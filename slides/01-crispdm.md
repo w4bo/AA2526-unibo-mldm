@@ -127,6 +127,14 @@ Read:
 
 > A collection of data used for some specific purpose.
 
+:::
+::: {.column width="40%"}
+
+![](https://github.com/user-attachments/assets/6b3f38bf-1a0f-4979-b141-854508d5faa9)
+
+:::
+::::
+
 **Feature**
 
 > Properties of things, ways that we, as humans, might describe them.
@@ -140,13 +148,5 @@ Read:
 **Query Language** [@liu2009encyclopedia]
 
 > A specialized programming language (e.g. SQL) for searching and changing the contents of a database.
-
-:::
-::: {.column width="40%"}
-
-![](https://github.com/user-attachments/assets/6b3f38bf-1a0f-4979-b141-854508d5faa9)
-
-:::
-::::
 
 {{< include _cs-automation.md >}} 

@@ -182,7 +182,7 @@ If you need help for coding and labs, *you can ask me and the designed tutor*
 :::: {.columns}
 ::: {.column width="60%"}
 
-Theory
+Theory (slides are very dynamic)
 
 1. [CRISP-DM](https://w4bo.github.io/AA2526-unibo-mldm/01-crispdm)
 1. [Business Understanding](https://w4bo.github.io/AA2526-unibo-mldm/02-businessunderstanding)

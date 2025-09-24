@@ -139,7 +139,7 @@ Read:
 
 **Query Language** [@liu2009encyclopedia]
 
-> A query language (e.g. SQL) is a specialized programming language for searching and changing the contents of a database.
+> A specialized programming language (e.g. SQL) for searching and changing the contents of a database.
 
 :::
 ::: {.column width="40%"}

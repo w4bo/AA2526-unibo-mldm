@@ -176,7 +176,463 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <p>This is essential also to understand which data should later be analyzed and how</p>
 </section>
 
+<section id="business-understanding-brown-spot" class="title-slide slide level1 center" data-background-color="#121011">
+<h1><img src="./img/cs.svg" class="title-icon"> Business Understanding: Brown Spot</h1>
+
+</section>
+
+<section id="brown-spot-of-european-pear" class="title-slide slide level1 center">
+<h1>Brown spot of European Pear</h1>
+<div class="columns">
+<div class="column" style="width:60%;">
+<blockquote>
+<p>Brown spot of European Pear</p>
+<ul>
+<li>A company wants to track the spreading of the Brown spot of European pear in Emilia Romagna.</li>
+<li>Brown spots are caused by a fungus (Stemphylium vesicarium) damaging pear fruits and causing economic loss for producers.</li>
+<li>Also, the company wants to find out if there are environmental factors related to the spreading of such fungus and the level of damage.</li>
+</ul>
+</blockquote>
+<ul>
+<li>How would you address this problem?</li>
+</ul>
+</div><div class="column" style="width:40%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="./img/brownspot/brownspot.png"></p>
+<figcaption>Brown Spots</figcaption>
+</figure>
+</div>
+</div></div>
+</section>
+
 <section id="determine-the-business-objectives" class="title-slide slide level1 center">
+<h1>Determine the Business Objectives</h1>
+<blockquote>
+<p>Ideally, the goal is to build a dataset such as the following</p>
+<table class="caption-top">
+<colgroup>
+<col style="width: 11%">
+<col style="width: 23%">
+<col style="width: 33%">
+<col style="width: 5%">
+<col style="width: 25%">
+</colgroup>
+<thead>
+<tr class="header">
+<th><em>Field</em></th>
+<th><em>AVG. Temperature</em></th>
+<th><em>Presence of Water Source</em></th>
+<th>…</th>
+<th><strong>Level of Damage</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Field#1</td>
+<td>14</td>
+<td>Close distance</td>
+<td>…</td>
+<td>High</td>
+</tr>
+<tr class="even">
+<td>Field#2</td>
+<td>14.5</td>
+<td>Medium distance</td>
+<td>…</td>
+<td>Medium</td>
+</tr>
+<tr class="odd">
+<td>Field#3</td>
+<td>13.8</td>
+<td>Medium distance</td>
+<td>…</td>
+<td>Low</td>
+</tr>
+<tr class="even">
+<td>Field#4</td>
+<td>…</td>
+<td>…</td>
+<td>…</td>
+<td>…</td>
+</tr>
+</tbody>
+</table>
+<p>and to learn relationships between <em>environmental features</em> and <strong>Level of Damage</strong> (the target of the analysis).</p>
+</blockquote>
+<ul>
+<li>What features would you collect?</li>
+<li>How do we translate this problem into a <em>quantitative metric</em>?</li>
+</ul>
+</section>
+
+<section id="determine-the-data-mining-goal" class="title-slide slide level1 center">
+<h1>Determine the Data Mining Goal</h1>
+<blockquote>
+<p>Ideally, the goal is to build a dataset such as the following</p>
+<table class="caption-top">
+<colgroup>
+<col style="width: 11%">
+<col style="width: 23%">
+<col style="width: 33%">
+<col style="width: 5%">
+<col style="width: 25%">
+</colgroup>
+<thead>
+<tr class="header">
+<th><em>Field</em></th>
+<th><em>AVG. Temperature</em></th>
+<th><em>Presence of Water Source</em></th>
+<th>…</th>
+<th><strong>Level of Damage</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Field#1</td>
+<td>14</td>
+<td>Close distance</td>
+<td>…</td>
+<td>High</td>
+</tr>
+<tr class="even">
+<td>Field#2</td>
+<td>14.5</td>
+<td>Medium distance</td>
+<td>…</td>
+<td>Medium</td>
+</tr>
+<tr class="odd">
+<td>Field#3</td>
+<td>13.8</td>
+<td>Medium distance</td>
+<td>…</td>
+<td>Low</td>
+</tr>
+<tr class="even">
+<td>Field#4</td>
+<td>…</td>
+<td>…</td>
+<td>…</td>
+<td>…</td>
+</tr>
+</tbody>
+</table>
+<p>and to learn relationships between <em>environmental features</em> and <strong>Level of Damage</strong> (the target of the analysis).</p>
+<p>In other words, can we identify features that allows us to predict an accurate level of damage?</p>
+</blockquote>
+<p>Metrics: predict the level of damage with high <em>accuracy</em></p>
+<ul>
+<li>How would you define accuracy?</li>
+<li>How can we collect the data?</li>
+</ul>
+</section>
+
+<section id="assess-the-situation-how-can-we-collect-the-data" class="title-slide slide level1 center">
+<h1>Assess the Situation: how can we collect the data?</h1>
+<blockquote>
+<p>The company prepares a questionnaire on paper with around 100 questions, and one of the employees moves across Emilia-Romagna to ask questions to the farmers and collect their answers.</p>
+</blockquote>
+
+<img data-src="https://github.com/user-attachments/assets/ad66fa16-fa65-450b-955e-37ab3bd67113" class="r-stretch quarto-figure-center"><p class="caption">Emilia Romagna, Italy</p><ul>
+<li>In your opinion, what are the pros/cons of this solution?</li>
+</ul>
+</section>
+
+<section id="section-1" class="title-slide slide level1 center">
+<h1></h1>
+<blockquote>
+<p>Once the employee had collected almost 100 questionnaires, the company asked us to apply machine learning techniques to understand which environmental conditions could be related to the spreading of the fungus.</p>
+</blockquote>
+<p>If you were the analyst, what would you do?</p>
+</section>
+
+<section id="if-you-were-the-analyst-what-would-you-do" class="title-slide slide level1 center">
+<h1>If you were the analyst, what would you do?</h1>
+<blockquote>
+<p>To us, it was impossible to apply machine learning techniques to data on paper.</p>
+<p>We prepared a Google Form where answers could be digitalized.</p>
+<p>The employee would take ~1 month to return the digitalized questionnaires.</p>
+<p><strong>Issue #1</strong>: some answers were inconsistent with the provided options.</p>
+<p><strong>Issue #2</strong>: what about open questions?</p>
+<p><strong>Issue #3</strong>: what about the trustworthiness of the data? E.g., there are some pesticides/fertilizers whose application is constrained by Italian/European laws. Can we trust the answers to these questions?</p>
+<p><strong>Issue #4</strong>: we have a dataset of 100 features (assuming for simplicity that each question can be simply turned into an attribute), and a dataset of 100 data.</p>
+</blockquote>
+<p>Outcome?</p>
+<ul>
+<li>This project was missing a proper plan (business+data understanding), and turned out to be a failure for the company.</li>
+<li>Even if we apply ML techniques to the data, the results we would get are not statistically relevant.</li>
+</ul>
+</section>
+
+<section id="business-understanding-personal-gazetteer" class="title-slide slide level1 center" data-background-color="#121011">
+<h1><img src="./img/cs.svg" class="title-icon"> Business Understanding: Personal Gazetteer</h1>
+
+</section>
+
+<section id="social-habits-la-città-intorno" class="title-slide slide level1 center">
+<h1>Social Habits: La Città Intorno</h1>
+<p><em>Lacittàintorno</em> is a programme for urban regeneration promoted by Fondazione Cariplo</p>
+<ul>
+<li>Designed to foster well-being and quality of life in urban areas</li>
+<li>Enhancing the functions and services in place in the following target neighbourhoods: Adriano, Via Padova, Corvetto, and Chiaravalle</li>
+<li>10 million euros investment over a three-year timeframe</li>
+</ul>
+
+<img data-src="./img/trajectory/CASE4-SocialHabitsAnalysis_15.png" class="r-stretch quarto-figure-center"><p class="caption">Neighborhoods of Milan (NIL)</p><p><strong>Question</strong>: what is the profile of users in these neighborhoods?</p>
+</section>
+
+<section id="location-intelligence-and-mobility-data" class="title-slide slide level1 center">
+<h1>Location Intelligence and Mobility Data</h1>
+<div class="columns">
+<div class="column" style="width:75%;">
+<p><em>More than 80% of companies</em> take decisions on the basis of information characterized by a spatial component.</p>
+<ul>
+<li><strong>Geo-referenced data</strong>: are data that contain a spatial position, they are typically static</li>
+<li><strong>Trajectory data</strong>: describe objects moving in the environment</li>
+<li>The main providers of trajectory data are:
+<ul>
+<li>Apps collecting data from GPS</li>
+<li>Telco that trace connection to Base Transceiver Stations</li>
+<li>Fleets of trucks, cars and ships</li>
+<li>…</li>
+</ul></li>
+</ul>
+<p><em>Location Intelligence</em> is a set of tools that allow <strong>a geographic dimension</strong> to be integrated within a <strong>BI platform</strong>.</p>
+<ul>
+<li>The goal is to increase the <strong>monitoring ability</strong> and the capability of understanding <strong>business events</strong>.</li>
+<li>Location intelligence supports <strong>data visualization and interaction with maps</strong> in <strong>BI contexts</strong>.</li>
+</ul>
+</div><div class="column" style="width:15%;">
+<p><img data-src="./img/trajectory/CASE4-SocialHabitsAnalysis_1.png"> <img data-src="./img/trajectory/CASE4-SocialHabitsAnalysis_2.jpg"></p>
+</div></div>
+</section>
+
+<section id="google-timeline" class="title-slide slide level1 center">
+<h1>Google Timeline</h1>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="./img/trajectory/CASE4-SocialHabitsAnalysis_4.png"></p>
+<figcaption>Single locations</figcaption>
+</figure>
+</div>
+</div><div class="column" style="width:50%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="./img/trajectory/CASE4-SocialHabitsAnalysis_5.png"></p>
+<figcaption>Trajectory</figcaption>
+</figure>
+</div>
+</div></div>
+</section>
+
+<section id="open-street-map" class="title-slide slide level1 center">
+<h1>Open Street Map</h1>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="./img/trajectory/CASE4-SocialHabitsAnalysis_6.png"></p>
+<figcaption>Open Street Map - Forlì</figcaption>
+</figure>
+</div>
+</div><div class="column" style="width:50%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="./img/trajectory/CASE4-SocialHabitsAnalysis_7.png"></p>
+<figcaption>Open Street Map - London</figcaption>
+</figure>
+</div>
+</div></div>
+</section>
+
+<section id="how-do-you-identify-relevant-places" class="title-slide slide level1 center">
+<h1>How do you identify relevant places?</h1>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><strong>Personal gazetteer</strong> is a personalized, digital record of significant locations (stay points) to an individual, similar to a geographical fingerprint</p>
+<ul>
+<li><em>Staypoints</em> are places of interest for a user</li>
+<li>How can extract staypoints with the following semantics?
+<ul>
+<li><em>Frequented</em> places?</li>
+<li><em>Home</em>?</li>
+<li><em>Work</em>?</li>
+</ul></li>
+</ul>
+</div><div class="column" style="width:50%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="./img/trajectory/CASE4-SocialHabitsAnalysis_13.png"></p>
+<figcaption>Trajectory stack</figcaption>
+</figure>
+</div>
+</div></div>
+</section>
+
+<section id="how-do-you-identify-relevant-places-1" class="title-slide slide level1 center">
+<h1>How do you identify relevant places?</h1>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p>Staypoints vs Trajectories</p>
+<ul>
+<li><strong>Trajectories</strong> describe mobility behaviors/patterns
+<ul>
+<li>USE CASE: understand where people going to an event come from?</li>
+<li><em>Frequent trajectories</em>: an end-to-end cluster of trajectories that are:
+<ul>
+<li>Compact enough</li>
+<li>Frequent enough</li>
+<li>Long enough</li>
+</ul></li>
+</ul></li>
+<li><strong>Staypoints</strong> identify places of interest for a user
+<ul>
+<li><em>Home</em>: the place where a user frequently stops between 1 and 5</li>
+<li><em>Work</em>: the place where a user frequently stops between 9 and 17</li>
+<li><em>Attend</em>: a place where the user stands at least 20 minutes and where at least one commercial activity is situated</li>
+</ul></li>
+</ul>
+</div><div class="column" style="width:50%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="./img/trajectory/CASE4-SocialHabitsAnalysis_9.jpg"></p>
+<figcaption>Heatmap of locations</figcaption>
+</figure>
+</div>
+</div></div>
+</section>
+
+<section id="social-habits-livein-vs-worksin" class="title-slide slide level1 center">
+<h1>Social Habits: LiveIn vs WorksIn</h1>
+
+<img data-src="./img/trajectory/CASE4-SocialHabitsAnalysis_16.png" class="r-stretch quarto-figure-center"><p class="caption">Colors are assigned according to the LiveIn semantic</p></section>
+
+<section id="social-habits-livein-vs-attend" class="title-slide slide level1 center">
+<h1>Social Habits: LiveIn vs Attend</h1>
+
+<img data-src="./img/trajectory/CASE4-SocialHabitsAnalysis_17.png" class="r-stretch quarto-figure-center"><p class="caption">Colors are assigned according to the LiveIn semantic</p></section>
+
+<section id="social-habits-livesin-adriano-vs-worksin" class="title-slide slide level1 center">
+<h1>Social Habits: LivesIn Adriano vs WorksIn *</h1>
+
+<img data-src="./img/trajectory/CASE4-SocialHabitsAnalysis_18.png" class="r-stretch quarto-figure-center"><p class="caption">Heatmap</p></section>
+
+<section id="social-habits-livesin-vs-worksin-adriano" class="title-slide slide level1 center">
+<h1>Social Habits: LivesIn * vs WorksIn Adriano</h1>
+
+<img data-src="./img/trajectory/CASE4-SocialHabitsAnalysis_19.png" class="r-stretch quarto-figure-center"><p class="caption">Heatmap</p></section>
+
+<section id="exploitation-of-trajectory-data" class="title-slide slide level1 center">
+<h1>Exploitation of Trajectory Data</h1>
+<div class="columns">
+<div class="column" style="width:50%;">
+<ul>
+<li><strong>Social habits and behaviors</strong>
+<ul>
+<li>Identify relevant places</li>
+<li>Identify communities</li>
+</ul></li>
+<li><strong>Urban mobility optimization</strong>
+<ul>
+<li>Historical analysis of traffic flows</li>
+<li>Early identification of accidents</li>
+<li>Dynamic and real-time traffic management</li>
+<li>Car pooling</li>
+</ul></li>
+<li><strong>Mobility/Movement mining</strong> identification of the mode of transport (car/foot) along a trajectory</li>
+<li><strong>Reverse geocoding</strong> it is the process by which an address or the name of a place is associated with a spatial datum (latitude, longitude)</li>
+<li><strong>Layer integration</strong> it is the process by which several information layers are superimposed and interrogated</li>
+<li><strong>Proximity marketing (indoor)</strong></li>
+<li>… and many others</li>
+</ul>
+</div><div class="column" style="width:50%;">
+<p><img data-src="./img/trajectory/CASE4-SocialHabitsAnalysis_9.jpg"></p>
+</div></div>
+</section>
+
+<section id="proximity-marketing" class="title-slide slide level1 center">
+<h1>Proximity marketing</h1>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><img data-src="./img/trajectory/CASE4-SocialHabitsAnalysis_10.png"></p>
+</div><div class="column" style="width:50%;">
+<p><img data-src="./img/trajectory/CASE4-SocialHabitsAnalysis_11.jpg"></p>
+</div></div>
+</section>
+
+<section id="social-habits-and-behaviors-ubiquitous-user-profiling-reality-mining" class="title-slide slide level1 center">
+<h1>Social habits and behaviors: Ubiquitous User Profiling – Reality Mining</h1>
+<p>Create a <strong>synthetic profile</strong> of the community that transits at a point / place starting <strong>from anonymous trajectory data</strong></p>
+<ul>
+<li><em>Who are the customers of the shopping center?</em>
+<ul>
+<li>50% live within 5km from the shopping center</li>
+<li>20% attend the shopping center X too</li>
+<li>On Saturday, 20% of customers go to the cinema after being at the shopping center</li>
+<li>On Saturday, 30% of customers go to restaurant Y after being at the shopping center</li>
+</ul></li>
+<li><em>Who comes on vacation to Cesenatico?</em>
+<ul>
+<li>In July 70% of the customers come from Emilia Romagna</li>
+<li>27% of customers live in neighborhoods with an average income above 30K €</li>
+<li>In August, 25% of customers come from Milan</li>
+<li>40% of the tourists have children</li>
+</ul></li>
+<li><em>How do the people who use the </em> <em>Freccia</em> _ Rossa Milan-Rome behave?_
+<ul>
+<li>30%, once in Rome, moves less than 10km from the station</li>
+<li>20%, once in Rome, take the subway</li>
+</ul></li>
+</ul>
+</section>
+
+<section id="urban-mobility-optimization-traffic-flows" class="title-slide slide level1 center">
+<h1>Urban mobility optimization: traffic flows</h1>
+<p><strong>Flow</strong>: is defined by a sequence of overlapping trajectories that are not necessarily end-to-end compact</p>
+
+<img data-src="./img/trajectory/CASE4-SocialHabitsAnalysis_20.png" class="r-stretch quarto-figure-center"><p class="caption">Top flows</p></section>
+
+<section id="urban-mobility-optimization-traffic-flows-1" class="title-slide slide level1 center">
+<h1>Urban mobility optimization: traffic flows</h1>
+<p><strong>Flow</strong>: is defined by a sequence of overlapping trajectories that are not necessarily end-to-end compact</p>
+<p>USE CASE: identify crowded routes</p>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="./img/trajectory/CASE4-SocialHabitsAnalysis_21.png"></p>
+<figcaption>Top morning flows</figcaption>
+</figure>
+</div>
+</div><div class="column" style="width:50%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="./img/trajectory/CASE4-SocialHabitsAnalysis_22.png"></p>
+<figcaption>Top evening flows</figcaption>
+</figure>
+</div>
+</div></div>
+</section>
+
+<section id="urban-mobility-optimization-garbage-collection-paths-for-hera" class="title-slide slide level1 center">
+<h1>Urban mobility optimization: garbage collection paths for HERA</h1>
+
+<img data-src="./img/trajectory/CASE4-SocialHabitsAnalysis_23.png" class="r-stretch quarto-figure-center"><p class="caption">Overall statistics</p></section>
+
+<section id="urban-mobility-optimization-garbage-collection-paths-for-hera-1" class="title-slide slide level1 center">
+<h1>Urban mobility optimization: garbage collection paths for HERA</h1>
+
+<img data-src="./img/trajectory/CASE4-SocialHabitsAnalysis_24.png" class="r-stretch quarto-figure-center"><p class="caption">Trips of a single truck</p></section>
+
+<section id="end-of-the-case-studies" class="title-slide slide level1 center">
+<h1>End of the case studies</h1>
+
+</section>
+
+<section id="determine-the-business-objectives-1" class="title-slide slide level1 center">
 <h1>Determine the Business Objectives</h1>
 <p><strong>Understanding a client’s true goal</strong> is critical to uncovering the important factors involved in the project</p>
 <ul>
@@ -225,7 +681,7 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 </ul>
 </section>
 
-<section id="section-1" class="title-slide slide level1 center">
+<section id="section-2" class="title-slide slide level1 center">
 <h1></h1>
 <p>Things are more complex in a company (<em>this is the added value of DTM!</em>)</p>
 <p><em>Determine the Organizational Structure</em></p>
@@ -272,7 +728,7 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 </ul>
 </section>
 
-<section id="section-2" class="title-slide slide level1 center">
+<section id="section-3" class="title-slide slide level1 center">
 <h1></h1>
 <div class="columns">
 <div class="column" style="width:50%;">
@@ -299,8 +755,8 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 </blockquote>
 </section>
 
-<section id="case-study-sport-kpis" class="title-slide slide level1 center">
-<h1>Case study: Sport KPIs</h1>
+<section id="case-study-sport-kpis" class="title-slide slide level1 center" data-background-color="#121011">
+<h1><img src="./img/cs.svg" class="title-icon"> Case study: Sport KPIs</h1>
 
 </section>
 
@@ -634,200 +1090,6 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <li>Even if you have good knowledge in the fields of computer and data science…</li>
 <li>… maybe you still miss domain knowledge that is fundamental to understanding and modeling the problem</li>
 </ul>
-</section>
-
-<section id="case-study-brown-spot" class="title-slide slide level1 center">
-<h1>Case study: Brown Spot</h1>
-
-</section>
-
-<section id="brown-spot-of-european-pear" class="title-slide slide level1 center">
-<h1>Brown spot of European Pear</h1>
-<div class="columns">
-<div class="column" style="width:60%;">
-<blockquote>
-<p>Brown spot of European Pear</p>
-<ul>
-<li>A company wants to track the spreading of the Brown spot of European pear in Emilia Romagna.</li>
-<li>Brown spots are caused by a fungus (Stemphylium vesicarium) damaging pear fruits and causing economic loss for producers.</li>
-<li>Also, the company wants to find out if there are environmental factors related to the spreading of such fungus and the level of damage.</li>
-</ul>
-</blockquote>
-<ul>
-<li>How would you address this problem?</li>
-</ul>
-</div><div class="column" style="width:40%;">
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="./img/brownspot/brownspot.png"></p>
-<figcaption>Brown Spots</figcaption>
-</figure>
-</div>
-</div></div>
-</section>
-
-<section id="determine-the-business-objectives-1" class="title-slide slide level1 center">
-<h1>Determine the Business Objectives</h1>
-<blockquote>
-<p>Ideally, the goal is to build a dataset such as the following</p>
-<table class="caption-top">
-<colgroup>
-<col style="width: 11%">
-<col style="width: 23%">
-<col style="width: 33%">
-<col style="width: 5%">
-<col style="width: 25%">
-</colgroup>
-<thead>
-<tr class="header">
-<th><em>Field</em></th>
-<th><em>AVG. Temperature</em></th>
-<th><em>Presence of Water Source</em></th>
-<th>…</th>
-<th><strong>Level of Damage</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>Field#1</td>
-<td>14</td>
-<td>Close distance</td>
-<td>…</td>
-<td>High</td>
-</tr>
-<tr class="even">
-<td>Field#2</td>
-<td>14.5</td>
-<td>Medium distance</td>
-<td>…</td>
-<td>Medium</td>
-</tr>
-<tr class="odd">
-<td>Field#3</td>
-<td>13.8</td>
-<td>Medium distance</td>
-<td>…</td>
-<td>Low</td>
-</tr>
-<tr class="even">
-<td>Field#4</td>
-<td>…</td>
-<td>…</td>
-<td>…</td>
-<td>…</td>
-</tr>
-</tbody>
-</table>
-<p>and to learn relationships between <em>environmental features</em> and <strong>Level of Damage</strong> (the target of the analysis).</p>
-</blockquote>
-<ul>
-<li>What features would you collect?</li>
-<li>How do we translate this problem into a <em>quantitative metric</em>?</li>
-</ul>
-</section>
-
-<section id="determine-the-data-mining-goal" class="title-slide slide level1 center">
-<h1>Determine the Data Mining Goal</h1>
-<blockquote>
-<p>Ideally, the goal is to build a dataset such as the following</p>
-<table class="caption-top">
-<colgroup>
-<col style="width: 11%">
-<col style="width: 23%">
-<col style="width: 33%">
-<col style="width: 5%">
-<col style="width: 25%">
-</colgroup>
-<thead>
-<tr class="header">
-<th><em>Field</em></th>
-<th><em>AVG. Temperature</em></th>
-<th><em>Presence of Water Source</em></th>
-<th>…</th>
-<th><strong>Level of Damage</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>Field#1</td>
-<td>14</td>
-<td>Close distance</td>
-<td>…</td>
-<td>High</td>
-</tr>
-<tr class="even">
-<td>Field#2</td>
-<td>14.5</td>
-<td>Medium distance</td>
-<td>…</td>
-<td>Medium</td>
-</tr>
-<tr class="odd">
-<td>Field#3</td>
-<td>13.8</td>
-<td>Medium distance</td>
-<td>…</td>
-<td>Low</td>
-</tr>
-<tr class="even">
-<td>Field#4</td>
-<td>…</td>
-<td>…</td>
-<td>…</td>
-<td>…</td>
-</tr>
-</tbody>
-</table>
-<p>and to learn relationships between <em>environmental features</em> and <strong>Level of Damage</strong> (the target of the analysis).</p>
-<p>In other words, can we identify features that allows us to predict an accurate level of damage?</p>
-</blockquote>
-<p>Metrics: predict the level of damage with high <em>accuracy</em></p>
-<ul>
-<li>How would you define accuracy?</li>
-<li>How can we collect the data?</li>
-</ul>
-</section>
-
-<section id="assess-the-situation-how-can-we-collect-the-data" class="title-slide slide level1 center">
-<h1>Assess the Situation: how can we collect the data?</h1>
-<blockquote>
-<p>The company prepares a questionnaire on paper with around 100 questions, and one of the employees moves across Emilia-Romagna to ask questions to the farmers and collect their answers.</p>
-</blockquote>
-
-<img data-src="https://github.com/user-attachments/assets/ad66fa16-fa65-450b-955e-37ab3bd67113" class="r-stretch quarto-figure-center"><p class="caption">Emilia Romagna, Italy</p><ul>
-<li>In your opinion, what are the pros/cons of this solution?</li>
-</ul>
-</section>
-
-<section id="section-3" class="title-slide slide level1 center">
-<h1></h1>
-<blockquote>
-<p>Once the employee had collected almost 100 questionnaires, the company asked us to apply machine learning techniques to understand which environmental conditions could be related to the spreading of the fungus.</p>
-</blockquote>
-<p>If you were the analyst, what would you do?</p>
-</section>
-
-<section id="if-you-were-the-analyst-what-would-you-do" class="title-slide slide level1 center">
-<h1>If you were the analyst, what would you do?</h1>
-<blockquote>
-<p>To us, it was impossible to apply machine learning techniques to data on paper.</p>
-<p>We prepared a Google Form where answers could be digitalized.</p>
-<p>The employee would take ~1 month to return the digitalized questionnaires.</p>
-<p><strong>Issue #1</strong>: some answers were inconsistent with the provided options.</p>
-<p><strong>Issue #2</strong>: what about open questions?</p>
-<p><strong>Issue #3</strong>: what about the trustworthiness of the data? E.g., there are some pesticides/fertilizers whose application is constrained by Italian/European laws. Can we trust the answers to these questions?</p>
-<p><strong>Issue #4</strong>: we have a dataset of 100 features (assuming for simplicity that each question can be simply turned into an attribute), and a dataset of 100 data.</p>
-</blockquote>
-<p>Outcome?</p>
-<ul>
-<li>This project was missing a proper plan (business+data understanding), and turned out to be a failure for the company.</li>
-<li>Even if we apply ML techniques to the data, the results we would get are not statistically relevant.</li>
-</ul>
-</section>
-
-<section id="end-of-the-case-study-brown-spot" class="title-slide slide level1 center">
-<h1>End of the case study: Brown Spot</h1>
-
 </section>
 
 <section id="references" class="title-slide slide level1 smaller scrollable">

@@ -60,7 +60,16 @@ subtitle: Data Mining, Machine Learning, and CRISP-DM
 :::
 ::::
 
-# Disclaimer
+# Disclaimer 1
+
+![-](./img/dgvsds.jpg)
+
+This course is orthogonal to:
+
+- Information Systems
+- Big Data and Cloud Platforms
+
+# Disclaimer 2
 
 :::: {.columns}
 ::: {.column width="60%"}
@@ -81,6 +90,25 @@ subtitle: Data Mining, Machine Learning, and CRISP-DM
 
 :::
 ::::
+
+# <img src="./img/cs.svg" class="title-icon" /> Vibe Coding and Automation {background-color="#121011"}
+
+**Vibe coding** is an AI-assisted software development technique popularized in February 2025.
+
+- A chatbot-based approach to creating software where the developer describes a project or task to a large language model (LLM)
+- The LLM generates code based on the prompt.
+- The developer does not review or edit the code, but solely uses tools and execution results to evaluate it and asks the LLM for improvements.
+- The developer avoids examination of the code, accepts AI-suggested completions without review, and focuses more on iterative experimentation.
+
+![[Vibe vs Real Coding](https://www.northcoders.com/blog/what-is-vibe-coding-and-can-it-replace-traditional-coding/)](https://www.northcoders.com/app/uploads/2025/06/vibe-coding-vs-real-coding-comparison-table-1.png)
+
+# Automating Data Science
+
+Read:
+
+- [CACM: Automating Data Science](https://cacm.acm.org/research/automating-data-science/)
+- [Gen Z face a more competitive job market than their predecessors](https://www.weforum.org/stories/2025/09/gen-z-are-competitive-job-market-randstad/)
+- [L'IA già ruba il lavoro ai giovani della Gen Z](https://www.ilsole24ore.com/art/l-intelligenza-artificiale-gia-ruba-lavoro-giovani-gen-z-AHgfnmz?refresh_ce=1)
 
 # Glossary [@sammut2017encyclopedia]
 
@@ -121,14 +149,3 @@ subtitle: Data Mining, Machine Learning, and CRISP-DM
 ::::
 
 {{< include _cs-automation.md >}} 
-
-# Disclaimer 2
-
-![-](./img/dgvsds.jpg)
-
-This course is orthogonal to courses on:
-
-- Information systems
-- Big data and cloud platforms
-
-# References

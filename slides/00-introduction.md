@@ -182,20 +182,20 @@ If you need help for coding and labs, *you can ask me and the designed tutor*
 :::: {.columns}
 ::: {.column width="60%"}
 
-1. [CRISP-DM](https://w4bo.github.io/AA2425-unibo-mldm/01-crispdm)
-1. [(Lab) Introduction to Google Colab](https://w4bo.github.io/AA2425-unibo-mldm/lab-00-introduction)
-1. [Business Understanding](https://w4bo.github.io/AA2425-unibo-mldm/02-businessunderstanding)
-1. [Data Understanding](https://w4bo.github.io/AA2425-unibo-mldm/03-dataunderstanding)
-1. [(Lab) Data Understanding](https://w4bo.github.io/AA2425-unibo-mldm/lab-01-dataunderstanding)
-1. [(Lab) Housing (understanding)](https://w4bo.github.io/AA2425-unibo-mldm/lab-02-housing)
-1. [Data Preparation](https://w4bo.github.io/AA2425-unibo-mldm/04-datapreparation)
-1. [(Lab) Data Preparation](https://w4bo.github.io/AA2425-unibo-mldm/lab-03-datapreparation)
-1. [Neural Networks](https://w4bo.github.io/AA2425-unibo-mldm/05-neuralnetworks)
-1. [Modeling](https://w4bo.github.io/AA2425-unibo-mldm/06-modeling)
-1. [(Lab) Housing (preparation)](https://w4bo.github.io/AA2425-unibo-mldm/lab-04-housing)
-1. [(Lab) Housing (modeling)](https://w4bo.github.io/AA2425-unibo-mldm/lab-06-housing)
-1. [(Lab) Titanic](https://w4bo.github.io/AA2425-unibo-mldm/lab-07-titanic)
-1. [(Lab) Breast cancer](https://w4bo.github.io/AA2425-unibo-mldm/lab-09-breastcancer)
+1. [CRISP-DM](https://w4bo.github.io/AA2526-unibo-mldm/01-crispdm)
+1. [(Lab) Introduction to Google Colab](https://w4bo.github.io/AA2526-unibo-mldm/lab-00-introduction)
+1. [Business Understanding](https://w4bo.github.io/AA2526-unibo-mldm/02-businessunderstanding)
+1. [Data Understanding](https://w4bo.github.io/AA2526-unibo-mldm/03-dataunderstanding)
+1. [(Lab) Data Understanding](https://w4bo.github.io/AA2526-unibo-mldm/lab-01-dataunderstanding)
+1. [(Lab) Housing (understanding)](https://w4bo.github.io/AA2526-unibo-mldm/lab-02-housing)
+1. [Data Preparation](https://w4bo.github.io/AA2526-unibo-mldm/04-datapreparation)
+1. [(Lab) Data Preparation](https://w4bo.github.io/AA2526-unibo-mldm/lab-03-datapreparation)
+1. [Neural Networks](https://w4bo.github.io/AA2526-unibo-mldm/05-neuralnetworks)
+1. [Modeling](https://w4bo.github.io/AA2526-unibo-mldm/06-modeling)
+1. [(Lab) Housing (preparation)](https://w4bo.github.io/AA2526-unibo-mldm/lab-04-housing)
+1. [(Lab) Housing (modeling)](https://w4bo.github.io/AA2526-unibo-mldm/lab-06-housing)
+1. [(Lab) Titanic](https://w4bo.github.io/AA2526-unibo-mldm/lab-07-titanic)
+1. [(Lab) Breast cancer](https://w4bo.github.io/AA2526-unibo-mldm/lab-09-breastcancer)
 
 :::
 ::: {.column width="40%"}

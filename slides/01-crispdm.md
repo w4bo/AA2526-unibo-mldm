@@ -37,7 +37,7 @@ subtitle: Data Mining, Machine Learning, and CRISP-DM
 :::: {.columns}
 ::: {.column width="60%"}
 
-CRISP-DM breaks down the life cycle of a data mining project into **six phases**:
+**CRISP-DM** breaks down the life cycle of a data mining project into **six phases**:
 
 1. business understanding,
 1. data understanding,
@@ -60,17 +60,17 @@ CRISP-DM breaks down the life cycle of a data mining project into **six phases**
 :::
 ::::
 
-# Disclaimer!
+# Disclaimer
 
 :::: {.columns}
 ::: {.column width="60%"}
 
-The CRISP-DM tells us that *we don't do machine learning for the sake of training machine learning models*
+*We don't do machine learning (only) for the sake of training machine learning models*
 
 - We have real problems to solve and questions to answer
 - A data scientist must understand the data and the domain before trying any model
 - Machine learning is not a simple copy and paste of code
-    - Code generation can be easily automated and outperform you!
+    - *Code generation can be easily automated and outperform you*!
     - The added value of a data scientist is the understanding of the problem and data
 - Data mining/Machine learning is not a course on `scikit-learn`
 
@@ -120,4 +120,15 @@ The CRISP-DM tells us that *we don't do machine learning for the sake of trainin
 :::
 ::::
 
-{{< include _cs-automation.md >}}
+{{< include _cs-automation.md >}} 
+
+# Disclaimer 2
+
+![-](./img/dgvsds.jpg)
+
+This course is orthogonal to courses on:
+
+- Information systems
+- Big data and cloud platforms
+
+# References

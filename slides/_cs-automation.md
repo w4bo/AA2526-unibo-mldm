@@ -164,7 +164,7 @@ and the one of a subsequent query obtained by drilling down the previous one (to
 :::
 ::::
 
-# Comparing the results
+# Comparing the results (done in 2024)
 
 :::: {.columns}
 ::: {.column width="30%"}

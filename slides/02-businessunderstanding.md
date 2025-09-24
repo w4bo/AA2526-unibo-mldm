@@ -19,6 +19,16 @@ The **business understanding** phase focuses on
 
 This is essential also to understand which data should later be analyzed and how
 
+# <img src="./img/cs.svg" class="title-icon" /> Business Understanding: Brown Spot {background-color="#121011"}
+
+{{< include _cs-brownspot.md >}}
+
+# <img src="./img/cs.svg" class="title-icon" /> Business Understanding: Personal Gazetteer {background-color="#121011"}
+
+{{< include _cs-trajectory.md >}}
+
+# End of the case studies
+
 # Determine the Business Objectives
 
 **Understanding a client's true goal** is critical to uncovering the important factors involved in the project
@@ -118,7 +128,7 @@ If the business goal cannot be effectively translated into a data mining goal, *
 >
 > Success should also be defined in these terms such as achieving a certain level of predictive accuracy
 
-# Case study: Sport KPIs
+# <img src="./img/cs.svg" class="title-icon" /> Case study: Sport KPIs {background-color="#121011"}
 
 {{< include _cs-kpisport.md >}}
 
@@ -146,11 +156,5 @@ Identifying and delving into the problem to solve
 - Is an **interdisciplinary** phase
 - Even if you have good knowledge in the fields of computer and data science...
 - ... maybe you still miss domain knowledge that is fundamental to understanding and modeling the problem
-
-# Case study: Brown Spot
-
-{{< include _cs-brownspot.md >}}
-
-# End of the case study: Brown Spot
 
 # References

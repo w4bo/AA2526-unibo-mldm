@@ -109,6 +109,7 @@ Read:
 - [CACM: Automating Data Science](https://cacm.acm.org/research/automating-data-science/)
 - [Gen Z face a more competitive job market than their predecessors](https://www.weforum.org/stories/2025/09/gen-z-are-competitive-job-market-randstad/)
 - [L'IA già ruba il lavoro ai giovani della Gen Z](https://www.ilsole24ore.com/art/l-intelligenza-artificiale-gia-ruba-lavoro-giovani-gen-z-AHgfnmz?refresh_ce=1)
+- [The Future of Work: How AI is Transforming Jobs and the Workplace](https://www.bcg.com/publications/2024/future-of-work-how-ai-is-transforming-jobs-and-the-workplace)
 
 # Glossary [@sammut2017encyclopedia]
 

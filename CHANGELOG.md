@@ -1,3 +1,13 @@
+## 1.0.0 (2025-09-24)
+
+### Bug Fixes
+
+* update links ([feb4a47](https://github.com/w4bo/AA2526-unibo-mldm/commit/feb4a4785c8bfd77f9adb180d81ebab49df69a7d))
+* update links ([3553ce9](https://github.com/w4bo/AA2526-unibo-mldm/commit/3553ce99043b2f8cd1558b052f4b72bf0f0b72de))
+* update links ([5327bc1](https://github.com/w4bo/AA2526-unibo-mldm/commit/5327bc1a5aee8d17d5a07d2af9c2b4b5bac96b5c))
+* update links ([831b3d7](https://github.com/w4bo/AA2526-unibo-mldm/commit/831b3d79de3416faf912fedd056c101dbe67693b))
+* update the slides ([dccc9c0](https://github.com/w4bo/AA2526-unibo-mldm/commit/dccc9c09d696859d8847f7630985815adaa6922e))
+
 ## [1.0.49](https://github.com/w4bo/AA2425-unibo-mldm/compare/1.0.48...1.0.49) (2025-03-31)
 
 ### Dependency updates

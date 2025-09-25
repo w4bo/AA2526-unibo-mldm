@@ -365,271 +365,9 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 </ul>
 </section>
 
-<section id="business-understanding-personal-gazetteer" class="title-slide slide level1 center" data-background-color="#121011">
-<h1><img src="./img/cs.svg" class="title-icon"> Business Understanding: Personal Gazetteer</h1>
-
-</section>
-
-<section id="social-habits-la-città-intorno" class="title-slide slide level1 center">
-<h1>Social Habits: La Città Intorno</h1>
-<p><em>Lacittàintorno</em> is a programme for urban regeneration promoted by Fondazione Cariplo</p>
-<ul>
-<li>Designed to foster well-being and quality of life in urban areas</li>
-<li>Enhancing the functions and services in place in the following target neighbourhoods: Adriano, Via Padova, Corvetto, and Chiaravalle</li>
-<li>10 million euros investment over a three-year timeframe</li>
-</ul>
-
-<img data-src="./img/trajectory/CASE4-SocialHabitsAnalysis_15.png" class="r-stretch quarto-figure-center"><p class="caption">Neighborhoods of Milan (NIL)</p><p><strong>Question</strong>: what is the profile of users in these neighborhoods?</p>
-</section>
-
-<section id="location-intelligence-and-mobility-data" class="title-slide slide level1 center">
-<h1>Location Intelligence and Mobility Data</h1>
-<div class="columns">
-<div class="column" style="width:75%;">
-<p><em>More than 80% of companies</em> take decisions on the basis of information characterized by a spatial component.</p>
-<ul>
-<li><strong>Geo-referenced data</strong>: are data that contain a spatial position, they are typically static</li>
-<li><strong>Trajectory data</strong>: describe objects moving in the environment</li>
-<li>The main providers of trajectory data are:
-<ul>
-<li>Apps collecting data from GPS</li>
-<li>Telco that trace connection to Base Transceiver Stations</li>
-<li>Fleets of trucks, cars and ships</li>
-<li>…</li>
-</ul></li>
-</ul>
-<p><em>Location Intelligence</em> is a set of tools that allow <strong>a geographic dimension</strong> to be integrated within a <strong>BI platform</strong>.</p>
-<ul>
-<li>The goal is to increase the <strong>monitoring ability</strong> and the capability of understanding <strong>business events</strong>.</li>
-<li>Location intelligence supports <strong>data visualization and interaction with maps</strong> in <strong>BI contexts</strong>.</li>
-</ul>
-</div><div class="column" style="width:15%;">
-<p><img data-src="./img/trajectory/CASE4-SocialHabitsAnalysis_1.png"> <img data-src="./img/trajectory/CASE4-SocialHabitsAnalysis_2.jpg"></p>
-</div></div>
-</section>
-
-<section id="google-timeline" class="title-slide slide level1 center">
-<h1>Google Timeline</h1>
-<div class="columns">
-<div class="column" style="width:50%;">
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="./img/trajectory/CASE4-SocialHabitsAnalysis_4.png"></p>
-<figcaption>Single locations</figcaption>
-</figure>
-</div>
-</div><div class="column" style="width:50%;">
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="./img/trajectory/CASE4-SocialHabitsAnalysis_5.png"></p>
-<figcaption>Trajectory</figcaption>
-</figure>
-</div>
-</div></div>
-</section>
-
-<section id="open-street-map" class="title-slide slide level1 center">
-<h1>Open Street Map</h1>
-<div class="columns">
-<div class="column" style="width:50%;">
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="./img/trajectory/CASE4-SocialHabitsAnalysis_6.png"></p>
-<figcaption>Open Street Map - Forlì</figcaption>
-</figure>
-</div>
-</div><div class="column" style="width:50%;">
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="./img/trajectory/CASE4-SocialHabitsAnalysis_7.png"></p>
-<figcaption>Open Street Map - London</figcaption>
-</figure>
-</div>
-</div></div>
-</section>
-
-<section id="how-do-you-identify-relevant-places" class="title-slide slide level1 center">
-<h1>How do you identify relevant places?</h1>
-<div class="columns">
-<div class="column" style="width:50%;">
-<p><strong>Personal gazetteer</strong> is a personalized, digital record of significant locations (stay points) to an individual, similar to a geographical fingerprint</p>
-<ul>
-<li><em>Staypoints</em> are places of interest for a user</li>
-<li>How can extract staypoints with the following semantics?
-<ul>
-<li><em>Frequented</em> places?</li>
-<li><em>Home</em>?</li>
-<li><em>Work</em>?</li>
-</ul></li>
-</ul>
-</div><div class="column" style="width:50%;">
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="./img/trajectory/CASE4-SocialHabitsAnalysis_13.png"></p>
-<figcaption>Trajectory stack</figcaption>
-</figure>
-</div>
-</div></div>
-</section>
-
-<section id="how-do-you-identify-relevant-places-1" class="title-slide slide level1 center">
-<h1>How do you identify relevant places?</h1>
-<div class="columns">
-<div class="column" style="width:50%;">
-<p>Staypoints vs Trajectories</p>
-<ul>
-<li><strong>Trajectories</strong> describe mobility behaviors/patterns
-<ul>
-<li>USE CASE: understand where people going to an event come from?</li>
-<li><em>Frequent trajectories</em>: an end-to-end cluster of trajectories that are:
-<ul>
-<li>Compact enough</li>
-<li>Frequent enough</li>
-<li>Long enough</li>
-</ul></li>
-</ul></li>
-<li><strong>Staypoints</strong> identify places of interest for a user
-<ul>
-<li><em>Home</em>: the place where a user frequently stops between 1 and 5</li>
-<li><em>Work</em>: the place where a user frequently stops between 9 and 17</li>
-<li><em>Attend</em>: a place where the user stands at least 20 minutes and where at least one commercial activity is situated</li>
-</ul></li>
-</ul>
-</div><div class="column" style="width:50%;">
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="./img/trajectory/CASE4-SocialHabitsAnalysis_9.jpg"></p>
-<figcaption>Heatmap of locations</figcaption>
-</figure>
-</div>
-</div></div>
-</section>
-
-<section id="social-habits-livein-vs-worksin" class="title-slide slide level1 center">
-<h1>Social Habits: LiveIn vs WorksIn</h1>
-
-<img data-src="./img/trajectory/CASE4-SocialHabitsAnalysis_16.png" class="r-stretch quarto-figure-center"><p class="caption">Colors are assigned according to the LiveIn semantic</p></section>
-
-<section id="social-habits-livein-vs-attend" class="title-slide slide level1 center">
-<h1>Social Habits: LiveIn vs Attend</h1>
-
-<img data-src="./img/trajectory/CASE4-SocialHabitsAnalysis_17.png" class="r-stretch quarto-figure-center"><p class="caption">Colors are assigned according to the LiveIn semantic</p></section>
-
-<section id="social-habits-livesin-adriano-vs-worksin" class="title-slide slide level1 center">
-<h1>Social Habits: LivesIn Adriano vs WorksIn *</h1>
-
-<img data-src="./img/trajectory/CASE4-SocialHabitsAnalysis_18.png" class="r-stretch quarto-figure-center"><p class="caption">Heatmap</p></section>
-
-<section id="social-habits-livesin-vs-worksin-adriano" class="title-slide slide level1 center">
-<h1>Social Habits: LivesIn * vs WorksIn Adriano</h1>
-
-<img data-src="./img/trajectory/CASE4-SocialHabitsAnalysis_19.png" class="r-stretch quarto-figure-center"><p class="caption">Heatmap</p></section>
-
-<section id="exploitation-of-trajectory-data" class="title-slide slide level1 center">
-<h1>Exploitation of Trajectory Data</h1>
-<div class="columns">
-<div class="column" style="width:50%;">
-<ul>
-<li><strong>Social habits and behaviors</strong>
-<ul>
-<li>Identify relevant places</li>
-<li>Identify communities</li>
-</ul></li>
-<li><strong>Urban mobility optimization</strong>
-<ul>
-<li>Historical analysis of traffic flows</li>
-<li>Early identification of accidents</li>
-<li>Dynamic and real-time traffic management</li>
-<li>Car pooling</li>
-</ul></li>
-<li><strong>Mobility/Movement mining</strong> identification of the mode of transport (car/foot) along a trajectory</li>
-<li><strong>Reverse geocoding</strong> it is the process by which an address or the name of a place is associated with a spatial datum (latitude, longitude)</li>
-<li><strong>Layer integration</strong> it is the process by which several information layers are superimposed and interrogated</li>
-<li><strong>Proximity marketing (indoor)</strong></li>
-<li>… and many others</li>
-</ul>
-</div><div class="column" style="width:50%;">
-<p><img data-src="./img/trajectory/CASE4-SocialHabitsAnalysis_9.jpg"></p>
-</div></div>
-</section>
-
-<section id="proximity-marketing" class="title-slide slide level1 center">
-<h1>Proximity marketing</h1>
-<div class="columns">
-<div class="column" style="width:50%;">
-<p><img data-src="./img/trajectory/CASE4-SocialHabitsAnalysis_10.png"></p>
-</div><div class="column" style="width:50%;">
-<p><img data-src="./img/trajectory/CASE4-SocialHabitsAnalysis_11.jpg"></p>
-</div></div>
-</section>
-
-<section id="social-habits-and-behaviors-ubiquitous-user-profiling-reality-mining" class="title-slide slide level1 center">
-<h1>Social habits and behaviors: Ubiquitous User Profiling – Reality Mining</h1>
-<p>Create a <strong>synthetic profile</strong> of the community that transits at a point / place starting <strong>from anonymous trajectory data</strong></p>
-<ul>
-<li><em>Who are the customers of the shopping center?</em>
-<ul>
-<li>50% live within 5km from the shopping center</li>
-<li>20% attend the shopping center X too</li>
-<li>On Saturday, 20% of customers go to the cinema after being at the shopping center</li>
-<li>On Saturday, 30% of customers go to restaurant Y after being at the shopping center</li>
-</ul></li>
-<li><em>Who comes on vacation to Cesenatico?</em>
-<ul>
-<li>In July 70% of the customers come from Emilia Romagna</li>
-<li>27% of customers live in neighborhoods with an average income above 30K €</li>
-<li>In August, 25% of customers come from Milan</li>
-<li>40% of the tourists have children</li>
-</ul></li>
-<li><em>How do the people who use the </em> <em>Freccia</em> _ Rossa Milan-Rome behave?_
-<ul>
-<li>30%, once in Rome, moves less than 10km from the station</li>
-<li>20%, once in Rome, take the subway</li>
-</ul></li>
-</ul>
-</section>
-
-<section id="urban-mobility-optimization-traffic-flows" class="title-slide slide level1 center">
-<h1>Urban mobility optimization: traffic flows</h1>
-<p><strong>Flow</strong>: is defined by a sequence of overlapping trajectories that are not necessarily end-to-end compact</p>
-
-<img data-src="./img/trajectory/CASE4-SocialHabitsAnalysis_20.png" class="r-stretch quarto-figure-center"><p class="caption">Top flows</p></section>
-
-<section id="urban-mobility-optimization-traffic-flows-1" class="title-slide slide level1 center">
-<h1>Urban mobility optimization: traffic flows</h1>
-<p><strong>Flow</strong>: is defined by a sequence of overlapping trajectories that are not necessarily end-to-end compact</p>
-<p>USE CASE: identify crowded routes</p>
-<div class="columns">
-<div class="column" style="width:50%;">
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="./img/trajectory/CASE4-SocialHabitsAnalysis_21.png"></p>
-<figcaption>Top morning flows</figcaption>
-</figure>
-</div>
-</div><div class="column" style="width:50%;">
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="./img/trajectory/CASE4-SocialHabitsAnalysis_22.png"></p>
-<figcaption>Top evening flows</figcaption>
-</figure>
-</div>
-</div></div>
-</section>
-
-<section id="urban-mobility-optimization-garbage-collection-paths-for-hera" class="title-slide slide level1 center">
-<h1>Urban mobility optimization: garbage collection paths for HERA</h1>
-
-<img data-src="./img/trajectory/CASE4-SocialHabitsAnalysis_23.png" class="r-stretch quarto-figure-center"><p class="caption">Overall statistics</p></section>
-
-<section id="urban-mobility-optimization-garbage-collection-paths-for-hera-1" class="title-slide slide level1 center">
-<h1>Urban mobility optimization: garbage collection paths for HERA</h1>
-
-<img data-src="./img/trajectory/CASE4-SocialHabitsAnalysis_24.png" class="r-stretch quarto-figure-center"><p class="caption">Trips of a single truck</p></section>
-
-<section id="end-of-the-case-studies" class="title-slide slide level1 center">
-<h1>End of the case studies</h1>
-
+<section id="end-of-the-case-study" class="title-slide slide level1 center" data-background-color="#121011">
+<h1>End of the case study</h1>
+<p>Back to CRISP-DM: Business understanding</p>
 </section>
 
 <section id="determine-the-business-objectives-1" class="title-slide slide level1 center">
@@ -755,8 +493,358 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 </blockquote>
 </section>
 
-<section id="case-study-sport-kpis" class="title-slide slide level1 center" data-background-color="#121011">
-<h1><img src="./img/cs.svg" class="title-icon"> Case study: Sport KPIs</h1>
+<section id="produce-a-project-plan" class="title-slide slide level1 center">
+<h1>Produce a Project Plan</h1>
+<p><strong>Describe the intended plan for achieving the goals</strong>, including:</p>
+<ul>
+<li>outlining specific steps and a proposed timeline</li>
+<li>an assessment of potential risks</li>
+<li>and an initial assessment of the tools and techniques needed to support the project</li>
+</ul>
+<p>Generally accepted industry timeline standards are <span class="citation" data-cites="shearer2000crisp">(<a href="#/references" role="doc-biblioref" onclick="">Shearer 2000</a>)</span>:</p>
+<ul>
+<li>50 to 70 percent of the time and effort in a data mining project involves the <em>Data Preparation Phase</em>;</li>
+<li>20 to 30 percent involves the <em>Data Understanding Phase</em>;</li>
+<li>only 10 to 20 percent is spent in each of the <em>Modeling, Evaluation, and Business Understanding Phases</em>;</li>
+<li>and 5 to 10 percent is spent in the <em>Deployment Planning Phase</em>.</li>
+</ul>
+</section>
+
+<section id="special-mention-interdisciplinarity" class="title-slide slide level1 center">
+<h1>Special Mention: Interdisciplinarity</h1>
+<p>Identifying and delving into the problem to solve</p>
+<ul>
+<li>Is an <strong>interdisciplinary</strong> phase</li>
+<li>Even if you have good knowledge in the fields of computer and data science…</li>
+<li>… maybe you still miss domain knowledge that is fundamental to understanding and modeling the problem</li>
+</ul>
+</section>
+
+<section id="business-understanding-personal-gazetteer" class="title-slide slide level1 center" data-background-color="#121011">
+<h1><img src="./img/cs.svg" class="title-icon"> Business Understanding: Personal Gazetteer</h1>
+
+</section>
+
+<section id="social-habits-la-città-intorno" class="title-slide slide level1 center">
+<h1>Social Habits: La Città Intorno</h1>
+<p><em>Lacittàintorno</em> is a programme for urban regeneration promoted by Fondazione Cariplo</p>
+<ul>
+<li>Designed to foster well-being and quality of life in urban areas</li>
+<li>Enhancing the functions and services in place in the following target neighbourhoods: Adriano, Via Padova, Corvetto, and Chiaravalle</li>
+<li>10 million euros investment over a three-year timeframe</li>
+</ul>
+
+<img data-src="./img/trajectory/CASE4-SocialHabitsAnalysis_15.png" class="r-stretch quarto-figure-center"><p class="caption">Neighborhoods of Milan (NIL)</p><p><strong>Question</strong>: what is the profile of users in these neighborhoods?</p>
+</section>
+
+<section id="location-intelligence-and-mobility-data" class="title-slide slide level1 center">
+<h1>Location Intelligence and Mobility Data</h1>
+<div class="columns">
+<div class="column" style="width:75%;">
+<p><em>More than 80% of companies</em> take decisions on the basis of information characterized by a spatial component.</p>
+<ul>
+<li><strong>Geo-referenced data</strong>: are data that contain a spatial position, they are typically static</li>
+<li><strong>Trajectory data</strong>: describe objects moving in the environment</li>
+<li>The main providers of trajectory data are:
+<ul>
+<li>Apps collecting data from GPS</li>
+<li>Telco that trace connection to Base Transceiver Stations</li>
+<li>Fleets of trucks, cars and ships</li>
+<li>…</li>
+</ul></li>
+</ul>
+<p><em>Location Intelligence</em> is a set of tools that allow <strong>a geographic dimension</strong> to be integrated within a <strong>BI platform</strong>.</p>
+<ul>
+<li>The goal is to increase the <strong>monitoring ability</strong> and the capability of understanding <strong>business events</strong>.</li>
+<li>Location intelligence supports <strong>data visualization and interaction with maps</strong> in <strong>BI contexts</strong>.</li>
+</ul>
+</div><div class="column" style="width:15%;">
+<p><img data-src="./img/trajectory/CASE4-SocialHabitsAnalysis_1.png"> <img data-src="./img/trajectory/CASE4-SocialHabitsAnalysis_2.jpg"></p>
+</div></div>
+</section>
+
+<section id="google-timeline" class="title-slide slide level1 center">
+<h1>Google Timeline</h1>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="./img/trajectory/CASE4-SocialHabitsAnalysis_4.png"></p>
+<figcaption>Single locations</figcaption>
+</figure>
+</div>
+</div><div class="column" style="width:50%;">
+<div class="fragment">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="./img/trajectory/CASE4-SocialHabitsAnalysis_5.png"></p>
+<figcaption>Trajectory</figcaption>
+</figure>
+</div>
+</div>
+</div></div>
+</section>
+
+<section id="open-street-map" class="title-slide slide level1 center">
+<h1>Open Street Map</h1>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="./img/trajectory/CASE4-SocialHabitsAnalysis_6.png"></p>
+<figcaption>Open Street Map - Forlì</figcaption>
+</figure>
+</div>
+</div><div class="column" style="width:50%;">
+<div class="fragment">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="./img/trajectory/CASE4-SocialHabitsAnalysis_7.png"></p>
+<figcaption>Open Street Map - London</figcaption>
+</figure>
+</div>
+</div>
+</div></div>
+</section>
+
+<section id="how-do-you-identify-relevant-places" class="title-slide slide level1 center">
+<h1>How do you identify relevant places?</h1>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><strong>Personal gazetteer</strong> is a personalized, digital record of significant locations (stay points) to an individual, similar to a geographical fingerprint</p>
+<ul>
+<li><em>Staypoints</em> are places of interest for a user</li>
+<li>How can extract staypoints with the following semantics?
+<ul>
+<li><em>Frequented</em> places?</li>
+<li><em>Home</em>?</li>
+<li><em>Work</em>?</li>
+</ul></li>
+</ul>
+</div><div class="column" style="width:50%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="./img/trajectory/CASE4-SocialHabitsAnalysis_13.png"></p>
+<figcaption>Trajectory stack</figcaption>
+</figure>
+</div>
+</div></div>
+</section>
+
+<section id="how-do-you-identify-relevant-places-1" class="title-slide slide level1 center">
+<h1>How do you identify relevant places?</h1>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p>Staypoints vs Trajectories</p>
+<ul>
+<li><strong>Trajectories</strong> describe mobility behaviors/patterns
+<ul>
+<li>USE CASE: understand where people going to an event come from?</li>
+<li><em>Frequent trajectories</em>: an end-to-end cluster of trajectories that are:
+<ul>
+<li>Compact enough</li>
+<li>Frequent enough</li>
+<li>Long enough</li>
+</ul></li>
+</ul></li>
+<li><strong>Staypoints</strong> identify places of interest for a user
+<ul>
+<li><em>Home</em>: the place where a user frequently stops between 1 and 5</li>
+<li><em>Work</em>: the place where a user frequently stops between 9 and 17</li>
+<li><em>Attend</em>: a place where the user stands at least 20 minutes and where at least one commercial activity is situated</li>
+</ul></li>
+</ul>
+</div><div class="column" style="width:50%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="./img/trajectory/CASE4-SocialHabitsAnalysis_9.jpg"></p>
+<figcaption>Heatmap of locations</figcaption>
+</figure>
+</div>
+</div></div>
+</section>
+
+<section id="social-habits-livein-vs-worksin" class="title-slide slide level1 center">
+<h1>Social Habits: LiveIn vs WorksIn</h1>
+
+<img data-src="./img/trajectory/CASE4-SocialHabitsAnalysis_16.png" class="r-stretch quarto-figure-center"><p class="caption">Colors are assigned according to the LiveIn semantic</p></section>
+
+<section id="social-habits-livein-vs-attend" class="title-slide slide level1 center">
+<h1>Social Habits: LiveIn vs Attend</h1>
+
+<img data-src="./img/trajectory/CASE4-SocialHabitsAnalysis_17.png" class="r-stretch quarto-figure-center"><p class="caption">Colors are assigned according to the LiveIn semantic</p></section>
+
+<section id="social-habits-livesin-adriano-vs-worksin" class="title-slide slide level1 center">
+<h1>Social Habits: LivesIn Adriano vs WorksIn *</h1>
+
+<img data-src="./img/trajectory/CASE4-SocialHabitsAnalysis_18.png" class="r-stretch quarto-figure-center"><p class="caption">Heatmap</p></section>
+
+<section id="social-habits-livesin-vs-worksin-adriano" class="title-slide slide level1 center">
+<h1>Social Habits: LivesIn * vs WorksIn Adriano</h1>
+
+<img data-src="./img/trajectory/CASE4-SocialHabitsAnalysis_19.png" class="r-stretch quarto-figure-center"><p class="caption">Heatmap</p></section>
+
+<section id="defining-attractiveness-dblpjournalseswafranciagg24" class="title-slide slide level1 center">
+<h1>Defining attractiveness <span class="citation" data-cites="DBLP:journals/eswa/FranciaGG24">(<a href="#/references" role="doc-biblioref" onclick="">Francia, Gallinucci, and Golfarelli 2024</a>)</span></h1>
+<p>The previous figures provide <em>qualitative</em> results.</p>
+<ul>
+<li>How can we <em>quantitatively</em> measure the attractiveness of neighborhood?</li>
+</ul>
+<div class="fragment">
+<p><span class="math inline">\(Attractiveness(n) = \frac{LiveIn_n + WorkIn_n + Frequent_n}{LiveIn_n}\)</span></p>
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th>Neighborhood</th>
+<th>Attractiveness</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Brera</td>
+<td>83%</td>
+</tr>
+<tr class="even">
+<td>Duomo</td>
+<td>83%</td>
+</tr>
+<tr class="odd">
+<td>Buenos Aires - Venezia</td>
+<td>82%</td>
+</tr>
+<tr class="even">
+<td>XXII Marzo</td>
+<td>82%</td>
+</tr>
+<tr class="odd">
+<td>…</td>
+<td>…</td>
+</tr>
+<tr class="even">
+<td>Gallaratese</td>
+<td>5%</td>
+</tr>
+<tr class="odd">
+<td>Lodi - Corvetto</td>
+<td>4%</td>
+</tr>
+<tr class="even">
+<td>Padova</td>
+<td>3%</td>
+</tr>
+<tr class="odd">
+<td>Adriano</td>
+<td>1%</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+
+<section id="exploitation-of-trajectory-data" class="title-slide slide level1 center">
+<h1>Exploitation of Trajectory Data</h1>
+<div class="columns">
+<div class="column" style="width:50%;">
+<ul>
+<li><strong>Social habits and behaviors</strong>
+<ul>
+<li>Identify relevant places</li>
+<li>Identify communities</li>
+</ul></li>
+<li><strong>Urban mobility optimization</strong>
+<ul>
+<li>Historical analysis of traffic flows</li>
+<li>Early identification of accidents</li>
+<li>Dynamic and real-time traffic management</li>
+<li>Car pooling</li>
+</ul></li>
+<li><strong>Mobility/Movement mining</strong> identification of the mode of transport (car/foot) along a trajectory</li>
+<li><strong>Reverse geocoding</strong> it is the process by which an address or the name of a place is associated with a spatial datum (latitude, longitude)</li>
+<li><strong>Layer integration</strong> it is the process by which several information layers are superimposed and interrogated</li>
+<li><strong>Proximity marketing (indoor)</strong></li>
+<li>… and many others</li>
+</ul>
+</div><div class="column" style="width:50%;">
+<p><img data-src="./img/trajectory/CASE4-SocialHabitsAnalysis_9.jpg"></p>
+</div></div>
+</section>
+
+<section id="proximity-marketing" class="title-slide slide level1 center">
+<h1>Proximity marketing</h1>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><img data-src="./img/trajectory/CASE4-SocialHabitsAnalysis_10.png"></p>
+</div><div class="column" style="width:50%;">
+<p><img data-src="./img/trajectory/CASE4-SocialHabitsAnalysis_11.jpg"></p>
+</div></div>
+</section>
+
+<section id="social-habits-and-behaviors-ubiquitous-user-profiling-reality-mining" class="title-slide slide level1 center">
+<h1>Social habits and behaviors: Ubiquitous User Profiling – Reality Mining</h1>
+<p>Create a <strong>synthetic profile</strong> of the community that transits at a point / place starting <strong>from anonymous trajectory data</strong></p>
+<ul>
+<li><em>Who are the customers of the shopping center?</em>
+<ul>
+<li>50% live within 5km from the shopping center</li>
+<li>20% attend the shopping center X too</li>
+<li>On Saturday, 20% of customers go to the cinema after being at the shopping center</li>
+<li>On Saturday, 30% of customers go to restaurant Y after being at the shopping center</li>
+</ul></li>
+<li><em>Who comes on vacation to Cesenatico?</em>
+<ul>
+<li>In July 70% of the customers come from Emilia Romagna</li>
+<li>27% of customers live in neighborhoods with an average income above 30K €</li>
+<li>In August, 25% of customers come from Milan</li>
+<li>40% of the tourists have children</li>
+</ul></li>
+<li><em>How do the people who use the </em> <em>Freccia</em> _ Rossa Milan-Rome behave?_
+<ul>
+<li>30%, once in Rome, moves less than 10km from the station</li>
+<li>20%, once in Rome, take the subway</li>
+</ul></li>
+</ul>
+</section>
+
+<section id="urban-mobility-optimization-traffic-flows" class="title-slide slide level1 center">
+<h1>Urban mobility optimization: traffic flows</h1>
+<p><strong>Flow</strong>: is defined by a sequence of overlapping trajectories that are not necessarily end-to-end compact</p>
+
+<img data-src="./img/trajectory/CASE4-SocialHabitsAnalysis_20.png" class="r-stretch quarto-figure-center"><p class="caption">Top flows</p></section>
+
+<section id="urban-mobility-optimization-traffic-flows-1" class="title-slide slide level1 center">
+<h1>Urban mobility optimization: traffic flows</h1>
+<p><strong>Flow</strong>: is defined by a sequence of overlapping trajectories that are not necessarily end-to-end compact</p>
+<p>USE CASE: identify crowded routes</p>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="./img/trajectory/CASE4-SocialHabitsAnalysis_21.png"></p>
+<figcaption>Top morning flows</figcaption>
+</figure>
+</div>
+</div><div class="column" style="width:50%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="./img/trajectory/CASE4-SocialHabitsAnalysis_22.png"></p>
+<figcaption>Top evening flows</figcaption>
+</figure>
+</div>
+</div></div>
+</section>
+
+<section id="urban-mobility-optimization-garbage-collection-paths-for-hera" class="title-slide slide level1 center">
+<h1>Urban mobility optimization: garbage collection paths for HERA</h1>
+
+<img data-src="./img/trajectory/CASE4-SocialHabitsAnalysis_23.png" class="r-stretch quarto-figure-center"><p class="caption">Overall statistics</p></section>
+
+<section id="urban-mobility-optimization-garbage-collection-paths-for-hera-1" class="title-slide slide level1 center">
+<h1>Urban mobility optimization: garbage collection paths for HERA</h1>
+
+<img data-src="./img/trajectory/CASE4-SocialHabitsAnalysis_24.png" class="r-stretch quarto-figure-center"><p class="caption">Trips of a single truck</p></section>
+
+<section id="business-understanding-sport-kpis" class="title-slide slide level1 center" data-background-color="#121011">
+<h1><img src="./img/cs.svg" class="title-icon"> Business Understanding: Sport KPIs</h1>
 
 </section>
 
@@ -1060,42 +1148,18 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 
 
 
-<section id="end-of-the-case-study-sport-kpis" class="title-slide slide level1 center">
-<h1>End of the case study: Sport KPIs</h1>
-
-</section>
-
-<section id="produce-a-project-plan" class="title-slide slide level1 center">
-<h1>Produce a Project Plan</h1>
-<p><strong>Describe the intended plan for achieving the goals</strong>, including:</p>
-<ul>
-<li>outlining specific steps and a proposed timeline</li>
-<li>an assessment of potential risks</li>
-<li>and an initial assessment of the tools and techniques needed to support the project</li>
-</ul>
-<p>Generally accepted industry timeline standards are <span class="citation" data-cites="shearer2000crisp">(<a href="#/references" role="doc-biblioref" onclick="">Shearer 2000</a>)</span>:</p>
-<ul>
-<li>50 to 70 percent of the time and effort in a data mining project involves the <em>Data Preparation Phase</em>;</li>
-<li>20 to 30 percent involves the <em>Data Understanding Phase</em>;</li>
-<li>only 10 to 20 percent is spent in each of the <em>Modeling, Evaluation, and Business Understanding Phases</em>;</li>
-<li>and 5 to 10 percent is spent in the <em>Deployment Planning Phase</em>.</li>
-</ul>
-</section>
-
-<section id="special-mention-interdisciplinarity" class="title-slide slide level1 center">
-<h1>Special Mention: Interdisciplinarity</h1>
-<p>Identifying and delving into the problem to solve</p>
-<ul>
-<li>Is an <strong>interdisciplinary</strong> phase</li>
-<li>Even if you have good knowledge in the fields of computer and data science…</li>
-<li>… maybe you still miss domain knowledge that is fundamental to understanding and modeling the problem</li>
-</ul>
+<section id="end-of-the-case-study-1" class="title-slide slide level1 center" data-background-color="#121011">
+<h1>End of the case study</h1>
+<p>Back to CRISP-DM: Business understanding</p>
 </section>
 
 <section id="references" class="title-slide slide level1 smaller scrollable">
 <h1>References</h1>
 
 <div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
+<div id="ref-DBLP:journals/eswa/FranciaGG24" class="csl-entry" role="listitem">
+Francia, Matteo, Enrico Gallinucci, and Matteo Golfarelli. 2024. <span>“Colossal Trajectory Mining: <span>A</span> Unifying Approach to Mine Behavioral Mobility Patterns.”</span> <em>Expert Syst. Appl.</em> 238 (Part <span>E</span>): 122055. <a href="https://doi.org/10.1016/J.ESWA.2023.122055">https://doi.org/10.1016/J.ESWA.2023.122055</a>.
+</div>
 <div id="ref-shearer2000crisp" class="csl-entry" role="listitem">
 Shearer, Colin. 2000. <span>“The CRISP-DM Model: The New Blueprint for Data Mining.”</span> <em>Journal of Data Warehousing</em> 5 (4): 13–22.
 </div>

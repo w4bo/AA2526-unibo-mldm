@@ -27,7 +27,27 @@
       margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
       vertical-align: middle;
     }
-  </style>
+    /* CSS for citations */
+    div.csl-bib-body { }
+    div.csl-entry {
+      clear: both;
+      margin-bottom: 0em;
+    }
+    .hanging-indent div.csl-entry {
+      margin-left:2em;
+      text-indent:-2em;
+    }
+    div.csl-left-margin {
+      min-width:2em;
+      float:left;
+    }
+    div.csl-right-inline {
+      margin-left:2em;
+      padding-left:1em;
+    }
+    div.csl-indent {
+      margin-left: 2em;
+    }  </style>
   <link rel="stylesheet" href="cs-trajectory_files/libs/revealjs/dist/theme/quarto-6391498a111a1f00b0d941bda0c7e264.css">
   <link href="cs-trajectory_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="cs-trajectory_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
@@ -186,11 +206,13 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 </figure>
 </div>
 </div><div class="column" style="width:50%;">
+<div class="fragment">
 <div class="quarto-figure quarto-figure-center">
 <figure>
 <p><img data-src="./img/trajectory/CASE4-SocialHabitsAnalysis_5.png"></p>
 <figcaption>Trajectory</figcaption>
 </figure>
+</div>
 </div>
 </div></div>
 </section>
@@ -206,11 +228,13 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 </figure>
 </div>
 </div><div class="column" style="width:50%;">
+<div class="fragment">
 <div class="quarto-figure quarto-figure-center">
 <figure>
 <p><img data-src="./img/trajectory/CASE4-SocialHabitsAnalysis_7.png"></p>
 <figcaption>Open Street Map - London</figcaption>
 </figure>
+</div>
 </div>
 </div></div>
 </section>
@@ -291,6 +315,63 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <h1>Social Habits: LivesIn * vs WorksIn Adriano</h1>
 
 <img data-src="./img/trajectory/CASE4-SocialHabitsAnalysis_19.png" class="r-stretch quarto-figure-center"><p class="caption">Heatmap</p></section>
+
+<section id="defining-attractiveness-dblpjournalseswafranciagg24" class="title-slide slide level1 center">
+<h1>Defining attractiveness <span class="citation" data-cites="DBLP:journals/eswa/FranciaGG24">(<a href="#/urban-mobility-optimization-garbage-collection-paths-for-hera-1" role="doc-biblioref" onclick="">Francia, Gallinucci, and Golfarelli 2024</a>)</span></h1>
+<p>The previous figures provide <em>qualitative</em> results.</p>
+<ul>
+<li>How can we <em>quantitatively</em> measure the attractiveness of neighborhood?</li>
+</ul>
+<div class="fragment">
+<p><span class="math inline">\(Attractiveness(n) = \frac{LiveIn_n + WorkIn_n + Frequent_n}{LiveIn_n}\)</span></p>
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th>Neighborhood</th>
+<th>Attractiveness</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Brera</td>
+<td>83%</td>
+</tr>
+<tr class="even">
+<td>Duomo</td>
+<td>83%</td>
+</tr>
+<tr class="odd">
+<td>Buenos Aires - Venezia</td>
+<td>82%</td>
+</tr>
+<tr class="even">
+<td>XXII Marzo</td>
+<td>82%</td>
+</tr>
+<tr class="odd">
+<td>…</td>
+<td>…</td>
+</tr>
+<tr class="even">
+<td>Gallaratese</td>
+<td>5%</td>
+</tr>
+<tr class="odd">
+<td>Lodi - Corvetto</td>
+<td>4%</td>
+</tr>
+<tr class="even">
+<td>Padova</td>
+<td>3%</td>
+</tr>
+<tr class="odd">
+<td>Adriano</td>
+<td>1%</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
 
 <section id="exploitation-of-trajectory-data" class="title-slide slide level1 center">
 <h1>Exploitation of Trajectory Data</h1>
@@ -389,11 +470,16 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 
 <img data-src="./img/trajectory/CASE4-SocialHabitsAnalysis_23.png" class="r-stretch quarto-figure-center"><p class="caption">Overall statistics</p></section>
 
-<section id="urban-mobility-optimization-garbage-collection-paths-for-hera-1" class="title-slide slide level1 center">
+<section id="urban-mobility-optimization-garbage-collection-paths-for-hera-1" class="title-slide slide level1 smaller scrollable">
 <h1>Urban mobility optimization: garbage collection paths for HERA</h1>
 
 
-<img data-src="./img/trajectory/CASE4-SocialHabitsAnalysis_24.png" class="r-stretch quarto-figure-center"><p class="caption">Trips of a single truck</p></section>
+<img data-src="./img/trajectory/CASE4-SocialHabitsAnalysis_24.png" class="r-stretch quarto-figure-center"><p class="caption">Trips of a single truck</p><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
+<div id="ref-DBLP:journals/eswa/FranciaGG24" class="csl-entry" role="listitem">
+Francia, Matteo, Enrico Gallinucci, and Matteo Golfarelli. 2024. <span>“Colossal Trajectory Mining: <span>A</span> Unifying Approach to Mine Behavioral Mobility Patterns.”</span> <em>Expert Syst. Appl.</em> 238 (Part <span>E</span>): 122055. <a href="https://doi.org/10.1016/J.ESWA.2023.122055">https://doi.org/10.1016/J.ESWA.2023.122055</a>.
+</div>
+</div>
+</section>
     </div>
   <div class="quarto-auto-generated-content" style="display: none;">
 <div class="footer footer-default">

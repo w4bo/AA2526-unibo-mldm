@@ -44,7 +44,9 @@ _Location Intelligence_ is a set of tools that allow  __a geographic dimension__
 ![Single locations](./img/trajectory/CASE4-SocialHabitsAnalysis_4.png)
 :::
 ::: {.column width="50%"}
+:::{.fragment}
 ![Trajectory](./img/trajectory/CASE4-SocialHabitsAnalysis_5.png)
+:::
 :::
 ::::
 
@@ -55,7 +57,9 @@ _Location Intelligence_ is a set of tools that allow  __a geographic dimension__
 ![Open Street Map - Forlì](./img/trajectory/CASE4-SocialHabitsAnalysis_6.png)
 :::
 ::: {.column width="50%"}
+:::{.fragment}
 ![Open Street Map - London](./img/trajectory/CASE4-SocialHabitsAnalysis_7.png)
+:::
 :::
 ::::
 
@@ -75,7 +79,6 @@ _Location Intelligence_ is a set of tools that allow  __a geographic dimension__
 ![Trajectory stack](./img/trajectory/CASE4-SocialHabitsAnalysis_13.png)
 :::
 ::::
-
 
 # How do you identify relevant places?
 
@@ -116,6 +119,30 @@ Staypoints vs Trajectories
 # Social Habits: LivesIn * vs WorksIn Adriano
 
 ![Heatmap](./img/trajectory/CASE4-SocialHabitsAnalysis_19.png)
+
+# Defining attractiveness [@DBLP:journals/eswa/FranciaGG24]
+
+The previous figures provide *qualitative* results.
+
+- How can we *quantitatively* measure the attractiveness of neighborhood?
+
+:::{.fragment}
+
+$Attractiveness(n) = \frac{LiveIn_n + WorkIn_n + Frequent_n}{LiveIn_n}$
+
+|Neighborhood |Attractiveness|
+|-------------|--------------|
+|Brera | 83%|
+|Duomo | 83%|
+|Buenos Aires - Venezia | 82%|
+|XXII Marzo | 82%|
+|...|...|
+|Gallaratese | 5%|
+|Lodi - Corvetto | 4%|
+|Padova | 3%|
+|Adriano | 1%|
+
+:::
 
 # Exploitation of Trajectory Data
 

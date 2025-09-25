@@ -23,11 +23,9 @@ This is essential also to understand which data should later be analyzed and how
 
 {{< include _cs-brownspot.md >}}
 
-# <img src="./img/cs.svg" class="title-icon" /> Business Understanding: Personal Gazetteer {background-color="#121011"}
+# End of the case study {background-color="#121011"}
 
-{{< include _cs-trajectory.md >}}
-
-# End of the case studies
+Back to CRISP-DM: Business understanding
 
 # Determine the Business Objectives
 
@@ -128,12 +126,6 @@ If the business goal cannot be effectively translated into a data mining goal, *
 >
 > Success should also be defined in these terms such as achieving a certain level of predictive accuracy
 
-# <img src="./img/cs.svg" class="title-icon" /> Case study: Sport KPIs {background-color="#121011"}
-
-{{< include _cs-kpisport.md >}}
-
-# End of the case study: Sport KPIs
-
 # Produce a Project Plan
 
 **Describe the intended plan for achieving the goals**, including:
@@ -156,5 +148,17 @@ Identifying and delving into the problem to solve
 - Is an **interdisciplinary** phase
 - Even if you have good knowledge in the fields of computer and data science...
 - ... maybe you still miss domain knowledge that is fundamental to understanding and modeling the problem
+
+# <img src="./img/cs.svg" class="title-icon" /> Business Understanding: Personal Gazetteer {background-color="#121011"}
+
+{{< include _cs-trajectory.md >}}
+
+# <img src="./img/cs.svg" class="title-icon" /> Business Understanding: Sport KPIs {background-color="#121011"}
+
+{{< include _cs-kpisport.md >}}
+
+# End of the case study {background-color="#121011"}
+
+Back to CRISP-DM: Business understanding
 
 # References

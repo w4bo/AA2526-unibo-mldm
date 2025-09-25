@@ -1,3 +1,9 @@
+## [1.0.2](https://github.com/w4bo/AA2526-unibo-mldm/compare/1.0.1...1.0.2) (2025-09-25)
+
+### Bug Fixes
+
+* update business understanding ([2ee513a](https://github.com/w4bo/AA2526-unibo-mldm/commit/2ee513a22462a2a185a3ac25f96d3cd4d64cd0e9))
+
 ## [1.0.1](https://github.com/w4bo/AA2526-unibo-mldm/compare/1.0.0...1.0.1) (2025-09-24)
 
 ### Bug Fixes

@@ -129,23 +129,23 @@ The previous figures provide *qualitative* results.
 :::{.fragment}
 
 - $Attractiveness(n) = \frac{LiveIn_n + WorkIn_n + Frequent_n}{LiveIn_n}$
-- $Attractiveness'(n) = \frac{LiveIn_n + WorkIn_n + Frequent_n}{\sum_i (LiveIn_i + WorkIn_i + Frequent_i)}$
+- $Attractiveness'(n) = \frac{MovementPattern_n}{\sum_i (MovementPattern_i)}$
 
 :::
 
 :::{.fragment}
 
-|Neighborhood |$Attractiveness'$|
-|-------------|--------------|
-|Brera | 83%|
-|Duomo | 83%|
-|Buenos Aires - Venezia | 82%|
-|XXII Marzo | 82%|
-|...|...|
-|Gallaratese | 5%|
-|Lodi - Corvetto | 4%|
-|Padova | 3%|
-|Adriano | 1%|
+|Neighborhood           | Distinct users  | WorkIn + Frequent | LiveIn  | $Attractiveness$  |$Attractiveness'$|
+|-----------------------|-----------------|-------------------|---------|-------------------|-----------------|
+|Brera                  | 2779            | 2396              | 440     | 545%              | 83%             |
+|Duomo                  | 4607            | 4203              | 464     | 906%              | 83%             |
+|Buenos Aires - Venezia | 3840            | 2644              | 1484    | 178%              | 82%             |
+|XXII Marzo             | 1790            | 1202              | 681     | 177%              | 82%             |
+|...                    | ...             | ...               | ...     | ...               |...              |
+|Gallaratese            | 1508            | 929               | 752     | 124%              | 5%              |
+|Lodi - Corvetto        | 1627            | 993               | 795     | 125%              | 4%              |
+|Padova                 | 1628            | 996               | 753     | 132%              | 3%              |
+|Adriano                | 636             | 316               | 385     | 82%               | 1%              |
 
 :::
 

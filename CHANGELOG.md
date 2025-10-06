@@ -1,3 +1,9 @@
+## [1.0.4](https://github.com/w4bo/AA2526-unibo-mldm/compare/1.0.3...1.0.4) (2025-10-06)
+
+### Bug Fixes
+
+* attractiveness ([b4625c8](https://github.com/w4bo/AA2526-unibo-mldm/commit/b4625c88329ce8caadeacc502793f240fac99de2))
+
 ## [1.0.3](https://github.com/w4bo/AA2526-unibo-mldm/compare/1.0.2...1.0.3) (2025-10-06)
 
 ### Dependency updates

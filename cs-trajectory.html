@@ -323,12 +323,17 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <li>How can we <em>quantitatively</em> measure the attractiveness of neighborhood?</li>
 </ul>
 <div class="fragment">
-<p><span class="math inline">\(Attractiveness(n) = \frac{LiveIn_n + WorkIn_n + Frequent_n}{LiveIn_n}\)</span></p>
+<ul>
+<li><span class="math inline">\(Attractiveness(n) = \frac{LiveIn_n + WorkIn_n + Frequent_n}{LiveIn_n}\)</span></li>
+<li><span class="math inline">\(Attractiveness'(n) = \frac{LiveIn_n + WorkIn_n + Frequent_n}{\sum_i (LiveIn_i + WorkIn_i + Frequent_i)}\)</span></li>
+</ul>
+</div>
+<div class="fragment">
 <table class="caption-top">
 <thead>
 <tr class="header">
 <th>Neighborhood</th>
-<th>Attractiveness</th>
+<th><span class="math inline">\(Attractiveness'\)</span></th>
 </tr>
 </thead>
 <tbody>

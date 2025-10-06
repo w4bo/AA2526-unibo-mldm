@@ -128,9 +128,14 @@ The previous figures provide *qualitative* results.
 
 :::{.fragment}
 
-$Attractiveness(n) = \frac{LiveIn_n + WorkIn_n + Frequent_n}{LiveIn_n}$
+- $Attractiveness(n) = \frac{LiveIn_n + WorkIn_n + Frequent_n}{LiveIn_n}$
+- $Attractiveness'(n) = \frac{LiveIn_n + WorkIn_n + Frequent_n}{\sum_i (LiveIn_i + WorkIn_i + Frequent_i)}$
 
-|Neighborhood |Attractiveness|
+:::
+
+:::{.fragment}
+
+|Neighborhood |$Attractiveness'$|
 |-------------|--------------|
 |Brera | 83%|
 |Duomo | 83%|

@@ -187,19 +187,24 @@ The previous figures provide *qualitative* results.
 
 Create a **synthetic profile** of the community that transits at a point / place starting  **from anonymous trajectory data**
 
-* _Who are the customers of the shopping center?_
-  * 50% live within 5km from the shopping center
-  * 20% attend the shopping center X too
-  * On Saturday, 20% of customers go to the cinema after being at the shopping center
-  * On Saturday, 30% of customers go to restaurant Y after being at the shopping center
-* _Who comes on vacation to Cesenatico?_
-  * In July 70% of the customers come from Emilia Romagna
-  * 27% of customers live in neighborhoods with an average income above 30K €
-  * In August, 25% of customers come from Milan
-  * 40% of the tourists have children
-* _How do the people who use the _  _Freccia_  _ Rossa Milan-Rome behave?_
-  * 30%, once in Rome, moves less than 10km from the station
-  * 20%, once in Rome, take the subway
+_Who are the customers of the shopping center?_
+
+* 50% live within 5km from the shopping center
+* 20% attend the shopping center X too
+* On Saturday, 20% of customers go to the cinema after being at the shopping center
+* On Saturday, 30% of customers go to restaurant Y after being at the shopping center
+
+_Who comes on vacation to Cesenatico?_
+
+* In July 70% of the customers come from Emilia Romagna
+* 27% of customers live in neighborhoods with an average income above 30K €
+* In August, 25% of customers come from Milan
+* 40% of the tourists have children
+
+_How do the people who use the Freccia Rossa Milan-Rome behave?_
+
+* 30%, once in Rome, moves less than 10km from the station
+* 20%, once in Rome, take the subway
 
 # Urban mobility optimization: traffic flows
 

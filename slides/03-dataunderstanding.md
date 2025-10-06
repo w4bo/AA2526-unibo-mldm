@@ -112,25 +112,64 @@ Rule of thumb: *one in ten/twenty* [@chowdhury2020variable]
 
 # <img src="./img/cs.svg" class="title-icon" /> **Problem**: how can we collect data?
 
+# Acquisition of a new dataset
+
+Data collection is usually a costly process
+
+- *Investment of time and money* for:
+  - Programming or learning to use an acquisition tool
+  - Handling of *large amounts of data*
+  - Testing to find any bugs that could compromise the success of the acquisition
+    - Unfortunately, we often notice them at the end of the process
+  - *Acquire new hardware* for data collection and storage
+
+It is necessary to carefully consider whether it is appropriate to acquire a new dataset
+
+- Considerations not only in engineering but also in management and economics aspects
+- Future needs must be foreseen in advance
+
+# Common Problems in Data Collection
+
+The business process produces huge amounts of data
+
+- It is almost impossible to acquire all the data
+- Also, physical limitations when the data stream is bigger than the storing capacity
+- Usually, it is necessary to choose which ones to store
+
+Sometimes companies have a lot of "old" data in their databases or information systems:
+
+- They don't know what to do with it
+- Data re-collection on existing data (since data must be clean or something similar)
+
+In many business processes it is unclear understanding:
+
+- Which data is possible to collect (also due to privacy issues)
+- Which data is (really) useful for the business
+
 # Public Datasets
 
-We can get data mainly in two ways:
+We can get data mainly in two ways
 
-1. By using *publicly available data* (datasets or databases) → someone collected them for us!
-    - They can be free or for a fee
-    - The quality of the data made available must be checked
-1. By *acquiring a new set of data*, but why?
-    - It is not certain that public data well represent the problem we want to solve
-    - We want to acquire specific data and thus generate specific expertise for the company (know-how)
-    - We are forced to acquire data that due to their sensitive nature would not otherwise be available (privacy issues)
-    - The company we work for already has a data collection process that we can use
+By using *publicly available data* (datasets or databases) → someone collected them for us!
+
+- They can be free or for a fee
+- The quality of the data made available must be checked
+
+By *acquiring a new set of data*, but why?
+
+- It is not certain that public data well represent the problem we want to solve
+- We want to acquire specific data and thus generate specific expertise for the company (know-how)
+- We are forced to acquire data that due to their sensitive nature would not otherwise be available (privacy issues)
+- The company we work for already has a data collection process that we can use
+
+# Public Datasets
 
 Many universities publicly release their datasets:
 
 - There are no requirements related to profit or non-disclosure agreement (NDA)
-  - It is the basis of the scientific method, in particular for the reproducibility of the results obtained
-  - I release my data so that others can conduct my own experiments and verify my results
-  - Examples: [https://www.image-net.org/](https://www.image-net.org/)
+- It is the basis of the scientific method, in particular for the reproducibility of the results obtained
+- I release my data so that others can conduct my own experiments and verify my results
+- Examples: [https://www.image-net.org/](https://www.image-net.org/)
 
 Some platforms make datasets available for competitions, such as [Kaggle](https://www.kaggle.com/datasets) and [others](https://medium.datadriveninvestor.com/kaggle-data-science-platform-alternatives-for-competitions-and-research-cbe051596e62)
 
@@ -148,30 +187,6 @@ The [Iris dataset](https://www.kaggle.com/datasets/uciml/iris) is public data th
     1. `PetalLengthCm`
     1. `PetalWidthCm`
     1. `Species`
-
-# Example of a public dataset: the Iris dataset
-
-Used in classification problems where the goal is to predict the species of Iris flowers based on their features
-
-- It is a simple dataset, it is easy to distinguish the different flowers and does not need data preparation
-
-<img src="./img/dataunderstanding/iris.svg" style="max-height: 450px !important" class="center-img">
-
-# Acquisition of a new dataset
-
-Acquiring a new dataset is usually a costly process!
-
-- *Investment of time and money* for:
-  - Programming or learning to use an acquisition tool
-  - Handling of *large amounts of data*
-  - Testing to find any bugs that could compromise the success of the acquisition
-    - Unfortunately, we often notice them at the end of the process
-  - *Acquire new hardware* for data collection and storage
-
-It is necessary to carefully consider whether it is appropriate to acquire a new dataset
-
-- Considerations not only in engineering but also in management and economics aspects
-- Future needs must be foreseen in advance
 
 # Data Annotation
 
@@ -199,22 +214,28 @@ Data collected without correct and timely annotation is often useless
 
 The data annotation process can take place in several ways:
 
-- *Manual*: each data is manually annotated
-  - A long and expensive process
-  - The quality of the annotations is usually controllable and high
-  - This is not always an applicable process (for example, is it possible to annotate a dataset with 1M of images?)
-- *Automatic*: each data is automatically annotated, using specific tools
-  - It is based on particular a priori knowledge (for example, all images acquired in a dog shelter depict dogs).
-  - The quality of the annotations is not always easily controlled
-- *Third parties*: all data is noted by a third party
-  - *Free of charge*: this is the case, for example, in which users barter the free use of some platform with the transfer of their annotated data (for example, photos uploaded - to Facebook accompanied by information regarding the content, the position of the face, or scene acquired).
-  - *Paid*: there are platforms where it is possible to purchase annotation time from third parties (often from "developing countries"). Example: Amazon Mechanical Turk
+Here’s a more concise version of your points:
+
+* *Manual*: Data is annotated by hand.
+
+  * Accurate but slow and costly.
+  * Not scalable for very large datasets.
+
+* *Automatic*: Data is annotated with tools.
+
+  * Relies on prior knowledge (e.g., dog shelter images → dogs).
+  * Quality is harder to control.
+
+* *Third-party*: Annotation done externally.
+
+  * *Free*: Users trade platform use for annotated data (e.g., Facebook photos).
+  * *Paid*: Annotations bought via platforms (e.g., Amazon Mechanical Turk).
 
 # [Amazon Mechanical Turk](https://www.mturk.com/)
 
 <img src="https://github.com/user-attachments/assets/4b272c03-7fca-4338-a112-02859d5cfe70" class="center-img">
 
-# Different Ways of Learning
+# Different Ways of Learning {visibility="hidden"} 
 
 :::: {.columns}
 ::: {.column width="65%"}
@@ -244,7 +265,7 @@ Specific algorithms correspond to each of these areas
 :::
 ::::
 
-# Open and Closed Sets
+# Open and Closed Sets {visibility="hidden"} 
 
 The last aspect to be defined relating to data annotation: **do we know all annotations**?
 
@@ -264,21 +285,6 @@ Two possible solutions to the open set problem:
   - The so-called "negative examples" are added to the training set
 - You allow the system not to assign the pattern
   - A threshold is defined and the pattern is assigned to the most likely class only when the probability is higher than the threshold
-
-# Common Problems in Data Collection
-
-Companies usually face common problems:
-
-- The business process produces huge amounts of data
-  - It is almost impossible to acquire all the data
-  - Also, physical limitations when the data stream is bigger than the storing capacity
-  - Usually, it is necessary to choose which ones to store
-- Sometimes companies have a lot of "old" data in their databases or information systems:
-  - They don't know what to do with it
-  - Data re-collection on existing data (since data must be clean or something similar)
-- In many business processes it is unclear understanding:
-  - Which data is possible to collect (also due to privacy issues)
-  - Which data is (really) useful for the business
 
 # <img src="./img/cs.svg" class="title-icon" /> **Problem**: now that we have the data, what do we do?
 

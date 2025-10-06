@@ -1,3 +1,9 @@
+## [1.0.5](https://github.com/w4bo/AA2526-unibo-mldm/compare/1.0.4...1.0.5) (2025-10-06)
+
+### Bug Fixes
+
+* reworing data understanding ([74187e0](https://github.com/w4bo/AA2526-unibo-mldm/commit/74187e04ccc9a01f2d4c9c385ebd3cffa76cdffa))
+
 ## [1.0.4](https://github.com/w4bo/AA2526-unibo-mldm/compare/1.0.3...1.0.4) (2025-10-06)
 
 ### Bug Fixes

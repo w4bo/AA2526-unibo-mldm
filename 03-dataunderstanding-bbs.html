@@ -297,31 +297,73 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 
 </section>
 
+<section id="acquisition-of-a-new-dataset" class="title-slide slide level1 center">
+<h1>Acquisition of a new dataset</h1>
+<p>Data collection is usually a costly process</p>
+<ul>
+<li><em>Investment of time and money</em> for:
+<ul>
+<li>Programming or learning to use an acquisition tool</li>
+<li>Handling of <em>large amounts of data</em></li>
+<li>Testing to find any bugs that could compromise the success of the acquisition
+<ul>
+<li>Unfortunately, we often notice them at the end of the process</li>
+</ul></li>
+<li><em>Acquire new hardware</em> for data collection and storage</li>
+</ul></li>
+</ul>
+<p>It is necessary to carefully consider whether it is appropriate to acquire a new dataset</p>
+<ul>
+<li>Considerations not only in engineering but also in management and economics aspects</li>
+<li>Future needs must be foreseen in advance</li>
+</ul>
+</section>
+
+<section id="common-problems-in-data-collection" class="title-slide slide level1 center">
+<h1>Common Problems in Data Collection</h1>
+<p>The business process produces huge amounts of data</p>
+<ul>
+<li>It is almost impossible to acquire all the data</li>
+<li>Also, physical limitations when the data stream is bigger than the storing capacity</li>
+<li>Usually, it is necessary to choose which ones to store</li>
+</ul>
+<p>Sometimes companies have a lot of “old” data in their databases or information systems:</p>
+<ul>
+<li>They don’t know what to do with it</li>
+<li>Data re-collection on existing data (since data must be clean or something similar)</li>
+</ul>
+<p>In many business processes it is unclear understanding:</p>
+<ul>
+<li>Which data is possible to collect (also due to privacy issues)</li>
+<li>Which data is (really) useful for the business</li>
+</ul>
+</section>
+
 <section id="public-datasets" class="title-slide slide level1 center">
 <h1>Public Datasets</h1>
-<p>We can get data mainly in two ways:</p>
-<ol type="1">
-<li>By using <em>publicly available data</em> (datasets or databases) → someone collected them for us!
+<p>We can get data mainly in two ways</p>
+<p>By using <em>publicly available data</em> (datasets or databases) → someone collected them for us!</p>
 <ul>
 <li>They can be free or for a fee</li>
 <li>The quality of the data made available must be checked</li>
-</ul></li>
-<li>By <em>acquiring a new set of data</em>, but why?
+</ul>
+<p>By <em>acquiring a new set of data</em>, but why?</p>
 <ul>
 <li>It is not certain that public data well represent the problem we want to solve</li>
 <li>We want to acquire specific data and thus generate specific expertise for the company (know-how)</li>
 <li>We are forced to acquire data that due to their sensitive nature would not otherwise be available (privacy issues)</li>
 <li>The company we work for already has a data collection process that we can use</li>
-</ul></li>
-</ol>
+</ul>
+</section>
+
+<section id="public-datasets-1" class="title-slide slide level1 center">
+<h1>Public Datasets</h1>
 <p>Many universities publicly release their datasets:</p>
 <ul>
-<li>There are no requirements related to profit or non-disclosure agreement (NDA)
-<ul>
+<li>There are no requirements related to profit or non-disclosure agreement (NDA)</li>
 <li>It is the basis of the scientific method, in particular for the reproducibility of the results obtained</li>
 <li>I release my data so that others can conduct my own experiments and verify my results</li>
 <li>Examples: <a href="https://www.image-net.org/">https://www.image-net.org/</a></li>
-</ul></li>
 </ul>
 <p>Some platforms make datasets available for competitions, such as <a href="https://www.kaggle.com/datasets">Kaggle</a> and <a href="https://medium.datadriveninvestor.com/kaggle-data-science-platform-alternatives-for-competitions-and-research-cbe051596e62">others</a></p>
 </section>
@@ -341,37 +383,6 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <li><code>PetalWidthCm</code></li>
 <li><code>Species</code></li>
 </ol></li>
-</ul>
-</section>
-
-<section id="example-of-a-public-dataset-the-iris-dataset-1" class="title-slide slide level1 center">
-<h1>Example of a public dataset: the Iris dataset</h1>
-<p>Used in classification problems where the goal is to predict the species of Iris flowers based on their features</p>
-<ul>
-<li>It is a simple dataset, it is easy to distinguish the different flowers and does not need data preparation</li>
-</ul>
-<p><img src="./img/dataunderstanding/iris.svg" style="max-height: 450px !important" class="center-img"></p>
-</section>
-
-<section id="acquisition-of-a-new-dataset" class="title-slide slide level1 center">
-<h1>Acquisition of a new dataset</h1>
-<p>Acquiring a new dataset is usually a costly process!</p>
-<ul>
-<li><em>Investment of time and money</em> for:
-<ul>
-<li>Programming or learning to use an acquisition tool</li>
-<li>Handling of <em>large amounts of data</em></li>
-<li>Testing to find any bugs that could compromise the success of the acquisition
-<ul>
-<li>Unfortunately, we often notice them at the end of the process</li>
-</ul></li>
-<li><em>Acquire new hardware</em> for data collection and storage</li>
-</ul></li>
-</ul>
-<p>It is necessary to carefully consider whether it is appropriate to acquire a new dataset</p>
-<ul>
-<li>Considerations not only in engineering but also in management and economics aspects</li>
-<li>Future needs must be foreseen in advance</li>
 </ul>
 </section>
 
@@ -403,22 +414,22 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <section id="data-annotation-process" class="title-slide slide level1 center">
 <h1>Data Annotation Process</h1>
 <p>The data annotation process can take place in several ways:</p>
+<p>Here’s a more concise version of your points:</p>
 <ul>
-<li><em>Manual</em>: each data is manually annotated
+<li><p><em>Manual</em>: Data is annotated by hand.</p>
 <ul>
-<li>A long and expensive process</li>
-<li>The quality of the annotations is usually controllable and high</li>
-<li>This is not always an applicable process (for example, is it possible to annotate a dataset with 1M of images?)</li>
+<li>Accurate but slow and costly.</li>
+<li>Not scalable for very large datasets.</li>
 </ul></li>
-<li><em>Automatic</em>: each data is automatically annotated, using specific tools
+<li><p><em>Automatic</em>: Data is annotated with tools.</p>
 <ul>
-<li>It is based on particular a priori knowledge (for example, all images acquired in a dog shelter depict dogs).</li>
-<li>The quality of the annotations is not always easily controlled</li>
+<li>Relies on prior knowledge (e.g., dog shelter images → dogs).</li>
+<li>Quality is harder to control.</li>
 </ul></li>
-<li><em>Third parties</em>: all data is noted by a third party
+<li><p><em>Third-party</em>: Annotation done externally.</p>
 <ul>
-<li><em>Free of charge</em>: this is the case, for example, in which users barter the free use of some platform with the transfer of their annotated data (for example, photos uploaded - to Facebook accompanied by information regarding the content, the position of the face, or scene acquired).</li>
-<li><em>Paid</em>: there are platforms where it is possible to purchase annotation time from third parties (often from “developing countries”). Example: Amazon Mechanical Turk</li>
+<li><em>Free</em>: Users trade platform use for annotated data (e.g., Facebook photos).</li>
+<li><em>Paid</em>: Annotations bought via platforms (e.g., Amazon Mechanical Turk).</li>
 </ul></li>
 </ul>
 </section>
@@ -428,91 +439,9 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 
 <img src="https://github.com/user-attachments/assets/4b272c03-7fca-4338-a112-02859d5cfe70" class="center-img r-stretch"></section>
 
-<section id="different-ways-of-learning" class="title-slide slide level1 center">
-<h1>Different Ways of Learning</h1>
-<div class="columns">
-<div class="column" style="width:65%;">
-<p>We define different types of learning depending on data annotation:</p>
-<ul>
-<li><em>Annotated data</em> → Supervised Learning
-<ul>
-<li>One of the most studied types that allows to obtain the best results</li>
-</ul></li>
-<li><em>Not annotated data</em> → Unsupervised Learning
-<ul>
-<li>Results that can be obtained are usually worse than the previous case</li>
-</ul></li>
-<li><em>Partially annotated data</em> → Semi-Supervised Learning</li>
-</ul>
-<p>Specific algorithms correspond to each of these areas</p>
-<ul>
-<li>Best performances are usually obtained with supervised trained algorithms</li>
-<li>We will mainly work on fully annotated data → Supervised Learning</li>
-</ul>
-</div><div class="column" style="width:35%;">
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="https://github.com/user-attachments/assets/50c6092b-43cd-4dbe-95c1-c0d9494803e6"></p>
-<figcaption>Fully annotated</figcaption>
-</figure>
-</div>
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="https://github.com/user-attachments/assets/e6d4832d-902c-49c3-8c62-a1948517bb7e"></p>
-<figcaption>Partially annotated</figcaption>
-</figure>
-</div>
-</div></div>
-</section>
 
-<section id="open-and-closed-sets" class="title-slide slide level1 center">
-<h1>Open and Closed Sets</h1>
-<p>The last aspect to be defined relating to data annotation: <strong>do we know all annotations</strong>?</p>
-<p><em>Closed Set</em>: it is assumed that the pattern to be classified belongs to one of the known classes.</p>
-<ul>
-<li>The most common case in machine learning benchmarks</li>
-<li>Ideal condition, but not always suitable for real-world systems</li>
-</ul>
-<p><em>Open Set</em>: the patterns to be classified can belong to none of the known classes.</p>
-<ul>
-<li>More realistic condition, but more challenging</li>
-<li>Example: classify all fruits into {pears, bananas}</li>
-</ul>
-<p>Two possible solutions to the open set problem:</p>
-<ul>
-<li>An additional fictitious class is added to the classes (“the rest of the world”, “unknown”)
-<ul>
-<li>The so-called “negative examples” are added to the training set</li>
-</ul></li>
-<li>You allow the system not to assign the pattern
-<ul>
-<li>A threshold is defined and the pattern is assigned to the most likely class only when the probability is higher than the threshold</li>
-</ul></li>
-</ul>
-</section>
 
-<section id="common-problems-in-data-collection" class="title-slide slide level1 center">
-<h1>Common Problems in Data Collection</h1>
-<p>Companies usually face common problems:</p>
-<ul>
-<li>The business process produces huge amounts of data
-<ul>
-<li>It is almost impossible to acquire all the data</li>
-<li>Also, physical limitations when the data stream is bigger than the storing capacity</li>
-<li>Usually, it is necessary to choose which ones to store</li>
-</ul></li>
-<li>Sometimes companies have a lot of “old” data in their databases or information systems:
-<ul>
-<li>They don’t know what to do with it</li>
-<li>Data re-collection on existing data (since data must be clean or something similar)</li>
-</ul></li>
-<li>In many business processes it is unclear understanding:
-<ul>
-<li>Which data is possible to collect (also due to privacy issues)</li>
-<li>Which data is (really) useful for the business</li>
-</ul></li>
-</ul>
-</section>
+
 
 <section id="problem-now-that-we-have-the-data-what-do-we-do" class="title-slide slide level1 center">
 <h1><img src="./img/cs.svg" class="title-icon"> <strong>Problem</strong>: now that we have the data, what do we do?</h1>

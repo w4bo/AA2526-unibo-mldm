@@ -325,52 +325,100 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <div class="fragment">
 <ul>
 <li><span class="math inline">\(Attractiveness(n) = \frac{LiveIn_n + WorkIn_n + Frequent_n}{LiveIn_n}\)</span></li>
-<li><span class="math inline">\(Attractiveness'(n) = \frac{LiveIn_n + WorkIn_n + Frequent_n}{\sum_i (LiveIn_i + WorkIn_i + Frequent_i)}\)</span></li>
+<li><span class="math inline">\(Attractiveness'(n) = \frac{MovementPattern_n}{\sum_i (MovementPattern_i)}\)</span></li>
 </ul>
 </div>
 <div class="fragment">
 <table class="caption-top">
+<colgroup>
+<col style="width: 22%">
+<col style="width: 16%">
+<col style="width: 18%">
+<col style="width: 8%">
+<col style="width: 18%">
+<col style="width: 16%">
+</colgroup>
 <thead>
 <tr class="header">
 <th>Neighborhood</th>
+<th>Distinct users</th>
+<th>WorkIn + Frequent</th>
+<th>LiveIn</th>
+<th><span class="math inline">\(Attractiveness\)</span></th>
 <th><span class="math inline">\(Attractiveness'\)</span></th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td>Brera</td>
+<td>2779</td>
+<td>2396</td>
+<td>440</td>
+<td>545%</td>
 <td>83%</td>
 </tr>
 <tr class="even">
 <td>Duomo</td>
+<td>4607</td>
+<td>4203</td>
+<td>464</td>
+<td>906%</td>
 <td>83%</td>
 </tr>
 <tr class="odd">
 <td>Buenos Aires - Venezia</td>
+<td>3840</td>
+<td>2644</td>
+<td>1484</td>
+<td>178%</td>
 <td>82%</td>
 </tr>
 <tr class="even">
 <td>XXII Marzo</td>
+<td>1790</td>
+<td>1202</td>
+<td>681</td>
+<td>177%</td>
 <td>82%</td>
 </tr>
 <tr class="odd">
+<td>…</td>
+<td>…</td>
+<td>…</td>
+<td>…</td>
 <td>…</td>
 <td>…</td>
 </tr>
 <tr class="even">
 <td>Gallaratese</td>
+<td>1508</td>
+<td>929</td>
+<td>752</td>
+<td>124%</td>
 <td>5%</td>
 </tr>
 <tr class="odd">
 <td>Lodi - Corvetto</td>
+<td>1627</td>
+<td>993</td>
+<td>795</td>
+<td>125%</td>
 <td>4%</td>
 </tr>
 <tr class="even">
 <td>Padova</td>
+<td>1628</td>
+<td>996</td>
+<td>753</td>
+<td>132%</td>
 <td>3%</td>
 </tr>
 <tr class="odd">
 <td>Adriano</td>
+<td>636</td>
+<td>316</td>
+<td>385</td>
+<td>82%</td>
 <td>1%</td>
 </tr>
 </tbody>

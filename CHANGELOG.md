@@ -1,3 +1,14 @@
+## [1.0.3](https://github.com/w4bo/AA2526-unibo-mldm/compare/1.0.2...1.0.3) (2025-10-06)
+
+### Dependency updates
+
+* **deps:** update dependency semantic-release-preconfigured-conventional-commits to v1.1.147 ([#4](https://github.com/w4bo/AA2526-unibo-mldm/issues/4)) ([3c61fa0](https://github.com/w4bo/AA2526-unibo-mldm/commit/3c61fa06700a353a91973f3347896c6cf4059d6a))
+* **deps:** update node.js to 22.20 ([#3](https://github.com/w4bo/AA2526-unibo-mldm/issues/3)) ([a15758f](https://github.com/w4bo/AA2526-unibo-mldm/commit/a15758f43587d50654b645f8cc1b3bb7db7562f6))
+
+### Bug Fixes
+
+* attractiveness ([05b715b](https://github.com/w4bo/AA2526-unibo-mldm/commit/05b715ba0bf443e668a45ddfbcbcaae4218907d9))
+
 ## [1.0.2](https://github.com/w4bo/AA2526-unibo-mldm/compare/1.0.1...1.0.2) (2025-09-25)
 
 ### Bug Fixes

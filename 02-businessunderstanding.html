@@ -193,9 +193,7 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <li>Also, the company wants to find out if there are environmental factors related to the spreading of such fungus and the level of damage.</li>
 </ul>
 </blockquote>
-<ul>
-<li>How would you address this problem?</li>
-</ul>
+<p>How would you address this problem?</p>
 </div><div class="column" style="width:40%;">
 <div class="quarto-figure quarto-figure-center">
 <figure>
@@ -324,8 +322,65 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <p>Metrics: predict the level of damage with high <em>accuracy</em></p>
 <ul>
 <li>How would you define accuracy?</li>
-<li>How can we collect the data?</li>
 </ul>
+</section>
+
+<section id="determine-the-data-mining-goal-1" class="title-slide slide level1 center">
+<h1>Determine the Data Mining Goal</h1>
+<blockquote>
+<p>Ideally, the goal is to build a dataset such as the following</p>
+<table class="caption-top">
+<colgroup>
+<col style="width: 11%">
+<col style="width: 23%">
+<col style="width: 33%">
+<col style="width: 5%">
+<col style="width: 25%">
+</colgroup>
+<thead>
+<tr class="header">
+<th><em>Field</em></th>
+<th><em>AVG. Temperature</em></th>
+<th><em>Presence of Water Source</em></th>
+<th>…</th>
+<th><strong>Level of Damage</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Field#1</td>
+<td>14</td>
+<td>Close distance</td>
+<td>…</td>
+<td>High</td>
+</tr>
+<tr class="even">
+<td>Field#2</td>
+<td>14.5</td>
+<td>Medium distance</td>
+<td>…</td>
+<td>Medium</td>
+</tr>
+<tr class="odd">
+<td>Field#3</td>
+<td>13.8</td>
+<td>Medium distance</td>
+<td>…</td>
+<td>Low</td>
+</tr>
+<tr class="even">
+<td>Field#4</td>
+<td>…</td>
+<td>…</td>
+<td>…</td>
+<td>…</td>
+</tr>
+</tbody>
+</table>
+<p>and to learn relationships between <em>environmental features</em> and <strong>Level of Damage</strong> (the target of the analysis).</p>
+<p>In other words, can we identify features that allows us to predict an accurate level of damage?</p>
+</blockquote>
+<p>How can we collect the data?</p>
 </section>
 
 <section id="assess-the-situation-how-can-we-collect-the-data" class="title-slide slide level1 center">
@@ -334,9 +389,7 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <p>The company prepares a questionnaire on paper with around 100 questions, and one of the employees moves across Emilia-Romagna to ask questions to the farmers and collect their answers.</p>
 </blockquote>
 
-<img data-src="https://github.com/user-attachments/assets/ad66fa16-fa65-450b-955e-37ab3bd67113" class="r-stretch quarto-figure-center"><p class="caption">Emilia Romagna, Italy</p><ul>
-<li>In your opinion, what are the pros/cons of this solution?</li>
-</ul>
+<img data-src="https://github.com/user-attachments/assets/ad66fa16-fa65-450b-955e-37ab3bd67113" class="r-stretch quarto-figure-center"><p class="caption">Emilia Romagna, Italy</p><p>What are the pros/cons of this solution?</p>
 </section>
 
 <section id="section-1" class="title-slide slide level1 center">
@@ -358,7 +411,10 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <p><strong>Issue #3</strong>: what about the trustworthiness of the data? E.g., there are some pesticides/fertilizers whose application is constrained by Italian/European laws. Can we trust the answers to these questions?</p>
 <p><strong>Issue #4</strong>: we have a dataset of 100 features (assuming for simplicity that each question can be simply turned into an attribute), and a dataset of 100 data.</p>
 </blockquote>
-<p>Outcome?</p>
+</section>
+
+<section id="outcome" class="title-slide slide level1 center">
+<h1>Outcome</h1>
 <ul>
 <li>This project was missing a proper plan (business+data understanding), and turned out to be a failure for the company.</li>
 <li>Even if we apply ML techniques to the data, the results we would get are not statistically relevant.</li>

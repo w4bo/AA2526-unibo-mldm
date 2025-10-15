@@ -1,3 +1,13 @@
+## [1.0.6](https://github.com/w4bo/AA2526-unibo-mldm/compare/1.0.5...1.0.6) (2025-10-15)
+
+### Bug Fixes
+
+* data understanding ([64c1de6](https://github.com/w4bo/AA2526-unibo-mldm/commit/64c1de69570540f5a4be62d0711b871f587b804b))
+
+### Build and continuous integration
+
+* **deps:** update actions/setup-node action to v6 ([#5](https://github.com/w4bo/AA2526-unibo-mldm/issues/5)) ([bab7913](https://github.com/w4bo/AA2526-unibo-mldm/commit/bab791333303fdce0b51ac8e697c76c3d604b481))
+
 ## [1.0.5](https://github.com/w4bo/AA2526-unibo-mldm/compare/1.0.4...1.0.5) (2025-10-06)
 
 ### Bug Fixes

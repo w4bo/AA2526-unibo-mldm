@@ -36,22 +36,34 @@ The analyst then proceeds to
 
 ![Red dots stand for places where surviving planes were shot. How would you reinforce the planes?](https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Survivorship-bias.svg/1280px-Survivorship-bias.svg.png)
 
-# Biases 
+# Biases
 
-> "If you torture the data long enough, it will confess to anything"
->
-> Ronald H. Coase
+**Bias**
 
+- Inclination or prejudice for or against one person or group, especially in a way considered to be unfair.
+    - "There was evidence of bias against foreign applicants"
+- A systematic distortion of a statistical result due to a factor not allowed for in its derivation.
+    - "The search results are biased by the specific queries used"
+
+:::{.fragment}
 During data collection and analysis, several **biases** can occur
 
 - *Selection*: sample used for data collection is not representative of the population being studied
 - *Sampling*: certain segments of the population are more likely to be included or excluded from the sample
 - *Response*: participants in a survey or study provide inaccurate or misleading responses
-- *Confirmation*: refers to the tendency to favor information that confirms pre-existing beliefs or hypotheses while ignoring or discounting contradictory evidence
+- *Confirmation*: refers to the tendency to favor information that confirms pre-existing beliefs or hypotheses while ignoring contradictory evidence
 - *Cultural*: data collection methods, survey questions, or study designs are culturally insensitive or fail to account for cultural differences
 - *Time-Interval*: the timing of data collection influences the results
-- *Publication*: tendency for researchers or journals to publish studies with positive or significant results while neglecting to publish studies with null or negative results
 - ... and many others
+:::
+
+# Confirmation bias
+
+> "If you torture the data long enough, it will confess to anything"
+>
+> Ronald H. Coase
+
+[(2023) Dati “torturati” per dare un assist al governo](https://www.ilfattoquotidiano.it/in-edicola/articoli/2023/09/14/linps-di-meloni-fa-sp-arire-il-lavoro-povero/7291305/)
 
 # Survivorship bias
 
@@ -91,6 +103,21 @@ The "survivors" get studied, while the failures are excluded, leading to potenti
 
 > After watching several news reports about airplane crashes, a person might overestimate the risk of flying. They might avoid flying, despite it being statistically safer than driving, because the images and stories of crashes are more readily available in their memory.
 
+# Biases and fairness
+
+**Fairness** refers to the various attempts to correct algorithmic bias in automated decision processes based on ML models.
+
+- Decisions made by such models after a learning process may be considered unfair if they were based on variables considered sensitive
+- E.g., gender, ethnicity, sexual orientation, or disability
+
+[(2018) Amazon scraps secret AI recruiting tool that showed bias against women](https://www.reuters.com/article/world/insight-amazon-scraps-secret-ai-recruiting-tool-that-showed-bias-against-women-idUSKCN1MK0AG/)
+
+How could we approach this problem?
+
+# Biases and fairness
+
+[(2024) ‘We definitely messed up’: why did Google AI tool make offensive historical images?](https://www.theguardian.com/technology/2024/mar/08/we-definitely-messed-up-why-did-google-ai-tool-make-offensive-historical-images)
+
 # <img src="./img/cs.svg" class="title-icon" /> **Problem**: is data the new oil?
 
 The more data we have, the more analysis we can do (however, more data != smarter data)
@@ -116,12 +143,13 @@ Rule of thumb: *one in ten/twenty* [@chowdhury2020variable]
 
 Data collection is usually a costly process
 
-- *Investment of time and money* for:
-  - Programming or learning to use an acquisition tool
-  - Handling of *large amounts of data*
-  - Testing to find any bugs that could compromise the success of the acquisition
+*Investment of time and money* for:
+
+- Programming or learning to use an acquisition tool
+- Handling of *large amounts of data*
+- Testing to find any bugs that could compromise the success of the acquisition
     - Unfortunately, we often notice them at the end of the process
-  - *Acquire new hardware* for data collection and storage
+- *Acquire new hardware* for data collection and storage
 
 It is necessary to carefully consider whether it is appropriate to acquire a new dataset
 
@@ -129,12 +157,6 @@ It is necessary to carefully consider whether it is appropriate to acquire a new
 - Future needs must be foreseen in advance
 
 # Common Problems in Data Collection
-
-The business process produces huge amounts of data
-
-- It is almost impossible to acquire all the data
-- Also, physical limitations when the data stream is bigger than the storing capacity
-- Usually, it is necessary to choose which ones to store
 
 Sometimes companies have a lot of "old" data in their databases or information systems:
 
@@ -150,8 +172,9 @@ In many business processes it is unclear understanding:
 
 We can get data mainly in two ways
 
-By using *publicly available data* (datasets or databases) → someone collected them for us!
+By using *publicly available data* (datasets or databases)
 
+- Someone collected them for us!
 - They can be free or for a fee
 - The quality of the data made available must be checked
 
@@ -188,7 +211,7 @@ The [Iris dataset](https://www.kaggle.com/datasets/uciml/iris) is public data th
     1. `PetalWidthCm`
     1. `Species`
 
-# Data Annotation
+# Data Annotation {visibility="hidden"} 
 
 *Acquiring a new dataset does not mean acquiring only new data!*
 
@@ -210,7 +233,7 @@ Data collected without correct and timely annotation is often useless
 
 - However, it is also possible to "extract knowledge" from un-annotated data through, for instance, clustering
 
-# Data Annotation Process
+# Data Annotation Process {visibility="hidden"} 
 
 The data annotation process can take place in several ways:
 
@@ -231,7 +254,7 @@ Here’s a more concise version of your points:
   * *Free*: Users trade platform use for annotated data (e.g., Facebook photos).
   * *Paid*: Annotations bought via platforms (e.g., Amazon Mechanical Turk).
 
-# [Amazon Mechanical Turk](https://www.mturk.com/)
+# [Amazon Mechanical Turk](https://www.mturk.com/) {visibility="hidden"} 
 
 <img src="https://github.com/user-attachments/assets/4b272c03-7fca-4338-a112-02859d5cfe70" class="center-img">
 
@@ -265,7 +288,7 @@ Specific algorithms correspond to each of these areas
 :::
 ::::
 
-# Open and Closed Sets {visibility="hidden"} 
+# Open and Closed Sets {visibility="hidden"}
 
 The last aspect to be defined relating to data annotation: **do we know all annotations**?
 
@@ -387,11 +410,7 @@ Graphical elements
 This task tackles the data mining questions, which can be addressed using querying, visualization, and reporting.
 
 - Create a data exploration report that outlines the first findings, or an initial hypothesis
-- For instance, query the data to discover the types of products that purchasers in a particular income group usually buy
-
-> 2D visualization of the Iris dataset
->
-> <img src="./img/dataunderstanding/iris.svg" style="max-height: 450px !important" class="center-img">
+- For instance, query the data to discover the which features are correlated with the target of the analysis
 
 # Iris
 
@@ -413,6 +432,12 @@ Value distribution vs `species`
 
 :::
 ::::
+
+# Iris
+
+> 2D visualization of the Iris dataset
+>
+> <img src="./img/dataunderstanding/iris.svg" style="max-height: 450px !important" class="center-img">
 
 # Verify Data Quality
 

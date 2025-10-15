@@ -9,7 +9,7 @@
 > - Brown spots are caused by a fungus (Stemphylium vesicarium) damaging pear fruits and causing economic loss for producers.
 > - Also, the company wants to find out if there are environmental factors related to the spreading of such fungus and the level of damage.
 
-- How would you address this problem?
+How would you address this problem?
 :::
 ::: {.column width="40%"}
 ![Brown Spots](./img/brownspot/brownspot.png)
@@ -50,7 +50,23 @@
 Metrics: predict the level of damage with high *accuracy*
 
 - How would you define accuracy?
-- How can we collect the data?
+
+# Determine the Data Mining Goal
+
+> Ideally, the goal is to build a dataset such as the following
+>
+> | *Field*  | *AVG. Temperature* | *Presence of Water Source* | ... | **Level of Damage** |
+> |----------|--------------------|----------------------------|-----|---------------------|
+> | Field\#1 | 14                 | Close distance             | ... | High                |
+> | Field\#2 | 14.5               | Medium distance            | ... | Medium              |
+> | Field\#3 | 13.8               | Medium distance            | ... | Low                 |
+> | Field\#4 | ...                | ...                        | ... | ...                 |
+>
+> and to learn relationships between *environmental features* and **Level of Damage** (the target of the analysis).
+>
+> In other words, can we identify features that allows us to predict an accurate level of damage?
+
+How can we collect the data?
 
 # Assess the Situation: how can we collect the data?
 
@@ -58,7 +74,7 @@ Metrics: predict the level of damage with high *accuracy*
 
 ![Emilia Romagna, Italy](https://github.com/user-attachments/assets/ad66fa16-fa65-450b-955e-37ab3bd67113)
 
-- In your opinion, what are the pros/cons of this solution?
+What are the pros/cons of this solution?
 
 #
 
@@ -82,7 +98,7 @@ If you were the analyst, what would you do?
 >
 > **Issue #4**: we have a dataset of 100 features (assuming for simplicity that each question can be simply turned into an attribute), and a dataset of 100 data.
 
-Outcome?
+# Outcome
 
 - This project was missing a proper plan (business+data understanding), and turned out to be a failure for the company.
 - Even if we apply ML techniques to the data, the results we would get are not statistically relevant.

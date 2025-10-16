@@ -30,8 +30,8 @@ Research topics
 
 [BIG (Business Intelligence Group)](https://big.csr.unibo.it/)
 
+- <img src="./img/biglogo.svg" class="title-icon" /> [https://big-unibo.github.io](https://big-unibo.github.io)
 - w/ Prof. Golfarelli, Prof. Gallinucci
-- You can check our thesis projects [here](https://big-unibo.github.io/thesis/)
 
 <img src="./img/unibo.svg" style="box-shadow: none !important; position: absolute !important; top: -250px !important; right: -250px !important; ; max-height: 500px !important; max-width: 500px !important" />
 
@@ -100,7 +100,7 @@ However, I suggest you to read the book:
 1. (w/ Prof. Gallinucci) Big data pipelines
 1. (w/ Prof. Gallinucci) Hands-on big data (lab session)
 
-The focus of my lectures is about *connecting the dots*! 
+The focus of my lectures is about *connecting the dots*!
 
 - You have done Machine Learning
 - ... and data mining

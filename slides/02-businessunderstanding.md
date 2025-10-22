@@ -155,6 +155,58 @@ Identifying and delving into the problem to solve
 
 # <img src="./img/cs.svg" class="title-icon" /> Business Understanding: Sport KPIs {background-color="#121011"}
 
+# Case Study: Stocks {background-color="#121011"}
+
+The [Standard and Poor's 500](https://en.wikipedia.org/wiki/S%26P_500) index tracks the stock performance of [500 of the largest companies](https://en.wikipedia.org/wiki/List_of_S%26P_500_companies) in the United States.
+
+![Top 25 company from the S&P 500 index](./img/datapreprocessing/market_cap_topn.svg)
+
+- Companies emit stocks that are buyed by investors, the number of stocks is called *shares outstanding*
+    - *Shares outstanding* are shares of a corporation that have been purchased by investors and are held by them
+- Stocks are daily traded in stock market
+    - *Volume* is the amount of shares that are daily traded
+    - *Close* and *Open* are closing/opening prices of daily trades
+
+How would you define the *weight* of a company in the index?
+
+# Case Study
+
+As a semplification, given a company $C$ and a generic index $I$
+
+:::: {.columns}
+::: {.column width="49%"}
+
+*Market cap weight* (e.g., [S&P 500](https://en.wikipedia.org/wiki/S%26P_500))
+
+- $\text{MarketCap(C)} = \text{SharesOut(C)} \times \text{StockPrice(C)}$
+- $\text{MarketCapWeight(C)} = \frac{\text{MarketCap(C)}}{\sum_{C' \in I} \text{MarketCap(C')}}$
+
+*Price weight index* (e.g., [Dow Jones Industrial Average](https://en.wikipedia.org/wiki/Dow_Jones_Industrial_Average))
+
+- $\text{PriceWeight(C)} = \frac{\text{StockPrice(C)}}{\sum_{C' \in I} \text{StockPrice(C')}}$
+
+:::
+::: {.column width="50%"}
+
+> Given a few companies such as
+>
+> | Ticker   |   Close |      Shares |   PWI (%) |   Market Cap (%) |
+> |:---------|--------:|------------:|----------:|-----------------:|
+> | AMZN     |  222.13 | 1.0515e+10  |  3.20253  |         4.53745  |
+> | AAPL     |  242.7  | 1.51158e+10 |  3.4991   |         7.12683  |
+> | GS       |  580.02 | 3.1391e+08  |  8.36237  |         0.353707 |
+> | MSFT     |  424.56 | 7.43488e+09 |  6.12105  |         6.13209  |
+> | NVDA     |  140.11 | 2.449e+10   |  2.02002  |         6.66582  |
+>
+> What is their impact on DJIA and S&P?
+
+:::
+::::
+
+# Case Study: Stocks
+
+![Price vs market cap weighted](./img/datapreprocessing/price_weight_distribution.svg)
+
 {{< include _cs-kpisport.md >}}
 
 # End of the case study {background-color="#121011"}

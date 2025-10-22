@@ -9,6 +9,7 @@ subtitle: Data Preparation
 #
 
 *Without clean data, the results of a data mining analysis are in question*.
+
 # Data Preparation (aka *data pre-processing*)
 
 The **data preparation** phase covers all activities to construct the dataset fed into the modeling tools from the initial data.
@@ -19,8 +20,8 @@ It plays a key role in a data analytics process and *avoids "garbage in, garbage
 
 - *A broad range of activities*; from correcting errors to selecting the most relevant features
     - Out-of-range values (`Income`: −100), Impossible combinations (`Exam mark`: 15 and `Exam result`: Passed), Missing values...
-- There are *no pre-defined rules* on the impact of pre-processing transformations
 - Data scientists *cannot easily foresee the impact of pipeline prototypes*
+    - There are *no pre-defined rules* on the impact of pre-processing transformations
     - Outline how each quality problem (reported in the earlier "Verify Data Quality" step) has been addressed
 
 #
@@ -48,15 +49,43 @@ Part of the data selection process should involve explaining why certain data wa
 
 > Examples
 >
-> - An individual's address may be used to determine which region that individual is from, the actual street address data can likely be eliminated to reduce the amount of data that must be evaluated.
+> - If decisions are based on the geographical region, individuals' addresses can be dropped to reduce the amount of data.
 >
-> - To learn how sales are characterized by store `type` you do not need to consider the `StoreId`
+> | ~~`Address`~~ | `Country` |`Sales` |
+> |-----------|--------|--------|
+> | Via dell'Università 50         | Italy   | 1000   |
+> |...         | ...  | ...  |
 >
-> | ~~`StoreId`~~ | `type` |`sales` |
+> - To learn how sales are characterized by store `Type` you do not need to consider the `StoreId`
+>
+> | ~~`StoreId`~~ | `Type` |`Sales` |
 > |-----------|--------|--------|
 > |S1         | grocery   | 1000   |
 > |S2         | supermarket | 1500 |
 > |S3         | ...  | ...  |
+
+# Select Data
+
+[Flight delays dataset](https://www.kaggle.com/datasets/patrickzel/flight-delay-and-cancellation-dataset-2019-2023) contains information about flights in the United States.
+
+- Task predict flight delays (`ARR_DELAY`: Arrival delay) based on the following (31) features
+- Features
+    1. `FL_DATE`: Date of the flight.
+    1. `AIRLINE`: Name of the airline.
+    1. `AIRLINE_DOT`: DOT identifier for the airline.
+    1. `AIRLINE_CODE`: Code assigned to the airline.
+    1. `DOT_CODE`: DOT identifier.
+    1. `FL_NUMBER`: Flight number.
+    1. `ORIGIN`: Origin airport code.
+    1. `ORIGIN_CITY`: City of origin airport.
+    1. `DEST`: Destination airport code.
+    1. `DEST_CITY`: City of destination airport.
+    1. `DEP_TIME`: Actual departure time.
+    1. `DEP_DELAY`: Departure delay.
+    1. `ARR_TIME`: Actual arrival time.
+    1. ...
+
+What features would you select/drop to predict flight delays?
 
 # [What personal data is considered sensitive](https://commission.europa.eu/law/law-topic/data-protection/reform/rules-business-and-organisations/legal-grounds-processing-data/sensitive-data/what-personal-data-considered-sensitive_en)?
 
@@ -194,7 +223,7 @@ See *Black Mirror* episodes and how they relate to the AI Act's high-risk catego
 > |-----------|--------|--------|
 > |S1         | 2024-10-04 | 1000   |
 > |S1         | 2024-10-05 | *1000* |
-> |**S2**         | 2024-10-04 | *1000* |
+> |**S2**     | 2024-10-04 | *1000* |
 
 :::
 ::::
@@ -260,11 +289,11 @@ See *Black Mirror* episodes and how they relate to the AI Act's high-risk catego
 |2023|	|
 |2024|	2182.87|
 
-# Case Study: Compount Interest {background-color="#121011"}
+# Case Study: Compount Interest
 
-:::: {.columns}
-::: {.column width="70%"}
-
+> :::: {.columns}
+> ::: {.column width="70%"}
+> 
 > Our portfolio has an initial value $V_0 = 1000€$ and each has a return of X%
 >
 > The first year, the portfolio increases its value to $V_1=1000€ + (1000€ \times X\%) = 1050€$
@@ -272,10 +301,10 @@ See *Black Mirror* episodes and how they relate to the AI Act's high-risk catego
 > The second year, the portfolio increases its value to $V_2 = V_1 + (V_1 \times X\%) = 1102.50€$
 >
 > ... and so on.
-
-:::
-::: {.column width="29%"}
-
+> 
+> :::
+> ::: {.column width="29%"}
+> 
 > |Year| Value |
 > |----|-----------|
 > |0   |1000.00 € |
@@ -283,11 +312,11 @@ See *Black Mirror* episodes and how they relate to the AI Act's high-risk catego
 > |2   |1102.50 € |
 > |... |...        |
 > |18  |2406.62 € |
+> 
+> :::
+> ::::
 
-:::
-::::
-
-This is not a linear increase but a geometric sequence, the final value is $\text{Initial value} \times (1 + \frac{r}{n})^\frac{t}{n}$
+This is not a linear increase but a geometric sequence: $\text{Final value} = \text{Initial value} \times (1 + \frac{r}{n})^\frac{t}{n}$
 
 - $r$ is the nominal annual interest rate
 - $n$ is the compounding frequency (1: annually, 12: monthly, 52: weekly, 365: daily)
@@ -301,7 +330,7 @@ This is not a linear increase but a geometric sequence, the final value is $\tex
 
 In this case the return is equal every year, so the average interest is $5\%$.
 
-# Case Study: Compount Interest {background-color="#121011"}
+# Case Study: Compount Interest
 
 Let us assume now that the returns changes over year.
 
@@ -316,7 +345,7 @@ Let us assume now that the returns changes over year.
 
 What is the average return?
 
-# Case Study: Compount Interest {background-color="#121011"}
+# Case Study: Compount Interest
 
 :::: {.columns}
 ::: {.column width="50%"}
@@ -364,120 +393,15 @@ $X\%$ is the *Compound Annual Growth Rate*, the mean annualized growth rate for 
 :::
 ::::
 
-# Case Study: Compount Interest {background-color="#121011"}
+# End of the Case Study {background-color="#121011"}
 
 **Take away**: pay attention to the semantics of the features!
-
-# What imputation problems can arise with skewed distributions?
-
-![Skewed vs normal distributions](https://user-images.githubusercontent.com/18005592/232750742-aacbf6b3-8a7d-49c6-b253-5ab8e7985104.png)
-
-# Effects of imputation on skewed distributions?
-
-*Long Tail* refers to the concept where a large number of niche products collectively generate more sales than a few bestsellers.
-
-- Ecommerces such as Amazon stock a vast array of products that traditional retailers wouldn't carry due to space constraints.
-- The Long Tail phenomenon is directly related to skewed distributions, specifically a type of right-skewed distribution
-
-![](./img/datapreprocessing/imputation_100.svg)
-
-# Normal vs Skewed distributions: what happens to mean values?
-
-:::: {.columns}
-::: {.column width="50%"}
-
-![Gaussian distribution](./img/datapreprocessing/height_distribution.svg)
-
-:::
-::: {.column width="50%"}
-
-![Skewed distribution](./img/datapreprocessing/market_cap_distribution.svg)
-
-:::
-::::
-
-# Skewed distributions
-
-:::: {.columns}
-::: {.column width="50%"}
-
-![Gaussian distribution](./img/datapreprocessing/height_distribution.svg)
-
-```
-Mean   = 173 cm
-Median = 173 cm
-```
-
-:::
-::: {.column width="50%"}
-
-![Skewed distribution](./img/datapreprocessing/market_cap_distribution.svg)
-
-```
-Mean:   103158262914
-Median:  36666524821
-```
-
-:::
-::::
-
-# Case Study: Stocks {background-color="#121011"}
-
-The [Standard and Poor's 500](https://en.wikipedia.org/wiki/S%26P_500) index tracks the stock performance of [500 of the largest companies](https://en.wikipedia.org/wiki/List_of_S%26P_500_companies) in the United States.
-
-![Top 25 company from the S&P 500 index](./img/datapreprocessing/market_cap_topn.svg)
-
-- Companies emit stocks that are buyed by investors, the number of stocks is called *shares outstanding*
-    - *Shares outstanding* are shares of a corporation that have been purchased by investors and are held by them
-- Stocks are daily traded in stock market
-    - *Volume* is the amount of shares that are daily traded
-    - *Close* and *Open* are closing/opening prices of daily trades
-
-How would you define the *weight* of a company in the index?
-
-# Case Study: Stocks {background-color="#121011"}
-
-As a semplification, given a company $C$ and a generic index $I$
-
-:::: {.columns}
-::: {.column width="49%"}
-
-*Market cap weight* (e.g., [S&P 500](https://en.wikipedia.org/wiki/S%26P_500))
-
-- $\text{MarketCap(C)} = \text{SharesOut(C)} \times \text{StockPrice(C)}$
-- $\text{MarketCapWeight(C)} = \frac{\text{MarketCap(C)}}{\sum_{C' \in I} \text{MarketCap(C')}}$
-
-*Price weight index* (e.g., [Dow Jones Industrial Average](https://en.wikipedia.org/wiki/Dow_Jones_Industrial_Average))
-
-- $\text{PriceWeight(C)} = \frac{\text{StockPrice(C)}}{\sum_{C' \in I} \text{StockPrice(C')}}$
-
-:::
-::: {.column width="50%"}
-
-> Given a few companies such as
->
-> | Ticker   |   Close |      Shares |   PWI (%) |   Market Cap (%) |
-> |:---------|--------:|------------:|----------:|-----------------:|
-> | AMZN     |  222.13 | 1.0515e+10  |  3.20253  |         4.53745  |
-> | AAPL     |  242.7  | 1.51158e+10 |  3.4991   |         7.12683  |
-> | GS       |  580.02 | 3.1391e+08  |  8.36237  |         0.353707 |
-> | MSFT     |  424.56 | 7.43488e+09 |  6.12105  |         6.13209  |
-> | NVDA     |  140.11 | 2.449e+10   |  2.02002  |         6.66582  |
->
-> What is their impact on DJIA and S&P?
-
-:::
-::::
-
-# Case Study: Stocks {background-color="#121011"}
-
-![Price vs market cap weighted](./img/datapreprocessing/price_weight_distribution.svg)
 
 # <img src="./img/cs.svg" class="title-icon" /> **Problem**: how do we handle anomalies?
 
 > A customer who typically buys groceries worth $50 suddenly places an order for $5,000 in electronics. Is it a fraud?
 >
-> A system that usually receives 100-200 requests per second suddenly sees 10,000 requests per second. is it a DDoS attack?
+> A system that usually receives 100-200 requests per second suddenly sees 10,000 requests per second. Is it a DDoS attack?
 >
 > A bottle-filling machine fills 500ml of liquid, but occasionally, some bottles contain 450ml or 550ml. Is it a defect?
 >
@@ -487,8 +411,7 @@ As a semplification, given a company $C$ and a generic index $I$
 
 **Outlier removal** is the process of eliminating data points that deviate significantly from the rest of the dataset
 
-- An *outlier* is a data point that differs significantly from other observations
-- Outliers can occur by chance or measurement error, or that the population has a heavy-tailed distribution
+- An *outlier* is a data point that differs significantly from other observations (e.g., a measurement error or heavy-tailed distribution)
 
 :::: {.columns}
 ::: {.column width="49%"}
@@ -520,7 +443,8 @@ Other methods flag outliers based on measures such as interquartile range.
 For example, if $Q_{1}$ and $Q_{3}$ are the lower and upper quartiles respectively, then one could define an outlier to be any observation outside the range:
 
 - $[Q_{1}-k(Q_{3}-Q_{1}),Q_{3}+k(Q_{3}-Q_{1})]$ for some nonnegative $k$
-- John Tukey proposed $k=1.5$ to indicate an "outlier" $k=3$ to indicate data that is "far out"
+- $k=1.5$ to indicate an "outlier"
+- $k=3$ to indicate data that is "far out"
 
 :::
 ::: {.column width="40%"}
@@ -535,7 +459,7 @@ For example, if $Q_{1}$ and $Q_{3}$ are the lower and upper quartiles respective
 **Isolation Forest** [@liu2008isolation] is an algorithm for data anomaly detection using binary trees
 
 - Because anomalies are few and different from other data, they can be isolated using few partitions.
-- Unlike decision tree algorithms, it uses only path length to output an anomaly score, and does not use leaf node statistics of class distribution or target value.
+- Unlike decision tree algorithms, it uses only path length to output an anomaly score.
 
 :::: {.columns}
 ::: {.column width="49%"}
@@ -582,21 +506,23 @@ The black swan theory was developed by Nassim Nicholas Taleb [@taleb2008impact] 
 
 Such extreme events (outliers), collectively play vastly larger roles than regular occurrences.
 
-# Case Study: The Black Swan Theory {background-color="#121011"}
+# Case Study: The Black Swan Theory
 
 [Long-Term Capital Management](https://en.wikipedia.org/wiki/Long-Term_Capital_Management) was a *highly leveraged* hedge fund.
 
 - Members of LTCM's board of directors included Myron Scholes and Robert C. Merton, who three years later in 1997 shared the Nobel Prize in Economics
-- LTCM was initially successful, with annualized returns of around
-    - 21% in its first year,
-    - 43% in its second year,
-    - and 41% in its third year.
-- However, in 1998 it lost $4.6 billion *in less than four months due to an unlikely combination* of high leverage and exposure to the 1997 Asian financial crisis and 1998 Russian financial crisis.
+- LTCM was initially successful, with annualized returns of around 21% in its first year, 43% in its second year, and 41% in its third year.
+- In 1998, **it lost $4.6 billion** *in less than four months due to an unlikely combination* of (1997) Asian and (1998) Russian financial crises.
 
 :::: {.columns}
 ::: {.column width="60%"}
 
-> [@jorion2000risk] Even worse, on 21 August, the portfolio lost $550 million. By 31 August, the portfolio had lost $1,710 million in 1 month only. Using the presumed $45 million daily (or $206 million monthly) standard deviation, this translates into a *8.3 standard deviation event*. Assuming a normal distribution, *such an event would occur once every 800 trillion years, or 40,000 times the age of the universe*. Surely this assumption was wrong.
+> [@jorion2000risk] [...] on 21 August, the portfolio lost $550 million. By 31 August, the portfolio had lost $1,710 million in 1 month only.
+>
+> - Using the presumed $45 million daily (or $206 million monthly) standard deviation, this translates into a *8.3 standard deviation event*.
+> - Assuming a normal distribution, *such an event would occur once every 800 trillion years, or 40,000 times the age of the universe*.
+>
+> Surely this assumption was wrong.
 
 :::
 ::: {.column width="40%"}
@@ -605,6 +531,8 @@ Such extreme events (outliers), collectively play vastly larger roles than regul
 
 :::
 ::::
+
+# End of the case study {background-color="#121011"}
 
 # <img src="./img/cs.svg" class="title-icon" /> **Problem**: is the dataset ready for machine learning?
 
@@ -616,13 +544,16 @@ Such extreme events (outliers), collectively play vastly larger roles than regul
 
 # <img src="./img/cs.svg" class="title-icon" /> **Problem**: is the dataset ready for machine learning?
 
-**Feature engineering**, in data science, refers to manipulation — addition, deletion, combination, mutation — of your data set to improve machine learning model training.
+**Feature engineering** refers to manipulation (addition, deletion, combination, mutation) of your data set to improve machine learning model training.
 
 *Derived attributes* should be added if they ease the modeling algorithm
 
 > `Area` = `Length` x `Width`.
 >
 > `Loyalty_Score` = `Total_Purchases` x 0.4 + `Avg_Order_Value` x 0.3 + `Frequency` x 0.3.
+>
+> `Ocean_Proximity` = distance((`Ocean_Latitude`, `Ocean_Longitude`), (`District_Latitude`, `District_Longitude`)).
+
 
 *Binning* may be necessary to *transform ranges to symbolic fields*
 
@@ -681,34 +612,32 @@ Categorical features can be *nominal* or *ordinal*.
 - These numbers are, in general, assigned arbitrarily.
 - Ordinal encoding is a preferred option when the categorical variable has an inherent order.
 
-> Examples include the variable `size`, with values "small", "medium", and "large".
->
-> :::: {.columns}
-> ::: {.column width="49%"}
->
+:::: {.columns}
+::: {.column width="49%"}
+
 > Before encoding
 >
-> | `ProductId` | `size` |
+> | `ProductId` | `Size` |
 > |-------------|--------|
 > |P1           | small  |
 > |P2           | medium |
 > |P3           | large  |
 > |P4           | small  |
->
-> :::
-> ::: {.column width="49%"}
->
+
+:::
+::: {.column width="49%"}
+
 > After encoding (small = 0, medium = 1, large = 2)
 >
-> | `ProductId` | `size` | `size_enc` |
+> | `ProductId` | `Size` | `Size_Enc` |
 > |-------------|--------|--------|
 > |P1           | small  | 0  |
 > |P2           | medium | 1  |
 > |P3           | large  | 2  |
 > |P4           | small  | 0  |
->
-> :::
-> ::::
+
+:::
+::::
 
 # Encoding: Likert scale
 
@@ -742,34 +671,32 @@ People who feel the product is average might not be bothered to write a review
 - The binary variable takes the value 1 if the observation shows the category, or alternatively, 0.
 - One hot encoding treats each category independently.
 
-> Examples include the variable `color`, with values "red", "green", and "blue".
->
-> :::: {.columns}
-> ::: {.column width="49%"}
->
+:::: {.columns}
+::: {.column width="49%"}
+
 > Before encoding
 >
-> | `ProductId` | `color` |
+> | `ProductId` | `Color` |
 > |-------------|--------|
 > |P1           | red  |
 > |P2           | green |
 > |P3           | blue  |
 > |P4           | red  |
->
-> :::
-> ::: {.column width="49%"}
->
-> After encoding
->
-> | `ProductId` | `color` | `red` | `green` | `blue` |
+
+:::
+::: {.column width="49%"}
+
+After encoding
+
+> | `ProductId` | `Color` | `red` | `green` | `blue` |
 > |-------------|--------|--------|--------|--------|
 > |P1           | red   | 1  | 0  | 0  |
 > |P2           | green | 0  | 1  | 0  |
 > |P3           | blue  | 0  | 0  | 1  |
 > |P4           | red   | 1  | 0  | 0  |
->
-> :::
-> ::::
+
+:::
+::::
 
 OHE increases the dimensionality of the dataset and it may not be suitable for encoding high cardinality features.
 
@@ -844,7 +771,11 @@ If data values varies widely, in some ML algorithms objective functions will not
 > :::
 > ::::
 
-#
+# Feature scaling
+
+<img src="./img/datapreprocessing/clustering.svg" class="center-img" style="!max-height: 500px;" />
+
+# Feature scaling
 
 Original Iris dataset
 
@@ -895,6 +826,69 @@ Transformed Iris dataset: `petal_length*=10`, addition of 1 outlier [`petal_leng
 
 :::
 ::::
+
+# What problems can arise with skewed distributions?
+
+![Skewed vs normal distributions](https://user-images.githubusercontent.com/18005592/232750742-aacbf6b3-8a7d-49c6-b253-5ab8e7985104.png)
+
+# Effects of imputation on skewed distributions?
+
+*Long Tail* refers to the concept where a large number of niche products collectively generate more sales than a few bestsellers.
+
+- Ecommerces such as Amazon stock a vast array of products that traditional retailers wouldn't carry due to space constraints.
+- The Long Tail phenomenon is directly related to skewed distributions, specifically a type of right-skewed distribution
+
+![](./img/datapreprocessing/imputation_100.svg)
+
+# Skewed distributions: what happens to mean values?
+
+:::: {.columns}
+::: {.column width="50%"}
+
+![Gaussian distribution](./img/datapreprocessing/height_distribution.svg)
+
+:::
+::: {.column width="50%"}
+
+![Skewed distribution](./img/datapreprocessing/market_cap_distribution.svg)
+
+:::
+::::
+
+# Skewed distributions: what happens to mean values?
+
+:::: {.columns}
+::: {.column width="50%"}
+
+![Gaussian distribution](./img/datapreprocessing/height_distribution.svg)
+
+```
+Mean   = 173 cm
+Median = 173 cm
+```
+
+:::
+::: {.column width="50%"}
+
+![Skewed distribution](./img/datapreprocessing/market_cap_distribution.svg)
+
+```
+Mean:   103158262914
+Median:  36666524821
+```
+
+:::
+::::
+
+# Skewed distributions
+
+Skewed distributions can be transformed using mathematical functions such as the logarithm
+
+<img src="./img/datapreprocessing/income_histograms.svg" class="center-img" style="!max-height: 500px;" />
+
+# Skewed distributions
+
+<img src="./img/datapreprocessing/clustering_figures.svg" class="center-img" style="!max-height: 500px;" />
 
 # <img src="./img/cs.svg" class="title-icon" /> **Problem**: if the dataset is too detailed/noisy, what can we do?
 
@@ -1009,7 +1003,7 @@ Pay attention to the *aggregation operator*!
 > 1. `Soundtrack Style`
 > 1. ... and many more (let’s assume 100+ features per movie).
 >
-> If movies had only 2 features (e.g., "Genre" and "IMDB Rating"), we could easily visualize clusters of similar movies.
+> If movies had only 2 features (e.g., `Genre` and `IMDB Rating`), we could easily visualize clusters of similar movies.
 >
 > With 100+ features, the data points are spread out across a vast space.
 >
@@ -1280,11 +1274,11 @@ Feature Relevance for 3 Components:
 > For instance, a retail chain has one table with information about each store's general characteristics (e.g., floor space, type of mall), another table with summarized sales data (e.g., profit, percent change in sales from the previous year), and another table with information about the demographics of the surrounding area.
 >
 > These tables can be merged together into a new table with one record for each store.
-:::: {.columns}
 
+:::: {.columns}
 ::: {.column width="30%"}
 
-> | `StoreId` | `type` |
+> | `StoreId` | `Type` |
 > |-----------|--------|
 > |S1         | grocery   |
 > |S2         | supermarket |
@@ -1298,7 +1292,7 @@ Feature Relevance for 3 Components:
 :::
 ::: {.column width="30%"}
 
-> | `StoreId` |`sales` |
+> | `StoreId` |`Sales` |
 > |-----------|--------|
 > |S1         | 1000   |
 > |S2         | 1500 |
@@ -1312,7 +1306,7 @@ Feature Relevance for 3 Components:
 :::
 ::: {.column width="30%"}
 
-> | `StoreId` | `type` |`sales` |
+> | `StoreId` | `Type` | `Sales` |
 > |-----------|--------|--------|
 > |S1         | grocery   | 1000   |
 > |S2         | supermarket | 1500 |

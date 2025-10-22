@@ -153,8 +153,6 @@ Identifying and delving into the problem to solve
 
 {{< include _cs-trajectory.md >}}
 
-# <img src="./img/cs.svg" class="title-icon" /> Business Understanding: Sport KPIs {background-color="#121011"}
-
 # Case Study: Stocks {background-color="#121011"}
 
 The [Standard and Poor's 500](https://en.wikipedia.org/wiki/S%26P_500) index tracks the stock performance of [500 of the largest companies](https://en.wikipedia.org/wiki/List_of_S%26P_500_companies) in the United States.
@@ -169,7 +167,7 @@ The [Standard and Poor's 500](https://en.wikipedia.org/wiki/S%26P_500) index tra
 
 How would you define the *weight* of a company in the index?
 
-# Case Study
+# Case Study: Stocks
 
 As a semplification, given a company $C$ and a generic index $I$
 
@@ -206,6 +204,8 @@ As a semplification, given a company $C$ and a generic index $I$
 # Case Study: Stocks
 
 ![Price vs market cap weighted](./img/datapreprocessing/price_weight_distribution.svg)
+
+# <img src="./img/cs.svg" class="title-icon" /> Business Understanding: Sport KPIs {background-color="#121011"}
 
 {{< include _cs-kpisport.md >}}
 

@@ -343,6 +343,7 @@ Plain Iris dataset
 
 Example of profiling the schema of the data in Iris
 
+> ```
 > RangeIndex: 150 entries, 0 to 149
 > Data columns (total 5 columns):
 > #   Column             Non-Null Count  Dtype 
@@ -354,6 +355,7 @@ Example of profiling the schema of the data in Iris
 > 4   species            150 non-null    object
 > dtypes: float64(4), object(1)
 > memory usage: 6.0+ KB
+> ```
 
 # Iris
 

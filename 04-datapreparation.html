@@ -241,7 +241,7 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 </tbody>
 </table>
 <ul>
-<li>To learn how sales are characterized by store <code>Type</code> you do not need to consider the <code>StoreId</code></li>
+<li>To learn how sales are characterized by store <code>Type</code>, you do not need to consider the <code>StoreId</code></li>
 </ul>
 <table class="caption-top">
 <thead>
@@ -328,7 +328,7 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <li><strong>Limited-risk</strong> applications <em>only have transparency</em> obligations.
 <ul>
 <li>AI applications that make it possible to generate or manipulate images, sound, or videos.</li>
-<li>Ensure that users are informed that they are interacting with an AI system and allowing them to make informed choices.</li>
+<li>Ensure that users are informed that they are interacting with an AI system and are allowed to make informed choices.</li>
 </ul></li>
 <li><strong>Minimal-risk</strong> applications <em>are not regulated</em>.
 <ul>
@@ -368,7 +368,7 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <h1><img src="./img/cs.svg" class="title-icon"> <strong>Problem</strong>: missing values?</h1>
 <blockquote>
 <p>A retail company tracks daily sales, but some records are missing due to system failures.</p>
-<p>A telecom company is predicting customer churn, but some customers have missing contract duration or monthly bill values.</p>
+<p>A telecom company is predicting customer churn, but some customers have missing contract durations or monthly bill values.</p>
 <p>A hospital maintains records of patients’ blood pressure, but 15% of entries are missing.</p>
 <p>A bank evaluates loan applications, but some applicants have missing income data.</p>
 </blockquote>
@@ -381,7 +381,7 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <ul>
 <li><em>Use historical sales trends</em> to impute missing values</li>
 </ul>
-<p>A telecom company is predicting customer churn, but some customers have missing contract duration or monthly bill values.</p>
+<p>A telecom company is predicting customer churn, but some customers have missing contract durations or monthly bill values.</p>
 <ul>
 <li><em>Use median imputation for numerical features</em> (e.g., replace missing monthly bill amounts with the median).</li>
 </ul>
@@ -469,7 +469,7 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <li>One form of hot-deck imputation is called “last observation carried forward”
 <ul>
 <li>Sort a dataset according to any number of variables, thus creating an ordered dataset</li>
-<li>Finds a missing value and uses the value immediately before the data that are missing to impute the missing value</li>
+<li>Finds a missing value and uses the value immediately before the data that is missing to impute the missing value</li>
 </ul></li>
 </ul>
 <div class="columns">
@@ -544,7 +544,7 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <li>Mean imputation attenuates any correlations involving the variable(s) that are imputed
 <ul>
 <li>There is no relationship between the imputed variable and any other measured variables.</li>
-<li>Mean imputation can be carried out within classes (i.e.&nbsp;categories, such as gender)</li>
+<li>Mean imputation can be carried out within classes (i.e., categories, such as gender)</li>
 </ul></li>
 </ul>
 <div class="columns">
@@ -713,8 +713,8 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 </table>
 </section>
 
-<section id="case-study-compount-interest" class="title-slide slide level1 center">
-<h1>Case Study: Compount Interest</h1>
+<section id="case-study-compound-interest" class="title-slide slide level1 center">
+<h1>Case Study: Compound Interest</h1>
 <blockquote>
 <div class="columns">
 <div class="column" style="width:70%;">
@@ -766,12 +766,12 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <p><span class="math inline">\(X = (\frac{\text{Final value}}{\text{Initial value}})^\frac{1}{18} - 1\)</span></p>
 <p><span class="math inline">\(X = 0.05 = 5\%\)</span></p>
 </blockquote>
-<p>In this case the return is equal every year, so the average interest is <span class="math inline">\(5\%\)</span>.</p>
+<p>In this case, the return is equal every year, so the average interest is <span class="math inline">\(5\%\)</span>.</p>
 </section>
 
-<section id="case-study-compount-interest-1" class="title-slide slide level1 center">
-<h1>Case Study: Compount Interest</h1>
-<p>Let us assume now that the returns changes over year.</p>
+<section id="case-study-compound-interest-1" class="title-slide slide level1 center">
+<h1>Case Study: Compound Interest</h1>
+<p>Let us assume now that the returns change over the year.</p>
 <blockquote>
 <table class="caption-top">
 <thead>
@@ -818,8 +818,8 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <p>What is the average return?</p>
 </section>
 
-<section id="case-study-compount-interest-2" class="title-slide slide level1 center">
-<h1>Case Study: Compount Interest</h1>
+<section id="case-study-compound-interest-2" class="title-slide slide level1 center">
+<h1>Case Study: Compound Interest</h1>
 <div class="columns">
 <div class="column" style="width:50%;">
 <p>If we apply the aritmetic mean it is <span class="math inline">\(\frac{5 -5 + 5 -5 + 0}{5} = 0%\)</span></p>
@@ -870,7 +870,7 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <p>The average return is <span class="math inline">\(X = -0.1\%\)</span></p>
 <p><span class="math inline">\(X\%\)</span> is the <em>Compound Annual Growth Rate</em>, the mean annualized growth rate for compounding values over a given time period.</p>
 <ul>
-<li>CAGR smoothes the effect of volatility of periodic values that can render arithmetic means less meaningful.</li>
+<li>CAGR smoothes the effect of the volatility of periodic values that can render arithmetic means less meaningful.</li>
 </ul>
 </div><div class="column" style="width:50%;">
 <blockquote>
@@ -916,7 +916,7 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 
 <section id="end-of-the-case-study" class="title-slide slide level1 center" data-background-color="#121011">
 <h1>End of the Case Study</h1>
-<p><strong>Take away</strong>: pay attention to the semantics of the features!</p>
+<p><strong>Takeaway</strong>: pay attention to the semantics of the features!</p>
 </section>
 
 <section id="problem-how-do-we-handle-anomalies" class="title-slide slide level1 center">
@@ -948,7 +948,7 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <li>Roughly 1 in 22 observations will differ by twice the standard deviation or more from the mean,</li>
 <li>… and 1 in 370 will deviate by three times the standard deviation.</li>
 </ul></li>
-<li>If the sample size is only 100, however, just three such outliers are already reason for concern.</li>
+<li>If the sample size is only 100, however, just three such outliers are already a reason for concern.</li>
 </ul>
 </section>
 
@@ -956,8 +956,8 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <h1>Outlier removal</h1>
 <div class="columns">
 <div class="column" style="width:60%;">
-<p>Other methods flag outliers based on measures such as interquartile range.</p>
-<p>For example, if <span class="math inline">\(Q_{1}\)</span> and <span class="math inline">\(Q_{3}\)</span> are the lower and upper quartiles respectively, then one could define an outlier to be any observation outside the range:</p>
+<p>Other methods flag outliers based on measures such as the interquartile range.</p>
+<p>If <span class="math inline">\(Q_{1}\)</span> and <span class="math inline">\(Q_{3}\)</span> are the lower and upper quartiles, an outlier is any observation outside the range:</p>
 <ul>
 <li><span class="math inline">\([Q_{1}-k(Q_{3}-Q_{1}),Q_{3}+k(Q_{3}-Q_{1})]\)</span> for some nonnegative <span class="math inline">\(k\)</span></li>
 <li><span class="math inline">\(k=1.5\)</span> to indicate an “outlier”</li>
@@ -972,7 +972,7 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <h1>Outlier removal</h1>
 <p><strong>Isolation Forest</strong> <span class="citation" data-cites="liu2008isolation">(<a href="#/references" role="doc-biblioref" onclick="">Liu, Ting, and Zhou 2008</a>)</span> is an algorithm for data anomaly detection using binary trees</p>
 <ul>
-<li>Because anomalies are few and different from other data, they can be isolated using few partitions.</li>
+<li>Because anomalies are few and different from other data, they can be isolated using a few partitions.</li>
 <li>Unlike decision tree algorithms, it uses only path length to output an anomaly score.</li>
 </ul>
 <div class="columns">
@@ -997,7 +997,7 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <h1>Case Study: The Black Swan Theory</h1>
 <p>Juvenal (55-128, Roman poet) wrote in his Satire VI of <em>events being “a bird as rare upon the earth as a black swan”</em></p>
 <ul>
-<li>When the phrase was coined, the black swan was presumed by Romans not to exist.</li>
+<li>When the phrase was coined, the black swan was presumed by the Romans not to exist.</li>
 <li>All swans are white because all records reported that swans had white feathers.</li>
 </ul>
 <div class="columns">
@@ -1024,23 +1024,23 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <li>The non-computability of the probability of consequential rare events using scientific methods.</li>
 <li>The psychological biases that blind people to uncertainty and to the substantial role of rare events in historical affairs.</li>
 </ul>
-<p>Such extreme events (outliers), collectively play vastly larger roles than regular occurrences.</p>
+<p>Such extreme events (outliers) collectively play vastly larger roles than regular occurrences.</p>
 </section>
 
-<section id="case-study-the-black-swan-theory-1" class="title-slide slide level1 center">
+<section id="case-study-the-black-swan-theory-1" class="title-slide slide level1 center" data-background-color="#121011">
 <h1>Case Study: The Black Swan Theory</h1>
 <p><a href="https://en.wikipedia.org/wiki/Long-Term_Capital_Management">Long-Term Capital Management</a> was a <em>highly leveraged</em> hedge fund.</p>
 <ul>
-<li>Members of LTCM’s board of directors included Myron Scholes and Robert C. Merton, who three years later in 1997 shared the Nobel Prize in Economics</li>
+<li>Members of LTCM’s board of directors included Myron Scholes and Robert C. Merton, who shared the Nobel Prize in Economics</li>
 <li>LTCM was initially successful, with annualized returns of around 21% in its first year, 43% in its second year, and 41% in its third year.</li>
 <li>In 1998, <strong>it lost $4.6 billion</strong> <em>in less than four months due to an unlikely combination</em> of (1997) Asian and (1998) Russian financial crises.</li>
 </ul>
 <div class="columns">
 <div class="column" style="width:60%;">
 <blockquote>
-<p><span class="citation" data-cites="jorion2000risk">(<a href="#/references" role="doc-biblioref" onclick="">Jorion 2000</a>)</span> […] on 21 August, the portfolio lost $550 million. By 31 August, the portfolio had lost $1,710 million in 1 month only.</p>
+<p><span class="citation" data-cites="jorion2000risk">(<a href="#/references" role="doc-biblioref" onclick="">Jorion 2000</a>)</span> […] on 21 August, the portfolio lost $550 million. By 31 August, the portfolio had lost $1,710 million in 1 month.</p>
 <ul>
-<li>Using the presumed $45 million daily (or $206 million monthly) standard deviation, this translates into a <em>8.3 standard deviation event</em>.</li>
+<li>Using the presumed $45 million daily (or $206 million monthly) standard deviation, this translates into an <em>8.3 standard deviation event</em>.</li>
 <li>Assuming a normal distribution, <em>such an event would occur once every 800 trillion years, or 40,000 times the age of the universe</em>.</li>
 </ul>
 <p>Surely this assumption was wrong.</p>
@@ -1055,11 +1055,6 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 </div></div>
 </section>
 
-<section id="end-of-the-case-study-1" class="title-slide slide level1 center" data-background-color="#121011">
-<h1>End of the case study</h1>
-
-</section>
-
 <section id="problem-is-the-dataset-ready-for-machine-learning" class="title-slide slide level1 center">
 <h1><img src="./img/cs.svg" class="title-icon"> <strong>Problem</strong>: is the dataset ready for machine learning?</h1>
 <blockquote>
@@ -1069,16 +1064,25 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 </blockquote>
 </section>
 
-<section id="problem-is-the-dataset-ready-for-machine-learning-1" class="title-slide slide level1 center">
-<h1><img src="./img/cs.svg" class="title-icon"> <strong>Problem</strong>: is the dataset ready for machine learning?</h1>
-<p><strong>Feature engineering</strong> refers to manipulation (addition, deletion, combination, mutation) of your data set to improve machine learning model training.</p>
+<section id="feature-engineering" class="title-slide slide level1 center">
+<h1>Feature engineering</h1>
+<p><strong>Feature engineering</strong> refers to the manipulation (addition, deletion, combination, mutation) of your data set to improve machine learning model training.</p>
 <p><em>Derived attributes</em> should be added if they ease the modeling algorithm</p>
 <blockquote>
 <p><code>Area</code> = <code>Length</code> x <code>Width</code>.</p>
 <p><code>Loyalty_Score</code> = <code>Total_Purchases</code> x 0.4 + <code>Avg_Order_Value</code> x 0.3 + <code>Frequency</code> x 0.3.</p>
 <p><code>Ocean_Proximity</code> = distance((<code>Ocean_Latitude</code>, <code>Ocean_Longitude</code>), (<code>District_Latitude</code>, <code>District_Longitude</code>)).</p>
 </blockquote>
-<p><em>Binning</em> may be necessary to <em>transform ranges to symbolic fields</em></p>
+<p><em>Encoding</em> may be necessary to transform <em>or symbolic fields (“definitely yes”, “yes”, “don’t know”, “no”) to numeric values</em></p>
+</section>
+
+<section id="problem-how-do-we-transform-features-into-numbers" class="title-slide slide level1 center">
+<h1><img src="./img/cs.svg" class="title-icon"> <strong>Problem</strong>: how do we transform features into numbers?</h1>
+<blockquote>
+<p>Some machine learning models can only work with numerical values.</p>
+<p>How do we transform the categorical values of the relevant features into numerical ones?</p>
+</blockquote>
+<p><em>Aggregation</em> and <em>Binning</em> may be necessary to <em>transform ranges to symbolic fields</em></p>
 <div class="columns">
 <div class="column" style="width:49%;">
 <blockquote>
@@ -1145,15 +1149,6 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 </table>
 </blockquote>
 </div></div>
-<p><em>Encoding</em> may be necessary to transform <em>or symbolic fields (“definitely yes”, “yes”, “don’t know”, “no”) to numeric values</em></p>
-</section>
-
-<section id="problem-how-do-we-transform-features-into-numbers" class="title-slide slide level1 center">
-<h1><img src="./img/cs.svg" class="title-icon"> <strong>Problem</strong>: how do we transform features into numbers?</h1>
-<blockquote>
-<p>Some machine learning models can only work with numerical values.</p>
-<p>How do we transform the categorical values of the relevant features into numerical ones?</p>
-</blockquote>
 </section>
 
 <section id="encoding" class="title-slide slide level1 center">
@@ -1250,7 +1245,7 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 
 <section id="encoding-likert-scale" class="title-slide slide level1 center">
 <h1>Encoding: Likert scale</h1>
-<p>The Likert scale is widely used in social work research, and is commonly constructed with four to seven points.</p>
+<p>The Likert scale is widely used in social work research and is commonly constructed with four to seven points.</p>
 <ul>
 <li><code>[*, **, ***, ****, *****]</code></li>
 <li><code>[1, 2, 3, 4, 5]</code></li>
@@ -1260,15 +1255,15 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 
 <section id="encoding-likert-scale-1" class="title-slide slide level1 center">
 <h1>Encoding: Likert scale</h1>
-<p>It is usually treated as an interval scale, but strictly speaking it is an ordinal scale, where arithmetic operations cannot be conducted <span class="citation" data-cites="wu2017can">(<a href="#/references" role="doc-biblioref" onclick="">Wu and Leung 2017</a>)</span></p>
-<pre><code>Converting responses to a Likert-type question into an average seems an obvious and intuitive step, but it doesn't necessarily constitute good methodology. One important point is that respondents are often reluctant to express a strong opinion and may distort the results by gravitating to the neutral midpoint response. It also assumes that the emotional distance between mild agreement or disagreement and strong agreement or disagreement is the same, which isn't necessarily the case. At its most fundamental level, the problem is that the numbers in a Likert scale are not numbers as such, but a means of ranking responses.</code></pre>
+<p>It is usually treated as an interval scale, but strictly speaking, it is an ordinal scale, where arithmetic operations cannot be conducted <span class="citation" data-cites="wu2017can">(<a href="#/references" role="doc-biblioref" onclick="">Wu and Leung 2017</a>)</span></p>
+<p>Converting responses to a Likert-type question into an average seems an obvious and intuitive step, but it doesn’t necessarily constitute good methodology. One important point is that respondents are often reluctant to express a strong opinion and may distort the results by gravitating to the neutral midpoint response. It also assumes that the emotional distance between mild agreement or disagreement and strong agreement or disagreement is the same, which isn’t necessarily the case. At its most fundamental level, the problem is that the numbers in a Likert scale are not numbers as such, but a means of ranking responses.</p>
 </section>
 
 <section id="encoding-likert-scale-2" class="title-slide slide level1 center">
 <h1>Encoding: Likert scale</h1>
 
 <img data-src="./img/datapreprocessing/reviews.png" class="r-stretch quarto-figure-center"><p class="caption">J-shaped distribution</p><p>People tend to write reviews only when they are either extremely satisfied or extremely unsatisfied.</p>
-<p>People who feel the product is average might not be bothered to write a review</p>
+<p>People who feel the product is average might not bother to write a review.</p>
 <p><span class="citation" data-cites="hu2009overcoming">(<a href="#/references" role="doc-biblioref" onclick="">Hu, Zhang, and Pavlou 2009</a>)</span></p>
 </section>
 
@@ -1356,9 +1351,9 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 </table>
 </blockquote>
 </div></div>
-<p>OHE increases the dimensionality of the dataset and it may not be suitable for encoding high cardinality features.</p>
+<p>OHE increases the dimensionality of the dataset, and it may not be suitable for encoding high cardinality features.</p>
 <ul>
-<li>To prevent a massive increase of the feature space, we can one-hot encode only the most frequent categories in the variable.</li>
+<li>To prevent a massive increase in the feature space, we can one-hot encode only the most frequent categories in the variable.</li>
 <li>… less frequent values are treated collectively and represented as 0s in all the binary variables.</li>
 </ul>
 </section>
@@ -1382,9 +1377,9 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 
 <section id="problem-how-do-we-treat-features-with-different-ranges" class="title-slide slide level1 center">
 <h1><img src="./img/cs.svg" class="title-icon"> <strong>Problem</strong>: how do we treat features with different ranges?</h1>
-<p>If data values varies widely, in some ML algorithms objective functions will not work properly without normalization.</p>
+<p>If data values vary widely, objective functions will not work properly without normalization in some ML algorithms.</p>
 <ul>
-<li>For example, many classifiers calculate the distance between two points by the Euclidean distance.
+<li>For example, many classifiers calculate the distance between two points using the Euclidean distance.
 <ul>
 <li><span class="math inline">\(d(p,q)={\sqrt {(p_{1}-q_{1})^{2}+(p_{2}-q_{2})^{2}+\cdots +(p_{n}-q_{n})^{2}}} = \sqrt{\sum_{i=1}^n (p_i - q_i)^2}\)</span></li>
 </ul></li>
@@ -1473,7 +1468,7 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <h1>Effects of imputation on skewed distributions?</h1>
 <p><em>Long Tail</em> refers to the concept where a large number of niche products collectively generate more sales than a few bestsellers.</p>
 <ul>
-<li>Ecommerces such as Amazon stock a vast array of products that traditional retailers wouldn’t carry due to space constraints.</li>
+<li>E-commerce sites such as Amazon stock a vast array of products that traditional retailers wouldn’t carry due to space constraints.</li>
 <li>The Long Tail phenomenon is directly related to skewed distributions, specifically a type of right-skewed distribution</li>
 </ul>
 
@@ -1525,7 +1520,7 @@ Median:  36666524821</code></pre>
 
 <section id="skewed-distributions" class="title-slide slide level1 center">
 <h1>Skewed distributions</h1>
-<p>Skewed distributions can be transformed using mathematical functions such as the logarithm</p>
+<p>Skewed distributions can be transformed using mathematical functions such as the logarithm.</p>
 <p><img src="./img/datapreprocessing/income_histograms.svg" class="center-img" style="!max-height: 500px;"></p>
 </section>
 
@@ -1692,7 +1687,7 @@ Median:  36666524821</code></pre>
 <h1>Binning</h1>
 <p><strong>Data binning</strong> is a data pre-processing technique that reduces the effects of minor observation errors</p>
 <ul>
-<li>The original values which fall into a given interval (bin) are replaced by a central value representative of that interval</li>
+<li>The original values that fall into a given interval (bin) are replaced by a central value representative of that interval</li>
 <li>Histograms are an example of data binning used in order to observe underlying frequency distributions</li>
 </ul>
 <p><em>Equal-width</em>: divide the range of values into equal-sized intervals or bins</p>
@@ -1723,7 +1718,7 @@ Median:  36666524821</code></pre>
 <section id="problem-what-if-we-have-too-many-features" class="title-slide slide level1 center">
 <h1><img src="./img/cs.svg" class="title-icon"> <strong>Problem</strong>: what if we have too many features?</h1>
 <blockquote>
-<p>A streaming platform ants to recommend movies based on user preferences.</p>
+<p>A streaming platform wants to recommend movies based on user preferences.</p>
 <p>Each movie is represented by a vector of features:</p>
 <ol type="1">
 <li><code>Genre</code></li>
@@ -1777,7 +1772,7 @@ Median:  36666524821</code></pre>
 <p>Feature selection approaches are characterized by</p>
 <ul>
 <li><em>Search technique</em> for proposing new feature subsets</li>
-<li><em>Evaluation measure</em> which scores the different feature subsets</li>
+<li><em>Evaluation measure</em> for scoring the different feature subsets</li>
 </ul>
 </section>
 
@@ -1936,9 +1931,9 @@ Median:  36666524821</code></pre>
 <li>Fit a full model including all the features.</li>
 <li>Consider the feature with the highest p-value.
 <ul>
-<li>If the p-value &lt; SL terminate the process.</li>
+<li>If the p-value &lt; SL, terminate the process.</li>
 </ul></li>
-<li>Remove the feature which is under consideration.</li>
+<li>Remove the feature that is under consideration.</li>
 <li>Fit a model without this feature. Repeat the entire process from Step 3.</li>
 </ol></li>
 </ul>
@@ -1992,13 +1987,13 @@ Median:  36666524821</code></pre>
 <p><em>Principal component analysis (PCA)</em> is a linear dimensionality reduction technique.</p>
 <ul>
 <li>PCA aims to preserve as much of the data’s variance as possible in fewer dimensions</li>
-<li>Variance measures of how much the data points differ from the mean of the dataset</li>
+<li>Variance measures how much the data points differ from the mean of the dataset</li>
 <li>The data is linearly transformed onto a new coordinate system such that the directions (<em>principal components</em>) capturing the largest variation in the data can be easily identified</li>
 <li>The first principal component captures the highest variance, the second component captures the second highest, and so on.</li>
 </ul>
 <p>Computing PCA</p>
 <ul>
-<li>PCA is sensitive to the scale of the data, the first step is usually to standardize the features (mean = 0, standard deviation = 1) to ensure that all features contribute equally to the analysis.</li>
+<li>PCA is sensitive to the scale of the data. The first step is usually to standardize the features (mean = 0, standard deviation = 1) to ensure that all features contribute equally to the analysis.</li>
 <li>Then, compute the covariance Matrix
 <ul>
 <li>Eigenvectors represent the directions of the principal components.</li>
@@ -2012,7 +2007,7 @@ Median:  36666524821</code></pre>
 <h1>PCA on the Iris dataset</h1>
 <div class="columns">
 <div class="column" style="width:60%;">
-<p>Iris contains 4 features, we cannot plot it directly</p>
+<p>Iris contains 4 features; we cannot plot it directly.</p>
 <ol type="1">
 <li><code>petal_length</code></li>
 <li><code>petal_width</code></li>
@@ -2273,7 +2268,7 @@ Median:  36666524821</code></pre>
 
 <section id="sequences-of-transformations" class="title-slide slide level1 center">
 <h1>Sequences of transformations</h1>
-<p>Things are even more complex when applying sequences of transformations</p>
+<p>Things are even more complex when applying sequences of transformations.</p>
 <ul>
 <li>E.g., normalization should be applied before rebalancing since rebalancing can alter average and standard deviations</li>
 <li>E.g., applying feature engineering before/after rebalancing produces different results depending on the dataset and algorithm</li>
@@ -2305,13 +2300,13 @@ Median:  36666524821</code></pre>
 <h1>Overlapping with big data and cloud platforms</h1>
 <ul>
 <li>Data <em>profiling</em> to get metadata summarizing our dataset</li>
-<li>Data <em>provenance</em> to track all the transformations that we apply on our dataset</li>
+<li>Data <em>provenance</em> to track all the transformations that we apply to our dataset</li>
 </ul>
 </section>
 
 <section id="towards-the-exam-examples-of-questions" class="title-slide slide level1 center">
 <h1>Towards the exam: examples of questions</h1>
-<p>These are <em>some</em> of the questions of the exam</p>
+<p>These are <em>some</em> of the questions of the exam.</p>
 <ol type="1">
 <li>Explain the importance of data transformation in the preprocessing pipeline.</li>
 <li>Discuss the challenges of data preprocessing in real-world machine learning projects. How can you ensure the quality of your preprocessed data?</li>

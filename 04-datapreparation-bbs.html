@@ -497,7 +497,7 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 </tr>
 <tr class="odd">
 <td>S2</td>
-<td>2024-10-04</td>
+<td>2024-01-04</td>
 <td></td>
 </tr>
 </tbody>
@@ -521,14 +521,14 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <td>1000</td>
 </tr>
 <tr class="even">
-<td>S1</td>
-<td>2024-10-05</td>
-<td><em>1000</em></td>
+<td><strong>S1</strong></td>
+<td><em>2024-10-05</em></td>
+<td>1000</td>
 </tr>
 <tr class="odd">
 <td><strong>S2</strong></td>
-<td>2024-10-04</td>
-<td><em>1000</em></td>
+<td><em>2024-01-04</em></td>
+<td>1000</td>
 </tr>
 </tbody>
 </table>
@@ -1076,81 +1076,6 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <p><em>Encoding</em> may be necessary to transform <em>or symbolic fields (“definitely yes”, “yes”, “don’t know”, “no”) to numeric values</em></p>
 </section>
 
-<section id="problem-how-do-we-transform-features-into-numbers" class="title-slide slide level1 center">
-<h1><img src="./img/cs.svg" class="title-icon"> <strong>Problem</strong>: how do we transform features into numbers?</h1>
-<blockquote>
-<p>Some machine learning models can only work with numerical values.</p>
-<p>How do we transform the categorical values of the relevant features into numerical ones?</p>
-</blockquote>
-<p><em>Aggregation</em> and <em>Binning</em> may be necessary to <em>transform ranges to symbolic fields</em></p>
-<div class="columns">
-<div class="column" style="width:49%;">
-<blockquote>
-<p>Before binning</p>
-<table class="caption-top">
-<thead>
-<tr class="header">
-<th><code>StoreId</code></th>
-<th><code>Date</code></th>
-<th><code>sales</code></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>S1</td>
-<td>2024-10-04</td>
-<td>1000</td>
-</tr>
-<tr class="even">
-<td>S1</td>
-<td>2024-10-05</td>
-<td>1500</td>
-</tr>
-<tr class="odd">
-<td>S1</td>
-<td>2024-10-06</td>
-<td>2000</td>
-</tr>
-</tbody>
-</table>
-</blockquote>
-</div><div class="column" style="width:49%;">
-<blockquote>
-<p>After binning (every 1000€)</p>
-<table class="caption-top">
-<thead>
-<tr class="header">
-<th><code>StoreId</code></th>
-<th><code>Date</code></th>
-<th><code>sales</code></th>
-<th><code>sales_bin</code></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>S1</td>
-<td>2024-10-04</td>
-<td>1000</td>
-<td>[1000-2000)</td>
-</tr>
-<tr class="even">
-<td>S1</td>
-<td>2024-10-05</td>
-<td>1500</td>
-<td>[1000-2000)</td>
-</tr>
-<tr class="odd">
-<td>S1</td>
-<td>2024-10-06</td>
-<td>2000</td>
-<td>[2000-3000)</td>
-</tr>
-</tbody>
-</table>
-</blockquote>
-</div></div>
-</section>
-
 <section id="encoding" class="title-slide slide level1 center">
 <h1>Encoding</h1>
 <p><strong>Encoding</strong> is the process of converting categorical variables into numeric features.</p>
@@ -1532,6 +1457,81 @@ Median:  36666524821</code></pre>
 <section id="problem-if-the-dataset-is-too-detailednoisy-what-can-we-do" class="title-slide slide level1 center">
 <h1><img src="./img/cs.svg" class="title-icon"> <strong>Problem</strong>: if the dataset is too detailed/noisy, what can we do?</h1>
 <blockquote>
+<p>Some machine learning models can only work with numerical values.</p>
+<p>How do we transform the categorical values of the relevant features into numerical ones?</p>
+</blockquote>
+<p><em>Aggregation</em> and <em>Binning</em> may be necessary to <em>transform ranges to symbolic fields</em></p>
+<div class="columns">
+<div class="column" style="width:49%;">
+<blockquote>
+<p>Before binning</p>
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th><code>StoreId</code></th>
+<th><code>Date</code></th>
+<th><code>sales</code></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>S1</td>
+<td>2024-10-04</td>
+<td>1000</td>
+</tr>
+<tr class="even">
+<td>S1</td>
+<td>2024-10-05</td>
+<td>1500</td>
+</tr>
+<tr class="odd">
+<td>S1</td>
+<td>2024-10-06</td>
+<td>2000</td>
+</tr>
+</tbody>
+</table>
+</blockquote>
+</div><div class="column" style="width:49%;">
+<blockquote>
+<p>After binning (every 1000€)</p>
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th><code>StoreId</code></th>
+<th><code>Date</code></th>
+<th><code>sales</code></th>
+<th><code>sales_bin</code></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>S1</td>
+<td>2024-10-04</td>
+<td>1000</td>
+<td>[1000-2000)</td>
+</tr>
+<tr class="even">
+<td>S1</td>
+<td>2024-10-05</td>
+<td>1500</td>
+<td>[1000-2000)</td>
+</tr>
+<tr class="odd">
+<td>S1</td>
+<td>2024-10-06</td>
+<td>2000</td>
+<td>[2000-3000)</td>
+</tr>
+</tbody>
+</table>
+</blockquote>
+</div></div>
+</section>
+
+<section id="problem-if-the-dataset-is-too-detailednoisy-what-can-we-do-1" class="title-slide slide level1 center">
+<h1><img src="./img/cs.svg" class="title-icon"> <strong>Problem</strong>: if the dataset is too detailed/noisy, what can we do?</h1>
+<blockquote>
 <p>A meteorologist analyzes hourly temperature readings, but the data has fluctuations due to temporary weather conditions.</p>
 <table class="caption-top">
 <thead>
@@ -1575,7 +1575,7 @@ Median:  36666524821</code></pre>
 </blockquote>
 </section>
 
-<section id="problem-if-the-dataset-is-too-detailednoisy-what-can-we-do-1" class="title-slide slide level1 center">
+<section id="problem-if-the-dataset-is-too-detailednoisy-what-can-we-do-2" class="title-slide slide level1 center">
 <h1><img src="./img/cs.svg" class="title-icon"> <strong>Problem</strong>: if the dataset is too detailed/noisy, what can we do?</h1>
 <blockquote>
 <p>For instance, using <em>equal-width binning</em> (grouping every 3 hours and averaging):</p>

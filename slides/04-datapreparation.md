@@ -208,22 +208,22 @@ See *Black Mirror* episodes and how they relate to the AI Act's high-risk catego
 
 > Before cleaning
 >
-> | `StoreId` | `Date` |`sales` |
-> |-----------|--------|--------|
+> | `StoreId` | `Date`     |`sales` |
+> |-----------|------------|--------|
 > |S1         | 2024-10-04 | 1000   |
-> |S1         | 2024-10-05 |  |
-> |S2         | 2024-10-04 |  |
+> |S1         | 2024-10-05 |        |
+> |S2         | 2024-01-04 |        |
 
 :::
 ::: {.column width="49%"}
 
 > After cleaning (sort by `StoreId` and `Date`)
 >
-> | `StoreId` | `Date` |`sales` |
-> |-----------|--------|--------|
-> |S1         | 2024-10-04 | 1000   |
-> |S1         | 2024-10-05 | *1000* |
-> |**S2** | 2024-10-04 | *1000* |
+> | `StoreId` | `Date`       |`sales` |
+> |-----------|--------------|--------|
+> |S1         | 2024-10-04   | 1000   |
+> |**S1**     | *2024-10-05* | 1000   |
+> |**S2**     | *2024-01-04* | 1000   |
 
 :::
 ::::
@@ -554,39 +554,6 @@ Such extreme events (outliers) collectively play vastly larger roles than regula
 
 *Encoding* may be necessary to transform *or symbolic fields ("definitely yes", "yes", "don't know", "no") to numeric values*
 
-# <img src="./img/cs.svg" class="title-icon" /> **Problem**: how do we transform features into numbers?
-
-> Some machine learning models can only work with numerical values.
->
-> How do we transform the categorical values of the relevant features into numerical ones?
-
-*Aggregation* and *Binning* may be necessary to *transform ranges to symbolic fields*
-
-:::: {.columns}
-::: {.column width="49%"}
-
-> Before binning
->
-> | `StoreId` | `Date` |`sales` |
-> |-----------|--------|--------|
-> |S1         | 2024-10-04 | 1000 |
-> |S1         | 2024-10-05 | 1500 |
-> |S1         | 2024-10-06 | 2000 |
-
-:::
-::: {.column width="49%"}
-
-> After binning (every 1000€)
->
-> | `StoreId` | `Date` |`sales` |`sales_bin` |
-> |-----------|--------    |--------|--------|
-> |S1         | 2024-10-04 | 1000 | \[1000-2000\) |
-> |S1         | 2024-10-05 | 1500 | \[1000-2000\) |
-> |S1         | 2024-10-06 | 2000 | \[2000-3000\) |
-
-:::
-::::
-
 # Encoding
 
 **Encoding** is the process of converting categorical variables into numeric features.
@@ -886,6 +853,39 @@ Skewed distributions can be transformed using mathematical functions such as the
 # Skewed distributions
 
 <img src="./img/datapreprocessing/clustering_figures.svg" class="center-img" style="!max-height: 500px;" />
+
+# <img src="./img/cs.svg" class="title-icon" /> **Problem**: if the dataset is too detailed/noisy, what can we do?
+
+> Some machine learning models can only work with numerical values.
+>
+> How do we transform the categorical values of the relevant features into numerical ones?
+
+*Aggregation* and *Binning* may be necessary to *transform ranges to symbolic fields*
+
+:::: {.columns}
+::: {.column width="49%"}
+
+> Before binning
+>
+> | `StoreId` | `Date` |`sales` |
+> |-----------|--------|--------|
+> |S1         | 2024-10-04 | 1000 |
+> |S1         | 2024-10-05 | 1500 |
+> |S1         | 2024-10-06 | 2000 |
+
+:::
+::: {.column width="49%"}
+
+> After binning (every 1000€)
+>
+> | `StoreId` | `Date` |`sales` |`sales_bin` |
+> |-----------|--------    |--------|--------|
+> |S1         | 2024-10-04 | 1000 | \[1000-2000\) |
+> |S1         | 2024-10-05 | 1500 | \[1000-2000\) |
+> |S1         | 2024-10-06 | 2000 | \[2000-3000\) |
+
+:::
+::::
 
 # <img src="./img/cs.svg" class="title-icon" /> **Problem**: if the dataset is too detailed/noisy, what can we do?
 

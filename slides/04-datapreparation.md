@@ -56,7 +56,7 @@ Part of the data selection process should involve explaining why certain data wa
 > | Via dell'Università 50         | Italy   | 1000   |
 > |...         | ...  | ...  |
 >
-> - To learn how sales are characterized by store `Type` you do not need to consider the `StoreId`
+> - To learn how sales are characterized by store `Type`, you do not need to consider the `StoreId`
 >
 > | ~~`StoreId`~~ | `Type` |`Sales` |
 > |-----------|--------|--------|
@@ -112,7 +112,7 @@ The *AI Act* is a European Union regulation concerning artificial intelligence t
   - They must be evaluated both before they are placed on the market and throughout their life cycle. 
 - **Limited-risk** applications *only have transparency* obligations.
   - AI applications that make it possible to generate or manipulate images, sound, or videos.
-  - Ensure that users are informed that they are interacting with an AI system and allowing them to make informed choices. 
+  - Ensure that users are informed that they are interacting with an AI system and are allowed to make informed choices. 
 - **Minimal-risk** applications *are not regulated*.
   - AI systems used for video games or spam filters.
 
@@ -135,7 +135,7 @@ See *Black Mirror* episodes and how they relate to the AI Act's high-risk catego
 
 > A retail company tracks daily sales, but some records are missing due to system failures.
 >
-> A telecom company is predicting customer churn, but some customers have missing contract duration or monthly bill values.
+> A telecom company is predicting customer churn, but some customers have missing contract durations or monthly bill values.
 >
 > A hospital maintains records of patients' blood pressure, but 15% of entries are missing.
 >
@@ -147,7 +147,7 @@ See *Black Mirror* episodes and how they relate to the AI Act's high-risk catego
 >
 > - *Use historical sales trends* to impute missing values
 >
-> A telecom company is predicting customer churn, but some customers have missing contract duration or monthly bill values.
+> A telecom company is predicting customer churn, but some customers have missing contract durations or monthly bill values.
 >
 > - *Use median imputation for numerical features* (e.g., replace missing monthly bill amounts with the median).
 >
@@ -201,7 +201,7 @@ See *Black Mirror* episodes and how they relate to the AI Act's high-risk catego
 
 - One form of hot-deck imputation is called "last observation carried forward"
     - Sort a dataset according to any number of variables, thus creating an ordered dataset
-    - Finds a missing value and uses the value immediately before the data that are missing to impute the missing value
+    - Finds a missing value and uses the value immediately before the data that is missing to impute the missing value
 
 :::: {.columns}
 ::: {.column width="49%"}
@@ -223,7 +223,7 @@ See *Black Mirror* episodes and how they relate to the AI Act's high-risk catego
 > |-----------|--------|--------|
 > |S1         | 2024-10-04 | 1000   |
 > |S1         | 2024-10-05 | *1000* |
-> |**S2**     | 2024-10-04 | *1000* |
+> |**S2** | 2024-10-04 | *1000* |
 
 :::
 ::::
@@ -236,7 +236,7 @@ See *Black Mirror* episodes and how they relate to the AI Act's high-risk catego
 
 - Mean imputation attenuates any correlations involving the variable(s) that are imputed
     - There is no relationship between the imputed variable and any other measured variables.
-    - Mean imputation can be carried out within classes (i.e. categories, such as gender)
+    - Mean imputation can be carried out within classes (i.e., categories, such as gender)
 
 :::: {.columns}
 ::: {.column width="49%"}
@@ -271,25 +271,25 @@ See *Black Mirror* episodes and how they relate to the AI Act's high-risk catego
 
 |Year|Portfolio Value|
 |:--:|:-------------:|
-|2008|	1000.00|
-|2009|	1050.00|
-|2010|	1102.50|
-|2011|	1157.63|
-|2012|	|
-|2013|	1276.28|
-|2014|	1340.10|
-|2015|	1407.10|
-|2016|	1477.46|
-|2017|	1551.33|
-|2018|	|
-|2019|	1710.34|
-|2020|	1795.86|
-|2021|	1885.65|
-|2022|	1979.93|
-|2023|	|
-|2024|	2182.87|
+|2008|  1000.00|
+|2009|  1050.00|
+|2010|  1102.50|
+|2011|  1157.63|
+|2012|  |
+|2013|  1276.28|
+|2014|  1340.10|
+|2015|  1407.10|
+|2016|  1477.46|
+|2017|  1551.33|
+|2018|  |
+|2019|  1710.34|
+|2020|  1795.86|
+|2021|  1885.65|
+|2022|  1979.93|
+|2023|  |
+|2024|  2182.87|
 
-# Case Study: Compount Interest
+# Case Study: Compound Interest
 
 > :::: {.columns}
 > ::: {.column width="70%"}
@@ -328,24 +328,24 @@ This is not a linear increase but a geometric sequence: $\text{Final value} = \t
 >
 > $X = 0.05 = 5\%$
 
-In this case the return is equal every year, so the average interest is $5\%$.
+In this case, the return is equal every year, so the average interest is $5\%$.
 
-# Case Study: Compount Interest
+# Case Study: Compound Interest
 
-Let us assume now that the returns changes over year.
+Let us assume now that the returns change over the year.
 
 > |Year| Value | Return|
 > |----|-----------|---|
-> |0|1000.00 €| 	-|
-> |1|1050.00 € |	5%|
-> |2|997.50 € 	|-5%|
-> |3|1047.38 € |	5%|
-> |4|995.01 € 	|-5%|
-> |5|995.01 € |	0%|
+> |0|1000.00 €|     -|
+> |1|1050.00 € |    5%|
+> |2|997.50 €   |-5%|
+> |3|1047.38 € |    5%|
+> |4|995.01 €   |-5%|
+> |5|995.01 € | 0%|
 
 What is the average return?
 
-# Case Study: Compount Interest
+# Case Study: Compound Interest
 
 :::: {.columns}
 ::: {.column width="50%"}
@@ -377,25 +377,25 @@ The average return is $X = -0.1\%$
 
 $X\%$ is the *Compound Annual Growth Rate*, the mean annualized growth rate for compounding values over a given time period.
 
-- CAGR smoothes the effect of volatility of periodic values that can render arithmetic means less meaningful.
+- CAGR smoothes the effect of the volatility of periodic values that can render arithmetic means less meaningful.
 
 :::
 ::: {.column width="50%"}
 
 > |Year| Value | Return|
 > |----|-----------|---|
-> |0|1000.00 €|	-|
-> |1|999.00 € |	-0.1%|
-> |2|998.00 € |	-0.1%|
+> |0|1000.00 €| -|
+> |1|999.00 € | -0.1%|
+> |2|998.00 € | -0.1%|
 > |...|...|...|
-> |5|995.01 € |	-0.1%|
+> |5|995.01 € | -0.1%|
 
 :::
 ::::
 
 # End of the Case Study {background-color="#121011"}
 
-**Take away**: pay attention to the semantics of the features!
+**Takeaway**: pay attention to the semantics of the features!
 
 # <img src="./img/cs.svg" class="title-icon" /> **Problem**: how do we handle anomalies?
 
@@ -431,16 +431,16 @@ In the case of normally distributed data, the *three sigma rule* means that:
 - Nearly all values (99.7%) lie within three standard deviations of the mean
     - Roughly 1 in 22 observations will differ by twice the standard deviation or more from the mean,
     - ... and 1 in 370 will deviate by three times the standard deviation.
-- If the sample size is only 100, however, just three such outliers are already reason for concern.
+- If the sample size is only 100, however, just three such outliers are already a reason for concern.
 
 # Outlier removal
 
 :::: {.columns}
 ::: {.column width="60%"}
 
-Other methods flag outliers based on measures such as interquartile range.
+Other methods flag outliers based on measures such as the interquartile range.
 
-For example, if $Q_{1}$ and $Q_{3}$ are the lower and upper quartiles respectively, then one could define an outlier to be any observation outside the range:
+If $Q_{1}$ and $Q_{3}$ are the lower and upper quartiles, an outlier is any observation outside the range:
 
 - $[Q_{1}-k(Q_{3}-Q_{1}),Q_{3}+k(Q_{3}-Q_{1})]$ for some nonnegative $k$
 - $k=1.5$ to indicate an "outlier"
@@ -458,7 +458,7 @@ For example, if $Q_{1}$ and $Q_{3}$ are the lower and upper quartiles respective
 
 **Isolation Forest** [@liu2008isolation] is an algorithm for data anomaly detection using binary trees
 
-- Because anomalies are few and different from other data, they can be isolated using few partitions.
+- Because anomalies are few and different from other data, they can be isolated using a few partitions.
 - Unlike decision tree algorithms, it uses only path length to output an anomaly score.
 
 :::: {.columns}
@@ -478,7 +478,7 @@ For example, if $Q_{1}$ and $Q_{3}$ are the lower and upper quartiles respective
 
 Juvenal (55-128, Roman poet) wrote in his Satire VI of *events being "a bird as rare upon the earth as a black swan"*
 
-- When the phrase was coined, the black swan was presumed by Romans not to exist.
+- When the phrase was coined, the black swan was presumed by the Romans not to exist.
 - All swans are white because all records reported that swans had white feathers.
 
 :::: {.columns}
@@ -504,22 +504,22 @@ The black swan theory was developed by Nassim Nicholas Taleb [@taleb2008impact] 
 - The non-computability of the probability of consequential rare events using scientific methods.
 - The psychological biases that blind people to uncertainty and to the substantial role of rare events in historical affairs.
 
-Such extreme events (outliers), collectively play vastly larger roles than regular occurrences.
+Such extreme events (outliers) collectively play vastly larger roles than regular occurrences.
 
-# Case Study: The Black Swan Theory
+# Case Study: The Black Swan Theory {background-color="#121011"}
 
 [Long-Term Capital Management](https://en.wikipedia.org/wiki/Long-Term_Capital_Management) was a *highly leveraged* hedge fund.
 
-- Members of LTCM's board of directors included Myron Scholes and Robert C. Merton, who three years later in 1997 shared the Nobel Prize in Economics
+- Members of LTCM's board of directors included Myron Scholes and Robert C. Merton, who shared the Nobel Prize in Economics
 - LTCM was initially successful, with annualized returns of around 21% in its first year, 43% in its second year, and 41% in its third year.
 - In 1998, **it lost $4.6 billion** *in less than four months due to an unlikely combination* of (1997) Asian and (1998) Russian financial crises.
 
 :::: {.columns}
 ::: {.column width="60%"}
 
-> [@jorion2000risk] [...] on 21 August, the portfolio lost $550 million. By 31 August, the portfolio had lost $1,710 million in 1 month only.
+> [@jorion2000risk] [...] on 21 August, the portfolio lost $550 million. By 31 August, the portfolio had lost $1,710 million in 1 month.
 >
-> - Using the presumed $45 million daily (or $206 million monthly) standard deviation, this translates into a *8.3 standard deviation event*.
+> - Using the presumed $45 million daily (or $206 million monthly) standard deviation, this translates into an *8.3 standard deviation event*.
 > - Assuming a normal distribution, *such an event would occur once every 800 trillion years, or 40,000 times the age of the universe*.
 >
 > Surely this assumption was wrong.
@@ -532,8 +532,6 @@ Such extreme events (outliers), collectively play vastly larger roles than regul
 :::
 ::::
 
-# End of the case study {background-color="#121011"}
-
 # <img src="./img/cs.svg" class="title-icon" /> **Problem**: is the dataset ready for machine learning?
 
 > An online retailer wants to predict which customers are likely to churn. Instead of using raw purchase data, they need a "Loyalty Score" based on Total purchases in the last 12 months, average order value, and frequency of purchases.
@@ -542,9 +540,9 @@ Such extreme events (outliers), collectively play vastly larger roles than regul
 >
 > Netflix needs to recommend movies based on genre. However, movie genres are categorical (e.g., "Action," "Comedy"), which must be converted into numbers.
 
-# <img src="./img/cs.svg" class="title-icon" /> **Problem**: is the dataset ready for machine learning?
+# Feature engineering
 
-**Feature engineering** refers to manipulation (addition, deletion, combination, mutation) of your data set to improve machine learning model training.
+**Feature engineering** refers to the manipulation (addition, deletion, combination, mutation) of your data set to improve machine learning model training.
 
 *Derived attributes* should be added if they ease the modeling algorithm
 
@@ -554,8 +552,15 @@ Such extreme events (outliers), collectively play vastly larger roles than regul
 >
 > `Ocean_Proximity` = distance((`Ocean_Latitude`, `Ocean_Longitude`), (`District_Latitude`, `District_Longitude`)).
 
+*Encoding* may be necessary to transform *or symbolic fields ("definitely yes", "yes", "don't know", "no") to numeric values*
 
-*Binning* may be necessary to *transform ranges to symbolic fields*
+# <img src="./img/cs.svg" class="title-icon" /> **Problem**: how do we transform features into numbers?
+
+> Some machine learning models can only work with numerical values.
+>
+> How do we transform the categorical values of the relevant features into numerical ones?
+
+*Aggregation* and *Binning* may be necessary to *transform ranges to symbolic fields*
 
 :::: {.columns}
 ::: {.column width="49%"}
@@ -573,7 +578,7 @@ Such extreme events (outliers), collectively play vastly larger roles than regul
 
 > After binning (every 1000€)
 >
-> | `StoreId` | `Date`     |`sales` |`sales_bin` |
+> | `StoreId` | `Date` |`sales` |`sales_bin` |
 > |-----------|--------    |--------|--------|
 > |S1         | 2024-10-04 | 1000 | \[1000-2000\) |
 > |S1         | 2024-10-05 | 1500 | \[1000-2000\) |
@@ -581,14 +586,6 @@ Such extreme events (outliers), collectively play vastly larger roles than regul
 
 :::
 ::::
-
-*Encoding* may be necessary to transform *or symbolic fields ("definitely yes", "yes", "don't know", "no") to numeric values*
-
-# <img src="./img/cs.svg" class="title-icon" /> **Problem**: how do we transform features into numbers?
-
-> Some machine learning models can only work with numerical values.
->
-> How do we transform the categorical values of the relevant features into numerical ones?
 
 # Encoding
 
@@ -641,7 +638,7 @@ Categorical features can be *nominal* or *ordinal*.
 
 # Encoding: Likert scale
 
-The Likert scale is widely used in social work research, and is commonly constructed with four to seven points.
+The Likert scale is widely used in social work research and is commonly constructed with four to seven points.
 
 - `[*, **, ***, ****, *****]`
 - `[1, 2, 3, 4, 5]`
@@ -650,9 +647,9 @@ What about averaging?
 
 # Encoding: Likert scale
 
-It is usually treated as an interval scale, but strictly speaking it is an ordinal scale, where arithmetic operations cannot be conducted [@wu2017can]
+It is usually treated as an interval scale, but strictly speaking, it is an ordinal scale, where arithmetic operations cannot be conducted [@wu2017can]
 
-    Converting responses to a Likert-type question into an average seems an obvious and intuitive step, but it doesn't necessarily constitute good methodology. One important point is that respondents are often reluctant to express a strong opinion and may distort the results by gravitating to the neutral midpoint response. It also assumes that the emotional distance between mild agreement or disagreement and strong agreement or disagreement is the same, which isn't necessarily the case. At its most fundamental level, the problem is that the numbers in a Likert scale are not numbers as such, but a means of ranking responses.
+ Converting responses to a Likert-type question into an average seems an obvious and intuitive step, but it doesn't necessarily constitute good methodology. One important point is that respondents are often reluctant to express a strong opinion and may distort the results by gravitating to the neutral midpoint response. It also assumes that the emotional distance between mild agreement or disagreement and strong agreement or disagreement is the same, which isn't necessarily the case. At its most fundamental level, the problem is that the numbers in a Likert scale are not numbers as such, but a means of ranking responses.
 
 # Encoding: Likert scale
 
@@ -660,7 +657,7 @@ It is usually treated as an interval scale, but strictly speaking it is an ordin
 
 People tend to write reviews only when they are either extremely satisfied or extremely unsatisfied.
 
-People who feel the product is average might not be bothered to write a review
+People who feel the product is average might not bother to write a review.
 
 [@hu2009overcoming]
 
@@ -698,9 +695,9 @@ After encoding
 :::
 ::::
 
-OHE increases the dimensionality of the dataset and it may not be suitable for encoding high cardinality features.
+OHE increases the dimensionality of the dataset, and it may not be suitable for encoding high cardinality features.
 
-- To prevent a massive increase of the feature space, we can one-hot encode only the most frequent categories in the variable.
+- To prevent a massive increase in the feature space, we can one-hot encode only the most frequent categories in the variable.
 - ... less frequent values are treated collectively and represented as 0s in all the binary variables.
 
 # Case Study: Encoding Wrong Data Types {background-color="#121011"}
@@ -722,9 +719,9 @@ See also the [year 2000 problem](https://en.wikipedia.org/wiki/Year_2000_problem
 
 # <img src="./img/cs.svg" class="title-icon" /> **Problem**: how do we treat features with different ranges?
 
-If data values varies widely, in some ML algorithms objective functions will not work properly without normalization.
+If data values vary widely, objective functions will not work properly without normalization in some ML algorithms.
 
-- For example, many classifiers calculate the distance between two points by the Euclidean distance.
+- For example, many classifiers calculate the distance between two points using the Euclidean distance.
     - $d(p,q)={\sqrt {(p_{1}-q_{1})^{2}+(p_{2}-q_{2})^{2}+\cdots +(p_{n}-q_{n})^{2}}} = \sqrt{\sum_{i=1}^n (p_i - q_i)^2}$
 - If one of the features has a broad range of values, the distance will be governed by this particular feature.
 
@@ -835,7 +832,7 @@ Transformed Iris dataset: `petal_length*=10`, addition of 1 outlier [`petal_leng
 
 *Long Tail* refers to the concept where a large number of niche products collectively generate more sales than a few bestsellers.
 
-- Ecommerces such as Amazon stock a vast array of products that traditional retailers wouldn't carry due to space constraints.
+- E-commerce sites such as Amazon stock a vast array of products that traditional retailers wouldn't carry due to space constraints.
 - The Long Tail phenomenon is directly related to skewed distributions, specifically a type of right-skewed distribution
 
 ![](./img/datapreprocessing/imputation_100.svg)
@@ -882,7 +879,7 @@ Median:  36666524821
 
 # Skewed distributions
 
-Skewed distributions can be transformed using mathematical functions such as the logarithm
+Skewed distributions can be transformed using mathematical functions such as the logarithm.
 
 <img src="./img/datapreprocessing/income_histograms.svg" class="center-img" style="!max-height: 500px;" />
 
@@ -894,15 +891,15 @@ Skewed distributions can be transformed using mathematical functions such as the
 
 > A meteorologist analyzes hourly temperature readings, but the data has fluctuations due to temporary weather conditions.
 >
-> |Hour|	Temperature (°C)|
+> |Hour|    Temperature (°C)|
 > |----|--------------------|
-> |1|	24.1|
-> |2|	24.3|
-> |3|	23.8|
-> |4|	24.5|
-> |5|	22.9 (Sudden drop due to rain)|
-> |6|	24.2|
-> |7|	23.9|
+> |1|   24.1|
+> |2|   24.3|
+> |3|   23.8|
+> |4|   24.5|
+> |5|   22.9 (Sudden drop due to rain)|
+> |6|   24.2|
+> |7|   23.9|
 >
 > How can we smooth small variations?
 
@@ -910,11 +907,11 @@ Skewed distributions can be transformed using mathematical functions such as the
 
 > For instance, using *equal-width binning* (grouping every 3 hours and averaging):
 >
-> |Time Period|	Smoothed Temperature (°C)|
+> |Time Period| Smoothed Temperature (°C)|
 > |-----------|--------------------------|
-> |1-3 AM|	24.0 (Avg of 24.1, 24.3, 23.8)|
-> |4-6 AM|	23.9 (Avg of 24.5, 22.9, 24.2)|
-> |7 AM|	23.9|
+> |1-3 AM|  24.0 (Avg of 24.1, 24.3, 23.8)|
+> |4-6 AM|  23.9 (Avg of 24.5, 22.9, 24.2)|
+> |7 AM|    23.9|
 >
 > Noise from sudden drops (e.g., 22.9°C at 5 AM) is smoothed, making temperature trends more reliable.
 
@@ -961,7 +958,7 @@ Pay attention to the *aggregation operator*!
 
 **Data binning** is a data pre-processing technique that reduces the effects of minor observation errors
 
-- The original values which fall into a given interval (bin) are replaced by a central value representative of that interval
+- The original values that fall into a given interval (bin) are replaced by a central value representative of that interval
 - Histograms are an example of data binning used in order to observe underlying frequency distributions
 
 *Equal-width*: divide the range of values into equal-sized intervals or bins
@@ -989,7 +986,7 @@ Pay attention to the *aggregation operator*!
 
 # <img src="./img/cs.svg" class="title-icon" /> **Problem**: what if we have too many features?
 
-> A streaming platform ants to recommend movies based on user preferences.
+> A streaming platform wants to recommend movies based on user preferences.
 >
 > Each movie is represented by a vector of features:
 >
@@ -1047,7 +1044,7 @@ The main approaches can also be divided into *feature selection* and *feature ex
 Feature selection approaches are characterized by
 
 - *Search technique* for proposing new feature subsets
-- *Evaluation measure* which scores the different feature subsets
+- *Evaluation measure* for scoring the different feature subsets
 
 # Feature selection
 
@@ -1164,8 +1161,8 @@ Feature selection approaches are characterized by
     1. Choose a significance level (e.g., SL = 0.05 with a 95% confidence).
     2. Fit a full model including all the features.
     3. Consider the feature with the highest p-value.
-        - If the p-value < SL terminate the process.
-    4. Remove the feature which is under consideration.
+        - If the p-value < SL, terminate the process.
+    4. Remove the feature that is under consideration.
     5. Fit a model without this feature. Repeat the entire process from Step 3.
 
 # Feature selection: Embedded strategy
@@ -1214,13 +1211,13 @@ See also [@katrutsa2017comprehensive] [@chan2022mitigating]
 *Principal component analysis (PCA)* is a linear dimensionality reduction technique.
 
 - PCA aims to preserve as much of the data's variance as possible in fewer dimensions
-- Variance measures of how much the data points differ from the mean of the dataset
+- Variance measures how much the data points differ from the mean of the dataset
 - The data is linearly transformed onto a new coordinate system such that the directions (*principal components*) capturing the largest variation in the data can be easily identified
 - The first principal component captures the highest variance, the second component captures the second highest, and so on.
 
 Computing PCA
 
-- PCA is sensitive to the scale of the data, the first step is usually to standardize the features (mean = 0, standard deviation = 1) to ensure that all features contribute equally to the analysis.
+- PCA is sensitive to the scale of the data. The first step is usually to standardize the features (mean = 0, standard deviation = 1) to ensure that all features contribute equally to the analysis.
 - Then, compute the covariance Matrix
     - Eigenvectors represent the directions of the principal components.
     - Eigenvalues represent the magnitude of variance in the direction of the corresponding eigenvector.
@@ -1231,7 +1228,7 @@ Computing PCA
 :::: {.columns}
 ::: {.column width="60%"}
 
-Iris contains 4 features, we cannot plot it directly
+Iris contains 4 features; we cannot plot it directly.
 
 1. `petal_length`
 1. `petal_width`
@@ -1333,9 +1330,9 @@ Feature Relevance for 3 Components:
 
 # Semantic Integration vs Primary Key-based Integration
 
-| **Aspect**   | **Semantic Integration**                                  | **Primary Key-based Integration**                      |
+| **Aspect** | **Semantic Integration** | **Primary Key-based Integration** |
 |--------------|-----------------------------------------------------------|-------------------------------------------------------|
-| *Approach*   | Based on meaning and understanding of the data.           | Based on matching unique keys.     |
+| *Approach* | Based on meaning and understanding of the data.           | Based on matching unique keys.     |
 | *Suitability*| Data with heterogeneous terminologies or structures. | Datasets have common, well-defined keys.    |
 | *Complexity* | Complex to interpret and align meanings. | Simpler, relies on exact key matches.                 |
 | *Flexibility*| Integrate data with different schemas/representations. | Less flexible, requires shared primary key fields.     |
@@ -1359,7 +1356,7 @@ Examples:
 
 # Sequences of transformations
 
-Things are even more complex when applying sequences of transformations
+Things are even more complex when applying sequences of transformations.
 
 - E.g., normalization should be applied before rebalancing since rebalancing can alter average and standard deviations
 - E.g., applying feature engineering before/after rebalancing produces different results depending on the dataset and algorithm
@@ -1385,11 +1382,11 @@ More an art than a science
 # Overlapping with big data and cloud platforms
 
 - Data *profiling* to get metadata summarizing our dataset
-- Data *provenance* to track all the transformations that we apply on our dataset
+- Data *provenance* to track all the transformations that we apply to our dataset
 
 # Towards the exam: examples of questions
 
-These are *some* of the questions of the exam
+These are *some* of the questions of the exam.
 
 1. Explain the importance of data transformation in the preprocessing pipeline.
 2. Discuss the challenges of data preprocessing in real-world machine learning projects. How can you ensure the quality of your preprocessed data?

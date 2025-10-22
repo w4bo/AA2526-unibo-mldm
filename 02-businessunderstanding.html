@@ -955,6 +955,99 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 
 </section>
 
+<section id="case-study-stocks" class="title-slide slide level1 center" data-background-color="#121011">
+<h1>Case Study: Stocks</h1>
+<p>The <a href="https://en.wikipedia.org/wiki/S%26P_500">Standard and Poor’s 500</a> index tracks the stock performance of <a href="https://en.wikipedia.org/wiki/List_of_S%26P_500_companies">500 of the largest companies</a> in the United States.</p>
+
+<img data-src="./img/datapreprocessing/market_cap_topn.svg" class="r-stretch quarto-figure-center"><p class="caption">Top 25 company from the S&amp;P 500 index</p><ul>
+<li>Companies emit stocks that are buyed by investors, the number of stocks is called <em>shares outstanding</em>
+<ul>
+<li><em>Shares outstanding</em> are shares of a corporation that have been purchased by investors and are held by them</li>
+</ul></li>
+<li>Stocks are daily traded in stock market
+<ul>
+<li><em>Volume</em> is the amount of shares that are daily traded</li>
+<li><em>Close</em> and <em>Open</em> are closing/opening prices of daily trades</li>
+</ul></li>
+</ul>
+<p>How would you define the <em>weight</em> of a company in the index?</p>
+</section>
+
+<section id="case-study" class="title-slide slide level1 center">
+<h1>Case Study</h1>
+<p>As a semplification, given a company <span class="math inline">\(C\)</span> and a generic index <span class="math inline">\(I\)</span></p>
+<div class="columns">
+<div class="column" style="width:49%;">
+<p><em>Market cap weight</em> (e.g., <a href="https://en.wikipedia.org/wiki/S%26P_500">S&amp;P 500</a>)</p>
+<ul>
+<li><span class="math inline">\(\text{MarketCap(C)} = \text{SharesOut(C)} \times \text{StockPrice(C)}\)</span></li>
+<li><span class="math inline">\(\text{MarketCapWeight(C)} = \frac{\text{MarketCap(C)}}{\sum_{C' \in I} \text{MarketCap(C')}}\)</span></li>
+</ul>
+<p><em>Price weight index</em> (e.g., <a href="https://en.wikipedia.org/wiki/Dow_Jones_Industrial_Average">Dow Jones Industrial Average</a>)</p>
+<ul>
+<li><span class="math inline">\(\text{PriceWeight(C)} = \frac{\text{StockPrice(C)}}{\sum_{C' \in I} \text{StockPrice(C')}}\)</span></li>
+</ul>
+</div><div class="column" style="width:50%;">
+<blockquote>
+<p>Given a few companies such as</p>
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th style="text-align: left;">Ticker</th>
+<th style="text-align: right;">Close</th>
+<th style="text-align: right;">Shares</th>
+<th style="text-align: right;">PWI (%)</th>
+<th style="text-align: right;">Market Cap (%)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">AMZN</td>
+<td style="text-align: right;">222.13</td>
+<td style="text-align: right;">1.0515e+10</td>
+<td style="text-align: right;">3.20253</td>
+<td style="text-align: right;">4.53745</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">AAPL</td>
+<td style="text-align: right;">242.7</td>
+<td style="text-align: right;">1.51158e+10</td>
+<td style="text-align: right;">3.4991</td>
+<td style="text-align: right;">7.12683</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">GS</td>
+<td style="text-align: right;">580.02</td>
+<td style="text-align: right;">3.1391e+08</td>
+<td style="text-align: right;">8.36237</td>
+<td style="text-align: right;">0.353707</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">MSFT</td>
+<td style="text-align: right;">424.56</td>
+<td style="text-align: right;">7.43488e+09</td>
+<td style="text-align: right;">6.12105</td>
+<td style="text-align: right;">6.13209</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">NVDA</td>
+<td style="text-align: right;">140.11</td>
+<td style="text-align: right;">2.449e+10</td>
+<td style="text-align: right;">2.02002</td>
+<td style="text-align: right;">6.66582</td>
+</tr>
+</tbody>
+</table>
+<p>What is their impact on DJIA and S&amp;P?</p>
+</blockquote>
+</div></div>
+</section>
+
+<section id="case-study-stocks-1" class="title-slide slide level1 center">
+<h1>Case Study: Stocks</h1>
+
+<img data-src="./img/datapreprocessing/price_weight_distribution.svg" class="r-stretch quarto-figure-center"><p class="caption">Price vs market cap weighted</p></section>
+
 <section id="training-kpis" class="title-slide slide level1 center">
 <h1>Training KPIs</h1>
 

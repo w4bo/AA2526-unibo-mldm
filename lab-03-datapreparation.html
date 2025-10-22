@@ -716,8 +716,219 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <div class="sourceCode cell-code" id="cb36"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb36-1"><a href=""></a><span class="bu">print</span>(<span class="ss">f"Mean: </span><span class="sc">{</span>height_df[<span class="st">"height (cm)"</span>]<span class="sc">.</span>mean()<span class="sc">.</span><span class="bu">round</span>()<span class="sc">}</span><span class="ss">, Median: </span><span class="sc">{</span>height_df[<span class="st">"height (cm)"</span>]<span class="sc">.</span>median()<span class="sc">.</span><span class="bu">round</span>()<span class="sc">}</span><span class="ss">"</span>)</span></code></pre></div>
 </details>
 </div>
-
 </section></section>
+<section id="clustering-with-normalized-data" class="title-slide slide level1 center">
+<h1>Clustering with normalized data</h1>
+<div id="6e7e4013" class="cell">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb37-1"><a href=""></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb37-2"><a href=""></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb37-3"><a href=""></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb37-4"><a href=""></a><span class="im">from</span> sklearn.cluster <span class="im">import</span> KMeans</span>
+<span id="cb37-5"><a href=""></a><span class="im">from</span> sklearn.preprocessing <span class="im">import</span> MinMaxScaler</span>
+<span id="cb37-6"><a href=""></a><span class="im">from</span> matplotlib.lines <span class="im">import</span> Line2D</span>
+<span id="cb37-7"><a href=""></a></span>
+<span id="cb37-8"><a href=""></a><span class="co"># --- Step 1: Create realistic synthetic data with overlap ---</span></span>
+<span id="cb37-9"><a href=""></a>np.random.seed(<span class="dv">42</span>)</span>
+<span id="cb37-10"><a href=""></a></span>
+<span id="cb37-11"><a href=""></a><span class="co"># Young, low income</span></span>
+<span id="cb37-12"><a href=""></a>age_young <span class="op">=</span> np.random.normal(<span class="dv">25</span>, <span class="dv">3</span>, <span class="dv">50</span>)</span>
+<span id="cb37-13"><a href=""></a>income_young <span class="op">=</span> np.random.normal(<span class="dv">30000</span>, <span class="dv">5000</span>, <span class="dv">50</span>)</span>
+<span id="cb37-14"><a href=""></a></span>
+<span id="cb37-15"><a href=""></a><span class="co"># Middle-aged, medium income</span></span>
+<span id="cb37-16"><a href=""></a>age_mid <span class="op">=</span> np.random.normal(<span class="dv">40</span>, <span class="dv">5</span>, <span class="dv">60</span>)</span>
+<span id="cb37-17"><a href=""></a>income_mid <span class="op">=</span> np.random.normal(<span class="dv">70000</span>, <span class="dv">8000</span>, <span class="dv">60</span>)</span>
+<span id="cb37-18"><a href=""></a></span>
+<span id="cb37-19"><a href=""></a><span class="co"># Older, high income</span></span>
+<span id="cb37-20"><a href=""></a>age_old <span class="op">=</span> np.random.normal(<span class="dv">60</span>, <span class="dv">4</span>, <span class="dv">40</span>)</span>
+<span id="cb37-21"><a href=""></a>income_old <span class="op">=</span> np.random.normal(<span class="dv">110000</span>, <span class="dv">10000</span>, <span class="dv">40</span>)</span>
+<span id="cb37-22"><a href=""></a></span>
+<span id="cb37-23"><a href=""></a><span class="co"># Older with medium income (overlap)</span></span>
+<span id="cb37-24"><a href=""></a>age_old_medium <span class="op">=</span> np.random.normal(<span class="dv">58</span>, <span class="dv">3</span>, <span class="dv">20</span>)</span>
+<span id="cb37-25"><a href=""></a>income_old_medium <span class="op">=</span> np.random.normal(<span class="dv">75000</span>, <span class="dv">6000</span>, <span class="dv">20</span>)</span>
+<span id="cb37-26"><a href=""></a></span>
+<span id="cb37-27"><a href=""></a><span class="co"># Combine</span></span>
+<span id="cb37-28"><a href=""></a>age <span class="op">=</span> np.concatenate([age_young, age_mid, age_old, age_old_medium])</span>
+<span id="cb37-29"><a href=""></a>income <span class="op">=</span> np.concatenate([income_young, income_mid, income_old, income_old_medium])</span>
+<span id="cb37-30"><a href=""></a>data <span class="op">=</span> pd.DataFrame({<span class="st">'Age'</span>: age, <span class="st">'Income'</span>: income})</span>
+<span id="cb37-31"><a href=""></a></span>
+<span id="cb37-32"><a href=""></a><span class="co"># --- Step 2: Assign true age group labels for visualization ---</span></span>
+<span id="cb37-33"><a href=""></a>data[<span class="st">'AgeGroup'</span>] <span class="op">=</span> pd.cut(data[<span class="st">'Age'</span>],</span>
+<span id="cb37-34"><a href=""></a>                          bins<span class="op">=</span>[<span class="dv">0</span>, <span class="dv">30</span>, <span class="dv">50</span>, <span class="dv">100</span>],</span>
+<span id="cb37-35"><a href=""></a>                          labels<span class="op">=</span>[<span class="st">'Young'</span>, <span class="st">'Middle-aged'</span>, <span class="st">'Older'</span>])</span>
+<span id="cb37-36"><a href=""></a></span>
+<span id="cb37-37"><a href=""></a><span class="co"># --- Step 3: KMeans without normalization ---</span></span>
+<span id="cb37-38"><a href=""></a>kmeans_no_norm <span class="op">=</span> KMeans(n_clusters<span class="op">=</span><span class="dv">3</span>, random_state<span class="op">=</span><span class="dv">42</span>)</span>
+<span id="cb37-39"><a href=""></a>data[<span class="st">'Cluster_NoNorm'</span>] <span class="op">=</span> kmeans_no_norm.fit_predict(data[[<span class="st">'Age'</span>, <span class="st">'Income'</span>]])</span>
+<span id="cb37-40"><a href=""></a></span>
+<span id="cb37-41"><a href=""></a><span class="co"># --- Step 4: Min-Max normalization ---</span></span>
+<span id="cb37-42"><a href=""></a>scaler <span class="op">=</span> MinMaxScaler()</span>
+<span id="cb37-43"><a href=""></a>data_scaled <span class="op">=</span> scaler.fit_transform(data[[<span class="st">'Age'</span>, <span class="st">'Income'</span>]])</span>
+<span id="cb37-44"><a href=""></a>data_scaled <span class="op">=</span> pd.DataFrame(data_scaled, columns<span class="op">=</span>[<span class="st">'Age_Scaled'</span>, <span class="st">'Income_Scaled'</span>])</span>
+<span id="cb37-45"><a href=""></a>data_scaled[<span class="st">'AgeGroup'</span>] <span class="op">=</span> data[<span class="st">'AgeGroup'</span>]</span>
+<span id="cb37-46"><a href=""></a></span>
+<span id="cb37-47"><a href=""></a><span class="co"># --- Step 5: KMeans with normalization ---</span></span>
+<span id="cb37-48"><a href=""></a>kmeans_norm <span class="op">=</span> KMeans(n_clusters<span class="op">=</span><span class="dv">3</span>, random_state<span class="op">=</span><span class="dv">42</span>)</span>
+<span id="cb37-49"><a href=""></a>data_scaled[<span class="st">'Cluster_Norm'</span>] <span class="op">=</span> kmeans_norm.fit_predict(data_scaled[[<span class="st">'Age_Scaled'</span>, <span class="st">'Income_Scaled'</span>]])</span>
+<span id="cb37-50"><a href=""></a></span>
+<span id="cb37-51"><a href=""></a><span class="co"># --- Step 6: Visualization setup ---</span></span>
+<span id="cb37-52"><a href=""></a>markers <span class="op">=</span> {<span class="st">'Young'</span>: <span class="st">'o'</span>, <span class="st">'Middle-aged'</span>: <span class="st">'^'</span>, <span class="st">'Older'</span>: <span class="st">'s'</span>}</span>
+<span id="cb37-53"><a href=""></a>cluster_colors <span class="op">=</span> {<span class="dv">0</span>: <span class="st">'red'</span>, <span class="dv">1</span>: <span class="st">'green'</span>, <span class="dv">2</span>: <span class="st">'blue'</span>}</span>
+<span id="cb37-54"><a href=""></a></span>
+<span id="cb37-55"><a href=""></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">13</span>, <span class="dv">6</span>))</span>
+<span id="cb37-56"><a href=""></a></span>
+<span id="cb37-57"><a href=""></a><span class="co"># --- Without normalization ---</span></span>
+<span id="cb37-58"><a href=""></a>plt.subplot(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">1</span>)</span>
+<span id="cb37-59"><a href=""></a><span class="cf">for</span> group, marker <span class="kw">in</span> markers.items():</span>
+<span id="cb37-60"><a href=""></a>    subset <span class="op">=</span> data[data[<span class="st">'AgeGroup'</span>] <span class="op">==</span> group]</span>
+<span id="cb37-61"><a href=""></a>    <span class="cf">for</span> cluster_id, color <span class="kw">in</span> cluster_colors.items():</span>
+<span id="cb37-62"><a href=""></a>        cluster_subset <span class="op">=</span> subset[subset[<span class="st">'Cluster_NoNorm'</span>] <span class="op">==</span> cluster_id]</span>
+<span id="cb37-63"><a href=""></a>        plt.scatter(cluster_subset[<span class="st">'Age'</span>], cluster_subset[<span class="st">'Income'</span>],</span>
+<span id="cb37-64"><a href=""></a>                    color<span class="op">=</span>color, marker<span class="op">=</span>marker, edgecolor<span class="op">=</span><span class="st">'black'</span>, alpha<span class="op">=</span><span class="fl">0.8</span>)</span>
+<span id="cb37-65"><a href=""></a>plt.title(<span class="st">'K-Means without Normalization'</span>)</span>
+<span id="cb37-66"><a href=""></a>plt.xlabel(<span class="st">'Age'</span>)</span>
+<span id="cb37-67"><a href=""></a>plt.ylabel(<span class="st">'Income ($)'</span>)</span>
+<span id="cb37-68"><a href=""></a>plt.grid(<span class="va">True</span>)</span>
+<span id="cb37-69"><a href=""></a></span>
+<span id="cb37-70"><a href=""></a><span class="co"># Add legend for age groups only</span></span>
+<span id="cb37-71"><a href=""></a>legend_elements <span class="op">=</span> [Line2D([<span class="dv">0</span>], [<span class="dv">0</span>], marker<span class="op">=</span>m, color<span class="op">=</span><span class="st">'w'</span>, label<span class="op">=</span>g,</span>
+<span id="cb37-72"><a href=""></a>                          markerfacecolor<span class="op">=</span><span class="st">'gray'</span>, markersize<span class="op">=</span><span class="dv">8</span>, markeredgecolor<span class="op">=</span><span class="st">'black'</span>)</span>
+<span id="cb37-73"><a href=""></a>                   <span class="cf">for</span> g, m <span class="kw">in</span> markers.items()]</span>
+<span id="cb37-74"><a href=""></a>plt.legend(handles<span class="op">=</span>legend_elements, title<span class="op">=</span><span class="st">"Age Groups"</span>, loc<span class="op">=</span><span class="st">'lower right'</span>)</span>
+<span id="cb37-75"><a href=""></a></span>
+<span id="cb37-76"><a href=""></a><span class="co"># --- With normalization ---</span></span>
+<span id="cb37-77"><a href=""></a>plt.subplot(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">2</span>)</span>
+<span id="cb37-78"><a href=""></a><span class="cf">for</span> group, marker <span class="kw">in</span> markers.items():</span>
+<span id="cb37-79"><a href=""></a>    subset <span class="op">=</span> data_scaled[data_scaled[<span class="st">'AgeGroup'</span>] <span class="op">==</span> group]</span>
+<span id="cb37-80"><a href=""></a>    <span class="cf">for</span> cluster_id, color <span class="kw">in</span> cluster_colors.items():</span>
+<span id="cb37-81"><a href=""></a>        cluster_subset <span class="op">=</span> subset[subset[<span class="st">'Cluster_Norm'</span>] <span class="op">==</span> cluster_id]</span>
+<span id="cb37-82"><a href=""></a>        plt.scatter(cluster_subset[<span class="st">'Age_Scaled'</span>], cluster_subset[<span class="st">'Income_Scaled'</span>],</span>
+<span id="cb37-83"><a href=""></a>                    color<span class="op">=</span>color, marker<span class="op">=</span>marker, edgecolor<span class="op">=</span><span class="st">'black'</span>, alpha<span class="op">=</span><span class="fl">0.8</span>)</span>
+<span id="cb37-84"><a href=""></a>plt.title(<span class="st">'K-Means with Min-Max Normalization'</span>)</span>
+<span id="cb37-85"><a href=""></a>plt.xlabel(<span class="st">'Age (scaled)'</span>)</span>
+<span id="cb37-86"><a href=""></a>plt.ylabel(<span class="st">'Income (scaled)'</span>)</span>
+<span id="cb37-87"><a href=""></a>plt.grid(<span class="va">True</span>)</span>
+<span id="cb37-88"><a href=""></a></span>
+<span id="cb37-89"><a href=""></a><span class="co"># Add legend again for age groups</span></span>
+<span id="cb37-90"><a href=""></a>plt.legend(handles<span class="op">=</span>legend_elements, title<span class="op">=</span><span class="st">"Age Groups"</span>, loc<span class="op">=</span><span class="st">'lower right'</span>)</span>
+<span id="cb37-91"><a href=""></a></span>
+<span id="cb37-92"><a href=""></a>plt.tight_layout()</span>
+<span id="cb37-93"><a href=""></a>plt.show()</span>
+<span id="cb37-94"><a href=""></a></span>
+<span id="cb37-95"><a href=""></a><span class="co"># --- Step 7: Display centroids ---</span></span>
+<span id="cb37-96"><a href=""></a><span class="bu">print</span>(<span class="st">"Centroids without normalization:"</span>)</span>
+<span id="cb37-97"><a href=""></a><span class="bu">print</span>(pd.DataFrame(kmeans_no_norm.cluster_centers_, columns<span class="op">=</span>[<span class="st">'Age'</span>, <span class="st">'Income'</span>]))</span>
+<span id="cb37-98"><a href=""></a></span>
+<span id="cb37-99"><a href=""></a><span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">Centroids with normalization:"</span>)</span>
+<span id="cb37-100"><a href=""></a><span class="bu">print</span>(pd.DataFrame(kmeans_norm.cluster_centers_, columns<span class="op">=</span>[<span class="st">'Age_Scaled'</span>, <span class="st">'Income_Scaled'</span>]))</span>
+<span id="cb37-101"><a href=""></a></span>
+<span id="cb37-102"><a href=""></a><span class="co"># --- Step 8: Scale back normalized centroids to original range ---</span></span>
+<span id="cb37-103"><a href=""></a>centroids_norm_scaled <span class="op">=</span> kmeans_norm.cluster_centers_</span>
+<span id="cb37-104"><a href=""></a>centroids_original_scale <span class="op">=</span> scaler.inverse_transform(centroids_norm_scaled)</span>
+<span id="cb37-105"><a href=""></a></span>
+<span id="cb37-106"><a href=""></a><span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">Centroids with normalization (scaled back to original values):"</span>)</span>
+<span id="cb37-107"><a href=""></a><span class="bu">print</span>(pd.DataFrame(centroids_original_scale, columns<span class="op">=</span>[<span class="st">'Age'</span>, <span class="st">'Income'</span>]))</span>
+<span id="cb37-108"><a href=""></a></span>
+<span id="cb37-109"><a href=""></a>plt.savefig(<span class="st">"img/datapreprocessing/clustering.svg"</span>)</span></code></pre></div>
+</details>
+</div>
+</section>
+
+<section id="clustering-with-skewed-data" class="title-slide slide level1 center">
+<h1>Clustering with skewed data</h1>
+<div id="4bdcd68e" class="cell">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb38-1"><a href=""></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb38-2"><a href=""></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb38-3"><a href=""></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb38-4"><a href=""></a><span class="im">from</span> sklearn.cluster <span class="im">import</span> KMeans</span>
+<span id="cb38-5"><a href=""></a><span class="im">from</span> sklearn.preprocessing <span class="im">import</span> MinMaxScaler</span>
+<span id="cb38-6"><a href=""></a></span>
+<span id="cb38-7"><a href=""></a>np.random.seed(<span class="dv">42</span>)</span>
+<span id="cb38-8"><a href=""></a></span>
+<span id="cb38-9"><a href=""></a><span class="co"># --- Step 1: Create meaningful dataset ---</span></span>
+<span id="cb38-10"><a href=""></a>age1 <span class="op">=</span> np.random.normal(<span class="dv">25</span>, <span class="dv">4</span>, <span class="dv">80</span>)</span>
+<span id="cb38-11"><a href=""></a>income1 <span class="op">=</span> np.random.exponential(<span class="dv">12000</span>, <span class="dv">80</span>) <span class="op">+</span> <span class="dv">15000</span></span>
+<span id="cb38-12"><a href=""></a></span>
+<span id="cb38-13"><a href=""></a>age2 <span class="op">=</span> np.random.normal(<span class="dv">40</span>, <span class="dv">6</span>, <span class="dv">70</span>)</span>
+<span id="cb38-14"><a href=""></a>income2 <span class="op">=</span> np.random.exponential(<span class="dv">20000</span>, <span class="dv">70</span>) <span class="op">+</span> <span class="dv">40000</span></span>
+<span id="cb38-15"><a href=""></a></span>
+<span id="cb38-16"><a href=""></a>age3 <span class="op">=</span> np.random.normal(<span class="dv">58</span>, <span class="dv">5</span>, <span class="dv">50</span>)</span>
+<span id="cb38-17"><a href=""></a>income3 <span class="op">=</span> np.random.exponential(<span class="dv">30000</span>, <span class="dv">50</span>) <span class="op">+</span> <span class="dv">70000</span></span>
+<span id="cb38-18"><a href=""></a></span>
+<span id="cb38-19"><a href=""></a>age <span class="op">=</span> np.concatenate([age1, age2, age3])</span>
+<span id="cb38-20"><a href=""></a>income <span class="op">=</span> np.concatenate([income1, income2, income3])</span>
+<span id="cb38-21"><a href=""></a></span>
+<span id="cb38-22"><a href=""></a>data <span class="op">=</span> pd.DataFrame({<span class="st">'Age'</span>: age, <span class="st">'Income'</span>: income})</span>
+<span id="cb38-23"><a href=""></a></span>
+<span id="cb38-24"><a href=""></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">12</span>, <span class="dv">5</span>))</span>
+<span id="cb38-25"><a href=""></a>plt.subplot(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">1</span>)</span>
+<span id="cb38-26"><a href=""></a>plt.hist(data[<span class="st">'Age'</span>], bins<span class="op">=</span><span class="dv">20</span>, color<span class="op">=</span><span class="st">'skyblue'</span>, edgecolor<span class="op">=</span><span class="st">'black'</span>)</span>
+<span id="cb38-27"><a href=""></a>plt.title(<span class="st">'Age Distribution'</span>)</span>
+<span id="cb38-28"><a href=""></a>plt.xlabel(<span class="st">'Age'</span>)</span>
+<span id="cb38-29"><a href=""></a>plt.ylabel(<span class="st">'Count'</span>)</span>
+<span id="cb38-30"><a href=""></a>plt.savefig(<span class="st">"age_histograms.svg"</span>)  <span class="co"># &lt;-- save histogram figure</span></span>
+<span id="cb38-31"><a href=""></a>plt.show()</span>
+<span id="cb38-32"><a href=""></a></span>
+<span id="cb38-33"><a href=""></a><span class="co"># --- Step 2: Histogram figure ---</span></span>
+<span id="cb38-34"><a href=""></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">12</span>, <span class="dv">5</span>))</span>
+<span id="cb38-35"><a href=""></a>plt.subplot(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">1</span>)</span>
+<span id="cb38-36"><a href=""></a>plt.hist(data[<span class="st">'Income'</span>], bins<span class="op">=</span><span class="dv">30</span>, color<span class="op">=</span><span class="st">'steelblue'</span>, edgecolor<span class="op">=</span><span class="st">'black'</span>)</span>
+<span id="cb38-37"><a href=""></a>plt.title(<span class="st">'Skewed Income Distribution (Before Log Transform)'</span>)</span>
+<span id="cb38-38"><a href=""></a>plt.xlabel(<span class="st">'Income ($)'</span>)</span>
+<span id="cb38-39"><a href=""></a>plt.ylabel(<span class="st">'Count'</span>)</span>
+<span id="cb38-40"><a href=""></a></span>
+<span id="cb38-41"><a href=""></a>plt.subplot(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">2</span>)</span>
+<span id="cb38-42"><a href=""></a>plt.hist(np.log1p(data[<span class="st">'Income'</span>]), bins<span class="op">=</span><span class="dv">30</span>, color<span class="op">=</span><span class="st">'seagreen'</span>, edgecolor<span class="op">=</span><span class="st">'black'</span>)</span>
+<span id="cb38-43"><a href=""></a>plt.title(<span class="st">'After Log Transform'</span>)</span>
+<span id="cb38-44"><a href=""></a>plt.xlabel(<span class="st">'log(Income)'</span>)</span>
+<span id="cb38-45"><a href=""></a>plt.ylabel(<span class="st">'Count'</span>)</span>
+<span id="cb38-46"><a href=""></a></span>
+<span id="cb38-47"><a href=""></a>plt.tight_layout()</span>
+<span id="cb38-48"><a href=""></a>plt.savefig(<span class="st">"income_histograms.svg"</span>)  <span class="co"># &lt;-- save histogram figure</span></span>
+<span id="cb38-49"><a href=""></a>plt.show()  <span class="co"># close figure to free memory</span></span>
+<span id="cb38-50"><a href=""></a></span>
+<span id="cb38-51"><a href=""></a><span class="co"># --- Step 3: K-Means clustering ---</span></span>
+<span id="cb38-52"><a href=""></a>kmeans_raw <span class="op">=</span> KMeans(n_clusters<span class="op">=</span><span class="dv">3</span>, random_state<span class="op">=</span><span class="dv">42</span>)</span>
+<span id="cb38-53"><a href=""></a>data[<span class="st">'Cluster_Raw'</span>] <span class="op">=</span> kmeans_raw.fit_predict(data[[<span class="st">'Age'</span>, <span class="st">'Income'</span>]])</span>
+<span id="cb38-54"><a href=""></a></span>
+<span id="cb38-55"><a href=""></a>data[<span class="st">'Income_Log'</span>] <span class="op">=</span> np.log1p(data[<span class="st">'Income'</span>])</span>
+<span id="cb38-56"><a href=""></a>scaler <span class="op">=</span> MinMaxScaler()</span>
+<span id="cb38-57"><a href=""></a>data_scaled <span class="op">=</span> scaler.fit_transform(data[[<span class="st">'Age'</span>, <span class="st">'Income_Log'</span>]])</span>
+<span id="cb38-58"><a href=""></a>data_scaled <span class="op">=</span> pd.DataFrame(data_scaled, columns<span class="op">=</span>[<span class="st">'Age_Scaled'</span>, <span class="st">'Income_Log_Scaled'</span>])</span>
+<span id="cb38-59"><a href=""></a></span>
+<span id="cb38-60"><a href=""></a>kmeans_log <span class="op">=</span> KMeans(n_clusters<span class="op">=</span><span class="dv">3</span>, random_state<span class="op">=</span><span class="dv">42</span>)</span>
+<span id="cb38-61"><a href=""></a>data_scaled[<span class="st">'Cluster_Log'</span>] <span class="op">=</span> kmeans_log.fit_predict(data_scaled[[<span class="st">'Age_Scaled'</span>, <span class="st">'Income_Log_Scaled'</span>]])</span>
+<span id="cb38-62"><a href=""></a></span>
+<span id="cb38-63"><a href=""></a><span class="co"># --- Step 4: Clustering figure ---</span></span>
+<span id="cb38-64"><a href=""></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">12</span>, <span class="dv">5</span>))</span>
+<span id="cb38-65"><a href=""></a></span>
+<span id="cb38-66"><a href=""></a>plt.subplot(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">1</span>)</span>
+<span id="cb38-67"><a href=""></a>plt.scatter(data[<span class="st">'Age'</span>], data[<span class="st">'Income'</span>], c<span class="op">=</span>data[<span class="st">'Cluster_Raw'</span>], cmap<span class="op">=</span><span class="st">'Set1'</span>, edgecolor<span class="op">=</span><span class="st">'k'</span>, s<span class="op">=</span><span class="dv">50</span>)</span>
+<span id="cb38-68"><a href=""></a>plt.title(<span class="st">'K-Means Clustering (Skewed Income)'</span>)</span>
+<span id="cb38-69"><a href=""></a>plt.xlabel(<span class="st">'Age'</span>)</span>
+<span id="cb38-70"><a href=""></a>plt.ylabel(<span class="st">'Income ($)'</span>)</span>
+<span id="cb38-71"><a href=""></a>plt.grid(<span class="va">True</span>)</span>
+<span id="cb38-72"><a href=""></a></span>
+<span id="cb38-73"><a href=""></a>plt.subplot(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">2</span>)</span>
+<span id="cb38-74"><a href=""></a>plt.scatter(data_scaled[<span class="st">'Age_Scaled'</span>], data_scaled[<span class="st">'Income_Log_Scaled'</span>],</span>
+<span id="cb38-75"><a href=""></a>            c<span class="op">=</span>data_scaled[<span class="st">'Cluster_Log'</span>], cmap<span class="op">=</span><span class="st">'Set1'</span>, edgecolor<span class="op">=</span><span class="st">'k'</span>, s<span class="op">=</span><span class="dv">50</span>)</span>
+<span id="cb38-76"><a href=""></a>plt.title(<span class="st">'K-Means after Log Transform + Scaling'</span>)</span>
+<span id="cb38-77"><a href=""></a>plt.xlabel(<span class="st">'Age (scaled)'</span>)</span>
+<span id="cb38-78"><a href=""></a>plt.ylabel(<span class="st">'Log(Income) (scaled)'</span>)</span>
+<span id="cb38-79"><a href=""></a>plt.grid(<span class="va">True</span>)</span>
+<span id="cb38-80"><a href=""></a></span>
+<span id="cb38-81"><a href=""></a>plt.tight_layout()</span>
+<span id="cb38-82"><a href=""></a>plt.savefig(<span class="st">"clustering_figures.svg"</span>)  <span class="co"># &lt;-- save clustering figure</span></span>
+<span id="cb38-83"><a href=""></a>plt.show()  <span class="co"># close figure to free memory</span></span>
+<span id="cb38-84"><a href=""></a></span>
+<span id="cb38-85"><a href=""></a><span class="bu">print</span>(<span class="st">"Figures saved as 'income_histograms.png' and 'clustering_figures.png'"</span>)</span></code></pre></div>
+</details>
+</div>
+
+</section>
     </div>
   <div class="quarto-auto-generated-content" style="display: none;">
 <div class="footer footer-default">

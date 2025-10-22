@@ -165,7 +165,11 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 
 <section id="section-1" class="title-slide slide level1 center">
 <h1></h1>
-<p><em>Without clean data, the results of a data mining analysis are in question</em>. # Data Preparation (aka <em>data pre-processing</em>)</p>
+<p><em>Without clean data, the results of a data mining analysis are in question</em>.</p>
+</section>
+
+<section id="data-preparation-aka-data-pre-processing" class="title-slide slide level1 center">
+<h1>Data Preparation (aka <em>data pre-processing</em>)</h1>
 <p>The <strong>data preparation</strong> phase covers all activities to construct the dataset fed into the modeling tools from the initial data.</p>
 
 <img data-src="./img/datapreprocessing/pipeline.svg" class="r-stretch quarto-figure-center"><p class="caption">Data pipeline</p><p>It plays a key role in a data analytics process and <em>avoids “garbage in, garbage out”</em></p>
@@ -174,9 +178,9 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <ul>
 <li>Out-of-range values (<code>Income</code>: −100), Impossible combinations (<code>Exam mark</code>: 15 and <code>Exam result</code>: Passed), Missing values…</li>
 </ul></li>
-<li>There are <em>no pre-defined rules</em> on the impact of pre-processing transformations</li>
 <li>Data scientists <em>cannot easily foresee the impact of pipeline prototypes</em>
 <ul>
+<li>There are <em>no pre-defined rules</em> on the impact of pre-processing transformations</li>
 <li>Outline how each quality problem (reported in the earlier “Verify Data Quality” step) has been addressed</li>
 </ul></li>
 </ul>
@@ -213,15 +217,38 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <blockquote>
 <p>Examples</p>
 <ul>
-<li><p>An individual’s address may be used to determine which region that individual is from, the actual street address data can likely be eliminated to reduce the amount of data that must be evaluated.</p></li>
-<li><p>To learn how sales are characterized by store <code>type</code> you do not need to consider the <code>StoreId</code></p></li>
+<li>If decisions are based on the geographical region, individuals’ addresses can be dropped to reduce the amount of data.</li>
+</ul>
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th><del><code>Address</code></del></th>
+<th><code>Country</code></th>
+<th><code>Sales</code></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Via dell’Università 50</td>
+<td>Italy</td>
+<td>1000</td>
+</tr>
+<tr class="even">
+<td>…</td>
+<td>…</td>
+<td>…</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>To learn how sales are characterized by store <code>Type</code> you do not need to consider the <code>StoreId</code></li>
 </ul>
 <table class="caption-top">
 <thead>
 <tr class="header">
 <th><del><code>StoreId</code></del></th>
-<th><code>type</code></th>
-<th><code>sales</code></th>
+<th><code>Type</code></th>
+<th><code>Sales</code></th>
 </tr>
 </thead>
 <tbody>
@@ -243,6 +270,32 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 </tbody>
 </table>
 </blockquote>
+</section>
+
+<section id="select-data-1" class="title-slide slide level1 center">
+<h1>Select Data</h1>
+<p><a href="https://www.kaggle.com/datasets/patrickzel/flight-delay-and-cancellation-dataset-2019-2023">Flight delays dataset</a> contains information about flights in the United States.</p>
+<ul>
+<li>Task predict flight delays (<code>ARR_DELAY</code>: Arrival delay) based on the following (31) features</li>
+<li>Features
+<ol type="1">
+<li><code>FL_DATE</code>: Date of the flight.</li>
+<li><code>AIRLINE</code>: Name of the airline.</li>
+<li><code>AIRLINE_DOT</code>: DOT identifier for the airline.</li>
+<li><code>AIRLINE_CODE</code>: Code assigned to the airline.</li>
+<li><code>DOT_CODE</code>: DOT identifier.</li>
+<li><code>FL_NUMBER</code>: Flight number.</li>
+<li><code>ORIGIN</code>: Origin airport code.</li>
+<li><code>ORIGIN_CITY</code>: City of origin airport.</li>
+<li><code>DEST</code>: Destination airport code.</li>
+<li><code>DEST_CITY</code>: City of destination airport.</li>
+<li><code>DEP_TIME</code>: Actual departure time.</li>
+<li><code>DEP_DELAY</code>: Departure delay.</li>
+<li><code>ARR_TIME</code>: Actual arrival time.</li>
+<li>…</li>
+</ol></li>
+</ul>
+<p>What features would you select/drop to predict flight delays?</p>
 </section>
 
 <section id="what-personal-data-is-considered-sensitive" class="title-slide slide level1 center">
@@ -660,18 +713,16 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 </table>
 </section>
 
-<section id="case-study-compount-interest" class="title-slide slide level1 center" data-background-color="#121011">
+<section id="case-study-compount-interest" class="title-slide slide level1 center">
 <h1>Case Study: Compount Interest</h1>
+<blockquote>
 <div class="columns">
 <div class="column" style="width:70%;">
-<blockquote>
 <p>Our portfolio has an initial value <span class="math inline">\(V_0 = 1000€\)</span> and each has a return of X%</p>
 <p>The first year, the portfolio increases its value to <span class="math inline">\(V_1=1000€ + (1000€ \times X\%) = 1050€\)</span></p>
 <p>The second year, the portfolio increases its value to <span class="math inline">\(V_2 = V_1 + (V_1 \times X\%) = 1102.50€\)</span></p>
 <p>… and so on.</p>
-</blockquote>
 </div><div class="column" style="width:29%;">
-<blockquote>
 <table class="caption-top">
 <thead>
 <tr class="header">
@@ -702,9 +753,9 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 </tr>
 </tbody>
 </table>
-</blockquote>
 </div></div>
-<p>This is not a linear increase but a geometric sequence, the final value is <span class="math inline">\(\text{Initial value} \times (1 + \frac{r}{n})^\frac{t}{n}\)</span></p>
+</blockquote>
+<p>This is not a linear increase but a geometric sequence: <span class="math inline">\(\text{Final value} = \text{Initial value} \times (1 + \frac{r}{n})^\frac{t}{n}\)</span></p>
 <ul>
 <li><span class="math inline">\(r\)</span> is the nominal annual interest rate</li>
 <li><span class="math inline">\(n\)</span> is the compounding frequency (1: annually, 12: monthly, 52: weekly, 365: daily)</li>
@@ -718,7 +769,7 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <p>In this case the return is equal every year, so the average interest is <span class="math inline">\(5\%\)</span>.</p>
 </section>
 
-<section id="case-study-compount-interest-1" class="title-slide slide level1 center" data-background-color="#121011">
+<section id="case-study-compount-interest-1" class="title-slide slide level1 center">
 <h1>Case Study: Compount Interest</h1>
 <p>Let us assume now that the returns changes over year.</p>
 <blockquote>
@@ -767,7 +818,7 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <p>What is the average return?</p>
 </section>
 
-<section id="case-study-compount-interest-2" class="title-slide slide level1 center" data-background-color="#121011">
+<section id="case-study-compount-interest-2" class="title-slide slide level1 center">
 <h1>Case Study: Compount Interest</h1>
 <div class="columns">
 <div class="column" style="width:50%;">
@@ -863,168 +914,16 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 </div></div>
 </section>
 
-<section id="case-study-compount-interest-3" class="title-slide slide level1 center" data-background-color="#121011">
-<h1>Case Study: Compount Interest</h1>
+<section id="end-of-the-case-study" class="title-slide slide level1 center" data-background-color="#121011">
+<h1>End of the Case Study</h1>
 <p><strong>Take away</strong>: pay attention to the semantics of the features!</p>
 </section>
-
-<section id="what-imputation-problems-can-arise-with-skewed-distributions" class="title-slide slide level1 center">
-<h1>What imputation problems can arise with skewed distributions?</h1>
-
-<img data-src="https://user-images.githubusercontent.com/18005592/232750742-aacbf6b3-8a7d-49c6-b253-5ab8e7985104.png" class="r-stretch quarto-figure-center"><p class="caption">Skewed vs normal distributions</p></section>
-
-<section id="effects-of-imputation-on-skewed-distributions" class="title-slide slide level1 center">
-<h1>Effects of imputation on skewed distributions?</h1>
-<p><em>Long Tail</em> refers to the concept where a large number of niche products collectively generate more sales than a few bestsellers.</p>
-<ul>
-<li>Ecommerces such as Amazon stock a vast array of products that traditional retailers wouldn’t carry due to space constraints.</li>
-<li>The Long Tail phenomenon is directly related to skewed distributions, specifically a type of right-skewed distribution</li>
-</ul>
-
-<img data-src="./img/datapreprocessing/imputation_100.svg" class="r-stretch"></section>
-
-<section id="normal-vs-skewed-distributions-what-happens-to-mean-values" class="title-slide slide level1 center">
-<h1>Normal vs Skewed distributions: what happens to mean values?</h1>
-<div class="columns">
-<div class="column" style="width:50%;">
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="./img/datapreprocessing/height_distribution.svg"></p>
-<figcaption>Gaussian distribution</figcaption>
-</figure>
-</div>
-</div><div class="column" style="width:50%;">
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="./img/datapreprocessing/market_cap_distribution.svg"></p>
-<figcaption>Skewed distribution</figcaption>
-</figure>
-</div>
-</div></div>
-</section>
-
-<section id="skewed-distributions" class="title-slide slide level1 center">
-<h1>Skewed distributions</h1>
-<div class="columns">
-<div class="column" style="width:50%;">
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="./img/datapreprocessing/height_distribution.svg"></p>
-<figcaption>Gaussian distribution</figcaption>
-</figure>
-</div>
-<pre><code>Mean   = 173 cm
-Median = 173 cm</code></pre>
-</div><div class="column" style="width:50%;">
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="./img/datapreprocessing/market_cap_distribution.svg"></p>
-<figcaption>Skewed distribution</figcaption>
-</figure>
-</div>
-<pre><code>Mean:   103158262914
-Median:  36666524821</code></pre>
-</div></div>
-</section>
-
-<section id="case-study-stocks" class="title-slide slide level1 center" data-background-color="#121011">
-<h1>Case Study: Stocks</h1>
-<p>The <a href="https://en.wikipedia.org/wiki/S%26P_500">Standard and Poor’s 500</a> index tracks the stock performance of <a href="https://en.wikipedia.org/wiki/List_of_S%26P_500_companies">500 of the largest companies</a> in the United States.</p>
-
-<img data-src="./img/datapreprocessing/market_cap_topn.svg" class="r-stretch quarto-figure-center"><p class="caption">Top 25 company from the S&amp;P 500 index</p><ul>
-<li>Companies emit stocks that are buyed by investors, the number of stocks is called <em>shares outstanding</em>
-<ul>
-<li><em>Shares outstanding</em> are shares of a corporation that have been purchased by investors and are held by them</li>
-</ul></li>
-<li>Stocks are daily traded in stock market
-<ul>
-<li><em>Volume</em> is the amount of shares that are daily traded</li>
-<li><em>Close</em> and <em>Open</em> are closing/opening prices of daily trades</li>
-</ul></li>
-</ul>
-<p>How would you define the <em>weight</em> of a company in the index?</p>
-</section>
-
-<section id="case-study-stocks-1" class="title-slide slide level1 center" data-background-color="#121011">
-<h1>Case Study: Stocks</h1>
-<p>As a semplification, given a company <span class="math inline">\(C\)</span> and a generic index <span class="math inline">\(I\)</span></p>
-<div class="columns">
-<div class="column" style="width:49%;">
-<p><em>Market cap weight</em> (e.g., <a href="https://en.wikipedia.org/wiki/S%26P_500">S&amp;P 500</a>)</p>
-<ul>
-<li><span class="math inline">\(\text{MarketCap(C)} = \text{SharesOut(C)} \times \text{StockPrice(C)}\)</span></li>
-<li><span class="math inline">\(\text{MarketCapWeight(C)} = \frac{\text{MarketCap(C)}}{\sum_{C' \in I} \text{MarketCap(C')}}\)</span></li>
-</ul>
-<p><em>Price weight index</em> (e.g., <a href="https://en.wikipedia.org/wiki/Dow_Jones_Industrial_Average">Dow Jones Industrial Average</a>)</p>
-<ul>
-<li><span class="math inline">\(\text{PriceWeight(C)} = \frac{\text{StockPrice(C)}}{\sum_{C' \in I} \text{StockPrice(C')}}\)</span></li>
-</ul>
-</div><div class="column" style="width:50%;">
-<blockquote>
-<p>Given a few companies such as</p>
-<table class="caption-top">
-<thead>
-<tr class="header">
-<th style="text-align: left;">Ticker</th>
-<th style="text-align: right;">Close</th>
-<th style="text-align: right;">Shares</th>
-<th style="text-align: right;">PWI (%)</th>
-<th style="text-align: right;">Market Cap (%)</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: left;">AMZN</td>
-<td style="text-align: right;">222.13</td>
-<td style="text-align: right;">1.0515e+10</td>
-<td style="text-align: right;">3.20253</td>
-<td style="text-align: right;">4.53745</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">AAPL</td>
-<td style="text-align: right;">242.7</td>
-<td style="text-align: right;">1.51158e+10</td>
-<td style="text-align: right;">3.4991</td>
-<td style="text-align: right;">7.12683</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">GS</td>
-<td style="text-align: right;">580.02</td>
-<td style="text-align: right;">3.1391e+08</td>
-<td style="text-align: right;">8.36237</td>
-<td style="text-align: right;">0.353707</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">MSFT</td>
-<td style="text-align: right;">424.56</td>
-<td style="text-align: right;">7.43488e+09</td>
-<td style="text-align: right;">6.12105</td>
-<td style="text-align: right;">6.13209</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">NVDA</td>
-<td style="text-align: right;">140.11</td>
-<td style="text-align: right;">2.449e+10</td>
-<td style="text-align: right;">2.02002</td>
-<td style="text-align: right;">6.66582</td>
-</tr>
-</tbody>
-</table>
-<p>What is their impact on DJIA and S&amp;P?</p>
-</blockquote>
-</div></div>
-</section>
-
-<section id="case-study-stocks-2" class="title-slide slide level1 center" data-background-color="#121011">
-<h1>Case Study: Stocks</h1>
-
-<img data-src="./img/datapreprocessing/price_weight_distribution.svg" class="r-stretch quarto-figure-center"><p class="caption">Price vs market cap weighted</p></section>
 
 <section id="problem-how-do-we-handle-anomalies" class="title-slide slide level1 center">
 <h1><img src="./img/cs.svg" class="title-icon"> <strong>Problem</strong>: how do we handle anomalies?</h1>
 <blockquote>
 <p>A customer who typically buys groceries worth $50 suddenly places an order for $5,000 in electronics. Is it a fraud?</p>
-<p>A system that usually receives 100-200 requests per second suddenly sees 10,000 requests per second. is it a DDoS attack?</p>
+<p>A system that usually receives 100-200 requests per second suddenly sees 10,000 requests per second. Is it a DDoS attack?</p>
 <p>A bottle-filling machine fills 500ml of liquid, but occasionally, some bottles contain 450ml or 550ml. Is it a defect?</p>
 <p>A credit card transaction of $10,000 when the usual spending is around $50-$100. Is it a fraud?</p>
 </blockquote>
@@ -1034,8 +933,7 @@ Median:  36666524821</code></pre>
 <h1>Outlier removal</h1>
 <p><strong>Outlier removal</strong> is the process of eliminating data points that deviate significantly from the rest of the dataset</p>
 <ul>
-<li>An <em>outlier</em> is a data point that differs significantly from other observations</li>
-<li>Outliers can occur by chance or measurement error, or that the population has a heavy-tailed distribution</li>
+<li>An <em>outlier</em> is a data point that differs significantly from other observations (e.g., a measurement error or heavy-tailed distribution)</li>
 </ul>
 <div class="columns">
 <div class="column" style="width:49%;">
@@ -1062,7 +960,8 @@ Median:  36666524821</code></pre>
 <p>For example, if <span class="math inline">\(Q_{1}\)</span> and <span class="math inline">\(Q_{3}\)</span> are the lower and upper quartiles respectively, then one could define an outlier to be any observation outside the range:</p>
 <ul>
 <li><span class="math inline">\([Q_{1}-k(Q_{3}-Q_{1}),Q_{3}+k(Q_{3}-Q_{1})]\)</span> for some nonnegative <span class="math inline">\(k\)</span></li>
-<li>John Tukey proposed <span class="math inline">\(k=1.5\)</span> to indicate an “outlier” <span class="math inline">\(k=3\)</span> to indicate data that is “far out”</li>
+<li><span class="math inline">\(k=1.5\)</span> to indicate an “outlier”</li>
+<li><span class="math inline">\(k=3\)</span> to indicate data that is “far out”</li>
 </ul>
 </div><div class="column" style="width:40%;">
 <p><img data-src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/Boxplot_vs_PDF.svg/800px-Boxplot_vs_PDF.svg.png"></p>
@@ -1074,7 +973,7 @@ Median:  36666524821</code></pre>
 <p><strong>Isolation Forest</strong> <span class="citation" data-cites="liu2008isolation">(<a href="#/references" role="doc-biblioref" onclick="">Liu, Ting, and Zhou 2008</a>)</span> is an algorithm for data anomaly detection using binary trees</p>
 <ul>
 <li>Because anomalies are few and different from other data, they can be isolated using few partitions.</li>
-<li>Unlike decision tree algorithms, it uses only path length to output an anomaly score, and does not use leaf node statistics of class distribution or target value.</li>
+<li>Unlike decision tree algorithms, it uses only path length to output an anomaly score.</li>
 </ul>
 <div class="columns">
 <div class="column" style="width:49%;">
@@ -1128,23 +1027,23 @@ Median:  36666524821</code></pre>
 <p>Such extreme events (outliers), collectively play vastly larger roles than regular occurrences.</p>
 </section>
 
-<section id="case-study-the-black-swan-theory-1" class="title-slide slide level1 center" data-background-color="#121011">
+<section id="case-study-the-black-swan-theory-1" class="title-slide slide level1 center">
 <h1>Case Study: The Black Swan Theory</h1>
 <p><a href="https://en.wikipedia.org/wiki/Long-Term_Capital_Management">Long-Term Capital Management</a> was a <em>highly leveraged</em> hedge fund.</p>
 <ul>
 <li>Members of LTCM’s board of directors included Myron Scholes and Robert C. Merton, who three years later in 1997 shared the Nobel Prize in Economics</li>
-<li>LTCM was initially successful, with annualized returns of around
-<ul>
-<li>21% in its first year,</li>
-<li>43% in its second year,</li>
-<li>and 41% in its third year.</li>
-</ul></li>
-<li>However, in 1998 it lost $4.6 billion <em>in less than four months due to an unlikely combination</em> of high leverage and exposure to the 1997 Asian financial crisis and 1998 Russian financial crisis.</li>
+<li>LTCM was initially successful, with annualized returns of around 21% in its first year, 43% in its second year, and 41% in its third year.</li>
+<li>In 1998, <strong>it lost $4.6 billion</strong> <em>in less than four months due to an unlikely combination</em> of (1997) Asian and (1998) Russian financial crises.</li>
 </ul>
 <div class="columns">
 <div class="column" style="width:60%;">
 <blockquote>
-<p><span class="citation" data-cites="jorion2000risk">(<a href="#/references" role="doc-biblioref" onclick="">Jorion 2000</a>)</span> Even worse, on 21 August, the portfolio lost $550 million. By 31 August, the portfolio had lost $1,710 million in 1 month only. Using the presumed $45 million daily (or $206 million monthly) standard deviation, this translates into a <em>8.3 standard deviation event</em>. Assuming a normal distribution, <em>such an event would occur once every 800 trillion years, or 40,000 times the age of the universe</em>. Surely this assumption was wrong.</p>
+<p><span class="citation" data-cites="jorion2000risk">(<a href="#/references" role="doc-biblioref" onclick="">Jorion 2000</a>)</span> […] on 21 August, the portfolio lost $550 million. By 31 August, the portfolio had lost $1,710 million in 1 month only.</p>
+<ul>
+<li>Using the presumed $45 million daily (or $206 million monthly) standard deviation, this translates into a <em>8.3 standard deviation event</em>.</li>
+<li>Assuming a normal distribution, <em>such an event would occur once every 800 trillion years, or 40,000 times the age of the universe</em>.</li>
+</ul>
+<p>Surely this assumption was wrong.</p>
 </blockquote>
 </div><div class="column" style="width:40%;">
 <div class="quarto-figure quarto-figure-center">
@@ -1154,6 +1053,11 @@ Median:  36666524821</code></pre>
 </figure>
 </div>
 </div></div>
+</section>
+
+<section id="end-of-the-case-study-1" class="title-slide slide level1 center" data-background-color="#121011">
+<h1>End of the case study</h1>
+
 </section>
 
 <section id="problem-is-the-dataset-ready-for-machine-learning" class="title-slide slide level1 center">
@@ -1167,11 +1071,12 @@ Median:  36666524821</code></pre>
 
 <section id="problem-is-the-dataset-ready-for-machine-learning-1" class="title-slide slide level1 center">
 <h1><img src="./img/cs.svg" class="title-icon"> <strong>Problem</strong>: is the dataset ready for machine learning?</h1>
-<p><strong>Feature engineering</strong>, in data science, refers to manipulation — addition, deletion, combination, mutation — of your data set to improve machine learning model training.</p>
+<p><strong>Feature engineering</strong> refers to manipulation (addition, deletion, combination, mutation) of your data set to improve machine learning model training.</p>
 <p><em>Derived attributes</em> should be added if they ease the modeling algorithm</p>
 <blockquote>
 <p><code>Area</code> = <code>Length</code> x <code>Width</code>.</p>
 <p><code>Loyalty_Score</code> = <code>Total_Purchases</code> x 0.4 + <code>Avg_Order_Value</code> x 0.3 + <code>Frequency</code> x 0.3.</p>
+<p><code>Ocean_Proximity</code> = distance((<code>Ocean_Latitude</code>, <code>Ocean_Longitude</code>), (<code>District_Latitude</code>, <code>District_Longitude</code>)).</p>
 </blockquote>
 <p><em>Binning</em> may be necessary to <em>transform ranges to symbolic fields</em></p>
 <div class="columns">
@@ -1274,16 +1179,15 @@ Median:  36666524821</code></pre>
 <li>These numbers are, in general, assigned arbitrarily.</li>
 <li>Ordinal encoding is a preferred option when the categorical variable has an inherent order.</li>
 </ul>
-<blockquote>
-<p>Examples include the variable <code>size</code>, with values “small”, “medium”, and “large”.</p>
 <div class="columns">
 <div class="column" style="width:49%;">
+<blockquote>
 <p>Before encoding</p>
 <table class="caption-top">
 <thead>
 <tr class="header">
 <th><code>ProductId</code></th>
-<th><code>size</code></th>
+<th><code>Size</code></th>
 </tr>
 </thead>
 <tbody>
@@ -1305,14 +1209,16 @@ Median:  36666524821</code></pre>
 </tr>
 </tbody>
 </table>
+</blockquote>
 </div><div class="column" style="width:49%;">
+<blockquote>
 <p>After encoding (small = 0, medium = 1, large = 2)</p>
 <table class="caption-top">
 <thead>
 <tr class="header">
 <th><code>ProductId</code></th>
-<th><code>size</code></th>
-<th><code>size_enc</code></th>
+<th><code>Size</code></th>
+<th><code>Size_Enc</code></th>
 </tr>
 </thead>
 <tbody>
@@ -1338,8 +1244,8 @@ Median:  36666524821</code></pre>
 </tr>
 </tbody>
 </table>
-</div></div>
 </blockquote>
+</div></div>
 </section>
 
 <section id="encoding-likert-scale" class="title-slide slide level1 center">
@@ -1373,16 +1279,15 @@ Median:  36666524821</code></pre>
 <li>The binary variable takes the value 1 if the observation shows the category, or alternatively, 0.</li>
 <li>One hot encoding treats each category independently.</li>
 </ul>
-<blockquote>
-<p>Examples include the variable <code>color</code>, with values “red”, “green”, and “blue”.</p>
 <div class="columns">
 <div class="column" style="width:49%;">
+<blockquote>
 <p>Before encoding</p>
 <table class="caption-top">
 <thead>
 <tr class="header">
 <th><code>ProductId</code></th>
-<th><code>color</code></th>
+<th><code>Color</code></th>
 </tr>
 </thead>
 <tbody>
@@ -1404,13 +1309,15 @@ Median:  36666524821</code></pre>
 </tr>
 </tbody>
 </table>
+</blockquote>
 </div><div class="column" style="width:49%;">
 <p>After encoding</p>
+<blockquote>
 <table class="caption-top">
 <thead>
 <tr class="header">
 <th><code>ProductId</code></th>
-<th><code>color</code></th>
+<th><code>Color</code></th>
 <th><code>red</code></th>
 <th><code>green</code></th>
 <th><code>blue</code></th>
@@ -1447,8 +1354,8 @@ Median:  36666524821</code></pre>
 </tr>
 </tbody>
 </table>
-</div></div>
 </blockquote>
+</div></div>
 <p>OHE increases the dimensionality of the dataset and it may not be suitable for encoding high cardinality features.</p>
 <ul>
 <li>To prevent a massive increase of the feature space, we can one-hot encode only the most frequent categories in the variable.</li>
@@ -1526,8 +1433,13 @@ Median:  36666524821</code></pre>
 </blockquote>
 </section>
 
-<section id="section-3" class="title-slide slide level1 center">
-<h1></h1>
+<section id="feature-scaling" class="title-slide slide level1 center">
+<h1>Feature scaling</h1>
+<p><img src="./img/datapreprocessing/clustering.svg" class="center-img" style="!max-height: 500px;"></p>
+</section>
+
+<section id="feature-scaling-1" class="title-slide slide level1 center">
+<h1>Feature scaling</h1>
 <p>Original Iris dataset</p>
 <div class="columns">
 <div class="column" style="width:24%;">
@@ -1550,6 +1462,76 @@ Median:  36666524821</code></pre>
 </div><div class="column" style="width:24%;">
 <p><img data-src="./img/datapreprocessing/normalized-robustscaler-distortion-True(4).svg"></p>
 </div></div>
+</section>
+
+<section id="what-problems-can-arise-with-skewed-distributions" class="title-slide slide level1 center">
+<h1>What problems can arise with skewed distributions?</h1>
+
+<img data-src="https://user-images.githubusercontent.com/18005592/232750742-aacbf6b3-8a7d-49c6-b253-5ab8e7985104.png" class="r-stretch quarto-figure-center"><p class="caption">Skewed vs normal distributions</p></section>
+
+<section id="effects-of-imputation-on-skewed-distributions" class="title-slide slide level1 center">
+<h1>Effects of imputation on skewed distributions?</h1>
+<p><em>Long Tail</em> refers to the concept where a large number of niche products collectively generate more sales than a few bestsellers.</p>
+<ul>
+<li>Ecommerces such as Amazon stock a vast array of products that traditional retailers wouldn’t carry due to space constraints.</li>
+<li>The Long Tail phenomenon is directly related to skewed distributions, specifically a type of right-skewed distribution</li>
+</ul>
+
+<img data-src="./img/datapreprocessing/imputation_100.svg" class="r-stretch"></section>
+
+<section id="skewed-distributions-what-happens-to-mean-values" class="title-slide slide level1 center">
+<h1>Skewed distributions: what happens to mean values?</h1>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="./img/datapreprocessing/height_distribution.svg"></p>
+<figcaption>Gaussian distribution</figcaption>
+</figure>
+</div>
+</div><div class="column" style="width:50%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="./img/datapreprocessing/market_cap_distribution.svg"></p>
+<figcaption>Skewed distribution</figcaption>
+</figure>
+</div>
+</div></div>
+</section>
+
+<section id="skewed-distributions-what-happens-to-mean-values-1" class="title-slide slide level1 center">
+<h1>Skewed distributions: what happens to mean values?</h1>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="./img/datapreprocessing/height_distribution.svg"></p>
+<figcaption>Gaussian distribution</figcaption>
+</figure>
+</div>
+<pre><code>Mean   = 173 cm
+Median = 173 cm</code></pre>
+</div><div class="column" style="width:50%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="./img/datapreprocessing/market_cap_distribution.svg"></p>
+<figcaption>Skewed distribution</figcaption>
+</figure>
+</div>
+<pre><code>Mean:   103158262914
+Median:  36666524821</code></pre>
+</div></div>
+</section>
+
+<section id="skewed-distributions" class="title-slide slide level1 center">
+<h1>Skewed distributions</h1>
+<p>Skewed distributions can be transformed using mathematical functions such as the logarithm</p>
+<p><img src="./img/datapreprocessing/income_histograms.svg" class="center-img" style="!max-height: 500px;"></p>
+</section>
+
+<section id="skewed-distributions-1" class="title-slide slide level1 center">
+<h1>Skewed distributions</h1>
+<p><img src="./img/datapreprocessing/clustering_figures.svg" class="center-img" style="!max-height: 500px;"></p>
 </section>
 
 <section id="problem-if-the-dataset-is-too-detailednoisy-what-can-we-do" class="title-slide slide level1 center">
@@ -1726,13 +1708,13 @@ Median:  36666524821</code></pre>
 </ul>
 </section>
 
-<section id="section-4" class="title-slide slide level1 center">
+<section id="section-3" class="title-slide slide level1 center">
 <h1></h1>
 <p><img data-src="./img/datapreprocessing/imputation_100.svg"></p>
 <p><img data-src="./img/datapreprocessing/imputation_20.svg"></p>
 </section>
 
-<section id="section-5" class="title-slide slide level1 center">
+<section id="section-4" class="title-slide slide level1 center">
 <h1></h1>
 <p><img data-src="./img/datapreprocessing/imputation_20.svg"></p>
 <p><img data-src="./img/datapreprocessing/imputation_equi_frequency.svg"></p>
@@ -1754,7 +1736,7 @@ Median:  36666524821</code></pre>
 <li><code>Soundtrack Style</code></li>
 <li>… and many more (let’s assume 100+ features per movie).</li>
 </ol>
-<p>If movies had only 2 features (e.g., “Genre” and “IMDB Rating”), we could easily visualize clusters of similar movies.</p>
+<p>If movies had only 2 features (e.g., <code>Genre</code> and <code>IMDB Rating</code>), we could easily visualize clusters of similar movies.</p>
 <p>With 100+ features, the data points are spread out across a vast space.</p>
 <ul>
 <li>All points seem “far apart” from each other, making similarity calculations less reliable.</li>
@@ -2116,15 +2098,16 @@ Median:  36666524821</code></pre>
 </ul>
 <blockquote>
 <p>For instance, a retail chain has one table with information about each store’s general characteristics (e.g., floor space, type of mall), another table with summarized sales data (e.g., profit, percent change in sales from the previous year), and another table with information about the demographics of the surrounding area.</p>
-<p>These tables can be merged together into a new table with one record for each store. :::: {.columns}</p>
+<p>These tables can be merged together into a new table with one record for each store.</p>
 </blockquote>
+<div class="columns">
 <div class="column" style="width:30%;">
 <blockquote>
 <table class="caption-top">
 <thead>
 <tr class="header">
 <th><code>StoreId</code></th>
-<th><code>type</code></th>
+<th><code>Type</code></th>
 </tr>
 </thead>
 <tbody>
@@ -2151,7 +2134,7 @@ Median:  36666524821</code></pre>
 <thead>
 <tr class="header">
 <th><code>StoreId</code></th>
-<th><code>sales</code></th>
+<th><code>Sales</code></th>
 </tr>
 </thead>
 <tbody>
@@ -2178,8 +2161,8 @@ Median:  36666524821</code></pre>
 <thead>
 <tr class="header">
 <th><code>StoreId</code></th>
-<th><code>type</code></th>
-<th><code>sales</code></th>
+<th><code>Type</code></th>
+<th><code>Sales</code></th>
 </tr>
 </thead>
 <tbody>
@@ -2201,7 +2184,7 @@ Median:  36666524821</code></pre>
 </tbody>
 </table>
 </blockquote>
-</div><p>::::</p>
+</div></div>
 </section>
 
 <section id="data-integration" class="title-slide slide level1 center">

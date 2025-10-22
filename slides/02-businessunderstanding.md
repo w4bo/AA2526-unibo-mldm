@@ -12,12 +12,12 @@ subtitle: Business understanding
 
 The **business understanding** phase focuses on
 
-1. determine the *business objectives*
-2. assessing the *context of the analysis*
-3. determining and *translating objectives into data mining goals*
-4. producing the *project plan*
+1. Determining the *business objectives*
+2. Assessing the *context of the analysis*
+3. Determining and *translating objectives into data mining goals*
+4. Producing the *project plan*
 
-This is essential also to understand which data should later be analyzed and how
+It is essential to understand which data should later be analyzed and how
 
 # <img src="./img/cs.svg" class="title-icon" /> Business Understanding: Brown Spot {background-color="#121011"}
 
@@ -124,7 +124,7 @@ If the business goal cannot be effectively translated into a data mining goal, *
 
 > Success may be measured by reducing lost customers by 10% or by achieving a better understanding of the customer base
 >
-> Success should also be defined in these terms such as achieving a certain level of predictive accuracy
+> Success should also be defined in these terms, such as achieving a certain level of predictive accuracy
 
 # Produce a Project Plan
 
@@ -161,10 +161,10 @@ The [Standard and Poor's 500](https://en.wikipedia.org/wiki/S%26P_500) index tra
 
 ![Top 25 company from the S&P 500 index](./img/datapreprocessing/market_cap_topn.svg)
 
-- Companies emit stocks that are buyed by investors, the number of stocks is called *shares outstanding*
+- Companies issue stocks that are bought by investors; the number of stocks is called *shares outstanding*
     - *Shares outstanding* are shares of a corporation that have been purchased by investors and are held by them
-- Stocks are daily traded in stock market
-    - *Volume* is the amount of shares that are daily traded
+- Stocks are traded daily in the stock market
+    - *Volume* is the number of shares that are traded daily
     - *Close* and *Open* are closing/opening prices of daily trades
 
 How would you define the *weight* of a company in the index?

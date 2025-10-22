@@ -48,8 +48,8 @@ subtitle: Data Mining, Machine Learning, and CRISP-DM
 
 **Arrows**
 
-- indicate the most important and frequent dependencies between the phases
-- the outer circle symbolizes the cyclical nature of data mining itself
+- Indicate the most important and frequent dependencies between the phases
+- The outer circle symbolizes the cyclical nature of data mining itself
 - ... lessons learned during the data mining process trigger new, often more focused business questions
 
 :::
@@ -80,7 +80,7 @@ This course is orthogonal to:
 - A data scientist must understand the data and the domain before trying any model
 - Machine learning is not a simple copy and paste of code
     - *Code generation can be easily automated and outperform you*!
-    - The added value of a data scientist is the understanding of the problem and data
+    - The added value of a data scientist is the understanding of the problem and the data
 - Data mining/Machine learning is not a course on `scikit-learn`
 
 :::
@@ -147,6 +147,6 @@ Read:
 
 **Query Language** [@liu2009encyclopedia]
 
-> A specialized programming language (e.g. SQL) for searching and changing the contents of a database.
+> A specialized programming language (e.g., SQL) for searching and changing the contents of a database.
 
 {{< include _cs-automation.md >}}

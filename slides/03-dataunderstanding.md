@@ -8,7 +8,7 @@ subtitle: Data Understanding
 
 # Data understanding
 
-The **data understanding** phase of CRISP-DM involves taking a closer look at the data available for mining
+The **data understanding** phase of CRISP-DM involves taking a closer look at the data available for mining.
 
 - This step is critical in preventing problems during data preparation, which is typically the longest part of a project
 - The data understanding phase involves four steps, including:
@@ -41,9 +41,9 @@ The analyst then proceeds to
 **Bias**
 
 - Inclination or prejudice for or against one person or group, especially in a way considered to be unfair.
-    - "There was evidence of bias against foreign applicants"
+    - "There was evidence of bias against foreign applicants."
 - A systematic distortion of a statistical result due to a factor not allowed for in its derivation.
-    - "The search results are biased by the specific queries used"
+    - "The search results are biased by the specific queries used."
 
 :::{.fragment}
 During data collection and analysis, several **biases** can occur
@@ -127,7 +127,7 @@ The more data we have, the more analysis we can do (however, more data != smarte
     - When is it "right" to protect privacy?
     - When does it become a limit?
 
-Acquiring data is a time-consuming, investment, and knowledge-intensive process
+Acquiring data is a time-consuming, investment and knowledge-intensive process
 
 - How much data is *enough*?
 
@@ -135,13 +135,13 @@ Acquiring data is a time-consuming, investment, and knowledge-intensive process
 
 Rule of thumb: *one in ten/twenty* [@chowdhury2020variable]
 
-> There is no set rule as to the number of variables to include in a prediction model as it often depends on several factors. The ‘one in ten rule’, a rule that stipulates how many variables/parameters can be estimated from a data set, is quite popular in traditional clinical prediction modeling strategies (e.g., logistic regression and survival models). According to this rule, one variable can be considered in a model for every 10 events
+> There is no set rule as to the number of variables to include in a prediction model as it often depends on several factors. The ‘one in ten rule’, a rule that stipulates how many variables/parameters can be estimated from a data set, is quite popular in traditional clinical prediction modeling strategies (e.g., logistic regression and survival models). According to this rule, one variable can be considered in a model for every 10 events.
 
 # <img src="./img/cs.svg" class="title-icon" /> **Problem**: how can we collect data?
 
 # Acquisition of a new dataset
 
-Data collection is usually a costly process
+Data collection is usually a costly process.
 
 *Investment of time and money* for:
 
@@ -151,9 +151,9 @@ Data collection is usually a costly process
     - Unfortunately, we often notice them at the end of the process
 - *Acquire new hardware* for data collection and storage
 
-It is necessary to carefully consider whether it is appropriate to acquire a new dataset
+It is necessary to carefully consider whether it is appropriate to acquire a new dataset.
 
-- Considerations not only in engineering but also in management and economics aspects
+- Considerations not only in engineering but also in management and economic aspects
 - Future needs must be foreseen in advance
 
 # Common Problems in Data Collection
@@ -163,14 +163,14 @@ Sometimes companies have a lot of "old" data in their databases or information s
 - They don't know what to do with it
 - Data re-collection on existing data (since data must be clean or something similar)
 
-In many business processes it is unclear understanding:
+In many business processes, it is unclear:
 
 - Which data is possible to collect (also due to privacy issues)
 - Which data is (really) useful for the business
 
 # Public Datasets
 
-We can get data mainly in two ways
+We can get data mainly in two ways.
 
 By using *publicly available data* (datasets or databases)
 
@@ -180,9 +180,9 @@ By using *publicly available data* (datasets or databases)
 
 By *acquiring a new set of data*, but why?
 
-- It is not certain that public data well represent the problem we want to solve
+- It is not certain that public data well represents the problem we want to solve
 - We want to acquire specific data and thus generate specific expertise for the company (know-how)
-- We are forced to acquire data that due to their sensitive nature would not otherwise be available (privacy issues)
+- We are forced to acquire data that, due to their sensitive nature, would not otherwise be available (privacy issues)
 - The company we work for already has a data collection process that we can use
 
 # Public Datasets
@@ -191,7 +191,7 @@ Many universities publicly release their datasets:
 
 - There are no requirements related to profit or non-disclosure agreement (NDA)
 - It is the basis of the scientific method, in particular for the reproducibility of the results obtained
-- I release my data so that others can conduct my own experiments and verify my results
+- I release my data so that others can conduct my experiments and verify my results
 - Examples: [https://www.image-net.org/](https://www.image-net.org/)
 
 Some platforms make datasets available for competitions, such as [Kaggle](https://www.kaggle.com/datasets) and [others](https://medium.datadriveninvestor.com/kaggle-data-science-platform-alternatives-for-competitions-and-research-cbe051596e62)
@@ -204,7 +204,7 @@ The [Iris dataset](https://www.kaggle.com/datasets/uciml/iris) is public data th
 
 - It can also be found on the [UCI Machine Learning Repository](http://archive.ics.uci.edu/ml/).
 - It includes 3 iris species (Setosa, Virginica, and Versicolor) with 50 samples each
-- It characterizes flowers with some properties about each flower
+- It characterizes flowers with some properties of each flower
     1. `SepalLengthCm`
     1. `SepalWidthCm`
     1. `PetalLengthCm`
@@ -229,7 +229,7 @@ The specific annotation is usually called a "label" and is the (semantic) conten
   - Pedestrian Localization → data: images, label: position of the pedestrian (x, y, w, h)
   - Audio classification numbers → data: audio sequences, label: number ('five')
 
-Data collected without correct and timely annotation is often useless
+Data collected without correct and timely annotation is often useless.
 
 - However, it is also possible to "extract knowledge" from un-annotated data through, for instance, clustering
 
@@ -266,14 +266,14 @@ Here’s a more concise version of your points:
 We define different types of learning depending on data annotation:
 
 - *Annotated data* → Supervised Learning
-  - One of the most studied types that allows to obtain the best results
+  - One of the most studied types that allows for obtaining the best results
 
 - *Not annotated data* → Unsupervised Learning
-  - Results that can be obtained are usually worse than the previous case
+  - The results that can be obtained are usually worse than the previous case
 
 - *Partially annotated data* → Semi-Supervised Learning
 
-Specific algorithms correspond to each of these areas
+Specific algorithms correspond to each of these areas.
 
 - Best performances are usually obtained with supervised trained algorithms
 - We will mainly work on fully annotated data → Supervised Learning
@@ -299,7 +299,7 @@ The last aspect to be defined relating to data annotation: **do we know all anno
 
 *Open Set*: the patterns to be classified can belong to none of the known classes.
 
-- More realistic condition, but more challenging
+- More realistic conditions, but more challenging
 - Example: classify all fruits into {pears, bananas}
 
 Two possible solutions to the open set problem:
@@ -307,7 +307,7 @@ Two possible solutions to the open set problem:
 - An additional fictitious class is added to the classes ("the rest of the world", "unknown")
   - The so-called "negative examples" are added to the training set
 - You allow the system not to assign the pattern
-  - A threshold is defined and the pattern is assigned to the most likely class only when the probability is higher than the threshold
+  - A threshold is defined, and the pattern is assigned to the most likely class only when the probability is higher than the threshold
 
 # <img src="./img/cs.svg" class="title-icon" /> **Problem**: now that we have the data, what do we do?
 
@@ -343,17 +343,17 @@ Plain Iris dataset
 
 Example of profiling the schema of the data in Iris
 
->     RangeIndex: 150 entries, 0 to 149
->     Data columns (total 5 columns):
->     #   Column             Non-Null Count  Dtype 
->     --- ------             --------------  ----- 
->     0   sepal length (cm)  150 non-null    float64
->     1   sepal width (cm)   150 non-null    float64
->     2   petal length (cm)  150 non-null    float64
->     3   petal width (cm)   150 non-null    float64
->     4   species            150 non-null    object
->     dtypes: float64(4), object(1)
->     memory usage: 6.0+ KB
+> RangeIndex: 150 entries, 0 to 149
+> Data columns (total 5 columns):
+> #   Column             Non-Null Count  Dtype 
+> --- ------             --------------  ----- 
+> 0   sepal length (cm)  150 non-null    float64
+> 1   sepal width (cm)   150 non-null    float64
+> 2   petal length (cm)  150 non-null    float64
+> 3   petal width (cm)   150 non-null    float64
+> 4   species            150 non-null    object
+> dtypes: float64(4), object(1)
+> memory usage: 6.0+ KB
 
 # Iris
 
@@ -375,7 +375,7 @@ Example of profiling the distribution of the data in Iris
 :::: {.columns}
 ::: {.column width="50%"}
 
-In descriptive statistics, a **box plot** shows graphically the locality, spread, and skewness groups of numerical data
+In descriptive statistics, a **box plot** shows graphically the locality, spread, and skewness of numerical data
 
 A boxplot is a standardized way of displaying the dataset based on the five-number summary:
 
@@ -410,7 +410,7 @@ Graphical elements
 This task tackles the data mining questions, which can be addressed using querying, visualization, and reporting.
 
 - Create a data exploration report that outlines the first findings, or an initial hypothesis
-- For instance, query the data to discover the which features are correlated with the target of the analysis
+- For instance, query the data to discover which features are correlated with the target of the analysis
 
 # Iris
 

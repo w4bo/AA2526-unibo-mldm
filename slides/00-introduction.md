@@ -59,7 +59,7 @@ Questions on **all (theoretical and practical) aspects** of the course
 No scheduled dates, just **book when you are ready**
 
 - *How do you know if you are prepared*?
-    - Open random slides and check the titles, can you expose them and make a self-contained speech?
+    - Open random slides and check the titles. Can you expose them and make a self-contained speech?
 - At least one week in advance, use the [Booking](https://outlook.office365.com/owa/calendar/DTMMachineLearningModule@live.unibo.it/bookings/s/VXKOGV3sS02dofzMZtOpHQ2) page
 
 According to the University's regulation
@@ -111,16 +111,16 @@ Once the project is completed:
         2. Proposed Method (~1.5 pages; what did you do and how)
         3. Results (~1 page; results and insights)
         4. Conclusions (~0.5 pages; summary)
-- Upload the paper, assignment, and presentation into a Github repository
+- Upload the paper, assignment, and presentation into a GitHub repository
     - Presentation must be 10-minute long (no more than 10/12 slides)
     - The assignment must be executable on Google Colab without errors
-- Share (with me) the Github repository
+- Share (with me) the GitHub repository
 
 **When both members have studied and all the material is ready, both members must book the exam on the same day**
 
 # Teaching material
 
-You will find all you need on Virtuale
+You will find all you need on Virtuale.
 
 - Slides and Python notebooks to be opened on Google Colab
 
@@ -141,11 +141,11 @@ Rule of thumb
 :::: {.columns}
 ::: {.column width="60%"}
 
-Slides and notes are sufficient to prepare for the final exam
+Slides and notes are sufficient to prepare for the final exam.
 
-- You can find them on Virtuale platform ([https://virtuale.unibo.it/](https://virtuale.unibo.it/))
+- You can find them on the Virtuale platform ([https://virtuale.unibo.it/](https://virtuale.unibo.it/))
 
-However, I suggest you to read the book:
+However, I suggest you read the book:
 
 - *Title*: Hands-on Machine Learning with Scikit-Learn, Keras & TensorFlow
 - *Author*: Aurélien Géron
@@ -165,7 +165,7 @@ However, I suggest you to read the book:
 
 # Office hours
 
-Lectures start/end 10 minutes later/earlier than the time stated in the teaching calendar
+Lectures start/end 10 minutes later/earlier than the time stated in the teaching calendar.
 
 - Please, **arrive on time** to avoid interruptions
 
@@ -174,7 +174,7 @@ Office hours:
 - *Short questions*: before/after each lecture
 - *Longer questions*: send an email to book an appointment
 
-If you need help for coding and labs, *you can ask me and the designed tutor*
+If you need help with coding and labs, *you can ask me and the designated tutor*
 
 - Remember, "I do not know how to code" is not a valid excuse!
 

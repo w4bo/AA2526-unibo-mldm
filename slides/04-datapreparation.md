@@ -1367,9 +1367,9 @@ More an art than a science
 
 - ... At least for now
 
-# **Final considerations**
+# Final considerations
 
-# Overlapping with business intelligence and data warehousing
+# Overlapping with Business Intelligence and Data Warehousing
 
 *ETL (Extract, Transform, Load)* is one of the most widely used data integration techniques in data warehousing.
 
@@ -1379,20 +1379,10 @@ More an art than a science
 
 *ELT (Extract, Load, Transform)* loads data into a storage system (like a data lake) and then transforms within the storage system.
 
-# Overlapping with big data and cloud platforms
+# Overlapping with Big Data and Cloud Platforms
 
 - Data *profiling* to get metadata summarizing our dataset
 - Data *provenance* to track all the transformations that we apply to our dataset
-
-# Towards the exam: examples of questions
-
-These are *some* of the questions of the exam.
-
-1. Explain the importance of data transformation in the preprocessing pipeline.
-2. Discuss the challenges of data preprocessing in real-world machine learning projects. How can you ensure the quality of your preprocessed data?
-3. How does improper handling of missing data impact machine learning models? Discuss different imputation methods and their effects on model performance.
-4. Explain the role of feature engineering in improving the performance of machine learning algorithms. Give examples of techniques used in feature engineering.
-5. Compare and contrast different methods of handling categorical data, such as label encoding and one-hot encoding. What are the pros and cons of each?
 
 # Wooclap
 

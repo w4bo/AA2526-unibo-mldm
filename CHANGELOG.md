@@ -1,3 +1,17 @@
+## [1.0.7](https://github.com/w4bo/AA2526-unibo-mldm/compare/1.0.6...1.0.7) (2025-11-05)
+
+### Bug Fixes
+
+* bbs slides ([f49ed2e](https://github.com/w4bo/AA2526-unibo-mldm/commit/f49ed2e00cbbaba4ff8167775b124876640c5b25))
+* bu ([372c3c0](https://github.com/w4bo/AA2526-unibo-mldm/commit/372c3c0eaee71774c2c68d14e6eaed00052893d5))
+* du ([9d4904d](https://github.com/w4bo/AA2526-unibo-mldm/commit/9d4904dde9dc1d1816c9ed2f16b58c8c7dd8c4cd))
+* fix typos ([54a4069](https://github.com/w4bo/AA2526-unibo-mldm/commit/54a40691a38436add318a1d704799ca74049b333))
+* slide order ([5b914de](https://github.com/w4bo/AA2526-unibo-mldm/commit/5b914de692fb9e63885f1bbe3e9a555d37134e77))
+* typos ([8273a0b](https://github.com/w4bo/AA2526-unibo-mldm/commit/8273a0b599d496fca8a841da1d00a826882f97c6))
+* update slides ([c123174](https://github.com/w4bo/AA2526-unibo-mldm/commit/c123174baac987325f1544234549cdf6372b7ff2))
+* update slides ([1102019](https://github.com/w4bo/AA2526-unibo-mldm/commit/110201951fba068ecf18709bae3bef3a2fc2c61d))
+* working on the slides ([6eaff20](https://github.com/w4bo/AA2526-unibo-mldm/commit/6eaff20cabdfc93258dcd90e791d905f27e9d661))
+
 ## [1.0.6](https://github.com/w4bo/AA2526-unibo-mldm/compare/1.0.5...1.0.6) (2025-10-15)
 
 ### Bug Fixes

@@ -8,7 +8,7 @@ subtitle: "Modeling: Neural Networks"
 
 # Recalling the Machine Learning pipeline
 
-We now focus on the model, the "heart" of the AI in our system
+We now focus on the model, the "heart" of the AI in our system.
 
 ![Data pipeline](./img/datapreprocessing/pipeline.svg)
 
@@ -17,27 +17,35 @@ We now focus on the model, the "heart" of the AI in our system
   - Usually, this "mechanism" is based on math, geometry, statistics, etc.
 - Even with the best model available, if I use "dirty" or "insignificant" input data, the system will perform poorly
 
+# Demos and useful links
+
+- [Playground TensorFlow](https://playground.tensorflow.org)
+- [Convnetjs](https://cs.stanford.edu/people/karpathy/convnetjs/)
+- [LLM architectures](https://bbycroft.net/llm)
+- [Transformers](https://poloclub.github.io/transformer-explainer/)
+- [Interactive gradient descent](https://blog.skz.dev/gradient-descent)
+
 # Neural Networks
 
 *Neural Networks* (NN): the key idea is to imitate, as far as possible, the neurons of the human brain
 
-- *Networks* since neurons are connected through each other
+- *Networks* since neurons are connected to each other
 - Several scientific studies reported the structure of the biological neuron:
 
 ![Biological neuron](./img/neuralnetworks/3 Model52.png)
 
 - The *axon* carries nerve signals away from the soma (from left to right)
 - The *cell body* is where signals are aggregated and processed
-- The *dendrites* is where the majority of input to the neuron occurs from other cells
+- The *dendrites* collect the inputs from other neurons
 
 # Artificial Neuron (perceptron)
 
 :::: {.columns}
 ::: {.column width="50%"}
 
-The first scheme about the neuron has been introduced by [@mcculloch1943logical]
+The first scheme about the neuron was introduced by [@mcculloch1943logical]
 
-The first Artificial Neuron (AN) has been introduced by *Rosenblatt* in 1957
+The first Artificial Neuron (AN) was introduced by *Rosenblatt* in 1957
 
 - *Inputs* are digital numbers (not analog signals)
 - Inputs are *weighted* (signals are not all equally important)
@@ -168,20 +176,20 @@ A single AN *can solve only linear problems*!
 The solution is to use more ANs organized on different layers → **Multi-Layer Perceptron (MLP)**
 
 - It is not so easy, since this introduces several mathematical problems
-- Besides, we greatly improve the computational load
+- Besides, we greatly improved the computational load
 
 # Artificial Neural Networks (ANN)
 
 :::: {.columns}
 ::: {.column width="65%"}
 
-**Neural Networks** are groups of artificial neurons are organized in different layers
+**Neural Networks** are groups of artificial neurons that are organized in different layers
 
 - An *input layer* (input of the network)
 - An *output layer* (output of the network)
 - One or more *hidden layer(s)*
 
-Each neuron is fully connected with those of the next level.
+Each neuron is fully connected to those of the next level.
 
 - Again, we try to imitate the hierarchical nature of our neurons
 - We have "only" about ten levels between the retina and the actuator muscles.
@@ -229,8 +237,8 @@ In our course, we will use only FF NN!
 
 **Activation functions** define the output of the neuron given an input or set of inputs:
 
-- They output a small value for small inputs, and a larger value if its inputs exceed a threshold
-- They are a sort of switches of the artificial neuron
+- They output a small value for small inputs, and a larger value if their inputs exceed a threshold
+- They are a sort of switch of the artificial neuron
 
 ![[Activation Functions](https://medium.com/@shrutijadon/survey-on-activation-functions-for-deep-learning-9689331ba092)](./img/neuralnetworks/3 Model55.png)
 
@@ -270,31 +278,31 @@ Limitations
 
 - The theorem applies to feedforward neural networks with $n$ inputs, a single hidden layer ("shallow" and wide), and 1 output
 - Achieving a close approximation might require an impractically large number of neurons, making the network hard to train
-- The theorem assumes that the "right" weights and biases exist but does not address how to find them
+- The theorem assumes that the "right" weights and biases exist, but does not address how to find them
 - Not applicable to discontinuous functions
 
 # Håstad's switching lemma [@hastad1986almost]
 
 **Håstad's switching lemma**: certain functions, while easily represented by deep networks with a modest number of neurons, require an exponentially larger number of neurons to represent accurately if constrained to a single hidden layer.
 
-"Global" functions are harder to be approximated, for instance
+"Global" functions are harder to approximate, for instance.
 
 - The *parity function* determines whether the number of 1s in a binary input string is odd or even.
 - The *majority function* outputs 1 if more than half of the input bits are 1, and 0 otherwise.
 
-This lemma provides a theoretical foundation for using depth in both circuit complexity and neural networks
+This lemma provides a theoretical foundation for using depth in both circuit complexity and neural networks.
 
-- It justifies the need for layered structure when working with complex, globally-dependent functions.
+- It justifies the need for a layered structure when working with complex, globally-dependent functions.
 
 # Universal Approximation Theorem [@kidger2020universal]
 
-[@kidger2020universal]: let $n$ be the number of inputs neurons, $m$ be the number of output neurons, and let $\rho$ be any nonaffine continuous function, with a continuous nonzero derivative at some point.
+[@kidger2020universal]: let $n$ be the number of input neurons, $m$ be the number of output neurons, and let $\rho$ be any nonaffine continuous function, with a continuous, nonzero derivative at some point.
 The class of neural networks of arbitrary depth, width $n + m + 2$ and activation function $\rho$, is dense in $C(K; R^m)$ for $K \subseteq R^n$ with $K$ compact.
 This covers any activation function, including polynomial activation functions.
 
 ![Universal Approximation Theorem for Deep Narrow Networks](img/neuralnetworks/universaltheorem2.svg)
 
-This is why deep neural networks work
+This is why deep neural networks work.
 
 # Neural networks training: intuition
 
@@ -327,7 +335,7 @@ How is it possible to train a neural network?
 :::
 ::::
 
-# Deep Neural Networds (DNN)
+# Deep Neural Networks (DNN)
 
 **Deep Learning**: a branch of ML that avoids the problematic phase of feature extraction (also) with high-dimensional inputs.
 
@@ -350,7 +358,7 @@ Feature extraction requires human intervention.
 
 # ANN and DNN training
 
-Training a NN means tune the weights to optimize the prediction accuracy
+Training a NN means tuning the weights to optimize the prediction accuracy.
 
 - ... by *minimizing* a loss/cost function.
 
@@ -390,7 +398,7 @@ The *cost function* is a mathematical formulation of the learning goal
 
 **Cross Entropy** is the distance between what the model believes the output distribution should be & what the original distribution is
 
-- In order to use the *Cross Entropy* loss, the output layer must output probabilities.
+- To use the *Cross Entropy* loss, the output layer must output probabilities.
 - *Binary Cross Entropy (BCE)*
   - $Loss = -y_i \cdot log (\hat{y}_i) - (1 - y_i) \cdot log(1 - \hat{y}_i)$
     - $\hat{y}_i$ is the i-th scalar value in the model output (prediction), $y_i$ is the corresponding target (label) value
@@ -532,7 +540,7 @@ Vanilla Gradient Descent
 Advantages
 
 - *Faster Training*: more frequent parameter updates than batch gradient descent, leading to faster convergence.
-- *Efficient GPU/CPU Utilization*: Mini-batch enable parallel processing and faster computation on GPUs.
+- *Efficient GPU/CPU Utilization*: Mini-batch enables parallel processing and faster computation on GPUs.
 
 Drawbacks
 
@@ -559,8 +567,8 @@ Adam is based on two principles:
 
 **Batch (size)**: the hyperparameter of gradient descent that controls the number of training samples to work through before the model's internal parameters are updated.
 
-- Typically batch size is a multiple of the power of two (16, 32, 64,...)
-- Too small batch size can compromise the stability of the learning phase
+- Typically, batch size is a multiple of the power of two (16, 32, 64,...)
+- A too-small batch size can compromise the stability of the learning phase
 - The larger the batch size, the more video memory is used! (check your GPU specs)
 - Empirically, the batch size may be (at least) equal to the number of classes
 
@@ -596,8 +604,8 @@ $\Delta w_{ij} = \eta (y_i - \hat{y}_i)g'(h_j)x_i$
 
 ![Chain rule](./img/neuralnetworks/3 Model74.png)
 
-- The introduction of backpropagation has been fundamental in order to train DNNs!
-- Delta rule is a special case of the more general backpropagation algorithm
+- The introduction of backpropagation has been fundamental in training DNNs!
+- The delta rule is a special case of the more general backpropagation algorithm
 
 # Backpropagation
 
@@ -620,7 +628,7 @@ For instance, given $y = sin(x^2)$, it is:
 
 # Backpropagation
 
-The problem with DNNs is that we have hidden layers, the loss functions depend on "hidden parameters" $𝑤$
+The problem with DNNs is that we have hidden layers, and the loss functions depend on "hidden parameters" $𝑤$
 
 ![Chain rule](./img/neuralnetworks/3 Model73.png)
 
@@ -659,6 +667,8 @@ Finally, the derivative is $\frac {dC}{da^{L}} \cdot {\frac {da^{L}}{dz^{L}}}\cd
 ![Learning rate](./img/neuralnetworks/3 Model76.png)
 
 The choice of the right value of the learning rate is important!
+
+See [this demo](https://blog.skz.dev/gradient-descent)
 
 :::
 ::::
@@ -700,13 +710,13 @@ sklearn.neural_network.MLPClassifier(
     learning_rate="constant",
     max_iter=200,
     shuffle=True,
-    ...
+ ...
 )
 ```
 
 # Developing AI systems
 
-It is not just important how well a particular classifier works
+It is not just important how well a particular classifier works.
 
 - *How to develop an AI system*?
 - *When is it better to use Machine Learning*? And *Deep Learning*?
@@ -714,7 +724,7 @@ It is not just important how well a particular classifier works
 
 # How to develop an AI project?
 
-- We have seen what are the main steps necessary for the realization of an AI project
+- We have seen the main steps necessary for the realization of an AI project
   - *Data Collection*
   - *Data Processing* (and feature extraction)
   - *Model training*
@@ -778,19 +788,19 @@ To date, Nvidia, a company that dominates the market:
 
 # Hardware purchase for DL
 
-In-house solution: the company buys the necessary hardware, it is the direct owner
+In-house solution: the company buys the necessary hardware, and it is the direct owner
 
 - Pros:
   - Extreme freedom of use of hardware
   - In the long run, it tends to have lower costs
 - Cons:
-  - Hardware maintenance is required → company needs specialized technicians
+  - Hardware maintenance is required → the company needs specialized technicians
   - Hardware ages (quickly) → necessary investments over time
   - For large numbers of GPUs:
     - It is necessary to have specific server rooms → temperature and access control
     - High energy consumption → consumption of the latest generation GPU: ~450W (!)
   - The GPU market is quite expensive and volatile:
-    - Very few companies involved in the production process → TMSC
+    - Very few companies are involved in the production process → TMSC
     - Semiconductor shortage
     - External elements influence the market: mining, wars,...
 
@@ -804,7 +814,7 @@ External solution: the hardware is rented through the *PaaS* paradigm (Cloud)
 - Pros:
   - Hardware maintenance is NOT required
   - NO investment over time is required for hardware upgrades
-  - Dedicated server rooms are NOT required, energy consumption is not borne by the company
+  - Dedicated server rooms are NOT required; energy consumption is not borne by the company
 - Cons:
   - In the long run, it tends to have higher costs
   - Cons already seen for cloud-based solutions:
@@ -833,19 +843,14 @@ Examples:
 :::: {.columns}
 ::: {.column width="50%"}
 
-![](./img/neuralnetworks/3 Model107.png)
+![Classic programming](./img/neuralnetworks/3 Model107.png)
 
 :::
 ::: {.column width="50%"}
 
-![](./img/neuralnetworks/95.png)
+![Deep learning](./img/neuralnetworks/95.png)
 
 :::
 ::::
-
-Demos
-
-- [Playground tensorflow](https://playground.tensorflow.org)
-- [Convnetjs](https://cs.stanford.edu/people/karpathy/convnetjs/)
 
 # References

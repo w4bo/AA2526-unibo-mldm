@@ -1,7 +1,7 @@
 #!/bin/bash
 set -e
 cd _site
-sudo chmod -R 777 .
+sudo chmod -R 777 . || true
 date=$(date '+%Y-%m-%dT%H:%M:%S')
 for FILE in *.html; do 
     if [[ "$FILE" == *-bbs* ]]; then

@@ -232,7 +232,7 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 
 <section id="recalling-the-machine-learning-pipeline" class="title-slide slide level1 center">
 <h1>Recalling the Machine Learning pipeline</h1>
-<p>We now focus on the model, the “heart” of the AI in our system</p>
+<p>We now focus on the model, the “heart” of the AI in our system.</p>
 
 <img data-src="./img/datapreprocessing/pipeline.svg" class="r-stretch quarto-figure-center"><p class="caption">Data pipeline</p><ul>
 <li>With <em>model</em>, we refer to the “mechanism” with which input data are transformed into outputs</li>
@@ -244,18 +244,29 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 </ul>
 </section>
 
+<section id="demos-and-useful-links" class="title-slide slide level1 center">
+<h1>Demos and useful links</h1>
+<ul>
+<li><a href="https://playground.tensorflow.org">Playground TensorFlow</a></li>
+<li><a href="https://cs.stanford.edu/people/karpathy/convnetjs/">Convnetjs</a></li>
+<li><a href="https://bbycroft.net/llm">LLM architectures</a></li>
+<li><a href="https://poloclub.github.io/transformer-explainer/">Transformers</a></li>
+<li><a href="https://blog.skz.dev/gradient-descent">Interactive gradient descent</a></li>
+</ul>
+</section>
+
 <section id="neural-networks" class="title-slide slide level1 center">
 <h1>Neural Networks</h1>
 <p><em>Neural Networks</em> (NN): the key idea is to imitate, as far as possible, the neurons of the human brain</p>
 <ul>
-<li><em>Networks</em> since neurons are connected through each other</li>
+<li><em>Networks</em> since neurons are connected to each other</li>
 <li>Several scientific studies reported the structure of the biological neuron:</li>
 </ul>
 
 <img data-src="./img/neuralnetworks/3%20Model52.png" class="r-stretch quarto-figure-center"><p class="caption">Biological neuron</p><ul>
 <li>The <em>axon</em> carries nerve signals away from the soma (from left to right)</li>
 <li>The <em>cell body</em> is where signals are aggregated and processed</li>
-<li>The <em>dendrites</em> is where the majority of input to the neuron occurs from other cells</li>
+<li>The <em>dendrites</em> collect the inputs from other neurons</li>
 </ul>
 </section>
 
@@ -263,8 +274,8 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <h1>Artificial Neuron (perceptron)</h1>
 <div class="columns">
 <div class="column" style="width:50%;">
-<p>The first scheme about the neuron has been introduced by <span class="citation" data-cites="mcculloch1943logical">(<a href="#/references" role="doc-biblioref" onclick="">McCulloch and Pitts 1943</a>)</span></p>
-<p>The first Artificial Neuron (AN) has been introduced by <em>Rosenblatt</em> in 1957</p>
+<p>The first scheme about the neuron was introduced by <span class="citation" data-cites="mcculloch1943logical">(<a href="#/references" role="doc-biblioref" onclick="">McCulloch and Pitts 1943</a>)</span></p>
+<p>The first Artificial Neuron (AN) was introduced by <em>Rosenblatt</em> in 1957</p>
 <ul>
 <li><em>Inputs</em> are digital numbers (not analog signals)</li>
 <li>Inputs are <em>weighted</em> (signals are not all equally important)</li>
@@ -449,7 +460,7 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <img data-src="./img/neuralnetworks/3%20Model56.png" class="r-stretch quarto-figure-center"><p class="caption">Linear vs Non-linear</p><p>The solution is to use more ANs organized on different layers → <strong>Multi-Layer Perceptron (MLP)</strong></p>
 <ul>
 <li>It is not so easy, since this introduces several mathematical problems</li>
-<li>Besides, we greatly improve the computational load</li>
+<li>Besides, we greatly improved the computational load</li>
 </ul>
 </section>
 
@@ -457,13 +468,13 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <h1>Artificial Neural Networks (ANN)</h1>
 <div class="columns">
 <div class="column" style="width:65%;">
-<p><strong>Neural Networks</strong> are groups of artificial neurons are organized in different layers</p>
+<p><strong>Neural Networks</strong> are groups of artificial neurons that are organized in different layers</p>
 <ul>
 <li>An <em>input layer</em> (input of the network)</li>
 <li>An <em>output layer</em> (output of the network)</li>
 <li>One or more <em>hidden layer(s)</em></li>
 </ul>
-<p>Each neuron is fully connected with those of the next level.</p>
+<p>Each neuron is fully connected to those of the next level.</p>
 <ul>
 <li>Again, we try to imitate the hierarchical nature of our neurons</li>
 <li>We have “only” about ten levels between the retina and the actuator muscles.</li>
@@ -523,8 +534,8 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <h1>Activation functions</h1>
 <p><strong>Activation functions</strong> define the output of the neuron given an input or set of inputs:</p>
 <ul>
-<li>They output a small value for small inputs, and a larger value if its inputs exceed a threshold</li>
-<li>They are a sort of switches of the artificial neuron</li>
+<li>They output a small value for small inputs, and a larger value if their inputs exceed a threshold</li>
+<li>They are a sort of switch of the artificial neuron</li>
 </ul>
 
 <img data-src="./img/neuralnetworks/3%20Model55.png" class="r-stretch quarto-figure-center"><p class="caption"><a href="https://medium.com/@shrutijadon/survey-on-activation-functions-for-deep-learning-9689331ba092">Activation Functions</a></p></section>
@@ -552,7 +563,7 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <ul>
 <li>The theorem applies to feedforward neural networks with <span class="math inline">\(n\)</span> inputs, a single hidden layer (“shallow” and wide), and 1 output</li>
 <li>Achieving a close approximation might require an impractically large number of neurons, making the network hard to train</li>
-<li>The theorem assumes that the “right” weights and biases exist but does not address how to find them</li>
+<li>The theorem assumes that the “right” weights and biases exist, but does not address how to find them</li>
 <li>Not applicable to discontinuous functions</li>
 </ul>
 </section>
@@ -560,22 +571,22 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <section id="håstads-switching-lemma-hastad1986almost" class="title-slide slide level1 center">
 <h1>Håstad’s switching lemma <span class="citation" data-cites="hastad1986almost">(<a href="#/references" role="doc-biblioref" onclick="">Hastad 1986</a>)</span></h1>
 <p><strong>Håstad’s switching lemma</strong>: certain functions, while easily represented by deep networks with a modest number of neurons, require an exponentially larger number of neurons to represent accurately if constrained to a single hidden layer.</p>
-<p>“Global” functions are harder to be approximated, for instance</p>
+<p>“Global” functions are harder to approximate, for instance.</p>
 <ul>
 <li>The <em>parity function</em> determines whether the number of 1s in a binary input string is odd or even.</li>
 <li>The <em>majority function</em> outputs 1 if more than half of the input bits are 1, and 0 otherwise.</li>
 </ul>
-<p>This lemma provides a theoretical foundation for using depth in both circuit complexity and neural networks</p>
+<p>This lemma provides a theoretical foundation for using depth in both circuit complexity and neural networks.</p>
 <ul>
-<li>It justifies the need for layered structure when working with complex, globally-dependent functions.</li>
+<li>It justifies the need for a layered structure when working with complex, globally-dependent functions.</li>
 </ul>
 </section>
 
 <section id="universal-approximation-theorem-kidger2020universal" class="title-slide slide level1 center">
 <h1>Universal Approximation Theorem <span class="citation" data-cites="kidger2020universal">(<a href="#/references" role="doc-biblioref" onclick="">Kidger and Lyons 2020</a>)</span></h1>
-<p><span class="citation" data-cites="kidger2020universal">(<a href="#/references" role="doc-biblioref" onclick="">Kidger and Lyons 2020</a>)</span>: let <span class="math inline">\(n\)</span> be the number of inputs neurons, <span class="math inline">\(m\)</span> be the number of output neurons, and let <span class="math inline">\(\rho\)</span> be any nonaffine continuous function, with a continuous nonzero derivative at some point. The class of neural networks of arbitrary depth, width <span class="math inline">\(n + m + 2\)</span> and activation function <span class="math inline">\(\rho\)</span>, is dense in <span class="math inline">\(C(K; R^m)\)</span> for <span class="math inline">\(K \subseteq R^n\)</span> with <span class="math inline">\(K\)</span> compact. This covers any activation function, including polynomial activation functions.</p>
+<p><span class="citation" data-cites="kidger2020universal">(<a href="#/references" role="doc-biblioref" onclick="">Kidger and Lyons 2020</a>)</span>: let <span class="math inline">\(n\)</span> be the number of input neurons, <span class="math inline">\(m\)</span> be the number of output neurons, and let <span class="math inline">\(\rho\)</span> be any nonaffine continuous function, with a continuous, nonzero derivative at some point. The class of neural networks of arbitrary depth, width <span class="math inline">\(n + m + 2\)</span> and activation function <span class="math inline">\(\rho\)</span>, is dense in <span class="math inline">\(C(K; R^m)\)</span> for <span class="math inline">\(K \subseteq R^n\)</span> with <span class="math inline">\(K\)</span> compact. This covers any activation function, including polynomial activation functions.</p>
 
-<img data-src="img/neuralnetworks/universaltheorem2.svg" class="r-stretch quarto-figure-center"><p class="caption">Universal Approximation Theorem for Deep Narrow Networks</p><p>This is why deep neural networks work</p>
+<img data-src="img/neuralnetworks/universaltheorem2.svg" class="r-stretch quarto-figure-center"><p class="caption">Universal Approximation Theorem for Deep Narrow Networks</p><p>This is why deep neural networks work.</p>
 </section>
 
 <section id="neural-networks-training-intuition" class="title-slide slide level1 center">
@@ -617,8 +628,8 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 </div></div>
 </section>
 
-<section id="deep-neural-networds-dnn" class="title-slide slide level1 center">
-<h1>Deep Neural Networds (DNN)</h1>
+<section id="deep-neural-networks-dnn" class="title-slide slide level1 center">
+<h1>Deep Neural Networks (DNN)</h1>
 <p><strong>Deep Learning</strong>: a branch of ML that avoids the problematic phase of feature extraction (also) with high-dimensional inputs.</p>
 <div class="columns">
 <div class="column" style="width:40%;">
@@ -644,7 +655,7 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 
 <section id="ann-and-dnn-training" class="title-slide slide level1 center">
 <h1>ANN and DNN training</h1>
-<p>Training a NN means tune the weights to optimize the prediction accuracy</p>
+<p>Training a NN means tuning the weights to optimize the prediction accuracy.</p>
 <ul>
 <li>… by <em>minimizing</em> a loss/cost function.</li>
 </ul>
@@ -695,7 +706,7 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 </ul>
 <p><strong>Cross Entropy</strong> is the distance between what the model believes the output distribution should be &amp; what the original distribution is</p>
 <ul>
-<li>In order to use the <em>Cross Entropy</em> loss, the output layer must output probabilities.</li>
+<li>To use the <em>Cross Entropy</em> loss, the output layer must output probabilities.</li>
 <li><em>Binary Cross Entropy (BCE)</em>
 <ul>
 <li><span class="math inline">\(Loss = -y_i \cdot log (\hat{y}_i) - (1 - y_i) \cdot log(1 - \hat{y}_i)\)</span>
@@ -850,7 +861,7 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <p>Advantages</p>
 <ul>
 <li><em>Faster Training</em>: more frequent parameter updates than batch gradient descent, leading to faster convergence.</li>
-<li><em>Efficient GPU/CPU Utilization</em>: Mini-batch enable parallel processing and faster computation on GPUs.</li>
+<li><em>Efficient GPU/CPU Utilization</em>: Mini-batch enables parallel processing and faster computation on GPUs.</li>
 </ul>
 <p>Drawbacks</p>
 <ul>
@@ -885,8 +896,8 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <h1><a href="https://machinelearningmastery.com/difference-between-a-batch-and-an-epoch/">Terminology</a></h1>
 <p><strong>Batch (size)</strong>: the hyperparameter of gradient descent that controls the number of training samples to work through before the model’s internal parameters are updated.</p>
 <ul>
-<li>Typically batch size is a multiple of the power of two (16, 32, 64,…)</li>
-<li>Too small batch size can compromise the stability of the learning phase</li>
+<li>Typically, batch size is a multiple of the power of two (16, 32, 64,…)</li>
+<li>A too-small batch size can compromise the stability of the learning phase</li>
 <li>The larger the batch size, the more video memory is used! (check your GPU specs)</li>
 <li>Empirically, the batch size may be (at least) equal to the number of classes</li>
 </ul>
@@ -923,8 +934,8 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 </ul>
 
 <img data-src="./img/neuralnetworks/3%20Model74.png" class="r-stretch quarto-figure-center"><p class="caption">Chain rule</p><ul>
-<li>The introduction of backpropagation has been fundamental in order to train DNNs!</li>
-<li>Delta rule is a special case of the more general backpropagation algorithm</li>
+<li>The introduction of backpropagation has been fundamental in training DNNs!</li>
+<li>The delta rule is a special case of the more general backpropagation algorithm</li>
 </ul>
 </section>
 
@@ -955,7 +966,7 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 
 <section id="backpropagation-2" class="title-slide slide level1 center">
 <h1>Backpropagation</h1>
-<p>The problem with DNNs is that we have hidden layers, the loss functions depend on “hidden parameters” <span class="math inline">\(𝑤\)</span></p>
+<p>The problem with DNNs is that we have hidden layers, and the loss functions depend on “hidden parameters” <span class="math inline">\(𝑤\)</span></p>
 
 <img data-src="./img/neuralnetworks/3%20Model73.png" class="r-stretch quarto-figure-center"><p class="caption">Chain rule</p><p><span class="math inline">\(C(y,f^{L}(W^{L}f^{L-1}(W^{L-1}\cdots f^{2}(W^{2}f^{1}(W^{1}x))\cdots )))\)</span></p>
 <ul>
@@ -1007,6 +1018,7 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 </figure>
 </div>
 <p>The choice of the right value of the learning rate is important!</p>
+<p>See <a href="https://blog.skz.dev/gradient-descent">this demo</a></p>
 </div></div>
 </section>
 
@@ -1049,13 +1061,13 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <span id="cb1-6"><a href=""></a>    learning_rate<span class="op">=</span><span class="st">"constant"</span>,</span>
 <span id="cb1-7"><a href=""></a>    max_iter<span class="op">=</span><span class="dv">200</span>,</span>
 <span id="cb1-8"><a href=""></a>    shuffle<span class="op">=</span><span class="va">True</span>,</span>
-<span id="cb1-9"><a href=""></a>    ...</span>
+<span id="cb1-9"><a href=""></a> ...</span>
 <span id="cb1-10"><a href=""></a>)</span></code></pre></div>
 </section>
 
 <section id="developing-ai-systems" class="title-slide slide level1 center">
 <h1>Developing AI systems</h1>
-<p>It is not just important how well a particular classifier works</p>
+<p>It is not just important how well a particular classifier works.</p>
 <ul>
 <li><em>How to develop an AI system</em>?</li>
 <li><em>When is it better to use Machine Learning</em>? And <em>Deep Learning</em>?</li>
@@ -1066,7 +1078,7 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <section id="how-to-develop-an-ai-project" class="title-slide slide level1 center">
 <h1>How to develop an AI project?</h1>
 <ul>
-<li>We have seen what are the main steps necessary for the realization of an AI project
+<li>We have seen the main steps necessary for the realization of an AI project
 <ul>
 <li><em>Data Collection</em></li>
 <li><em>Data Processing</em> (and feature extraction)</li>
@@ -1179,7 +1191,7 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 
 <section id="hardware-purchase-for-dl" class="title-slide slide level1 center">
 <h1>Hardware purchase for DL</h1>
-<p>In-house solution: the company buys the necessary hardware, it is the direct owner</p>
+<p>In-house solution: the company buys the necessary hardware, and it is the direct owner</p>
 <ul>
 <li>Pros:
 <ul>
@@ -1188,7 +1200,7 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 </ul></li>
 <li>Cons:
 <ul>
-<li>Hardware maintenance is required → company needs specialized technicians</li>
+<li>Hardware maintenance is required → the company needs specialized technicians</li>
 <li>Hardware ages (quickly) → necessary investments over time</li>
 <li>For large numbers of GPUs:
 <ul>
@@ -1197,7 +1209,7 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 </ul></li>
 <li>The GPU market is quite expensive and volatile:
 <ul>
-<li>Very few companies involved in the production process → TMSC</li>
+<li>Very few companies are involved in the production process → TMSC</li>
 <li>Semiconductor shortage</li>
 <li>External elements influence the market: mining, wars,…</li>
 </ul></li>
@@ -1215,7 +1227,7 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <ul>
 <li>Hardware maintenance is NOT required</li>
 <li>NO investment over time is required for hardware upgrades</li>
-<li>Dedicated server rooms are NOT required, energy consumption is not borne by the company</li>
+<li>Dedicated server rooms are NOT required; energy consumption is not borne by the company</li>
 </ul></li>
 <li>Cons:
 <ul>
@@ -1249,15 +1261,20 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <h1></h1>
 <div class="columns">
 <div class="column" style="width:50%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
 <p><img data-src="./img/neuralnetworks/3%20Model107.png"></p>
+<figcaption>Classic programming</figcaption>
+</figure>
+</div>
 </div><div class="column" style="width:50%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
 <p><img data-src="./img/neuralnetworks/95.png"></p>
+<figcaption>Deep learning</figcaption>
+</figure>
+</div>
 </div></div>
-<p>Demos</p>
-<ul>
-<li><a href="https://playground.tensorflow.org">Playground tensorflow</a></li>
-<li><a href="https://cs.stanford.edu/people/karpathy/convnetjs/">Convnetjs</a></li>
-</ul>
 </section>
 
 <section id="references" class="title-slide slide level1 smaller scrollable">

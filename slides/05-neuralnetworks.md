@@ -25,6 +25,12 @@ We now focus on the model, the "heart" of the AI in our system.
 - [Transformers](https://poloclub.github.io/transformer-explainer/)
 - [Interactive gradient descent](https://blog.skz.dev/gradient-descent)
 
+# Disclaimer!
+
+Neural networks are **mathematically intensive**!
+
+![Mathematical Symbol Fight](https://imgs.xkcd.com/comics/mathematical_symbol_fight.png)
+
 # Neural Networks
 
 *Neural Networks* (NN): the key idea is to imitate, as far as possible, the neurons of the human brain

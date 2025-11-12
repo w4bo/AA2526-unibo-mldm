@@ -1,3 +1,22 @@
+## [1.0.10](https://github.com/w4bo/AA2526-unibo-mldm/compare/1.0.9...1.0.10) (2025-11-12)
+
+### Dependency updates
+
+* **deps:** update dependency semantic-release-preconfigured-conventional-commits to v1.1.154 ([#6](https://github.com/w4bo/AA2526-unibo-mldm/issues/6)) ([63376b3](https://github.com/w4bo/AA2526-unibo-mldm/commit/63376b3e24ccfe8d773fd2b5bde60363335edbb1))
+* **deps:** update dependency semantic-release-preconfigured-conventional-commits to v1.1.156 ([#10](https://github.com/w4bo/AA2526-unibo-mldm/issues/10)) ([eba8982](https://github.com/w4bo/AA2526-unibo-mldm/commit/eba8982e7eb404a8826f85653345bb62b4d94a37))
+* **deps:** update node.js to 22.21 ([#7](https://github.com/w4bo/AA2526-unibo-mldm/issues/7)) ([325814a](https://github.com/w4bo/AA2526-unibo-mldm/commit/325814a11091eb759aab2865d2ee699862eb5f91))
+* **deps:** update node.js to v24 ([#8](https://github.com/w4bo/AA2526-unibo-mldm/issues/8)) ([39fca5a](https://github.com/w4bo/AA2526-unibo-mldm/commit/39fca5af4091514ff02724560169291548ad5328))
+
+### Bug Fixes
+
+* update slides ([441118b](https://github.com/w4bo/AA2526-unibo-mldm/commit/441118b353914a6a5ef38359a82237c3f74c52d0))
+* update slides ([589907a](https://github.com/w4bo/AA2526-unibo-mldm/commit/589907a936990f78a81bb6e1d5d49e0f0117a7d4))
+* update slides ([868d299](https://github.com/w4bo/AA2526-unibo-mldm/commit/868d2996af200e58b9a2f8329f336fc41920a490))
+
+### Build and continuous integration
+
+* **deps:** update jamesives/github-pages-deploy-action action to v4.7.4 ([#9](https://github.com/w4bo/AA2526-unibo-mldm/issues/9)) ([3b3516a](https://github.com/w4bo/AA2526-unibo-mldm/commit/3b3516a0b2e1dd452a055f10418c90fecc087966))
+
 ## [1.0.9](https://github.com/w4bo/AA2526-unibo-mldm/compare/1.0.8...1.0.9) (2025-11-05)
 
 ### Bug Fixes

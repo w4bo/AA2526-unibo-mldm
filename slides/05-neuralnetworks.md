@@ -15,7 +15,7 @@ We now focus on the model, the "heart" of the AI in our system.
 - With *model*, we refer to the "mechanism" with which input data are transformed into outputs
 - A ML algorithm *trains* a ML model
   - Usually, this "mechanism" is based on math, geometry, statistics, etc.
-- Even with the best model available, if I use "dirty" or "insignificant" input data, the system will perform poorly
+- Even with the best model available, the model will perform poorly if it trains on "dirty" data
 
 # Demos and useful links
 

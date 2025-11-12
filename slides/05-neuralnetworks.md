@@ -847,6 +847,10 @@ Examples:
 
 [Saying ‘Thank You’ to ChatGPT Is Costly. But Maybe It’s Worth the Price.](https://www.nytimes.com/2025/04/24/technology/chatgpt-alexa-please-thank-you.html)
 
+# [@cottier2024rising]
+
+![The rising costs of training frontier AI models](img/risingcost.png)
+
 #
 
 :::: {.columns}

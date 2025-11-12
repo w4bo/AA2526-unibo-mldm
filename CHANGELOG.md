@@ -1,3 +1,9 @@
+## [1.0.11](https://github.com/w4bo/AA2526-unibo-mldm/compare/1.0.10...1.0.11) (2025-11-12)
+
+### Bug Fixes
+
+* update slides ([c2d8316](https://github.com/w4bo/AA2526-unibo-mldm/commit/c2d831613402456fd24429a865218e06d0da46f4))
+
 ## [1.0.10](https://github.com/w4bo/AA2526-unibo-mldm/compare/1.0.9...1.0.10) (2025-11-12)
 
 ### Dependency updates

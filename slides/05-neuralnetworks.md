@@ -843,6 +843,9 @@ Examples:
 - [https://buomsoo-kim.github.io/colab/2020/03/15/Google-newly-launches-colab-pro.md/](https://buomsoo-kim.github.io/colab/2020/03/15/Google-newly-launches-colab-pro.md/)
 - [https://calculator.aws/#/addService/EC2](https://calculator.aws/#/addService/EC2)
 
+#
+
+[Saying ‘Thank You’ to ChatGPT Is Costly. But Maybe It’s Worth the Price.](https://www.nytimes.com/2025/04/24/technology/chatgpt-alexa-please-thank-you.html)
 
 #
 

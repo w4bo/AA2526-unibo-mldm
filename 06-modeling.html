@@ -208,7 +208,7 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 </section>
 <section class="slide level2">
 
-<p><a href="https://colab.research.google.com/github/w4bo/AA2425-unibo-mldm/blob/master/slides/lab-05-ml.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"></a></p>
+<p><a href="https://colab.research.google.com/github/w4bo/AA2526-unibo-mldm/blob/master/slides/06-modeling.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"></a></p>
 </section>
 <section id="section" class="title-slide slide level1 center">
 <h1></h1>
@@ -285,7 +285,7 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <li><em>Feature extraction</em>: extract the features from data to define the attributes in image and text data</li>
 </ul></li>
 </ul>
-<div id="80e1c257" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2025-11-12T14:23:41.401126Z&quot;,&quot;iopub.status.busy&quot;:&quot;2025-11-12T14:23:41.400812Z&quot;,&quot;iopub.status.idle&quot;:&quot;2025-11-12T14:23:42.164881Z&quot;,&quot;shell.execute_reply&quot;:&quot;2025-11-12T14:23:42.164269Z&quot;}" data-outputid="19814ad4-7ef0-47a6-c339-2729b5be8854" data-execution_count="1">
+<div id="80e1c257" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2025-11-17T10:24:24.088365Z&quot;,&quot;iopub.status.busy&quot;:&quot;2025-11-17T10:24:24.088142Z&quot;,&quot;iopub.status.idle&quot;:&quot;2025-11-17T10:24:24.821896Z&quot;,&quot;shell.execute_reply&quot;:&quot;2025-11-17T10:24:24.821285Z&quot;}" data-outputid="19814ad4-7ef0-47a6-c339-2729b5be8854" data-execution_count="1">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb1-1"><a href=""></a><span class="im">import</span> sklearn <span class="im">as</span> sk</span>
@@ -383,7 +383,7 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 
 <section id="datasets-in-sklearn" class="title-slide slide level1 center">
 <h1>Datasets in sklearn</h1>
-<div id="f54858f9" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2025-11-12T14:23:42.167540Z&quot;,&quot;iopub.status.busy&quot;:&quot;2025-11-12T14:23:42.167058Z&quot;,&quot;iopub.status.idle&quot;:&quot;2025-11-12T14:23:42.207361Z&quot;,&quot;shell.execute_reply&quot;:&quot;2025-11-12T14:23:42.206870Z&quot;}" data-execution_count="2">
+<div id="f54858f9" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2025-11-17T10:24:24.824621Z&quot;,&quot;iopub.status.busy&quot;:&quot;2025-11-17T10:24:24.824046Z&quot;,&quot;iopub.status.idle&quot;:&quot;2025-11-17T10:24:24.864042Z&quot;,&quot;shell.execute_reply&quot;:&quot;2025-11-17T10:24:24.863467Z&quot;}" data-execution_count="2">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb12-1"><a href=""></a><span class="im">import</span> sklearn.datasets <span class="im">as</span> datasets</span>
@@ -409,7 +409,7 @@ load_wine</code></pre>
 
 <section id="the-iris-dataset" class="title-slide slide level1 center">
 <h1>The <code>Iris</code> dataset</h1>
-<div id="Y-nsPIhDQe89" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2025-11-12T14:23:42.209570Z&quot;,&quot;iopub.status.busy&quot;:&quot;2025-11-12T14:23:42.209068Z&quot;,&quot;iopub.status.idle&quot;:&quot;2025-11-12T14:23:42.225285Z&quot;,&quot;shell.execute_reply&quot;:&quot;2025-11-12T14:23:42.224804Z&quot;}" data-outputid="d019e408-35e4-4d21-d78a-9b92b6784e2a" data-execution_count="3">
+<div id="Y-nsPIhDQe89" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2025-11-17T10:24:24.866225Z&quot;,&quot;iopub.status.busy&quot;:&quot;2025-11-17T10:24:24.865809Z&quot;,&quot;iopub.status.idle&quot;:&quot;2025-11-17T10:24:24.881836Z&quot;,&quot;shell.execute_reply&quot;:&quot;2025-11-17T10:24:24.881297Z&quot;}" data-outputid="d019e408-35e4-4d21-d78a-9b92b6784e2a" data-execution_count="3">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb14-1"><a href=""></a><span class="im">from</span> sklearn.datasets <span class="im">import</span> load_iris</span>
@@ -548,7 +548,7 @@ load_wine</code></pre>
 
 <section id="profiling" class="title-slide slide level1 center">
 <h1>Profiling</h1>
-<div id="ohmh7Kc8Nvm7" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2025-11-12T14:23:42.227255Z&quot;,&quot;iopub.status.busy&quot;:&quot;2025-11-12T14:23:42.226881Z&quot;,&quot;iopub.status.idle&quot;:&quot;2025-11-12T14:23:42.234040Z&quot;,&quot;shell.execute_reply&quot;:&quot;2025-11-12T14:23:42.233478Z&quot;}" data-outputid="3a9f740a-1006-4b5d-9d44-ff192314d6a1" data-execution_count="4">
+<div id="ohmh7Kc8Nvm7" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2025-11-17T10:24:24.883820Z&quot;,&quot;iopub.status.busy&quot;:&quot;2025-11-17T10:24:24.883513Z&quot;,&quot;iopub.status.idle&quot;:&quot;2025-11-17T10:24:24.891054Z&quot;,&quot;shell.execute_reply&quot;:&quot;2025-11-17T10:24:24.890504Z&quot;}" data-outputid="3a9f740a-1006-4b5d-9d44-ff192314d6a1" data-execution_count="4">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb15-1"><a href=""></a>df.info()</span></code></pre></div>
@@ -572,7 +572,7 @@ memory usage: 6.0 KB</code></pre>
 
 <section id="training-and-test-sets-1" class="title-slide slide level1 center">
 <h1>Training and test sets</h1>
-<div id="fOKkpeA2NeEs" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2025-11-12T14:23:42.236072Z&quot;,&quot;iopub.status.busy&quot;:&quot;2025-11-12T14:23:42.235649Z&quot;,&quot;iopub.status.idle&quot;:&quot;2025-11-12T14:23:42.263528Z&quot;,&quot;shell.execute_reply&quot;:&quot;2025-11-12T14:23:42.262961Z&quot;}" data-execution_count="5">
+<div id="fOKkpeA2NeEs" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2025-11-17T10:24:24.893180Z&quot;,&quot;iopub.status.busy&quot;:&quot;2025-11-17T10:24:24.892714Z&quot;,&quot;iopub.status.idle&quot;:&quot;2025-11-17T10:24:24.920515Z&quot;,&quot;shell.execute_reply&quot;:&quot;2025-11-17T10:24:24.919904Z&quot;}" data-execution_count="5">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb17-1"><a href=""></a><span class="co"># Split the data into training and test sets</span></span>
@@ -610,7 +610,7 @@ y_test: (30,)</code></pre>
 <section id="section-1" class="title-slide slide level1 center">
 <h1></h1>
 <p>When throwing two dice, the outcome of any roll is unpredictable, but a sum of 7 will tend to occur twice as often as 4</p>
-<div id="a1a121cf" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2025-11-12T14:23:42.265647Z&quot;,&quot;iopub.status.busy&quot;:&quot;2025-11-12T14:23:42.265251Z&quot;,&quot;iopub.status.idle&quot;:&quot;2025-11-12T14:23:42.818561Z&quot;,&quot;shell.execute_reply&quot;:&quot;2025-11-12T14:23:42.817943Z&quot;}" data-execution_count="6">
+<div id="a1a121cf" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2025-11-17T10:24:24.922780Z&quot;,&quot;iopub.status.busy&quot;:&quot;2025-11-17T10:24:24.922201Z&quot;,&quot;iopub.status.idle&quot;:&quot;2025-11-17T10:24:25.470010Z&quot;,&quot;shell.execute_reply&quot;:&quot;2025-11-17T10:24:25.469389Z&quot;}" data-execution_count="6">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb19"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb19-1"><a href=""></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
@@ -637,7 +637,7 @@ y_test: (30,)</code></pre>
 <li>The PRNG-generated sequence is not truly random, because it is completely determined by an initial value, called <em>seed</em></li>
 <li>Pseudorandom number generators are important in practice for their reproducibility.</li>
 </ul>
-<div id="4210a099" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2025-11-12T14:23:42.820834Z&quot;,&quot;iopub.status.busy&quot;:&quot;2025-11-12T14:23:42.820295Z&quot;,&quot;iopub.status.idle&quot;:&quot;2025-11-12T14:23:42.825943Z&quot;,&quot;shell.execute_reply&quot;:&quot;2025-11-12T14:23:42.825408Z&quot;}" data-execution_count="7">
+<div id="4210a099" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2025-11-17T10:24:25.472024Z&quot;,&quot;iopub.status.busy&quot;:&quot;2025-11-17T10:24:25.471745Z&quot;,&quot;iopub.status.idle&quot;:&quot;2025-11-17T10:24:25.476764Z&quot;,&quot;shell.execute_reply&quot;:&quot;2025-11-17T10:24:25.476239Z&quot;}" data-execution_count="7">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb20"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb20-1"><a href=""></a><span class="bu">print</span>(np.random.randint(<span class="dv">1</span>, <span class="dv">7</span>, size<span class="op">=</span><span class="dv">10</span>))</span>
@@ -651,8 +651,8 @@ y_test: (30,)</code></pre>
 <span id="cb20-9"><a href=""></a><span class="bu">print</span>(np.random.randint(<span class="dv">1</span>, <span class="dv">7</span>, size<span class="op">=</span><span class="dv">10</span>))</span></code></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
-<pre><code>[6 6 2 5 4 1 5 1 5 2]
-[2 3 1 2 2 6 3 6 5 3]
+<pre><code>[5 4 2 4 1 2 4 1 4 6]
+[4 1 5 2 6 2 5 1 1 2]
 [4 5 3 5 5 2 3 3 3 5]
 [4 5 3 5 5 2 3 3 3 5]
 [4 5 3 5 5 2 3 3 3 5]
@@ -700,7 +700,7 @@ y_test: (30,)</code></pre>
 <section>
 <section id="decision-tree" class="title-slide slide level1 center">
 <h1>Decision tree</h1>
-<div id="qRGDyke9OGij" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2025-11-12T14:23:42.828007Z&quot;,&quot;iopub.status.busy&quot;:&quot;2025-11-12T14:23:42.827799Z&quot;,&quot;iopub.status.idle&quot;:&quot;2025-11-12T14:23:42.882164Z&quot;,&quot;shell.execute_reply&quot;:&quot;2025-11-12T14:23:42.881643Z&quot;}" data-outputid="28adc7ac-dafc-4623-98c5-dda0795d6ca5" data-execution_count="8">
+<div id="qRGDyke9OGij" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2025-11-17T10:24:25.478902Z&quot;,&quot;iopub.status.busy&quot;:&quot;2025-11-17T10:24:25.478468Z&quot;,&quot;iopub.status.idle&quot;:&quot;2025-11-17T10:24:25.534119Z&quot;,&quot;shell.execute_reply&quot;:&quot;2025-11-17T10:24:25.533528Z&quot;}" data-outputid="28adc7ac-dafc-4623-98c5-dda0795d6ca5" data-execution_count="8">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb22"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb22-1"><a href=""></a><span class="im">from</span> sklearn.tree <span class="im">import</span> DecisionTreeClassifier  <span class="co"># Import the model</span></span>
@@ -718,7 +718,7 @@ y_test: (30,)</code></pre>
 </section>
 <section id="plotting-the-tree" class="slide level2">
 <h2>Plotting the tree</h2>
-<div id="TCYt3BziRjqK" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2025-11-12T14:23:42.884410Z&quot;,&quot;iopub.status.busy&quot;:&quot;2025-11-12T14:23:42.883907Z&quot;,&quot;iopub.status.idle&quot;:&quot;2025-11-12T14:23:43.024825Z&quot;,&quot;shell.execute_reply&quot;:&quot;2025-11-12T14:23:43.024240Z&quot;}" data-outputid="a5c6ce55-6e0d-4504-e4c8-408382791a1d" data-execution_count="9">
+<div id="TCYt3BziRjqK" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2025-11-17T10:24:25.536382Z&quot;,&quot;iopub.status.busy&quot;:&quot;2025-11-17T10:24:25.535932Z&quot;,&quot;iopub.status.idle&quot;:&quot;2025-11-17T10:24:25.677518Z&quot;,&quot;shell.execute_reply&quot;:&quot;2025-11-17T10:24:25.676888Z&quot;}" data-outputid="a5c6ce55-6e0d-4504-e4c8-408382791a1d" data-execution_count="9">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb24"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb24-1"><a href=""></a><span class="im">from</span> sklearn.tree <span class="im">import</span> plot_tree</span>
@@ -728,7 +728,7 @@ y_test: (30,)</code></pre>
 
 </div>
 <img data-src="06-modeling_files/figure-revealjs/cell-10-output-1.png" class="r-stretch"><p>Checking feature relevance</p>
-<div id="JV7m4ZKqPaJm" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2025-11-12T14:23:43.026818Z&quot;,&quot;iopub.status.busy&quot;:&quot;2025-11-12T14:23:43.026618Z&quot;,&quot;iopub.status.idle&quot;:&quot;2025-11-12T14:23:43.034765Z&quot;,&quot;shell.execute_reply&quot;:&quot;2025-11-12T14:23:43.034277Z&quot;}" data-outputid="efeb6271-4cec-4fcb-b621-84f298272ad7" data-execution_count="10">
+<div id="JV7m4ZKqPaJm" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2025-11-17T10:24:25.679898Z&quot;,&quot;iopub.status.busy&quot;:&quot;2025-11-17T10:24:25.679411Z&quot;,&quot;iopub.status.idle&quot;:&quot;2025-11-17T10:24:25.687971Z&quot;,&quot;shell.execute_reply&quot;:&quot;2025-11-17T10:24:25.687499Z&quot;}" data-outputid="efeb6271-4cec-4fcb-b621-84f298272ad7" data-execution_count="10">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb25"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb25-1"><a href=""></a>feature_importance_df <span class="op">=</span> pd.DataFrame({<span class="st">'Feature'</span>: X.columns, <span class="st">'Importance'</span>: clf.feature_importances_})  <span class="co"># Create a DataFrame to display feature importance</span></span>
@@ -789,7 +789,7 @@ y_test: (30,)</code></pre>
 </section></section>
 <section id="petal-vs-sepal" class="title-slide slide level1 center">
 <h1><code>petal</code> vs <code>sepal</code></h1>
-<div id="8h4GlwOOPlz3" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2025-11-12T14:23:43.042323Z&quot;,&quot;iopub.status.busy&quot;:&quot;2025-11-12T14:23:43.041962Z&quot;,&quot;iopub.status.idle&quot;:&quot;2025-11-12T14:23:43.136613Z&quot;,&quot;shell.execute_reply&quot;:&quot;2025-11-12T14:23:43.136037Z&quot;}" data-outputid="a3ff9957-5136-4fe3-d3e0-dc7a7ddf2bfe" data-execution_count="12">
+<div id="8h4GlwOOPlz3" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2025-11-17T10:24:25.695524Z&quot;,&quot;iopub.status.busy&quot;:&quot;2025-11-17T10:24:25.695171Z&quot;,&quot;iopub.status.idle&quot;:&quot;2025-11-17T10:24:25.789181Z&quot;,&quot;shell.execute_reply&quot;:&quot;2025-11-17T10:24:25.788666Z&quot;}" data-outputid="a3ff9957-5136-4fe3-d3e0-dc7a7ddf2bfe" data-execution_count="12">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb26"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb26-1"><a href=""></a>plot(df, clf, feature_importance_df[<span class="st">'Feature'</span>].iloc[:<span class="dv">2</span>].tolist())  <span class="co"># plot the 2 most important features</span></span></code></pre></div>
@@ -802,7 +802,7 @@ y_test: (30,)</code></pre>
 </div>
 </div>
 </div>
-<div id="nFNaqWIOT-Rd" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2025-11-12T14:23:43.138475Z&quot;,&quot;iopub.status.busy&quot;:&quot;2025-11-12T14:23:43.138279Z&quot;,&quot;iopub.status.idle&quot;:&quot;2025-11-12T14:23:43.235075Z&quot;,&quot;shell.execute_reply&quot;:&quot;2025-11-12T14:23:43.234547Z&quot;}" data-outputid="e57d7a46-c26b-4bfc-c956-f67944b26ada" data-execution_count="13">
+<div id="nFNaqWIOT-Rd" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2025-11-17T10:24:25.791020Z&quot;,&quot;iopub.status.busy&quot;:&quot;2025-11-17T10:24:25.790835Z&quot;,&quot;iopub.status.idle&quot;:&quot;2025-11-17T10:24:25.889202Z&quot;,&quot;shell.execute_reply&quot;:&quot;2025-11-17T10:24:25.888607Z&quot;}" data-outputid="e57d7a46-c26b-4bfc-c956-f67944b26ada" data-execution_count="13">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb27"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb27-1"><a href=""></a>plot(df, clf, feature_importance_df[<span class="st">'Feature'</span>].iloc[<span class="dv">2</span>:].tolist())  <span class="co"># plot the 2 lest important features</span></span></code></pre></div>
@@ -819,7 +819,7 @@ y_test: (30,)</code></pre>
 
 <section id="feature-selection-checking-correlations" class="title-slide slide level1 center">
 <h1>Feature selection: checking correlations</h1>
-<div id="e8799449" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2025-11-12T14:23:43.236933Z&quot;,&quot;iopub.status.busy&quot;:&quot;2025-11-12T14:23:43.236735Z&quot;,&quot;iopub.status.idle&quot;:&quot;2025-11-12T14:23:43.244020Z&quot;,&quot;shell.execute_reply&quot;:&quot;2025-11-12T14:23:43.243449Z&quot;}" data-execution_count="14">
+<div id="e8799449" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2025-11-17T10:24:25.891203Z&quot;,&quot;iopub.status.busy&quot;:&quot;2025-11-17T10:24:25.891001Z&quot;,&quot;iopub.status.idle&quot;:&quot;2025-11-17T10:24:25.898657Z&quot;,&quot;shell.execute_reply&quot;:&quot;2025-11-17T10:24:25.898139Z&quot;}" data-execution_count="14">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb28"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb28-1"><a href=""></a>X_train.corr(method<span class="op">=</span><span class="st">'pearson'</span>, numeric_only<span class="op">=</span><span class="va">True</span>)</span></code></pre></div>
@@ -894,7 +894,7 @@ y_test: (30,)</code></pre>
 
 <section id="decision-boundaries-max_depth1" class="title-slide slide level1 center">
 <h1>Decision boundaries: <code>max_depth=1</code></h1>
-<div id="5d66e1c0" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2025-11-12T14:23:43.257252Z&quot;,&quot;iopub.status.busy&quot;:&quot;2025-11-12T14:23:43.257068Z&quot;,&quot;iopub.status.idle&quot;:&quot;2025-11-12T14:23:43.695684Z&quot;,&quot;shell.execute_reply&quot;:&quot;2025-11-12T14:23:43.695086Z&quot;}" data-execution_count="16">
+<div id="5d66e1c0" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2025-11-17T10:24:25.912499Z&quot;,&quot;iopub.status.busy&quot;:&quot;2025-11-17T10:24:25.912118Z&quot;,&quot;iopub.status.idle&quot;:&quot;2025-11-17T10:24:26.349227Z&quot;,&quot;shell.execute_reply&quot;:&quot;2025-11-17T10:24:26.348702Z&quot;}" data-execution_count="16">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb29"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb29-1"><a href=""></a>tree <span class="op">=</span> plot_boundary(DecisionTreeClassifier(max_depth<span class="op">=</span><span class="dv">1</span>, random_state<span class="op">=</span>seed), <span class="st">"decisiontree_cplot"</span>)</span></code></pre></div>
@@ -905,7 +905,7 @@ y_test: (30,)</code></pre>
 
 <section id="decision-boundaries-max_depth2" class="title-slide slide level1 center">
 <h1>Decision boundaries: <code>max_depth=2</code></h1>
-<div id="a334f69e" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2025-11-12T14:23:43.697889Z&quot;,&quot;iopub.status.busy&quot;:&quot;2025-11-12T14:23:43.697515Z&quot;,&quot;iopub.status.idle&quot;:&quot;2025-11-12T14:23:44.147782Z&quot;,&quot;shell.execute_reply&quot;:&quot;2025-11-12T14:23:44.147186Z&quot;}" data-execution_count="17">
+<div id="a334f69e" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2025-11-17T10:24:26.351183Z&quot;,&quot;iopub.status.busy&quot;:&quot;2025-11-17T10:24:26.350843Z&quot;,&quot;iopub.status.idle&quot;:&quot;2025-11-17T10:24:26.793978Z&quot;,&quot;shell.execute_reply&quot;:&quot;2025-11-17T10:24:26.793407Z&quot;}" data-execution_count="17">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb30"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb30-1"><a href=""></a>tree <span class="op">=</span> plot_boundary(DecisionTreeClassifier(max_depth<span class="op">=</span><span class="dv">2</span>, random_state<span class="op">=</span>seed), <span class="st">"decisiontree_cplot"</span>)</span></code></pre></div>
@@ -916,7 +916,7 @@ y_test: (30,)</code></pre>
 
 <section id="decision-boundaries-max_depth2-changing-the-random-seed" class="title-slide slide level1 center">
 <h1>Decision boundaries: <code>max_depth=2</code> (changing the random seed)</h1>
-<div id="648564ec" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2025-11-12T14:23:44.149849Z&quot;,&quot;iopub.status.busy&quot;:&quot;2025-11-12T14:23:44.149643Z&quot;,&quot;iopub.status.idle&quot;:&quot;2025-11-12T14:23:44.588856Z&quot;,&quot;shell.execute_reply&quot;:&quot;2025-11-12T14:23:44.588283Z&quot;}" data-execution_count="18">
+<div id="648564ec" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2025-11-17T10:24:26.796104Z&quot;,&quot;iopub.status.busy&quot;:&quot;2025-11-17T10:24:26.795729Z&quot;,&quot;iopub.status.idle&quot;:&quot;2025-11-17T10:24:27.231503Z&quot;,&quot;shell.execute_reply&quot;:&quot;2025-11-17T10:24:27.230893Z&quot;}" data-execution_count="18">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb31"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb31-1"><a href=""></a>tree <span class="op">=</span> plot_boundary(DecisionTreeClassifier(max_depth<span class="op">=</span><span class="dv">2</span>, random_state<span class="op">=</span><span class="dv">1</span>), <span class="st">"decisiontree_cplot"</span>)</span></code></pre></div>
@@ -927,7 +927,7 @@ y_test: (30,)</code></pre>
 
 <section id="decision-boundaries-max_depth3" class="title-slide slide level1 center">
 <h1>Decision boundaries: <code>max_depth=3</code></h1>
-<div id="11077234" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2025-11-12T14:23:44.591027Z&quot;,&quot;iopub.status.busy&quot;:&quot;2025-11-12T14:23:44.590556Z&quot;,&quot;iopub.status.idle&quot;:&quot;2025-11-12T14:23:45.028199Z&quot;,&quot;shell.execute_reply&quot;:&quot;2025-11-12T14:23:45.027649Z&quot;}" data-execution_count="19">
+<div id="11077234" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2025-11-17T10:24:27.233539Z&quot;,&quot;iopub.status.busy&quot;:&quot;2025-11-17T10:24:27.233324Z&quot;,&quot;iopub.status.idle&quot;:&quot;2025-11-17T10:24:27.670998Z&quot;,&quot;shell.execute_reply&quot;:&quot;2025-11-17T10:24:27.670432Z&quot;}" data-execution_count="19">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb32"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb32-1"><a href=""></a>tree <span class="op">=</span> plot_boundary(DecisionTreeClassifier(max_depth<span class="op">=</span><span class="dv">3</span>, random_state<span class="op">=</span>seed), <span class="st">"decisiontree_cplot"</span>)</span></code></pre></div>
@@ -938,7 +938,7 @@ y_test: (30,)</code></pre>
 
 <section id="decision-boundaries-max_depth6" class="title-slide slide level1 center">
 <h1>Decision boundaries: <code>max_depth=6</code></h1>
-<div id="6fd5a7ac" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2025-11-12T14:23:45.030453Z&quot;,&quot;iopub.status.busy&quot;:&quot;2025-11-12T14:23:45.030050Z&quot;,&quot;iopub.status.idle&quot;:&quot;2025-11-12T14:23:45.467497Z&quot;,&quot;shell.execute_reply&quot;:&quot;2025-11-12T14:23:45.466898Z&quot;}" data-execution_count="20">
+<div id="6fd5a7ac" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2025-11-17T10:24:27.673083Z&quot;,&quot;iopub.status.busy&quot;:&quot;2025-11-17T10:24:27.672790Z&quot;,&quot;iopub.status.idle&quot;:&quot;2025-11-17T10:24:28.105310Z&quot;,&quot;shell.execute_reply&quot;:&quot;2025-11-17T10:24:28.104721Z&quot;}" data-execution_count="20">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb33"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb33-1"><a href=""></a>tree <span class="op">=</span> plot_boundary(DecisionTreeClassifier(max_depth<span class="op">=</span><span class="dv">6</span>, random_state<span class="op">=</span>seed), <span class="st">"decisiontree_cplot"</span>)</span></code></pre></div>
@@ -949,7 +949,7 @@ y_test: (30,)</code></pre>
 
 <section id="plotting-the-accuracy" class="title-slide slide level1 center">
 <h1>Plotting the accuracy</h1>
-<div id="b0ec6d95" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2025-11-12T14:23:45.469753Z&quot;,&quot;iopub.status.busy&quot;:&quot;2025-11-12T14:23:45.469396Z&quot;,&quot;iopub.status.idle&quot;:&quot;2025-11-12T14:23:45.627448Z&quot;,&quot;shell.execute_reply&quot;:&quot;2025-11-12T14:23:45.626853Z&quot;}" data-execution_count="21">
+<div id="b0ec6d95" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2025-11-17T10:24:28.107467Z&quot;,&quot;iopub.status.busy&quot;:&quot;2025-11-17T10:24:28.107248Z&quot;,&quot;iopub.status.idle&quot;:&quot;2025-11-17T10:24:28.259550Z&quot;,&quot;shell.execute_reply&quot;:&quot;2025-11-17T10:24:28.258949Z&quot;}" data-execution_count="21">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb34"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb34-1"><a href=""></a><span class="co"># Prepare to store max_depth values and corresponding accuracies</span></span>
@@ -1058,7 +1058,7 @@ y_test: (30,)</code></pre>
 
 <section id="random-forest" class="title-slide slide level1 center">
 <h1>Random forest</h1>
-<div id="aa8c6cae" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2025-11-12T14:23:46.012388Z&quot;,&quot;iopub.status.busy&quot;:&quot;2025-11-12T14:23:46.011926Z&quot;,&quot;iopub.status.idle&quot;:&quot;2025-11-12T14:24:01.987305Z&quot;,&quot;shell.execute_reply&quot;:&quot;2025-11-12T14:24:01.986698Z&quot;}" data-execution_count="24">
+<div id="aa8c6cae" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2025-11-17T10:24:28.629788Z&quot;,&quot;iopub.status.busy&quot;:&quot;2025-11-17T10:24:28.629599Z&quot;,&quot;iopub.status.idle&quot;:&quot;2025-11-17T10:24:44.473028Z&quot;,&quot;shell.execute_reply&quot;:&quot;2025-11-17T10:24:44.472455Z&quot;}" data-execution_count="24">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb36"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb36-1"><a href=""></a><span class="im">from</span> sklearn.model_selection <span class="im">import</span> RandomizedSearchCV</span>
@@ -1099,7 +1099,7 @@ Best Cross-validation Accuracy: 0.9583333333333334 Test Set Accuracy with Best P
 
 <section id="decision-boundaries-k1-no-normalization" class="title-slide slide level1 center">
 <h1>Decision boundaries: <code>k=1</code> (no normalization)</h1>
-<div id="313f0aeb" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2025-11-12T14:24:02.192905Z&quot;,&quot;iopub.status.busy&quot;:&quot;2025-11-12T14:24:02.192699Z&quot;,&quot;iopub.status.idle&quot;:&quot;2025-11-12T14:24:44.473760Z&quot;,&quot;shell.execute_reply&quot;:&quot;2025-11-12T14:24:44.473231Z&quot;}" data-execution_count="26">
+<div id="313f0aeb" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2025-11-17T10:24:44.674997Z&quot;,&quot;iopub.status.busy&quot;:&quot;2025-11-17T10:24:44.674604Z&quot;,&quot;iopub.status.idle&quot;:&quot;2025-11-17T10:25:26.628189Z&quot;,&quot;shell.execute_reply&quot;:&quot;2025-11-17T10:25:26.627604Z&quot;}" data-execution_count="26">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb38"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb38-1"><a href=""></a><span class="im">from</span> sklearn.neighbors <span class="im">import</span> KNeighborsClassifier</span>
@@ -1112,7 +1112,7 @@ Best Cross-validation Accuracy: 0.9583333333333334 Test Set Accuracy with Best P
 
 <section id="decision-boundaries-k1-min-max-normalization" class="title-slide slide level1 center">
 <h1>Decision boundaries: <code>k=1</code> (min-max normalization)</h1>
-<div id="fd0b352a" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2025-11-12T14:24:44.475654Z&quot;,&quot;iopub.status.busy&quot;:&quot;2025-11-12T14:24:44.475468Z&quot;,&quot;iopub.status.idle&quot;:&quot;2025-11-12T14:24:50.022732Z&quot;,&quot;shell.execute_reply&quot;:&quot;2025-11-12T14:24:50.022191Z&quot;}" data-execution_count="27">
+<div id="fd0b352a" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2025-11-17T10:25:26.630327Z&quot;,&quot;iopub.status.busy&quot;:&quot;2025-11-17T10:25:26.629986Z&quot;,&quot;iopub.status.idle&quot;:&quot;2025-11-17T10:25:32.206616Z&quot;,&quot;shell.execute_reply&quot;:&quot;2025-11-17T10:25:32.206091Z&quot;}" data-execution_count="27">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb39"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb39-1"><a href=""></a>knn <span class="op">=</span> plot_boundary(KNeighborsClassifier(n_neighbors<span class="op">=</span><span class="dv">1</span>), <span class="st">"knn_cplot"</span>, norm<span class="op">=</span><span class="va">True</span>)</span></code></pre></div>
@@ -1123,7 +1123,7 @@ Best Cross-validation Accuracy: 0.9583333333333334 Test Set Accuracy with Best P
 
 <section id="decision-boundaries-k10-min-max-normalization" class="title-slide slide level1 center">
 <h1>Decision boundaries: <code>k=10</code> (min-max normalization)</h1>
-<div id="8c2f5371" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2025-11-12T14:24:50.024819Z&quot;,&quot;iopub.status.busy&quot;:&quot;2025-11-12T14:24:50.024457Z&quot;,&quot;iopub.status.idle&quot;:&quot;2025-11-12T14:24:55.820740Z&quot;,&quot;shell.execute_reply&quot;:&quot;2025-11-12T14:24:55.820164Z&quot;}" data-execution_count="28">
+<div id="8c2f5371" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2025-11-17T10:25:32.208664Z&quot;,&quot;iopub.status.busy&quot;:&quot;2025-11-17T10:25:32.208210Z&quot;,&quot;iopub.status.idle&quot;:&quot;2025-11-17T10:25:38.147737Z&quot;,&quot;shell.execute_reply&quot;:&quot;2025-11-17T10:25:38.147182Z&quot;}" data-execution_count="28">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb40"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb40-1"><a href=""></a>knn <span class="op">=</span> plot_boundary(KNeighborsClassifier(n_neighbors<span class="op">=</span><span class="dv">10</span>), <span class="st">"knn_cplot"</span>, norm<span class="op">=</span><span class="va">True</span>)</span></code></pre></div>
@@ -1134,7 +1134,7 @@ Best Cross-validation Accuracy: 0.9583333333333334 Test Set Accuracy with Best P
 
 <section id="plotting-the-accuracy-1" class="title-slide slide level1 center">
 <h1>Plotting the accuracy</h1>
-<div id="40f79431" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2025-11-12T14:24:55.823028Z&quot;,&quot;iopub.status.busy&quot;:&quot;2025-11-12T14:24:55.822529Z&quot;,&quot;iopub.status.idle&quot;:&quot;2025-11-12T14:24:55.983570Z&quot;,&quot;shell.execute_reply&quot;:&quot;2025-11-12T14:24:55.983024Z&quot;}" data-execution_count="29">
+<div id="40f79431" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2025-11-17T10:25:38.149863Z&quot;,&quot;iopub.status.busy&quot;:&quot;2025-11-17T10:25:38.149457Z&quot;,&quot;iopub.status.idle&quot;:&quot;2025-11-17T10:25:38.306616Z&quot;,&quot;shell.execute_reply&quot;:&quot;2025-11-17T10:25:38.306102Z&quot;}" data-execution_count="29">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb41"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb41-1"><a href=""></a><span class="co"># Prepare to store max_depth values and corresponding accuracies</span></span>
@@ -1190,7 +1190,7 @@ Is this image a grape?</code></pre>
 
 <section id="perceptron-1" class="title-slide slide level1 center">
 <h1>Perceptron</h1>
-<div id="38b9e754" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2025-11-12T14:24:55.985797Z&quot;,&quot;iopub.status.busy&quot;:&quot;2025-11-12T14:24:55.985406Z&quot;,&quot;iopub.status.idle&quot;:&quot;2025-11-12T14:24:56.469540Z&quot;,&quot;shell.execute_reply&quot;:&quot;2025-11-12T14:24:56.468944Z&quot;}" data-execution_count="30">
+<div id="38b9e754" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2025-11-17T10:25:38.308836Z&quot;,&quot;iopub.status.busy&quot;:&quot;2025-11-17T10:25:38.308437Z&quot;,&quot;iopub.status.idle&quot;:&quot;2025-11-17T10:25:38.784984Z&quot;,&quot;shell.execute_reply&quot;:&quot;2025-11-17T10:25:38.784467Z&quot;}" data-execution_count="30">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb43"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb43-1"><a href=""></a><span class="im">from</span> sklearn.linear_model <span class="im">import</span> Perceptron</span>
@@ -1203,7 +1203,7 @@ Is this image a grape?</code></pre>
 
 <section id="perceptron-changing-the-seed" class="title-slide slide level1 center">
 <h1>Perceptron: changing the seed</h1>
-<div id="04c0a645" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2025-11-12T14:24:56.471463Z&quot;,&quot;iopub.status.busy&quot;:&quot;2025-11-12T14:24:56.471255Z&quot;,&quot;iopub.status.idle&quot;:&quot;2025-11-12T14:24:56.947611Z&quot;,&quot;shell.execute_reply&quot;:&quot;2025-11-12T14:24:56.947011Z&quot;}" data-execution_count="31">
+<div id="04c0a645" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2025-11-17T10:25:38.787032Z&quot;,&quot;iopub.status.busy&quot;:&quot;2025-11-17T10:25:38.786643Z&quot;,&quot;iopub.status.idle&quot;:&quot;2025-11-17T10:25:39.261799Z&quot;,&quot;shell.execute_reply&quot;:&quot;2025-11-17T10:25:39.261218Z&quot;}" data-execution_count="31">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb44"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb44-1"><a href=""></a>perceptron <span class="op">=</span> plot_boundary(Perceptron(random_state<span class="op">=</span><span class="dv">1</span>), <span class="st">"perceptron_cplot"</span>)</span></code></pre></div>
@@ -1214,7 +1214,7 @@ Is this image a grape?</code></pre>
 
 <section id="multi-layer-perceptron" class="title-slide slide level1 center">
 <h1>Multi-layer perceptron</h1>
-<div id="56b111d2" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2025-11-12T14:24:56.949833Z&quot;,&quot;iopub.status.busy&quot;:&quot;2025-11-12T14:24:56.949409Z&quot;,&quot;iopub.status.idle&quot;:&quot;2025-11-12T14:24:57.862835Z&quot;,&quot;shell.execute_reply&quot;:&quot;2025-11-12T14:24:57.862263Z&quot;}" data-execution_count="32">
+<div id="56b111d2" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2025-11-17T10:25:39.263703Z&quot;,&quot;iopub.status.busy&quot;:&quot;2025-11-17T10:25:39.263509Z&quot;,&quot;iopub.status.idle&quot;:&quot;2025-11-17T10:25:40.202591Z&quot;,&quot;shell.execute_reply&quot;:&quot;2025-11-17T10:25:40.202057Z&quot;}" data-execution_count="32">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb45"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb45-1"><a href=""></a><span class="im">from</span> sklearn.neural_network <span class="im">import</span> MLPClassifier</span>

@@ -60,7 +60,7 @@ No scheduled dates, just **book when you are ready**
 
 - *How do you know if you are prepared*?
     - Open random slides and check the titles. Can you expose them and make a self-contained speech?
-- At least one week in advance, use the [Booking](https://outlook.office365.com/owa/calendar/DTMMachineLearningModule@live.unibo.it/bookings/s/VXKOGV3sS02dofzMZtOpHQ2) page
+- At least one week in advance, use the [Booking](https://outlook.office.com/book/DTMMachineLearningModule@live.unibo.it/) page
 
 According to the University's regulation
 

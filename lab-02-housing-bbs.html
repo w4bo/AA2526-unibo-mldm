@@ -142,12 +142,12 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 </section>
 <section class="slide level2">
 
-<div class="quarto-embed-nb-cell" data-notebook="/data/lab-02-housing.ipynb" data-notebook-title="The [`California Housing`](https://www.oreilly.com/library/view/hands-on-machine-learning/9781492032632/) case study" data-notebook-cellid="110c3773">
+<div class="quarto-embed-nb-cell" data-notebook="/data/lab-02-housing.ipynb" data-notebook-title="The [`California Housing`](https://www.oreilly.com/library/view/hands-on-machine-learning/9781492032632/) case study" data-notebook-cellid="c83bbad3">
 <p><a href="https://colab.research.google.com/github/w4bo/AA2526-unibo-mldm/blob/main/slides/lab-02-housing.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"></a></p>
 <section id="the-california-housing-case-study" class="title-slide slide level1 center">
 <h1>The <a href="https://www.oreilly.com/library/view/hands-on-machine-learning/9781492032632/"><code>California Housing</code></a> case study</h1>
 <p>Our task is to use California census data to forecast housing prices given the population, median income, and median housing price for each block group in California. Block groups are the smallest geographical unit for which the US Census Bureau publishes sample data (a block group typically has a population of 600 to 3,000 people). We will just call them “districts” for short.</p>
-<div id="80970f2e" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2025-11-19T10:45:36.243176Z&quot;,&quot;iopub.status.busy&quot;:&quot;2025-11-19T10:45:36.242997Z&quot;,&quot;iopub.status.idle&quot;:&quot;2025-11-19T10:45:36.709641Z&quot;,&quot;shell.execute_reply&quot;:&quot;2025-11-19T10:45:36.709096Z&quot;}" data-outputid="587cfb9c-3001-4d5a-8aa5-819ce7247549" data-execution_count="1">
+<div id="80970f2e" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2025-11-20T22:36:31.827775Z&quot;,&quot;iopub.status.busy&quot;:&quot;2025-11-20T22:36:31.827375Z&quot;,&quot;iopub.status.idle&quot;:&quot;2025-11-20T22:36:32.478039Z&quot;,&quot;shell.execute_reply&quot;:&quot;2025-11-20T22:36:32.477509Z&quot;}" data-outputid="587cfb9c-3001-4d5a-8aa5-819ce7247549" data-execution_count="1">
 <div class="cell-output cell-output-display" data-execution_count="1">
 <div>
 <style scoped="">
@@ -344,7 +344,7 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <li>Which attributes (i.e., columns) are contained in the dataset?</li>
 <li>Which is their semantics?</li>
 </ul>
-<div id="9817e68c" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2025-11-19T10:45:36.711902Z&quot;,&quot;iopub.status.busy&quot;:&quot;2025-11-19T10:45:36.711523Z&quot;,&quot;iopub.status.idle&quot;:&quot;2025-11-19T10:45:36.715475Z&quot;,&quot;shell.execute_reply&quot;:&quot;2025-11-19T10:45:36.715042Z&quot;}" data-outputid="7a505de0-d4f0-42d0-f781-bb4abd8f8fce" data-execution_count="2">
+<div id="9817e68c" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2025-11-20T22:36:32.480046Z&quot;,&quot;iopub.status.busy&quot;:&quot;2025-11-20T22:36:32.479708Z&quot;,&quot;iopub.status.idle&quot;:&quot;2025-11-20T22:36:32.483306Z&quot;,&quot;shell.execute_reply&quot;:&quot;2025-11-20T22:36:32.482893Z&quot;}" data-outputid="7a505de0-d4f0-42d0-f781-bb4abd8f8fce" data-execution_count="2">
 <div class="cell-output cell-output-display" data-execution_count="2">
 <pre><code>Index(['longitude', 'latitude', 'housing_median_age', 'total_rooms',
        'total_bedrooms', 'population', 'households', 'median_income',
@@ -369,7 +369,7 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 
 <section id="data-profiling" class="title-slide slide level1 center">
 <h1>Data profiling</h1>
-<div id="85441c0b" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2025-11-19T10:45:36.717162Z&quot;,&quot;iopub.status.busy&quot;:&quot;2025-11-19T10:45:36.716986Z&quot;,&quot;iopub.status.idle&quot;:&quot;2025-11-19T10:45:36.724503Z&quot;,&quot;shell.execute_reply&quot;:&quot;2025-11-19T10:45:36.724039Z&quot;}" data-outputid="2f22dd7b-0b6b-4f6f-ef8c-b317a0b6c28c" data-execution_count="3">
+<div id="85441c0b" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2025-11-20T22:36:32.485085Z&quot;,&quot;iopub.status.busy&quot;:&quot;2025-11-20T22:36:32.484702Z&quot;,&quot;iopub.status.idle&quot;:&quot;2025-11-20T22:36:32.492438Z&quot;,&quot;shell.execute_reply&quot;:&quot;2025-11-20T22:36:32.491920Z&quot;}" data-outputid="2f22dd7b-0b6b-4f6f-ef8c-b317a0b6c28c" data-execution_count="3">
 <div class="cell-output cell-output-stdout">
 <pre><code>&lt;class 'pandas.core.frame.DataFrame'&gt;
 RangeIndex: 20640 entries, 0 to 20639
@@ -394,7 +394,7 @@ memory usage: 1.6+ MB</code></pre>
 
 <section id="data-profiling-1" class="title-slide slide level1 center">
 <h1>Data profiling</h1>
-<div id="e6a24b3a" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2025-11-19T10:45:36.726110Z&quot;,&quot;iopub.status.busy&quot;:&quot;2025-11-19T10:45:36.725933Z&quot;,&quot;iopub.status.idle&quot;:&quot;2025-11-19T10:45:36.752895Z&quot;,&quot;shell.execute_reply&quot;:&quot;2025-11-19T10:45:36.752419Z&quot;}" data-outputid="14d781ec-eb1f-4e59-d475-cc3a39f7e5cb" data-execution_count="4">
+<div id="e6a24b3a" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2025-11-20T22:36:32.494404Z&quot;,&quot;iopub.status.busy&quot;:&quot;2025-11-20T22:36:32.493923Z&quot;,&quot;iopub.status.idle&quot;:&quot;2025-11-20T22:36:32.519934Z&quot;,&quot;shell.execute_reply&quot;:&quot;2025-11-20T22:36:32.519451Z&quot;}" data-outputid="14d781ec-eb1f-4e59-d475-cc3a39f7e5cb" data-execution_count="4">
 <div class="cell-output cell-output-display" data-execution_count="4">
 <div>
 <style scoped="">
@@ -611,7 +611,7 @@ memory usage: 1.6+ MB</code></pre>
 <section id="memory-usage" class="title-slide slide level1 center">
 <h1>Memory usage</h1>
 <p>What if I change float64 to float32?</p>
-<div id="8f1e7c90" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2025-11-19T10:45:37.781326Z&quot;,&quot;iopub.status.busy&quot;:&quot;2025-11-19T10:45:37.780912Z&quot;,&quot;iopub.status.idle&quot;:&quot;2025-11-19T10:45:37.791543Z&quot;,&quot;shell.execute_reply&quot;:&quot;2025-11-19T10:45:37.791080Z&quot;}" data-outputid="42de86f8-33bc-4b32-ba59-df1d5f761ac8" data-execution_count="6">
+<div id="8f1e7c90" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2025-11-20T22:36:33.549301Z&quot;,&quot;iopub.status.busy&quot;:&quot;2025-11-20T22:36:33.548771Z&quot;,&quot;iopub.status.idle&quot;:&quot;2025-11-20T22:36:33.560424Z&quot;,&quot;shell.execute_reply&quot;:&quot;2025-11-20T22:36:33.559871Z&quot;}" data-outputid="42de86f8-33bc-4b32-ba59-df1d5f761ac8" data-execution_count="6">
 <div class="cell-output cell-output-stdout">
 <pre><code>&lt;class 'pandas.core.frame.DataFrame'&gt;
 RangeIndex: 20640 entries, 0 to 20639
@@ -643,7 +643,7 @@ memory usage: 887.0+ KB</code></pre>
 <section id="non-numeric-attributes" class="title-slide slide level1 center">
 <h1>Non-numeric attributes</h1>
 <p><code>ocean_proximity</code> is a text attribute, but not all machine libraries can manipulated textual data types.</p>
-<div id="3297de8e" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2025-11-19T10:45:37.793337Z&quot;,&quot;iopub.status.busy&quot;:&quot;2025-11-19T10:45:37.793152Z&quot;,&quot;iopub.status.idle&quot;:&quot;2025-11-19T10:45:37.798447Z&quot;,&quot;shell.execute_reply&quot;:&quot;2025-11-19T10:45:37.797915Z&quot;}" data-outputid="3e206562-51ff-44be-d06d-d1f44a268887" data-execution_count="7">
+<div id="3297de8e" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2025-11-20T22:36:33.562632Z&quot;,&quot;iopub.status.busy&quot;:&quot;2025-11-20T22:36:33.562205Z&quot;,&quot;iopub.status.idle&quot;:&quot;2025-11-20T22:36:33.568032Z&quot;,&quot;shell.execute_reply&quot;:&quot;2025-11-20T22:36:33.567519Z&quot;}" data-outputid="3e206562-51ff-44be-d06d-d1f44a268887" data-execution_count="7">
 <div class="cell-output cell-output-display" data-execution_count="7">
 <pre><code>ocean_proximity
 &lt;1H OCEAN     9136

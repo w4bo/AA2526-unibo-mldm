@@ -1,3 +1,13 @@
+## [1.0.15](https://github.com/w4bo/AA2526-unibo-mldm/compare/1.0.14...1.0.15) (2025-11-26)
+
+### Bug Fixes
+
+* update slides ([0d9046b](https://github.com/w4bo/AA2526-unibo-mldm/commit/0d9046bb988f81c6b34bcc8a7cc27291945131cd))
+
+### Build and continuous integration
+
+* **deps:** update actions/checkout action to v6 ([#13](https://github.com/w4bo/AA2526-unibo-mldm/issues/13)) ([dc67f11](https://github.com/w4bo/AA2526-unibo-mldm/commit/dc67f11237caf2667081aa85b8e634a28a6f3404))
+
 ## [1.0.14](https://github.com/w4bo/AA2526-unibo-mldm/compare/1.0.13...1.0.14) (2025-11-19)
 
 ### Dependency updates

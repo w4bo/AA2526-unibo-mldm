@@ -1,3 +1,14 @@
+## [1.0.14](https://github.com/w4bo/AA2526-unibo-mldm/compare/1.0.13...1.0.14) (2025-11-19)
+
+### Dependency updates
+
+* **deps:** update dependency semantic-release-preconfigured-conventional-commits to v1.1.157 ([#12](https://github.com/w4bo/AA2526-unibo-mldm/issues/12)) ([daa9411](https://github.com/w4bo/AA2526-unibo-mldm/commit/daa9411e9d75a749196da60e65a023c0b5b30bfb))
+
+### Bug Fixes
+
+* update slides ([caeb139](https://github.com/w4bo/AA2526-unibo-mldm/commit/caeb139b083adc6d44001ac30d1a71ed024fc84f))
+* update slides ([07f2966](https://github.com/w4bo/AA2526-unibo-mldm/commit/07f29660499500847e6e0f04638b330eb1dc18b3))
+
 ## [1.0.13](https://github.com/w4bo/AA2526-unibo-mldm/compare/1.0.12...1.0.13) (2025-11-18)
 
 ### Bug Fixes

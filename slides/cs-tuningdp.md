@@ -288,7 +288,7 @@ Key features:
 * representation via an human- and
 * machine-readable medium;
 * insight discovery;
-* dealing with possible arising  inconsistencies.
+* dealing with possible arising inconsistencies.
 
 Future directions:
 

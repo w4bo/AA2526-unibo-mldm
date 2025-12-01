@@ -1,3 +1,9 @@
+## [1.0.17](https://github.com/w4bo/AA2526-unibo-mldm/compare/1.0.16...1.0.17) (2025-12-01)
+
+### Bug Fixes
+
+* refactoring css ([5fbfd7e](https://github.com/w4bo/AA2526-unibo-mldm/commit/5fbfd7e5a7b272be6c51f3570ee85ac773489ae7))
+
 ## [1.0.16](https://github.com/w4bo/AA2526-unibo-mldm/compare/1.0.15...1.0.16) (2025-12-01)
 
 ### Bug Fixes

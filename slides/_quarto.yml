@@ -46,7 +46,7 @@ format:
 author: Matteo Francia <br/> DISI --- University of Bologna <br/> m.francia@unibo.it
 title: Machine Learning and Data Mining (Module 2)
 bibliography:
-  - refs.bib
+  - refs/refs.bib
 
 execute:
     enabled: false

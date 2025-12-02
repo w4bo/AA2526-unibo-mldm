@@ -1,3 +1,9 @@
+## [1.0.19](https://github.com/w4bo/AA2526-unibo-mldm/compare/1.0.18...1.0.19) (2025-12-02)
+
+### Bug Fixes
+
+* look for unused nested images ([a9928e7](https://github.com/w4bo/AA2526-unibo-mldm/commit/a9928e71ec4731a164a1625b531f652a360f1421))
+
 ## [1.0.18](https://github.com/w4bo/AA2526-unibo-mldm/compare/1.0.17...1.0.18) (2025-12-01)
 
 ### Bug Fixes

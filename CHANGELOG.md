@@ -1,3 +1,9 @@
+## [1.0.18](https://github.com/w4bo/AA2526-unibo-mldm/compare/1.0.17...1.0.18) (2025-12-01)
+
+### Bug Fixes
+
+* removing unused images ([7dd6091](https://github.com/w4bo/AA2526-unibo-mldm/commit/7dd609172fd867fdb0a98c04261385993da18a27))
+
 ## [1.0.17](https://github.com/w4bo/AA2526-unibo-mldm/compare/1.0.16...1.0.17) (2025-12-01)
 
 ### Bug Fixes

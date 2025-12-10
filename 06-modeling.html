@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="en"><head>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script><script src="06-modeling_files/libs/quarto-html/tabby.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js" integrity="sha384-ZvpUoO/+PpLXR1lu4jmpXWu80pZlYUAfxl5NsBMWOEPSjUn/6Z/hRTt8+pR6L4N2" crossorigin="anonymous"></script><script src="06-modeling_files/libs/quarto-html/tabby.min.js"></script>
 <script src="06-modeling_files/libs/quarto-html/popper.min.js"></script>
 <script src="06-modeling_files/libs/quarto-html/tippy.umd.min.js"></script>
 <link href="06-modeling_files/libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="06-modeling_files/libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="06-modeling_files/libs/quarto-html/quarto-syntax-highlighting-549806ee2085284f45b00abea8c6df48.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.6.40">
+<link href="06-modeling_files/libs/quarto-html/quarto-syntax-highlighting-cdaacfc258cb6f151192107f105ac881.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.9.12">
 
   <meta name="author" content="Matteo Francia   DISI — University of Bologna   m.francia@unibo.it">
   <title>Machine Learning and Data Mining (Module 2)</title>
@@ -28,8 +28,9 @@
       vertical-align: middle;
     }
     /* CSS for syntax highlighting */
+    html { -webkit-text-size-adjust: 100%; }
     pre > code.sourceCode { white-space: pre; position: relative; }
-    pre > code.sourceCode > span { line-height: 1.25; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
     pre > code.sourceCode > span:empty { height: 1.2em; }
     .sourceCode { overflow: visible; }
     code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -40,7 +41,7 @@
     }
     @media print {
     pre > code.sourceCode { white-space: pre-wrap; }
-    pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
     }
     pre.numberSource code
       { counter-reset: source-line 0; }
@@ -93,7 +94,7 @@
     code span.vs { color: #20794d; } /* VerbatimString */
     code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </style>
-  <link rel="stylesheet" href="06-modeling_files/libs/revealjs/dist/theme/quarto-6391498a111a1f00b0d941bda0c7e264.css">
+  <link rel="stylesheet" href="06-modeling_files/libs/revealjs/dist/theme/quarto-b3aa9dda08c8fde6dffd4aadb76df7d0.css">
   <link href="06-modeling_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="06-modeling_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="06-modeling_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -185,7 +186,7 @@
       margin-right: 0; 
     }
   </style>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" integrity="sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg==" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/requirejs@2.3.6/require.min.js" integrity="sha384-c9c+LnTbwQ3aujuU7ULEPVvgLs+Fn6fJUvIGTsuu1ZcCf11fiEubah0ttpca4ntM sha384-6V1/AdqZRWk1KAlWbKBlGhN7VG4iE/yAZcO6NZPMF8od0vukrvr0tg4qY6NSrItx" crossorigin="anonymous"></script>
   
   <script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
 </head>
@@ -285,7 +286,7 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <li><em>Feature extraction</em>: extract the features from data to define the attributes in image and text data</li>
 </ul></li>
 </ul>
-<div id="80e1c257" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2025-12-10T06:08:53.808547Z&quot;,&quot;iopub.status.busy&quot;:&quot;2025-12-10T06:08:53.808359Z&quot;,&quot;iopub.status.idle&quot;:&quot;2025-12-10T06:08:54.557037Z&quot;,&quot;shell.execute_reply&quot;:&quot;2025-12-10T06:08:54.556440Z&quot;}" data-outputid="19814ad4-7ef0-47a6-c339-2729b5be8854" data-execution_count="1">
+<div id="80e1c257" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2025-12-10T14:22:36.107337Z&quot;,&quot;iopub.status.busy&quot;:&quot;2025-12-10T14:22:36.107156Z&quot;,&quot;iopub.status.idle&quot;:&quot;2025-12-10T14:22:36.862224Z&quot;,&quot;shell.execute_reply&quot;:&quot;2025-12-10T14:22:36.861617Z&quot;}}" data-outputid="19814ad4-7ef0-47a6-c339-2729b5be8854" data-execution_count="1">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb1-1"><a href=""></a><span class="im">import</span> sklearn <span class="im">as</span> sk</span>
@@ -383,7 +384,7 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 
 <section id="datasets-in-sklearn" class="title-slide slide level1 center">
 <h1>Datasets in sklearn</h1>
-<div id="f54858f9" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2025-12-10T06:08:54.559402Z&quot;,&quot;iopub.status.busy&quot;:&quot;2025-12-10T06:08:54.559144Z&quot;,&quot;iopub.status.idle&quot;:&quot;2025-12-10T06:08:54.598023Z&quot;,&quot;shell.execute_reply&quot;:&quot;2025-12-10T06:08:54.597529Z&quot;}" data-execution_count="2">
+<div id="f54858f9" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2025-12-10T14:22:36.864492Z&quot;,&quot;iopub.status.busy&quot;:&quot;2025-12-10T14:22:36.864215Z&quot;,&quot;iopub.status.idle&quot;:&quot;2025-12-10T14:22:36.907782Z&quot;,&quot;shell.execute_reply&quot;:&quot;2025-12-10T14:22:36.907155Z&quot;}}" data-execution_count="2">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb12-1"><a href=""></a><span class="im">import</span> sklearn.datasets <span class="im">as</span> datasets</span>
@@ -409,7 +410,7 @@ load_wine</code></pre>
 
 <section id="the-iris-dataset" class="title-slide slide level1 center">
 <h1>The <code>Iris</code> dataset</h1>
-<div id="Y-nsPIhDQe89" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2025-12-10T06:08:54.599953Z&quot;,&quot;iopub.status.busy&quot;:&quot;2025-12-10T06:08:54.599712Z&quot;,&quot;iopub.status.idle&quot;:&quot;2025-12-10T06:08:54.615763Z&quot;,&quot;shell.execute_reply&quot;:&quot;2025-12-10T06:08:54.615295Z&quot;}" data-outputid="d019e408-35e4-4d21-d78a-9b92b6784e2a" data-execution_count="3">
+<div id="Y-nsPIhDQe89" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2025-12-10T14:22:36.910126Z&quot;,&quot;iopub.status.busy&quot;:&quot;2025-12-10T14:22:36.909576Z&quot;,&quot;iopub.status.idle&quot;:&quot;2025-12-10T14:22:36.926633Z&quot;,&quot;shell.execute_reply&quot;:&quot;2025-12-10T14:22:36.926127Z&quot;}}" data-outputid="d019e408-35e4-4d21-d78a-9b92b6784e2a" data-execution_count="3">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb14-1"><a href=""></a><span class="im">from</span> sklearn.datasets <span class="im">import</span> load_iris</span>
@@ -437,7 +438,7 @@ load_wine</code></pre>
     }
 </style>
 
-<table class="dataframe caption-top" data-quarto-postprocess="true" data-border="1">
+<table class="dataframe caption-top" data-border="1">
 <thead>
 <tr class="header" style="text-align: right;">
 <th data-quarto-table-cell-role="th"></th>
@@ -450,7 +451,7 @@ load_wine</code></pre>
 </thead>
 <tbody>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">0</td>
+<th data-quarto-table-cell-role="th">0</th>
 <td>5.1</td>
 <td>3.5</td>
 <td>1.4</td>
@@ -458,7 +459,7 @@ load_wine</code></pre>
 <td>0</td>
 </tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th">1</td>
+<th data-quarto-table-cell-role="th">1</th>
 <td>4.9</td>
 <td>3.0</td>
 <td>1.4</td>
@@ -466,7 +467,7 @@ load_wine</code></pre>
 <td>0</td>
 </tr>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">2</td>
+<th data-quarto-table-cell-role="th">2</th>
 <td>4.7</td>
 <td>3.2</td>
 <td>1.3</td>
@@ -474,7 +475,7 @@ load_wine</code></pre>
 <td>0</td>
 </tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th">3</td>
+<th data-quarto-table-cell-role="th">3</th>
 <td>4.6</td>
 <td>3.1</td>
 <td>1.5</td>
@@ -482,7 +483,7 @@ load_wine</code></pre>
 <td>0</td>
 </tr>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">4</td>
+<th data-quarto-table-cell-role="th">4</th>
 <td>5.0</td>
 <td>3.6</td>
 <td>1.4</td>
@@ -490,7 +491,7 @@ load_wine</code></pre>
 <td>0</td>
 </tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th">...</td>
+<th data-quarto-table-cell-role="th">...</th>
 <td>...</td>
 <td>...</td>
 <td>...</td>
@@ -498,7 +499,7 @@ load_wine</code></pre>
 <td>...</td>
 </tr>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">145</td>
+<th data-quarto-table-cell-role="th">145</th>
 <td>6.7</td>
 <td>3.0</td>
 <td>5.2</td>
@@ -506,7 +507,7 @@ load_wine</code></pre>
 <td>2</td>
 </tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th">146</td>
+<th data-quarto-table-cell-role="th">146</th>
 <td>6.3</td>
 <td>2.5</td>
 <td>5.0</td>
@@ -514,7 +515,7 @@ load_wine</code></pre>
 <td>2</td>
 </tr>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">147</td>
+<th data-quarto-table-cell-role="th">147</th>
 <td>6.5</td>
 <td>3.0</td>
 <td>5.2</td>
@@ -522,7 +523,7 @@ load_wine</code></pre>
 <td>2</td>
 </tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th">148</td>
+<th data-quarto-table-cell-role="th">148</th>
 <td>6.2</td>
 <td>3.4</td>
 <td>5.4</td>
@@ -530,7 +531,7 @@ load_wine</code></pre>
 <td>2</td>
 </tr>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">149</td>
+<th data-quarto-table-cell-role="th">149</th>
 <td>5.9</td>
 <td>3.0</td>
 <td>5.1</td>
@@ -548,7 +549,7 @@ load_wine</code></pre>
 
 <section id="profiling" class="title-slide slide level1 center">
 <h1>Profiling</h1>
-<div id="ohmh7Kc8Nvm7" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2025-12-10T06:08:54.617602Z&quot;,&quot;iopub.status.busy&quot;:&quot;2025-12-10T06:08:54.617243Z&quot;,&quot;iopub.status.idle&quot;:&quot;2025-12-10T06:08:54.624412Z&quot;,&quot;shell.execute_reply&quot;:&quot;2025-12-10T06:08:54.623916Z&quot;}" data-outputid="3a9f740a-1006-4b5d-9d44-ff192314d6a1" data-execution_count="4">
+<div id="ohmh7Kc8Nvm7" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2025-12-10T14:22:36.928865Z&quot;,&quot;iopub.status.busy&quot;:&quot;2025-12-10T14:22:36.928417Z&quot;,&quot;iopub.status.idle&quot;:&quot;2025-12-10T14:22:36.936609Z&quot;,&quot;shell.execute_reply&quot;:&quot;2025-12-10T14:22:36.936030Z&quot;}}" data-outputid="3a9f740a-1006-4b5d-9d44-ff192314d6a1" data-execution_count="4">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb15-1"><a href=""></a>df.info()</span></code></pre></div>
@@ -572,7 +573,7 @@ memory usage: 6.0 KB</code></pre>
 
 <section id="training-and-test-sets-1" class="title-slide slide level1 center">
 <h1>Training and test sets</h1>
-<div id="fOKkpeA2NeEs" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2025-12-10T06:08:54.626157Z&quot;,&quot;iopub.status.busy&quot;:&quot;2025-12-10T06:08:54.625851Z&quot;,&quot;iopub.status.idle&quot;:&quot;2025-12-10T06:08:54.653160Z&quot;,&quot;shell.execute_reply&quot;:&quot;2025-12-10T06:08:54.652601Z&quot;}" data-execution_count="5">
+<div id="fOKkpeA2NeEs" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2025-12-10T14:22:36.938743Z&quot;,&quot;iopub.status.busy&quot;:&quot;2025-12-10T14:22:36.938388Z&quot;,&quot;iopub.status.idle&quot;:&quot;2025-12-10T14:22:36.968405Z&quot;,&quot;shell.execute_reply&quot;:&quot;2025-12-10T14:22:36.967803Z&quot;}}" data-execution_count="5">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb17-1"><a href=""></a><span class="co"># Split the data into training and test sets</span></span>
@@ -610,7 +611,7 @@ y_test: (30,)</code></pre>
 <section id="section-1" class="title-slide slide level1 center">
 <h1></h1>
 <p>When throwing two dice, the outcome of any roll is unpredictable, but a sum of 7 will tend to occur twice as often as 4</p>
-<div id="a1a121cf" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2025-12-10T06:08:54.655057Z&quot;,&quot;iopub.status.busy&quot;:&quot;2025-12-10T06:08:54.654716Z&quot;,&quot;iopub.status.idle&quot;:&quot;2025-12-10T06:08:55.211734Z&quot;,&quot;shell.execute_reply&quot;:&quot;2025-12-10T06:08:55.211106Z&quot;}" data-execution_count="6">
+<div id="a1a121cf" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2025-12-10T14:22:36.970521Z&quot;,&quot;iopub.status.busy&quot;:&quot;2025-12-10T14:22:36.970143Z&quot;,&quot;iopub.status.idle&quot;:&quot;2025-12-10T14:22:37.547874Z&quot;,&quot;shell.execute_reply&quot;:&quot;2025-12-10T14:22:37.547278Z&quot;}}" data-execution_count="6">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb19"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb19-1"><a href=""></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
@@ -637,7 +638,7 @@ y_test: (30,)</code></pre>
 <li>The PRNG-generated sequence is not truly random, because it is completely determined by an initial value, called <em>seed</em></li>
 <li>Pseudorandom number generators are important in practice for their reproducibility.</li>
 </ul>
-<div id="4210a099" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2025-12-10T06:08:55.214248Z&quot;,&quot;iopub.status.busy&quot;:&quot;2025-12-10T06:08:55.213704Z&quot;,&quot;iopub.status.idle&quot;:&quot;2025-12-10T06:08:55.219591Z&quot;,&quot;shell.execute_reply&quot;:&quot;2025-12-10T06:08:55.219013Z&quot;}" data-execution_count="7">
+<div id="4210a099" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2025-12-10T14:22:37.550191Z&quot;,&quot;iopub.status.busy&quot;:&quot;2025-12-10T14:22:37.549693Z&quot;,&quot;iopub.status.idle&quot;:&quot;2025-12-10T14:22:37.555205Z&quot;,&quot;shell.execute_reply&quot;:&quot;2025-12-10T14:22:37.554727Z&quot;}}" data-execution_count="7">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb20"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb20-1"><a href=""></a><span class="bu">print</span>(np.random.randint(<span class="dv">1</span>, <span class="dv">7</span>, size<span class="op">=</span><span class="dv">10</span>))</span>
@@ -651,8 +652,8 @@ y_test: (30,)</code></pre>
 <span id="cb20-9"><a href=""></a><span class="bu">print</span>(np.random.randint(<span class="dv">1</span>, <span class="dv">7</span>, size<span class="op">=</span><span class="dv">10</span>))</span></code></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
-<pre><code>[4 6 1 2 3 5 6 3 5 5]
-[6 3 2 1 4 6 2 4 5 4]
+<pre><code>[6 3 4 2 3 5 6 5 4 5]
+[3 6 3 2 4 2 4 6 5 2]
 [4 5 3 5 5 2 3 3 3 5]
 [4 5 3 5 5 2 3 3 3 5]
 [4 5 3 5 5 2 3 3 3 5]
@@ -700,7 +701,7 @@ y_test: (30,)</code></pre>
 <section>
 <section id="decision-tree" class="title-slide slide level1 center">
 <h1>Decision tree</h1>
-<div id="qRGDyke9OGij" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2025-12-10T06:08:55.221926Z&quot;,&quot;iopub.status.busy&quot;:&quot;2025-12-10T06:08:55.221415Z&quot;,&quot;iopub.status.idle&quot;:&quot;2025-12-10T06:08:55.280175Z&quot;,&quot;shell.execute_reply&quot;:&quot;2025-12-10T06:08:55.279582Z&quot;}" data-outputid="28adc7ac-dafc-4623-98c5-dda0795d6ca5" data-execution_count="8">
+<div id="qRGDyke9OGij" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2025-12-10T14:22:37.557098Z&quot;,&quot;iopub.status.busy&quot;:&quot;2025-12-10T14:22:37.556923Z&quot;,&quot;iopub.status.idle&quot;:&quot;2025-12-10T14:22:37.616069Z&quot;,&quot;shell.execute_reply&quot;:&quot;2025-12-10T14:22:37.615546Z&quot;}}" data-outputid="28adc7ac-dafc-4623-98c5-dda0795d6ca5" data-execution_count="8">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb22"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb22-1"><a href=""></a><span class="im">from</span> sklearn.tree <span class="im">import</span> DecisionTreeClassifier  <span class="co"># Import the model</span></span>
@@ -718,7 +719,7 @@ y_test: (30,)</code></pre>
 </section>
 <section id="plotting-the-tree" class="slide level2">
 <h2>Plotting the tree</h2>
-<div id="TCYt3BziRjqK" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2025-12-10T06:08:55.282667Z&quot;,&quot;iopub.status.busy&quot;:&quot;2025-12-10T06:08:55.282165Z&quot;,&quot;iopub.status.idle&quot;:&quot;2025-12-10T06:08:55.427642Z&quot;,&quot;shell.execute_reply&quot;:&quot;2025-12-10T06:08:55.427052Z&quot;}" data-outputid="a5c6ce55-6e0d-4504-e4c8-408382791a1d" data-execution_count="9">
+<div id="TCYt3BziRjqK" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2025-12-10T14:22:37.618103Z&quot;,&quot;iopub.status.busy&quot;:&quot;2025-12-10T14:22:37.617688Z&quot;,&quot;iopub.status.idle&quot;:&quot;2025-12-10T14:22:37.756927Z&quot;,&quot;shell.execute_reply&quot;:&quot;2025-12-10T14:22:37.756316Z&quot;}}" data-outputid="a5c6ce55-6e0d-4504-e4c8-408382791a1d" data-execution_count="9">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb24"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb24-1"><a href=""></a><span class="im">from</span> sklearn.tree <span class="im">import</span> plot_tree</span>
@@ -728,7 +729,7 @@ y_test: (30,)</code></pre>
 
 </div>
 <img data-src="06-modeling_files/figure-revealjs/cell-10-output-1.png" class="r-stretch"><p>Checking feature relevance</p>
-<div id="JV7m4ZKqPaJm" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2025-12-10T06:08:55.430047Z&quot;,&quot;iopub.status.busy&quot;:&quot;2025-12-10T06:08:55.429658Z&quot;,&quot;iopub.status.idle&quot;:&quot;2025-12-10T06:08:55.438142Z&quot;,&quot;shell.execute_reply&quot;:&quot;2025-12-10T06:08:55.437555Z&quot;}" data-outputid="efeb6271-4cec-4fcb-b621-84f298272ad7" data-execution_count="10">
+<div id="JV7m4ZKqPaJm" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2025-12-10T14:22:37.758752Z&quot;,&quot;iopub.status.busy&quot;:&quot;2025-12-10T14:22:37.758574Z&quot;,&quot;iopub.status.idle&quot;:&quot;2025-12-10T14:22:37.766913Z&quot;,&quot;shell.execute_reply&quot;:&quot;2025-12-10T14:22:37.766343Z&quot;}}" data-outputid="efeb6271-4cec-4fcb-b621-84f298272ad7" data-execution_count="10">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb25"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb25-1"><a href=""></a>feature_importance_df <span class="op">=</span> pd.DataFrame({<span class="st">'Feature'</span>: X.columns, <span class="st">'Importance'</span>: clf.feature_importances_})  <span class="co"># Create a DataFrame to display feature importance</span></span>
@@ -751,7 +752,7 @@ y_test: (30,)</code></pre>
     }
 </style>
 
-<table class="dataframe caption-top" data-quarto-postprocess="true" data-border="1">
+<table class="dataframe caption-top" data-border="1">
 <thead>
 <tr class="header" style="text-align: right;">
 <th data-quarto-table-cell-role="th"></th>
@@ -761,22 +762,22 @@ y_test: (30,)</code></pre>
 </thead>
 <tbody>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">2</td>
+<th data-quarto-table-cell-role="th">2</th>
 <td>petal length (cm)</td>
 <td>1.0</td>
 </tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th">3</td>
+<th data-quarto-table-cell-role="th">3</th>
 <td>petal width (cm)</td>
 <td>0.0</td>
 </tr>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">0</td>
+<th data-quarto-table-cell-role="th">0</th>
 <td>sepal length (cm)</td>
 <td>0.0</td>
 </tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th">1</td>
+<th data-quarto-table-cell-role="th">1</th>
 <td>sepal width (cm)</td>
 <td>0.0</td>
 </tr>
@@ -789,7 +790,7 @@ y_test: (30,)</code></pre>
 </section></section>
 <section id="petal-vs-sepal" class="title-slide slide level1 center">
 <h1><code>petal</code> vs <code>sepal</code></h1>
-<div id="8h4GlwOOPlz3" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2025-12-10T06:08:55.445409Z&quot;,&quot;iopub.status.busy&quot;:&quot;2025-12-10T06:08:55.444965Z&quot;,&quot;iopub.status.idle&quot;:&quot;2025-12-10T06:08:55.541648Z&quot;,&quot;shell.execute_reply&quot;:&quot;2025-12-10T06:08:55.541021Z&quot;}" data-outputid="a3ff9957-5136-4fe3-d3e0-dc7a7ddf2bfe" data-execution_count="12">
+<div id="8h4GlwOOPlz3" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2025-12-10T14:22:37.774559Z&quot;,&quot;iopub.status.busy&quot;:&quot;2025-12-10T14:22:37.774376Z&quot;,&quot;iopub.status.idle&quot;:&quot;2025-12-10T14:22:37.872181Z&quot;,&quot;shell.execute_reply&quot;:&quot;2025-12-10T14:22:37.871653Z&quot;}}" data-outputid="a3ff9957-5136-4fe3-d3e0-dc7a7ddf2bfe" data-execution_count="12">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb26"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb26-1"><a href=""></a>plot(df, clf, feature_importance_df[<span class="st">'Feature'</span>].iloc[:<span class="dv">2</span>].tolist())  <span class="co"># plot the 2 most important features</span></span></code></pre></div>
@@ -802,7 +803,7 @@ y_test: (30,)</code></pre>
 </div>
 </div>
 </div>
-<div id="nFNaqWIOT-Rd" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2025-12-10T06:08:55.543786Z&quot;,&quot;iopub.status.busy&quot;:&quot;2025-12-10T06:08:55.543388Z&quot;,&quot;iopub.status.idle&quot;:&quot;2025-12-10T06:08:55.640430Z&quot;,&quot;shell.execute_reply&quot;:&quot;2025-12-10T06:08:55.639927Z&quot;}" data-outputid="e57d7a46-c26b-4bfc-c956-f67944b26ada" data-execution_count="13">
+<div id="nFNaqWIOT-Rd" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2025-12-10T14:22:37.874043Z&quot;,&quot;iopub.status.busy&quot;:&quot;2025-12-10T14:22:37.873824Z&quot;,&quot;iopub.status.idle&quot;:&quot;2025-12-10T14:22:37.971192Z&quot;,&quot;shell.execute_reply&quot;:&quot;2025-12-10T14:22:37.970581Z&quot;}}" data-outputid="e57d7a46-c26b-4bfc-c956-f67944b26ada" data-execution_count="13">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb27"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb27-1"><a href=""></a>plot(df, clf, feature_importance_df[<span class="st">'Feature'</span>].iloc[<span class="dv">2</span>:].tolist())  <span class="co"># plot the 2 lest important features</span></span></code></pre></div>
@@ -819,7 +820,7 @@ y_test: (30,)</code></pre>
 
 <section id="feature-selection-checking-correlations" class="title-slide slide level1 center">
 <h1>Feature selection: checking correlations</h1>
-<div id="e8799449" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2025-12-10T06:08:55.642296Z&quot;,&quot;iopub.status.busy&quot;:&quot;2025-12-10T06:08:55.642112Z&quot;,&quot;iopub.status.idle&quot;:&quot;2025-12-10T06:08:55.649604Z&quot;,&quot;shell.execute_reply&quot;:&quot;2025-12-10T06:08:55.649140Z&quot;}" data-execution_count="14">
+<div id="e8799449" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2025-12-10T14:22:37.973205Z&quot;,&quot;iopub.status.busy&quot;:&quot;2025-12-10T14:22:37.973006Z&quot;,&quot;iopub.status.idle&quot;:&quot;2025-12-10T14:22:37.980401Z&quot;,&quot;shell.execute_reply&quot;:&quot;2025-12-10T14:22:37.979950Z&quot;}}" data-execution_count="14">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb28"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb28-1"><a href=""></a>X_train.corr(method<span class="op">=</span><span class="st">'pearson'</span>, numeric_only<span class="op">=</span><span class="va">True</span>)</span></code></pre></div>
@@ -840,7 +841,7 @@ y_test: (30,)</code></pre>
     }
 </style>
 
-<table class="dataframe caption-top" data-quarto-postprocess="true" data-border="1">
+<table class="dataframe caption-top" data-border="1">
 <thead>
 <tr class="header" style="text-align: right;">
 <th data-quarto-table-cell-role="th"></th>
@@ -852,28 +853,28 @@ y_test: (30,)</code></pre>
 </thead>
 <tbody>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">sepal length (cm)</td>
+<th data-quarto-table-cell-role="th">sepal length (cm)</th>
 <td>1.000000</td>
 <td>-0.106926</td>
 <td>0.862175</td>
 <td>0.801480</td>
 </tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th">sepal width (cm)</td>
+<th data-quarto-table-cell-role="th">sepal width (cm)</th>
 <td>-0.106926</td>
 <td>1.000000</td>
 <td>-0.432089</td>
 <td>-0.369509</td>
 </tr>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">petal length (cm)</td>
+<th data-quarto-table-cell-role="th">petal length (cm)</th>
 <td>0.862175</td>
 <td>-0.432089</td>
 <td>1.000000</td>
 <td>0.962577</td>
 </tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th">petal width (cm)</td>
+<th data-quarto-table-cell-role="th">petal width (cm)</th>
 <td>0.801480</td>
 <td>-0.369509</td>
 <td>0.962577</td>
@@ -894,7 +895,7 @@ y_test: (30,)</code></pre>
 
 <section id="decision-boundaries-max_depth1" class="title-slide slide level1 center">
 <h1>Decision boundaries: <code>max_depth=1</code></h1>
-<div id="5d66e1c0" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2025-12-10T06:08:55.663141Z&quot;,&quot;iopub.status.busy&quot;:&quot;2025-12-10T06:08:55.662777Z&quot;,&quot;iopub.status.idle&quot;:&quot;2025-12-10T06:08:56.100518Z&quot;,&quot;shell.execute_reply&quot;:&quot;2025-12-10T06:08:56.099977Z&quot;}" data-execution_count="16">
+<div id="5d66e1c0" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2025-12-10T14:22:37.993979Z&quot;,&quot;iopub.status.busy&quot;:&quot;2025-12-10T14:22:37.993778Z&quot;,&quot;iopub.status.idle&quot;:&quot;2025-12-10T14:22:38.442426Z&quot;,&quot;shell.execute_reply&quot;:&quot;2025-12-10T14:22:38.441740Z&quot;}}" data-execution_count="16">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb29"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb29-1"><a href=""></a>tree <span class="op">=</span> plot_boundary(DecisionTreeClassifier(max_depth<span class="op">=</span><span class="dv">1</span>, random_state<span class="op">=</span>seed), <span class="st">"decisiontree_cplot"</span>)</span></code></pre></div>
@@ -905,7 +906,7 @@ y_test: (30,)</code></pre>
 
 <section id="decision-boundaries-max_depth2" class="title-slide slide level1 center">
 <h1>Decision boundaries: <code>max_depth=2</code></h1>
-<div id="a334f69e" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2025-12-10T06:08:56.102363Z&quot;,&quot;iopub.status.busy&quot;:&quot;2025-12-10T06:08:56.102155Z&quot;,&quot;iopub.status.idle&quot;:&quot;2025-12-10T06:08:56.542542Z&quot;,&quot;shell.execute_reply&quot;:&quot;2025-12-10T06:08:56.541898Z&quot;}" data-execution_count="17">
+<div id="a334f69e" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2025-12-10T14:22:38.444415Z&quot;,&quot;iopub.status.busy&quot;:&quot;2025-12-10T14:22:38.444215Z&quot;,&quot;iopub.status.idle&quot;:&quot;2025-12-10T14:22:38.899025Z&quot;,&quot;shell.execute_reply&quot;:&quot;2025-12-10T14:22:38.898470Z&quot;}}" data-execution_count="17">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb30"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb30-1"><a href=""></a>tree <span class="op">=</span> plot_boundary(DecisionTreeClassifier(max_depth<span class="op">=</span><span class="dv">2</span>, random_state<span class="op">=</span>seed), <span class="st">"decisiontree_cplot"</span>)</span></code></pre></div>
@@ -916,7 +917,7 @@ y_test: (30,)</code></pre>
 
 <section id="decision-boundaries-max_depth2-changing-the-random-seed" class="title-slide slide level1 center">
 <h1>Decision boundaries: <code>max_depth=2</code> (changing the random seed)</h1>
-<div id="648564ec" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2025-12-10T06:08:56.544854Z&quot;,&quot;iopub.status.busy&quot;:&quot;2025-12-10T06:08:56.544414Z&quot;,&quot;iopub.status.idle&quot;:&quot;2025-12-10T06:08:56.971399Z&quot;,&quot;shell.execute_reply&quot;:&quot;2025-12-10T06:08:56.970770Z&quot;}" data-execution_count="18">
+<div id="648564ec" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2025-12-10T14:22:38.900951Z&quot;,&quot;iopub.status.busy&quot;:&quot;2025-12-10T14:22:38.900743Z&quot;,&quot;iopub.status.idle&quot;:&quot;2025-12-10T14:22:39.340505Z&quot;,&quot;shell.execute_reply&quot;:&quot;2025-12-10T14:22:39.339980Z&quot;}}" data-execution_count="18">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb31"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb31-1"><a href=""></a>tree <span class="op">=</span> plot_boundary(DecisionTreeClassifier(max_depth<span class="op">=</span><span class="dv">2</span>, random_state<span class="op">=</span><span class="dv">1</span>), <span class="st">"decisiontree_cplot"</span>)</span></code></pre></div>
@@ -927,7 +928,7 @@ y_test: (30,)</code></pre>
 
 <section id="decision-boundaries-max_depth3" class="title-slide slide level1 center">
 <h1>Decision boundaries: <code>max_depth=3</code></h1>
-<div id="11077234" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2025-12-10T06:08:56.973409Z&quot;,&quot;iopub.status.busy&quot;:&quot;2025-12-10T06:08:56.973211Z&quot;,&quot;iopub.status.idle&quot;:&quot;2025-12-10T06:08:57.412881Z&quot;,&quot;shell.execute_reply&quot;:&quot;2025-12-10T06:08:57.412337Z&quot;}" data-execution_count="19">
+<div id="11077234" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2025-12-10T14:22:39.342498Z&quot;,&quot;iopub.status.busy&quot;:&quot;2025-12-10T14:22:39.342304Z&quot;,&quot;iopub.status.idle&quot;:&quot;2025-12-10T14:22:39.785697Z&quot;,&quot;shell.execute_reply&quot;:&quot;2025-12-10T14:22:39.785101Z&quot;}}" data-execution_count="19">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb32"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb32-1"><a href=""></a>tree <span class="op">=</span> plot_boundary(DecisionTreeClassifier(max_depth<span class="op">=</span><span class="dv">3</span>, random_state<span class="op">=</span>seed), <span class="st">"decisiontree_cplot"</span>)</span></code></pre></div>
@@ -938,7 +939,7 @@ y_test: (30,)</code></pre>
 
 <section id="decision-boundaries-max_depth6" class="title-slide slide level1 center">
 <h1>Decision boundaries: <code>max_depth=6</code></h1>
-<div id="6fd5a7ac" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2025-12-10T06:08:57.415039Z&quot;,&quot;iopub.status.busy&quot;:&quot;2025-12-10T06:08:57.414656Z&quot;,&quot;iopub.status.idle&quot;:&quot;2025-12-10T06:08:57.847949Z&quot;,&quot;shell.execute_reply&quot;:&quot;2025-12-10T06:08:57.847439Z&quot;}" data-execution_count="20">
+<div id="6fd5a7ac" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2025-12-10T14:22:39.787889Z&quot;,&quot;iopub.status.busy&quot;:&quot;2025-12-10T14:22:39.787443Z&quot;,&quot;iopub.status.idle&quot;:&quot;2025-12-10T14:22:40.239120Z&quot;,&quot;shell.execute_reply&quot;:&quot;2025-12-10T14:22:40.238526Z&quot;}}" data-execution_count="20">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb33"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb33-1"><a href=""></a>tree <span class="op">=</span> plot_boundary(DecisionTreeClassifier(max_depth<span class="op">=</span><span class="dv">6</span>, random_state<span class="op">=</span>seed), <span class="st">"decisiontree_cplot"</span>)</span></code></pre></div>
@@ -949,7 +950,7 @@ y_test: (30,)</code></pre>
 
 <section id="plotting-the-accuracy" class="title-slide slide level1 center">
 <h1>Plotting the accuracy</h1>
-<div id="b0ec6d95" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2025-12-10T06:08:57.850053Z&quot;,&quot;iopub.status.busy&quot;:&quot;2025-12-10T06:08:57.849850Z&quot;,&quot;iopub.status.idle&quot;:&quot;2025-12-10T06:08:58.008553Z&quot;,&quot;shell.execute_reply&quot;:&quot;2025-12-10T06:08:58.008000Z&quot;}" data-execution_count="21">
+<div id="b0ec6d95" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2025-12-10T14:22:40.241219Z&quot;,&quot;iopub.status.busy&quot;:&quot;2025-12-10T14:22:40.240877Z&quot;,&quot;iopub.status.idle&quot;:&quot;2025-12-10T14:22:40.408480Z&quot;,&quot;shell.execute_reply&quot;:&quot;2025-12-10T14:22:40.407976Z&quot;}}" data-execution_count="21">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb34"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb34-1"><a href=""></a><span class="co"># Prepare to store max_depth values and corresponding accuracies</span></span>
@@ -1058,7 +1059,7 @@ y_test: (30,)</code></pre>
 
 <section id="random-forest" class="title-slide slide level1 center">
 <h1>Random forest</h1>
-<div id="aa8c6cae" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2025-12-10T06:08:58.383873Z&quot;,&quot;iopub.status.busy&quot;:&quot;2025-12-10T06:08:58.383460Z&quot;,&quot;iopub.status.idle&quot;:&quot;2025-12-10T06:09:14.504682Z&quot;,&quot;shell.execute_reply&quot;:&quot;2025-12-10T06:09:14.504056Z&quot;}" data-execution_count="24">
+<div id="aa8c6cae" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2025-12-10T14:22:40.790214Z&quot;,&quot;iopub.status.busy&quot;:&quot;2025-12-10T14:22:40.790022Z&quot;,&quot;iopub.status.idle&quot;:&quot;2025-12-10T14:22:56.884358Z&quot;,&quot;shell.execute_reply&quot;:&quot;2025-12-10T14:22:56.883758Z&quot;}}" data-execution_count="24">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb36"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb36-1"><a href=""></a><span class="im">from</span> sklearn.model_selection <span class="im">import</span> RandomizedSearchCV</span>
@@ -1099,7 +1100,7 @@ Best Cross-validation Accuracy: 0.9583333333333334 Test Set Accuracy with Best P
 
 <section id="decision-boundaries-k1-no-normalization" class="title-slide slide level1 center">
 <h1>Decision boundaries: <code>k=1</code> (no normalization)</h1>
-<div id="313f0aeb" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2025-12-10T06:09:14.711105Z&quot;,&quot;iopub.status.busy&quot;:&quot;2025-12-10T06:09:14.710629Z&quot;,&quot;iopub.status.idle&quot;:&quot;2025-12-10T06:09:58.171968Z&quot;,&quot;shell.execute_reply&quot;:&quot;2025-12-10T06:09:58.171373Z&quot;}" data-execution_count="26">
+<div id="313f0aeb" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2025-12-10T14:22:57.087444Z&quot;,&quot;iopub.status.busy&quot;:&quot;2025-12-10T14:22:57.087095Z&quot;,&quot;iopub.status.idle&quot;:&quot;2025-12-10T14:23:39.343500Z&quot;,&quot;shell.execute_reply&quot;:&quot;2025-12-10T14:23:39.342871Z&quot;}}" data-execution_count="26">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb38"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb38-1"><a href=""></a><span class="im">from</span> sklearn.neighbors <span class="im">import</span> KNeighborsClassifier</span>
@@ -1112,7 +1113,7 @@ Best Cross-validation Accuracy: 0.9583333333333334 Test Set Accuracy with Best P
 
 <section id="decision-boundaries-k1-min-max-normalization" class="title-slide slide level1 center">
 <h1>Decision boundaries: <code>k=1</code> (min-max normalization)</h1>
-<div id="fd0b352a" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2025-12-10T06:09:58.174129Z&quot;,&quot;iopub.status.busy&quot;:&quot;2025-12-10T06:09:58.173809Z&quot;,&quot;iopub.status.idle&quot;:&quot;2025-12-10T06:10:03.884204Z&quot;,&quot;shell.execute_reply&quot;:&quot;2025-12-10T06:10:03.883621Z&quot;}" data-execution_count="27">
+<div id="fd0b352a" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2025-12-10T14:23:39.345642Z&quot;,&quot;iopub.status.busy&quot;:&quot;2025-12-10T14:23:39.345192Z&quot;,&quot;iopub.status.idle&quot;:&quot;2025-12-10T14:23:44.888741Z&quot;,&quot;shell.execute_reply&quot;:&quot;2025-12-10T14:23:44.888153Z&quot;}}" data-execution_count="27">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb39"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb39-1"><a href=""></a>knn <span class="op">=</span> plot_boundary(KNeighborsClassifier(n_neighbors<span class="op">=</span><span class="dv">1</span>), <span class="st">"knn_cplot"</span>, norm<span class="op">=</span><span class="va">True</span>)</span></code></pre></div>
@@ -1123,7 +1124,7 @@ Best Cross-validation Accuracy: 0.9583333333333334 Test Set Accuracy with Best P
 
 <section id="decision-boundaries-k10-min-max-normalization" class="title-slide slide level1 center">
 <h1>Decision boundaries: <code>k=10</code> (min-max normalization)</h1>
-<div id="8c2f5371" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2025-12-10T06:10:03.886531Z&quot;,&quot;iopub.status.busy&quot;:&quot;2025-12-10T06:10:03.886152Z&quot;,&quot;iopub.status.idle&quot;:&quot;2025-12-10T06:10:10.136577Z&quot;,&quot;shell.execute_reply&quot;:&quot;2025-12-10T06:10:10.135913Z&quot;}" data-execution_count="28">
+<div id="8c2f5371" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2025-12-10T14:23:44.890860Z&quot;,&quot;iopub.status.busy&quot;:&quot;2025-12-10T14:23:44.890656Z&quot;,&quot;iopub.status.idle&quot;:&quot;2025-12-10T14:23:50.836305Z&quot;,&quot;shell.execute_reply&quot;:&quot;2025-12-10T14:23:50.835709Z&quot;}}" data-execution_count="28">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb40"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb40-1"><a href=""></a>knn <span class="op">=</span> plot_boundary(KNeighborsClassifier(n_neighbors<span class="op">=</span><span class="dv">10</span>), <span class="st">"knn_cplot"</span>, norm<span class="op">=</span><span class="va">True</span>)</span></code></pre></div>
@@ -1134,7 +1135,7 @@ Best Cross-validation Accuracy: 0.9583333333333334 Test Set Accuracy with Best P
 
 <section id="plotting-the-accuracy-1" class="title-slide slide level1 center">
 <h1>Plotting the accuracy</h1>
-<div id="40f79431" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2025-12-10T06:10:10.138926Z&quot;,&quot;iopub.status.busy&quot;:&quot;2025-12-10T06:10:10.138463Z&quot;,&quot;iopub.status.idle&quot;:&quot;2025-12-10T06:10:10.307866Z&quot;,&quot;shell.execute_reply&quot;:&quot;2025-12-10T06:10:10.307299Z&quot;}" data-execution_count="29">
+<div id="40f79431" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2025-12-10T14:23:50.838442Z&quot;,&quot;iopub.status.busy&quot;:&quot;2025-12-10T14:23:50.838237Z&quot;,&quot;iopub.status.idle&quot;:&quot;2025-12-10T14:23:51.000591Z&quot;,&quot;shell.execute_reply&quot;:&quot;2025-12-10T14:23:51.000087Z&quot;}}" data-execution_count="29">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb41"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb41-1"><a href=""></a><span class="co"># Prepare to store max_depth values and corresponding accuracies</span></span>
@@ -1190,7 +1191,7 @@ Is this image a grape?</code></pre>
 
 <section id="perceptron-1" class="title-slide slide level1 center">
 <h1>Perceptron</h1>
-<div id="38b9e754" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2025-12-10T06:10:10.310501Z&quot;,&quot;iopub.status.busy&quot;:&quot;2025-12-10T06:10:10.310004Z&quot;,&quot;iopub.status.idle&quot;:&quot;2025-12-10T06:10:10.802696Z&quot;,&quot;shell.execute_reply&quot;:&quot;2025-12-10T06:10:10.802173Z&quot;}" data-execution_count="30">
+<div id="38b9e754" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2025-12-10T14:23:51.002543Z&quot;,&quot;iopub.status.busy&quot;:&quot;2025-12-10T14:23:51.002345Z&quot;,&quot;iopub.status.idle&quot;:&quot;2025-12-10T14:23:51.499480Z&quot;,&quot;shell.execute_reply&quot;:&quot;2025-12-10T14:23:51.498834Z&quot;}}" data-execution_count="30">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb43"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb43-1"><a href=""></a><span class="im">from</span> sklearn.linear_model <span class="im">import</span> Perceptron</span>
@@ -1203,7 +1204,7 @@ Is this image a grape?</code></pre>
 
 <section id="perceptron-changing-the-seed" class="title-slide slide level1 center">
 <h1>Perceptron: changing the seed</h1>
-<div id="04c0a645" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2025-12-10T06:10:10.804780Z&quot;,&quot;iopub.status.busy&quot;:&quot;2025-12-10T06:10:10.804409Z&quot;,&quot;iopub.status.idle&quot;:&quot;2025-12-10T06:10:11.296537Z&quot;,&quot;shell.execute_reply&quot;:&quot;2025-12-10T06:10:11.295984Z&quot;}" data-execution_count="31">
+<div id="04c0a645" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2025-12-10T14:23:51.501502Z&quot;,&quot;iopub.status.busy&quot;:&quot;2025-12-10T14:23:51.501309Z&quot;,&quot;iopub.status.idle&quot;:&quot;2025-12-10T14:23:51.997587Z&quot;,&quot;shell.execute_reply&quot;:&quot;2025-12-10T14:23:51.996951Z&quot;}}" data-execution_count="31">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb44"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb44-1"><a href=""></a>perceptron <span class="op">=</span> plot_boundary(Perceptron(random_state<span class="op">=</span><span class="dv">1</span>), <span class="st">"perceptron_cplot"</span>)</span></code></pre></div>
@@ -1214,7 +1215,7 @@ Is this image a grape?</code></pre>
 
 <section id="multi-layer-perceptron" class="title-slide slide level1 center">
 <h1>Multi-layer perceptron</h1>
-<div id="56b111d2" class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2025-12-10T06:10:11.298597Z&quot;,&quot;iopub.status.busy&quot;:&quot;2025-12-10T06:10:11.298224Z&quot;,&quot;iopub.status.idle&quot;:&quot;2025-12-10T06:10:12.284329Z&quot;,&quot;shell.execute_reply&quot;:&quot;2025-12-10T06:10:12.283751Z&quot;}" data-execution_count="32">
+<div id="56b111d2" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2025-12-10T14:23:51.999603Z&quot;,&quot;iopub.status.busy&quot;:&quot;2025-12-10T14:23:51.999299Z&quot;,&quot;iopub.status.idle&quot;:&quot;2025-12-10T14:23:52.997185Z&quot;,&quot;shell.execute_reply&quot;:&quot;2025-12-10T14:23:52.996570Z&quot;}}" data-execution_count="32">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb45"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb45-1"><a href=""></a><span class="im">from</span> sklearn.neural_network <span class="im">import</span> MLPClassifier</span>
@@ -1425,7 +1426,7 @@ Is this image a grape?</code></pre>
         margin: 0.1,
 
         math: {
-          mathjax: 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/MathJax.js',
+          mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@2.7.9/MathJax.js',
           config: 'TeX-AMS_HTML-full',
           tex2jax: {
             inlineMath: [['\\(','\\)']],
@@ -1452,129 +1453,111 @@ Is this image a grape?</code></pre>
       });
     </script>
     <script id="quarto-html-after-body" type="application/javascript">
-    window.document.addEventListener("DOMContentLoaded", function (event) {
-      const toggleBodyColorMode = (bsSheetEl) => {
-        const mode = bsSheetEl.getAttribute("data-mode");
-        const bodyEl = window.document.querySelector("body");
-        if (mode === "dark") {
-          bodyEl.classList.add("quarto-dark");
-          bodyEl.classList.remove("quarto-light");
-        } else {
-          bodyEl.classList.add("quarto-light");
-          bodyEl.classList.remove("quarto-dark");
-        }
-      }
-      const toggleBodyColorPrimary = () => {
-        const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
-        if (bsSheetEl) {
-          toggleBodyColorMode(bsSheetEl);
-        }
-      }
-      toggleBodyColorPrimary();  
-      const tabsets =  window.document.querySelectorAll(".panel-tabset-tabby")
-      tabsets.forEach(function(tabset) {
-        const tabby = new Tabby('#' + tabset.id);
-      });
-        var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
-        var mailtoRegex = new RegExp(/^mailto:/);
-          var filterRegex = new RegExp('/' + window.location.host + '/');
-        var isInternal = (href) => {
-            return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
-        }
-        // Inspect non-navigation links and adorn them if external
-     	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
-        for (var i=0; i<links.length; i++) {
-          const link = links[i];
-          if (!isInternal(link.href)) {
-            // undo the damage that might have been done by quarto-nav.js in the case of
-            // links that we want to consider external
-            if (link.dataset.originalHref !== undefined) {
-              link.href = link.dataset.originalHref;
+      window.document.addEventListener("DOMContentLoaded", function (event) {
+        const tabsets =  window.document.querySelectorAll(".panel-tabset-tabby")
+        tabsets.forEach(function(tabset) {
+          const tabby = new Tabby('#' + tabset.id);
+        });
+          var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+          var mailtoRegex = new RegExp(/^mailto:/);
+            var filterRegex = new RegExp('/' + window.location.host + '/');
+          var isInternal = (href) => {
+              return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+          }
+          // Inspect non-navigation links and adorn them if external
+         var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+          for (var i=0; i<links.length; i++) {
+            const link = links[i];
+            if (!isInternal(link.href)) {
+              // undo the damage that might have been done by quarto-nav.js in the case of
+              // links that we want to consider external
+              if (link.dataset.originalHref !== undefined) {
+                link.href = link.dataset.originalHref;
+              }
             }
           }
-        }
-      function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
-        const config = {
-          allowHTML: true,
-          maxWidth: 500,
-          delay: 100,
-          arrow: false,
-          appendTo: function(el) {
-              return el.closest('section.slide') || el.parentElement;
-          },
-          interactive: true,
-          interactiveBorder: 10,
-          theme: 'light-border',
-          placement: 'bottom-start',
-        };
-        if (contentFn) {
-          config.content = contentFn;
-        }
-        if (onTriggerFn) {
-          config.onTrigger = onTriggerFn;
-        }
-        if (onUntriggerFn) {
-          config.onUntrigger = onUntriggerFn;
-        }
-          config['offset'] = [0,0];
-          config['maxWidth'] = 700;
-        window.tippy(el, config); 
-      }
-      const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
-      for (var i=0; i<noterefs.length; i++) {
-        const ref = noterefs[i];
-        tippyHover(ref, function() {
-          // use id or data attribute instead here
-          let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
-          try { href = new URL(href).hash; } catch {}
-          const id = href.replace(/^#\/?/, "");
-          const note = window.document.getElementById(id);
-          if (note) {
-            return note.innerHTML;
-          } else {
-            return "";
+        function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+          const config = {
+            allowHTML: true,
+            maxWidth: 500,
+            delay: 100,
+            arrow: false,
+            appendTo: function(el) {
+                return el.closest('section.slide') || el.parentElement;
+            },
+            interactive: true,
+            interactiveBorder: 10,
+            theme: 'light-border',
+            placement: 'bottom-start',
+          };
+          if (contentFn) {
+            config.content = contentFn;
           }
-        });
-      }
-      const findCites = (el) => {
-        const parentEl = el.parentElement;
-        if (parentEl) {
-          const cites = parentEl.dataset.cites;
-          if (cites) {
-            return {
-              el,
-              cites: cites.split(' ')
-            };
-          } else {
-            return findCites(el.parentElement)
+          if (onTriggerFn) {
+            config.onTrigger = onTriggerFn;
           }
-        } else {
-          return undefined;
+          if (onUntriggerFn) {
+            config.onUntrigger = onUntriggerFn;
+          }
+            config['offset'] = [0,0];
+            config['maxWidth'] = 700;
+          window.tippy(el, config); 
         }
-      };
-      var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
-      for (var i=0; i<bibliorefs.length; i++) {
-        const ref = bibliorefs[i];
-        const citeInfo = findCites(ref);
-        if (citeInfo) {
-          tippyHover(citeInfo.el, function() {
-            var popup = window.document.createElement('div');
-            citeInfo.cites.forEach(function(cite) {
-              var citeDiv = window.document.createElement('div');
-              citeDiv.classList.add('hanging-indent');
-              citeDiv.classList.add('csl-entry');
-              var biblioDiv = window.document.getElementById('ref-' + cite);
-              if (biblioDiv) {
-                citeDiv.innerHTML = biblioDiv.innerHTML;
-              }
-              popup.appendChild(citeDiv);
-            });
-            return popup.innerHTML;
+        const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+        for (var i=0; i<noterefs.length; i++) {
+          const ref = noterefs[i];
+          tippyHover(ref, function() {
+            // use id or data attribute instead here
+            let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+            try { href = new URL(href).hash; } catch {}
+            const id = href.replace(/^#\/?/, "");
+            const note = window.document.getElementById(id);
+            if (note) {
+              return note.innerHTML;
+            } else {
+              return "";
+            }
           });
         }
-      }
-    });
-    </script>
+        const findCites = (el) => {
+          const parentEl = el.parentElement;
+          if (parentEl) {
+            const cites = parentEl.dataset.cites;
+            if (cites) {
+              return {
+                el,
+                cites: cites.split(' ')
+              };
+            } else {
+              return findCites(el.parentElement)
+            }
+          } else {
+            return undefined;
+          }
+        };
+        var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+        for (var i=0; i<bibliorefs.length; i++) {
+          const ref = bibliorefs[i];
+          const citeInfo = findCites(ref);
+          if (citeInfo) {
+            tippyHover(citeInfo.el, function() {
+              var popup = window.document.createElement('div');
+              citeInfo.cites.forEach(function(cite) {
+                var citeDiv = window.document.createElement('div');
+                citeDiv.classList.add('hanging-indent');
+                citeDiv.classList.add('csl-entry');
+                var biblioDiv = window.document.getElementById('ref-' + cite);
+                if (biblioDiv) {
+                  citeDiv.innerHTML = biblioDiv.innerHTML;
+                }
+                popup.appendChild(citeDiv);
+              });
+              return popup.innerHTML;
+            });
+          }
+        }
+      });
+      </script>
     
 
 </body></html>

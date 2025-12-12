@@ -1,3 +1,13 @@
+## [1.0.21](https://github.com/w4bo/AA2526-unibo-mldm/compare/1.0.20...1.0.21) (2025-12-12)
+
+### Dependency updates
+
+* **deps:** update slides/utils digest to 7e90833 ([#25](https://github.com/w4bo/AA2526-unibo-mldm/issues/25)) ([82502a5](https://github.com/w4bo/AA2526-unibo-mldm/commit/82502a5f87e798acb4566646f77546547e49fe35))
+
+### Bug Fixes
+
+* restore broken images for modeling ([5d8f141](https://github.com/w4bo/AA2526-unibo-mldm/commit/5d8f141f06f1d65b21ad814f2ec358ad4bc42d6c))
+
 ## [1.0.20](https://github.com/w4bo/AA2526-unibo-mldm/compare/1.0.19...1.0.20) (2025-12-11)
 
 ### Dependency updates

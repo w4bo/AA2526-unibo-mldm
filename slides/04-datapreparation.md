@@ -416,12 +416,12 @@ $X\%$ is the *Compound Annual Growth Rate*, the mean annualized growth rate for 
 :::: {.columns}
 ::: {.column width="49%"}
 
-![](https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/Standard_deviation_diagram_micro.svg/1920px-Standard_deviation_diagram_micro.svg.png)
+![](img/datapreprocessing/outlier_01.png)
 
 :::
 ::: {.column width="25%"}
 
-![](https://upload.wikimedia.org/wikipedia/commons/thumb/2/22/Empirical_rule_histogram.svg/1024px-Empirical_rule_histogram.svg.png)
+![](img/datapreprocessing/outlier_02.png)
 
 :::
 ::::
@@ -449,7 +449,7 @@ If $Q_{1}$ and $Q_{3}$ are the lower and upper quartiles, an outlier is any obse
 :::
 ::: {.column width="40%"}
 
-![](https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/Boxplot_vs_PDF.svg/800px-Boxplot_vs_PDF.svg.png)
+![](img/datapreprocessing/outlier_03.png)
 
 :::
 ::::

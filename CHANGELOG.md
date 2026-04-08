@@ -1,3 +1,27 @@
+## [1.0.22](https://github.com/w4bo/AA2526-unibo-mldm/compare/1.0.21...1.0.22) (2026-04-08)
+
+### Dependency updates
+
+* **deps:** update node.js to 24.13 ([#31](https://github.com/w4bo/AA2526-unibo-mldm/issues/31)) ([3b1fb82](https://github.com/w4bo/AA2526-unibo-mldm/commit/3b1fb82568bb7bef3d2e7048d3b1f17fc97b5f86))
+* **deps:** update node.js to 24.14 ([#35](https://github.com/w4bo/AA2526-unibo-mldm/issues/35)) ([b889109](https://github.com/w4bo/AA2526-unibo-mldm/commit/b8891098f876caf8c28b47c94b31dbca23086008))
+* **deps:** update slides/utils digest to 5c44e4b ([#37](https://github.com/w4bo/AA2526-unibo-mldm/issues/37)) ([c7f3c3a](https://github.com/w4bo/AA2526-unibo-mldm/commit/c7f3c3a0e68c891a8cbfd1661e1c96407d430a5f))
+* **deps:** update slides/utils digest to 787347f ([#27](https://github.com/w4bo/AA2526-unibo-mldm/issues/27)) ([c819085](https://github.com/w4bo/AA2526-unibo-mldm/commit/c819085f48f5c628b51a187cd5b24adc9f589582))
+* **deps:** update slides/utils digest to acfe00b ([#28](https://github.com/w4bo/AA2526-unibo-mldm/issues/28)) ([2606b37](https://github.com/w4bo/AA2526-unibo-mldm/commit/2606b37a4031c30f084daa60dc53ed96cd843fb5))
+* **deps:** update slides/utils digest to c722254 ([#26](https://github.com/w4bo/AA2526-unibo-mldm/issues/26)) ([1827ec5](https://github.com/w4bo/AA2526-unibo-mldm/commit/1827ec5274ee7f66a393fa04739fd3e2556ec346))
+* **deps:** update slides/utils digest to cb86509 ([#39](https://github.com/w4bo/AA2526-unibo-mldm/issues/39)) ([0bbc9b2](https://github.com/w4bo/AA2526-unibo-mldm/commit/0bbc9b2baf4503b037c16bc9df070ea685886161))
+* **deps:** update w4bo/python docker tag to v1.0.7 ([#40](https://github.com/w4bo/AA2526-unibo-mldm/issues/40)) ([944b457](https://github.com/w4bo/AA2526-unibo-mldm/commit/944b457b9b29f706529d6c0a1d6be2ad83f723a9))
+* **deps:** update w4bo/quarto-slides docker tag to v1.0.28 ([#38](https://github.com/w4bo/AA2526-unibo-mldm/issues/38)) ([1379cb3](https://github.com/w4bo/AA2526-unibo-mldm/commit/1379cb3a66c536065173254e6cda8aa58c0c7a26))
+
+### Bug Fixes
+
+* move bias at the end ([c98a4e9](https://github.com/w4bo/AA2526-unibo-mldm/commit/c98a4e95a9b6140b0a17a47946a0a1212230c1a8))
+
+### Build and continuous integration
+
+* **deps:** update actions/setup-node action to v6.2.0 ([#32](https://github.com/w4bo/AA2526-unibo-mldm/issues/32)) ([83e05c4](https://github.com/w4bo/AA2526-unibo-mldm/commit/83e05c4dc92916556db016797bad05a8831ee94b))
+* **deps:** update actions/setup-node action to v6.3.0 ([#36](https://github.com/w4bo/AA2526-unibo-mldm/issues/36)) ([45b88af](https://github.com/w4bo/AA2526-unibo-mldm/commit/45b88afbe16c7634644eec428afe56f676073001))
+* **deps:** update jamesives/github-pages-deploy-action action to v4.8.0 ([#29](https://github.com/w4bo/AA2526-unibo-mldm/issues/29)) ([d850df6](https://github.com/w4bo/AA2526-unibo-mldm/commit/d850df65d0b04a60f1661378519da54fcc70810e))
+
 ## [1.0.21](https://github.com/w4bo/AA2526-unibo-mldm/compare/1.0.20...1.0.21) (2025-12-12)
 
 ### Dependency updates

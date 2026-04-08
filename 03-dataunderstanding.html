@@ -197,111 +197,6 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 </ul>
 </section>
 
-<section id="problem-what-about-biases" class="title-slide slide level1 center">
-<h1><img src="./img/cs.svg" class="title-icon"> <strong>Problem</strong>: what about biases?</h1>
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Survivorship-bias.svg/1280px-Survivorship-bias.svg.png"></p>
-<figcaption>Red dots stand for places where surviving planes were shot. How would you reinforce the planes?</figcaption>
-</figure>
-</div>
-</section>
-
-<section id="biases" class="title-slide slide level1 center">
-<h1>Biases</h1>
-<p><strong>Bias</strong></p>
-<ul>
-<li>Inclination or prejudice for or against one person or group, especially in a way considered to be unfair.
-<ul>
-<li>“There was evidence of bias against foreign applicants.”</li>
-</ul></li>
-<li>A systematic distortion of a statistical result due to a factor not allowed for in its derivation.
-<ul>
-<li>“The search results are biased by the specific queries used.”</li>
-</ul></li>
-</ul>
-<div class="fragment">
-<p>During data collection and analysis, several <strong>biases</strong> can occur</p>
-<ul>
-<li><em>Selection</em>: sample used for data collection is not representative of the population being studied</li>
-<li><em>Sampling</em>: certain segments of the population are more likely to be included or excluded from the sample</li>
-<li><em>Response</em>: participants in a survey or study provide inaccurate or misleading responses</li>
-<li><em>Confirmation</em>: refers to the tendency to favor information that confirms pre-existing beliefs or hypotheses while ignoring contradictory evidence</li>
-<li><em>Cultural</em>: data collection methods, survey questions, or study designs are culturally insensitive or fail to account for cultural differences</li>
-<li><em>Time-Interval</em>: the timing of data collection influences the results</li>
-<li>… and many others</li>
-</ul>
-</div>
-</section>
-
-<section id="confirmation-bias" class="title-slide slide level1 center">
-<h1>Confirmation bias</h1>
-<blockquote>
-<p>“If you torture the data long enough, it will confess to anything”</p>
-<p>Ronald H. Coase</p>
-</blockquote>
-<p><a href="https://www.ilfattoquotidiano.it/in-edicola/articoli/2023/09/14/linps-di-meloni-fa-sp-arire-il-lavoro-povero/7291305/">(2023) Dati “torturati” per dare un assist al governo</a></p>
-</section>
-
-<section id="survivorship-bias" class="title-slide slide level1 center">
-<h1>Survivorship bias</h1>
-<p>The “survivors” get studied, while the failures are excluded, leading to potentially flawed conclusions.</p>
-<p><em>Start-up Success Stories</em></p>
-<blockquote>
-<p>People often hear stories of wildly successful companies like Apple, Amazon, or Tesla and assume that hard work and a good idea are enough to succeed. This overlooks the countless failed start-ups that had hard-working teams and great ideas but didn’t survive due to market conditions, competition, or other factors.</p>
-</blockquote>
-<p><em>Fitness and Weight Loss Programs</em></p>
-<blockquote>
-<p>Testimonials for fitness programs often highlight people who achieved dramatic results. These “success stories” ignore the many individuals who followed the same program but didn’t achieve noticeable results, either due to differences in genetics, lifestyle, or other factors.</p>
-</blockquote>
-<p><em>Investment Portfolios</em></p>
-<blockquote>
-<p>Financial advice often highlights top-performing stocks or mutual funds as examples of great investments. These examples focus on the “survivors” in the market, ignoring the many investments that failed or underperformed, which can lead to overestimating the likelihood of similar success in the future.</p>
-</blockquote>
-</section>
-
-<section id="survivorship-bias-1" class="title-slide slide level1 center">
-<h1>Survivorship bias</h1>
-
-<img data-src="https://imgs.xkcd.com/comics/survivorship_bias.png" class="r-stretch quarto-figure-center"><p class="caption">https://xkcd.com/1827/</p></section>
-
-<section id="selection-bias" class="title-slide slide level1 center">
-<h1>Selection bias</h1>
-
-<img data-src="https://imgs.xkcd.com/comics/selection_bias.png" class="r-stretch quarto-figure-center"><p class="caption">https://xkcd.com/2618/</p></section>
-
-<section id="and-more" class="title-slide slide level1 center">
-<h1>… and more!</h1>
-<p><em>Confirmation Bias</em></p>
-<blockquote>
-<p>A person who believes in a specific political ideology might seek out news articles or social media posts that reinforce their beliefs, while ignoring or dismissing information that contradicts their views. This selective exposure to information strengthens their pre-existing opinions.</p>
-</blockquote>
-<p><em>Anchoring Bias</em></p>
-<blockquote>
-<p>When shopping for a new car, a person may see a car priced at $30,000, and then a second car priced at $25,000. Even if the second car is not objectively better or a great deal, the first price “anchors” their perception of the value of the second car, leading them to think it’s a better deal simply because it’s cheaper than the first option.</p>
-</blockquote>
-<p><em>Availability Bias</em></p>
-<blockquote>
-<p>After watching several news reports about airplane crashes, a person might overestimate the risk of flying. They might avoid flying, despite it being statistically safer than driving, because the images and stories of crashes are more readily available in their memory.</p>
-</blockquote>
-</section>
-
-<section id="biases-and-fairness" class="title-slide slide level1 center">
-<h1>Biases and fairness</h1>
-<p><strong>Fairness</strong> refers to the various attempts to correct algorithmic bias in automated decision processes based on ML models.</p>
-<ul>
-<li>Decisions made by such models after a learning process may be considered unfair if they were based on variables considered sensitive</li>
-<li>E.g., gender, ethnicity, sexual orientation, or disability</li>
-</ul>
-<p><a href="https://www.reuters.com/article/world/insight-amazon-scraps-secret-ai-recruiting-tool-that-showed-bias-against-women-idUSKCN1MK0AG/">(2018) Amazon scraps secret AI recruiting tool that showed bias against women</a></p>
-<p>How could we approach this problem?</p>
-</section>
-
-<section id="biases-and-fairness-1" class="title-slide slide level1 center">
-<h1>Biases and fairness</h1>
-<p><a href="https://www.theguardian.com/technology/2024/mar/08/we-definitely-messed-up-why-did-google-ai-tool-make-offensive-historical-images">(2024) ‘We definitely messed up’: why did Google AI tool make offensive historical images?</a></p>
-</section>
-
 <section id="problem-is-data-the-new-oil" class="title-slide slide level1 center">
 <h1><img src="./img/cs.svg" class="title-icon"> <strong>Problem</strong>: is data the new oil?</h1>
 <p>The more data we have, the more analysis we can do (however, more data != smarter data)</p>
@@ -749,6 +644,111 @@ memory usage: 6.0+ KB</code></pre>
 <section id="metrics-of-data-quality-batini2009methodologies" class="title-slide slide level1 center">
 <h1>Metrics of Data Quality <span class="citation" data-cites="batini2009methodologies">(<a href="#/references" role="doc-biblioref" onclick="">Batini et al. 2009</a>)</span></h1>
 <p><img src="https://github.com/user-attachments/assets/0724117f-3369-41f7-a277-2bfe1cf5d533" style="max-height: 450px !important" class="center-img"></p>
+</section>
+
+<section id="problem-what-about-biases" class="title-slide slide level1 center">
+<h1><img src="./img/cs.svg" class="title-icon"> <strong>Problem</strong>: what about biases?</h1>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Survivorship-bias.svg/1280px-Survivorship-bias.svg.png"></p>
+<figcaption>Red dots stand for places where surviving planes were shot. How would you reinforce the planes?</figcaption>
+</figure>
+</div>
+</section>
+
+<section id="biases" class="title-slide slide level1 center">
+<h1>Biases</h1>
+<p><strong>Bias</strong></p>
+<ul>
+<li>Inclination or prejudice for or against one person or group, especially in a way considered to be unfair.
+<ul>
+<li>“There was evidence of bias against foreign applicants.”</li>
+</ul></li>
+<li>A systematic distortion of a statistical result due to a factor not allowed for in its derivation.
+<ul>
+<li>“The search results are biased by the specific queries used.”</li>
+</ul></li>
+</ul>
+<div class="fragment">
+<p>During data collection and analysis, several <strong>biases</strong> can occur</p>
+<ul>
+<li><em>Selection</em>: sample used for data collection is not representative of the population being studied</li>
+<li><em>Sampling</em>: certain segments of the population are more likely to be included or excluded from the sample</li>
+<li><em>Response</em>: participants in a survey or study provide inaccurate or misleading responses</li>
+<li><em>Confirmation</em>: refers to the tendency to favor information that confirms pre-existing beliefs or hypotheses while ignoring contradictory evidence</li>
+<li><em>Cultural</em>: data collection methods, survey questions, or study designs are culturally insensitive or fail to account for cultural differences</li>
+<li><em>Time-Interval</em>: the timing of data collection influences the results</li>
+<li>… and many others</li>
+</ul>
+</div>
+</section>
+
+<section id="confirmation-bias" class="title-slide slide level1 center">
+<h1>Confirmation bias</h1>
+<blockquote>
+<p>“If you torture the data long enough, it will confess to anything”</p>
+<p>Ronald H. Coase</p>
+</blockquote>
+<p><a href="https://www.ilfattoquotidiano.it/in-edicola/articoli/2023/09/14/linps-di-meloni-fa-sp-arire-il-lavoro-povero/7291305/">(2023) Dati “torturati” per dare un assist al governo</a></p>
+</section>
+
+<section id="survivorship-bias" class="title-slide slide level1 center">
+<h1>Survivorship bias</h1>
+<p>The “survivors” get studied, while the failures are excluded, leading to potentially flawed conclusions.</p>
+<p><em>Start-up Success Stories</em></p>
+<blockquote>
+<p>People often hear stories of wildly successful companies like Apple, Amazon, or Tesla and assume that hard work and a good idea are enough to succeed. This overlooks the countless failed start-ups that had hard-working teams and great ideas but didn’t survive due to market conditions, competition, or other factors.</p>
+</blockquote>
+<p><em>Fitness and Weight Loss Programs</em></p>
+<blockquote>
+<p>Testimonials for fitness programs often highlight people who achieved dramatic results. These “success stories” ignore the many individuals who followed the same program but didn’t achieve noticeable results, either due to differences in genetics, lifestyle, or other factors.</p>
+</blockquote>
+<p><em>Investment Portfolios</em></p>
+<blockquote>
+<p>Financial advice often highlights top-performing stocks or mutual funds as examples of great investments. These examples focus on the “survivors” in the market, ignoring the many investments that failed or underperformed, which can lead to overestimating the likelihood of similar success in the future.</p>
+</blockquote>
+</section>
+
+<section id="survivorship-bias-1" class="title-slide slide level1 center">
+<h1>Survivorship bias</h1>
+
+<img data-src="https://imgs.xkcd.com/comics/survivorship_bias.png" class="r-stretch quarto-figure-center"><p class="caption">https://xkcd.com/1827/</p></section>
+
+<section id="selection-bias" class="title-slide slide level1 center">
+<h1>Selection bias</h1>
+
+<img data-src="https://imgs.xkcd.com/comics/selection_bias.png" class="r-stretch quarto-figure-center"><p class="caption">https://xkcd.com/2618/</p></section>
+
+<section id="and-more" class="title-slide slide level1 center">
+<h1>… and more!</h1>
+<p><em>Confirmation Bias</em></p>
+<blockquote>
+<p>A person who believes in a specific political ideology might seek out news articles or social media posts that reinforce their beliefs, while ignoring or dismissing information that contradicts their views. This selective exposure to information strengthens their pre-existing opinions.</p>
+</blockquote>
+<p><em>Anchoring Bias</em></p>
+<blockquote>
+<p>When shopping for a new car, a person may see a car priced at $30,000, and then a second car priced at $25,000. Even if the second car is not objectively better or a great deal, the first price “anchors” their perception of the value of the second car, leading them to think it’s a better deal simply because it’s cheaper than the first option.</p>
+</blockquote>
+<p><em>Availability Bias</em></p>
+<blockquote>
+<p>After watching several news reports about airplane crashes, a person might overestimate the risk of flying. They might avoid flying, despite it being statistically safer than driving, because the images and stories of crashes are more readily available in their memory.</p>
+</blockquote>
+</section>
+
+<section id="biases-and-fairness" class="title-slide slide level1 center">
+<h1>Biases and fairness</h1>
+<p><strong>Fairness</strong> refers to the various attempts to correct algorithmic bias in automated decision processes based on ML models.</p>
+<ul>
+<li>Decisions made by such models after a learning process may be considered unfair if they were based on variables considered sensitive</li>
+<li>E.g., gender, ethnicity, sexual orientation, or disability</li>
+</ul>
+<p><a href="https://www.reuters.com/article/world/insight-amazon-scraps-secret-ai-recruiting-tool-that-showed-bias-against-women-idUSKCN1MK0AG/">(2018) Amazon scraps secret AI recruiting tool that showed bias against women</a></p>
+<p>How could we approach this problem?</p>
+</section>
+
+<section id="biases-and-fairness-1" class="title-slide slide level1 center">
+<h1>Biases and fairness</h1>
+<p><a href="https://www.theguardian.com/technology/2024/mar/08/we-definitely-messed-up-why-did-google-ai-tool-make-offensive-historical-images">(2024) ‘We definitely messed up’: why did Google AI tool make offensive historical images?</a></p>
 </section>
 
 <section id="references" class="title-slide slide level1 smaller scrollable">

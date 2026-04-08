@@ -1,3 +1,9 @@
+## [1.0.23](https://github.com/w4bo/AA2526-unibo-mldm/compare/1.0.22...1.0.23) (2026-04-08)
+
+### Bug Fixes
+
+* add images ([35bb37a](https://github.com/w4bo/AA2526-unibo-mldm/commit/35bb37aaa2e864a63d8673dc722e927b004c6eae))
+
 ## [1.0.22](https://github.com/w4bo/AA2526-unibo-mldm/compare/1.0.21...1.0.22) (2026-04-08)
 
 ### Dependency updates

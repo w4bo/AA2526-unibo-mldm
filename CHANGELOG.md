@@ -1,3 +1,10 @@
+## [1.0.24](https://github.com/w4bo/AA2526-unibo-mldm/compare/1.0.23...1.0.24) (2026-04-12)
+
+### Bug Fixes
+
+* california image ([162a30a](https://github.com/w4bo/AA2526-unibo-mldm/commit/162a30aba30c52e14a4e75db4b13711d94786eb2))
+* california image ([f6f8679](https://github.com/w4bo/AA2526-unibo-mldm/commit/f6f867905be3bae279d676a019912bd85827ea0e))
+
 ## [1.0.23](https://github.com/w4bo/AA2526-unibo-mldm/compare/1.0.22...1.0.23) (2026-04-08)
 
 ### Bug Fixes

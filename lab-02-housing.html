@@ -216,7 +216,7 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <section id="the-california-housing-case-study" class="title-slide slide level1 center">
 <h1>The <a href="https://www.oreilly.com/library/view/hands-on-machine-learning/9781492032632/"><code>California Housing</code></a> case study</h1>
 <p>Our task is to use California census data to forecast housing prices given the population, median income, and median housing price for each block group in California. Block groups are the smallest geographical unit for which the US Census Bureau publishes sample data (a block group typically has a population of 600 to 3,000 people). We will just call them “districts” for short.</p>
-<div id="80970f2e" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2024-10-08T14:38:19.804084Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-10-08T14:38:19.804084Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-10-08T14:38:20.600432Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-10-08T14:38:20.600432Z&quot;}}" data-outputid="587cfb9c-3001-4d5a-8aa5-819ce7247549">
+<div id="80970f2e" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2024-10-08T14:38:19.804084Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-10-08T14:38:19.804084Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-10-08T14:38:20.600432Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-10-08T14:38:20.600432Z&quot;}}" data-outputid="36a2bf36-0e2a-4471-dd8c-e925408b6b4d" data-execution_count="37">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb1-1"><a href=""></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
@@ -225,8 +225,9 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <span id="cb1-4"><a href=""></a>df <span class="op">=</span> pd.read_csv(<span class="st">"https://raw.githubusercontent.com/w4bo/handsOnDataPipelines/main/materials/datasets/housing.csv"</span>, delimiter<span class="op">=</span><span class="st">","</span>)</span>
 <span id="cb1-5"><a href=""></a>df</span></code></pre></div>
 </details>
-<div class="cell-output cell-output-display" data-execution_count="2">
-<div>
+<div class="cell-output cell-output-display" data-execution_count="37">
+<div id="df-d80dceea-6f54-4856-852b-851750861c8f" class="colab-df-container">
+    <div>
 <style scoped="">
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;
@@ -406,6 +407,138 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 
 <p>20640 rows × 10 columns</p>
 </div>
+    <div class="colab-df-buttons">
+
+  <div class="colab-df-container">
+    <button class="colab-df-convert" onclick="convertToInteractive('df-d80dceea-6f54-4856-852b-851750861c8f')" title="Convert this dataframe to an interactive table." style="display:none;">
+
+  <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewbox="0 -960 960 960">
+    <path d="M120-120v-720h720v720H120Zm60-500h600v-160H180v160Zm220 220h160v-160H400v160Zm0 220h160v-160H400v160ZM180-400h160v-160H180v160Zm440 0h160v-160H620v160ZM180-180h160v-160H180v160Zm440 0h160v-160H620v160Z"></path>
+  </svg>
+    </button>
+
+  <style>
+    .colab-df-container {
+      display:flex;
+      gap: 12px;
+    }
+
+    .colab-df-convert {
+      background-color: #E8F0FE;
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      display: none;
+      fill: #1967D2;
+      height: 32px;
+      padding: 0 0 0 0;
+      width: 32px;
+    }
+
+    .colab-df-convert:hover {
+      background-color: #E2EBFA;
+      box-shadow: 0px 1px 2px rgba(60, 64, 67, 0.3), 0px 1px 3px 1px rgba(60, 64, 67, 0.15);
+      fill: #174EA6;
+    }
+
+    .colab-df-buttons div {
+      margin-bottom: 4px;
+    }
+
+    [theme=dark] .colab-df-convert {
+      background-color: #3B4455;
+      fill: #D2E3FC;
+    }
+
+    [theme=dark] .colab-df-convert:hover {
+      background-color: #434B5C;
+      box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
+      filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.3));
+      fill: #FFFFFF;
+    }
+  </style>
+
+    <script>
+      const buttonEl =
+        document.querySelector('#df-d80dceea-6f54-4856-852b-851750861c8f button.colab-df-convert');
+      buttonEl.style.display =
+        google.colab.kernel.accessAllowed ? 'block' : 'none';
+
+      async function convertToInteractive(key) {
+        const element = document.querySelector('#df-d80dceea-6f54-4856-852b-851750861c8f');
+        const dataTable =
+          await google.colab.kernel.invokeFunction('convertToInteractive',
+                                                    [key], {});
+        if (!dataTable) return;
+
+        const docLinkHtml = 'Like what you see? Visit the ' +
+          '<a target="_blank" href=https://colab.research.google.com/notebooks/data_table.ipynb>data table notebook</a>'
+          + ' to learn more about interactive tables.';
+        element.innerHTML = '';
+        dataTable['output_type'] = 'display_data';
+        await google.colab.output.renderOutput(dataTable, element);
+        const docLink = document.createElement('div');
+        docLink.innerHTML = docLinkHtml;
+        element.appendChild(docLink);
+      }
+    </script>
+  </div>
+
+
+  <div id="id_7a833a19-38dd-486f-a9b3-40fec96133ba">
+    <style>
+      .colab-df-generate {
+        background-color: #E8F0FE;
+        border: none;
+        border-radius: 50%;
+        cursor: pointer;
+        display: none;
+        fill: #1967D2;
+        height: 32px;
+        padding: 0 0 0 0;
+        width: 32px;
+      }
+
+      .colab-df-generate:hover {
+        background-color: #E2EBFA;
+        box-shadow: 0px 1px 2px rgba(60, 64, 67, 0.3), 0px 1px 3px 1px rgba(60, 64, 67, 0.15);
+        fill: #174EA6;
+      }
+
+      [theme=dark] .colab-df-generate {
+        background-color: #3B4455;
+        fill: #D2E3FC;
+      }
+
+      [theme=dark] .colab-df-generate:hover {
+        background-color: #434B5C;
+        box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
+        filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.3));
+        fill: #FFFFFF;
+      }
+    </style>
+    <button class="colab-df-generate" onclick="generateWithVariable('df')" title="Generate code using this dataframe." style="display:none;">
+
+  <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewbox="0 0 24 24" width="24px">
+    <path d="M7,19H8.4L18.45,9,17,7.55,7,17.6ZM5,21V16.75L18.45,3.32a2,2,0,0,1,2.83,0l1.4,1.43a1.91,1.91,0,0,1,.58,1.4,1.91,1.91,0,0,1-.58,1.4L9.25,21ZM18.45,9,17,7.55Zm-12,3A5.31,5.31,0,0,0,4.9,8.1,5.31,5.31,0,0,0,1,6.5,5.31,5.31,0,0,0,4.9,4.9,5.31,5.31,0,0,0,6.5,1,5.31,5.31,0,0,0,8.1,4.9,5.31,5.31,0,0,0,12,6.5,5.46,5.46,0,0,0,6.5,12Z"></path>
+  </svg>
+    </button>
+    <script>
+      (() => {
+      const buttonEl =
+        document.querySelector('#id_7a833a19-38dd-486f-a9b3-40fec96133ba button.colab-df-generate');
+      buttonEl.style.display =
+        google.colab.kernel.accessAllowed ? 'block' : 'none';
+
+      buttonEl.onclick = () => {
+        google.colab.notebook.generateWithVariable('df');
+      }
+      })();
+    </script>
+  </div>
+
+    </div>
+  </div>
 </div>
 </div>
 </section>
@@ -421,12 +554,12 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <li>Which attributes (i.e., columns) are contained in the dataset?</li>
 <li>Which is their semantics?</li>
 </ul>
-<div id="9817e68c" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2024-10-08T14:38:20.602431Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-10-08T14:38:20.602431Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-10-08T14:38:20.605730Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-10-08T14:38:20.605730Z&quot;}}" data-outputid="7a505de0-d4f0-42d0-f781-bb4abd8f8fce">
+<div id="9817e68c" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2024-10-08T14:38:20.602431Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-10-08T14:38:20.602431Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-10-08T14:38:20.605730Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-10-08T14:38:20.605730Z&quot;}}" data-outputid="f7f3e3ef-f3c0-46e2-8236-1e217647d8f4" data-execution_count="38">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb2-1"><a href=""></a>df.columns</span></code></pre></div>
 </details>
-<div class="cell-output cell-output-display" data-execution_count="3">
+<div class="cell-output cell-output-display" data-execution_count="38">
 <pre><code>Index(['longitude', 'latitude', 'housing_median_age', 'total_rooms',
        'total_bedrooms', 'population', 'households', 'median_income',
        'median_house_value', 'ocean_proximity'],
@@ -450,7 +583,7 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 
 <section id="data-profiling" class="title-slide slide level1 center">
 <h1>Data profiling</h1>
-<div id="85441c0b" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2024-10-08T14:38:20.607716Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-10-08T14:38:20.607716Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-10-08T14:38:20.613716Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-10-08T14:38:20.613716Z&quot;}}" data-outputid="2f22dd7b-0b6b-4f6f-ef8c-b317a0b6c28c" data-scrolled="true">
+<div id="85441c0b" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2024-10-08T14:38:20.607716Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-10-08T14:38:20.607716Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-10-08T14:38:20.613716Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-10-08T14:38:20.613716Z&quot;}}" data-outputid="19e1c0c4-27e9-412d-f4b4-b303a2b294af" data-scrolled="true" data-execution_count="39">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb4-1"><a href=""></a><span class="co"># show some statistics on the dataframe</span></span>
@@ -480,13 +613,14 @@ memory usage: 1.6+ MB</code></pre>
 
 <section id="data-profiling-1" class="title-slide slide level1 center">
 <h1>Data profiling</h1>
-<div id="e6a24b3a" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2024-10-08T14:38:20.615716Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-10-08T14:38:20.615716Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-10-08T14:38:20.635039Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-10-08T14:38:20.635039Z&quot;}}" data-outputid="14d781ec-eb1f-4e59-d475-cc3a39f7e5cb">
+<div id="e6a24b3a" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2024-10-08T14:38:20.615716Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-10-08T14:38:20.615716Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-10-08T14:38:20.635039Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-10-08T14:38:20.635039Z&quot;}}" data-outputid="e000edbf-c168-404d-f551-7d84f9a31f34" data-execution_count="40">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb6-1"><a href=""></a>df.describe(include<span class="op">=</span><span class="st">'all'</span>)</span></code></pre></div>
 </details>
-<div class="cell-output cell-output-display" data-execution_count="5">
-<div>
+<div class="cell-output cell-output-display" data-execution_count="40">
+<div id="df-d4303c1b-20fd-428a-a493-902cfed2457a" class="colab-df-container">
+    <div>
 <style scoped="">
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;
@@ -665,6 +799,86 @@ memory usage: 1.6+ MB</code></pre>
 </table>
 
 </div>
+    <div class="colab-df-buttons">
+
+  <div class="colab-df-container">
+    <button class="colab-df-convert" onclick="convertToInteractive('df-d4303c1b-20fd-428a-a493-902cfed2457a')" title="Convert this dataframe to an interactive table." style="display:none;">
+
+  <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewbox="0 -960 960 960">
+    <path d="M120-120v-720h720v720H120Zm60-500h600v-160H180v160Zm220 220h160v-160H400v160Zm0 220h160v-160H400v160ZM180-400h160v-160H180v160Zm440 0h160v-160H620v160ZM180-180h160v-160H180v160Zm440 0h160v-160H620v160Z"></path>
+  </svg>
+    </button>
+
+  <style>
+    .colab-df-container {
+      display:flex;
+      gap: 12px;
+    }
+
+    .colab-df-convert {
+      background-color: #E8F0FE;
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      display: none;
+      fill: #1967D2;
+      height: 32px;
+      padding: 0 0 0 0;
+      width: 32px;
+    }
+
+    .colab-df-convert:hover {
+      background-color: #E2EBFA;
+      box-shadow: 0px 1px 2px rgba(60, 64, 67, 0.3), 0px 1px 3px 1px rgba(60, 64, 67, 0.15);
+      fill: #174EA6;
+    }
+
+    .colab-df-buttons div {
+      margin-bottom: 4px;
+    }
+
+    [theme=dark] .colab-df-convert {
+      background-color: #3B4455;
+      fill: #D2E3FC;
+    }
+
+    [theme=dark] .colab-df-convert:hover {
+      background-color: #434B5C;
+      box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
+      filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.3));
+      fill: #FFFFFF;
+    }
+  </style>
+
+    <script>
+      const buttonEl =
+        document.querySelector('#df-d4303c1b-20fd-428a-a493-902cfed2457a button.colab-df-convert');
+      buttonEl.style.display =
+        google.colab.kernel.accessAllowed ? 'block' : 'none';
+
+      async function convertToInteractive(key) {
+        const element = document.querySelector('#df-d4303c1b-20fd-428a-a493-902cfed2457a');
+        const dataTable =
+          await google.colab.kernel.invokeFunction('convertToInteractive',
+                                                    [key], {});
+        if (!dataTable) return;
+
+        const docLinkHtml = 'Like what you see? Visit the ' +
+          '<a target="_blank" href=https://colab.research.google.com/notebooks/data_table.ipynb>data table notebook</a>'
+          + ' to learn more about interactive tables.';
+        element.innerHTML = '';
+        dataTable['output_type'] = 'display_data';
+        await google.colab.output.renderOutput(dataTable, element);
+        const docLink = document.createElement('div');
+        docLink.innerHTML = docLinkHtml;
+        element.appendChild(docLink);
+      }
+    </script>
+  </div>
+
+
+    </div>
+  </div>
 </div>
 </div>
 </section>
@@ -681,10 +895,11 @@ memory usage: 1.6+ MB</code></pre>
 </section>
 <section id="section" class="slide level2">
 <h2></h2>
-<div id="H0bU-4jprHm3" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2024-10-08T14:38:20.637045Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-10-08T14:38:20.637045Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-10-08T14:38:21.500456Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-10-08T14:38:21.500456Z&quot;}}" data-outputid="9bf8d9ae-213a-4873-ff38-a202193c9066">
+<div id="H0bU-4jprHm3" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2024-10-08T14:38:20.637045Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-10-08T14:38:20.637045Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-10-08T14:38:21.500456Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-10-08T14:38:21.500456Z&quot;}}" data-outputid="fe0c46cd-be92-48cc-e502-1ad80579c7bc" data-execution_count="68">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb7-1"><a href=""></a>df.plot(kind<span class="op">=</span><span class="st">"scatter"</span>, x<span class="op">=</span><span class="st">"longitude"</span>, y<span class="op">=</span><span class="st">"latitude"</span>, alpha<span class="op">=</span><span class="fl">0.4</span>, s<span class="op">=</span>df[<span class="st">"population"</span>]<span class="op">/</span><span class="dv">100</span>, label<span class="op">=</span><span class="st">"population"</span>, figsize<span class="op">=</span>(<span class="dv">4</span>,<span class="dv">3</span>), c<span class="op">=</span><span class="st">"median_house_value"</span>, cmap<span class="op">=</span><span class="st">"jet"</span>, colorbar<span class="op">=</span><span class="va">True</span>)</span></code></pre></div>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb7-1"><a href=""></a>ax <span class="op">=</span> df.plot(kind<span class="op">=</span><span class="st">"scatter"</span>, x<span class="op">=</span><span class="st">"longitude"</span>, y<span class="op">=</span><span class="st">"latitude"</span>, alpha<span class="op">=</span><span class="fl">0.4</span>, s<span class="op">=</span>df[<span class="st">"population"</span>] <span class="op">/</span> <span class="dv">100</span>, label<span class="op">=</span><span class="st">"population"</span>, figsize<span class="op">=</span>(<span class="dv">16</span>, <span class="dv">9</span>), c<span class="op">=</span><span class="st">"median_house_value"</span>, cmap<span class="op">=</span><span class="st">"jet"</span>, colorbar<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb7-2"><a href=""></a>ax.set_aspect(<span class="st">'equal'</span>, adjustable<span class="op">=</span><span class="st">'box'</span>)</span></code></pre></div>
 </details>
 
 </div>
@@ -697,24 +912,128 @@ memory usage: 1.6+ MB</code></pre>
 <section id="can-we-exploit-the-nature-of-the-data-again" class="title-slide slide level1 center">
 <h1>Can we exploit the nature of the data… again?</h1>
 
-<img data-src="./img/california.png" class="r-stretch quarto-figure-center"><p class="caption">California, USA</p></section>
+<img data-src="https://github.com/w4bo/AA2526-unibo-mldm/blob/main/slides/img/california.png?raw=1" class="r-stretch quarto-figure-center"><p class="caption">California, USA</p></section>
 
 <section id="merging-the-data-sources" class="title-slide slide level1 center">
 <h1>Merging the data sources</h1>
 
 <img data-src="https://user-images.githubusercontent.com/18005592/232756567-b706619a-2cc9-4b45-b78f-5172103e0c3b.png" class="r-stretch quarto-figure-center"><p class="caption">California, USA</p></section>
 
+<section id="non-numeric-attributes" class="title-slide slide level1 center">
+<h1>Non-numeric attributes</h1>
+<p><code>ocean_proximity</code> is a text attribute, but not all machine libraries can manipulated textual data types.</p>
+<div id="3297de8e" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2024-10-08T14:38:21.512620Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-10-08T14:38:21.512620Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-10-08T14:38:21.517623Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-10-08T14:38:21.517623Z&quot;}}" data-outputid="f9cb8862-75c9-49cf-8b2f-d5a04845bae6" data-execution_count="43">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb8-1"><a href=""></a>df[<span class="st">"ocean_proximity"</span>].value_counts()</span></code></pre></div>
+</details>
+<div class="cell-output cell-output-display" data-execution_count="43">
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+
+<table class="dataframe caption-top" data-border="1">
+<thead>
+<tr class="header" style="text-align: right;">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">count</th>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">ocean_proximity</th>
+<th data-quarto-table-cell-role="th"></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">&lt;1H OCEAN</th>
+<td>9136</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">INLAND</th>
+<td>6551</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">NEAR OCEAN</th>
+<td>2658</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">NEAR BAY</th>
+<td>2290</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">ISLAND</th>
+<td>5</td>
+</tr>
+</tbody>
+</table>
+
+</div><br><label><b>dtype:</b> int64</label>
+</div>
+</div>
+<div id="xkOk2VEdVkde" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2024-10-08T14:38:21.519640Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-10-08T14:38:21.518651Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-10-08T14:38:21.579634Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-10-08T14:38:21.579634Z&quot;}}" data-outputid="96761939-f4af-46b2-e3c6-92cb6005b3aa" data-execution_count="44">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb9-1"><a href=""></a>df[<span class="st">"ocean_proximity"</span>].hist()</span></code></pre></div>
+</details>
+<div class="cell-output cell-output-display">
+<div>
+<figure>
+<p><img data-src="lab-02-housing_files/figure-revealjs/cell-8-output-1.png"></p>
+</figure>
+</div>
+</div>
+</div>
+<div id="8RC4rhgyJNNm" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;,&quot;height&quot;:906}}" data-outputid="b44dbf66-a4b1-47c9-b4b0-920dda258fd9" data-execution_count="69">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb10-1"><a href=""></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span>
+<span id="cb10-2"><a href=""></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb10-3"><a href=""></a></span>
+<span id="cb10-4"><a href=""></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">16</span>, <span class="dv">9</span>))</span>
+<span id="cb10-5"><a href=""></a>sns.scatterplot(data<span class="op">=</span>df, x<span class="op">=</span><span class="st">"longitude"</span>, y<span class="op">=</span><span class="st">"latitude"</span>, hue<span class="op">=</span><span class="st">"ocean_proximity"</span>, alpha<span class="op">=</span><span class="fl">0.6</span>, s<span class="op">=</span><span class="dv">20</span>)</span>
+<span id="cb10-6"><a href=""></a>plt.gca().set_aspect(<span class="st">'equal'</span>, adjustable<span class="op">=</span><span class="st">'box'</span>)</span>
+<span id="cb10-7"><a href=""></a>plt.xlabel(<span class="st">"Longitude"</span>)</span>
+<span id="cb10-8"><a href=""></a>plt.ylabel(<span class="st">"Latitude"</span>)</span>
+<span id="cb10-9"><a href=""></a>plt.tight_layout()</span></code></pre></div>
+</details>
+<div class="cell-output cell-output-display">
+<div>
+<figure>
+<p><img data-src="lab-02-housing_files/figure-revealjs/cell-9-output-1.png"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+
+<section id="missing-values" class="title-slide slide level1 center">
+<h1>Missing values</h1>
+<p>There are some missing values for <code>total_bedrooms</code>. What should we do?</p>
+<p>Most Machine Learning algorithms cannot work with missing features.</p>
+</section>
+
 <section id="memory-usage" class="title-slide slide level1 center">
 <h1>Memory usage</h1>
 <p>What if I change float64 to float32?</p>
-<div id="8f1e7c90" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2024-10-08T14:38:21.502456Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-10-08T14:38:21.502456Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-10-08T14:38:21.510610Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-10-08T14:38:21.510610Z&quot;}}" data-outputid="42de86f8-33bc-4b32-ba59-df1d5f761ac8">
+<div id="8f1e7c90" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2024-10-08T14:38:21.502456Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-10-08T14:38:21.502456Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-10-08T14:38:21.510610Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-10-08T14:38:21.510610Z&quot;}}" data-outputid="3b233ffe-0cf1-4eea-ddfc-0530772ea557" data-execution_count="42">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb8-1"><a href=""></a>dff <span class="op">=</span> df.copy(deep<span class="op">=</span><span class="va">True</span>)  <span class="co"># copy the dataframe</span></span>
-<span id="cb8-2"><a href=""></a><span class="cf">for</span> x <span class="kw">in</span> df.columns:  <span class="co"># iterate over the columns</span></span>
-<span id="cb8-3"><a href=""></a>    <span class="cf">if</span> dff[x].dtype <span class="op">==</span> <span class="st">'float64'</span>:  <span class="co"># if the column has type `float64`</span></span>
-<span id="cb8-4"><a href=""></a>        dff[x] <span class="op">=</span> dff[x].astype(<span class="st">'float32'</span>)  <span class="co"># ... change it to `float32`</span></span>
-<span id="cb8-5"><a href=""></a>dff.info()  <span class="co"># show some statistics on the dataframe</span></span></code></pre></div>
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb11-1"><a href=""></a>dff <span class="op">=</span> df.copy(deep<span class="op">=</span><span class="va">True</span>)  <span class="co"># copy the dataframe</span></span>
+<span id="cb11-2"><a href=""></a><span class="cf">for</span> x <span class="kw">in</span> df.columns:  <span class="co"># iterate over the columns</span></span>
+<span id="cb11-3"><a href=""></a>    <span class="cf">if</span> dff[x].dtype <span class="op">==</span> <span class="st">'float64'</span>:  <span class="co"># if the column has type `float64`</span></span>
+<span id="cb11-4"><a href=""></a>        dff[x] <span class="op">=</span> dff[x].astype(<span class="st">'float32'</span>)  <span class="co"># ... change it to `float32`</span></span>
+<span id="cb11-5"><a href=""></a>dff.info()  <span class="co"># show some statistics on the dataframe</span></span></code></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>&lt;class 'pandas.core.frame.DataFrame'&gt;
@@ -738,46 +1057,9 @@ memory usage: 887.0+ KB</code></pre>
 </div>
 </section>
 
-<section id="missing-values" class="title-slide slide level1 center">
-<h1>Missing values</h1>
-<p>There are some missing values for <code>total_bedrooms</code>. What should we do?</p>
-<p>Most Machine Learning algorithms cannot work with missing features.</p>
-</section>
-
-<section id="non-numeric-attributes" class="title-slide slide level1 center">
-<h1>Non-numeric attributes</h1>
-<p><code>ocean_proximity</code> is a text attribute, but not all machine libraries can manipulated textual data types.</p>
-<div id="3297de8e" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2024-10-08T14:38:21.512620Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-10-08T14:38:21.512620Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-10-08T14:38:21.517623Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-10-08T14:38:21.517623Z&quot;}}" data-outputid="3e206562-51ff-44be-d06d-d1f44a268887">
-<details open="" class="code-fold">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb10-1"><a href=""></a>df[<span class="st">"ocean_proximity"</span>].value_counts()</span></code></pre></div>
-</details>
-<div class="cell-output cell-output-display" data-execution_count="8">
-<pre><code>ocean_proximity
-&lt;1H OCEAN     9136
-INLAND        6551
-NEAR OCEAN    2658
-NEAR BAY      2290
-ISLAND           5
-Name: count, dtype: int64</code></pre>
-</div>
-</div>
-</section>
-
-<section id="non-numeric-attributes-1" class="title-slide slide level1 center">
-<h1>Non-numeric attributes</h1>
-<div id="xkOk2VEdVkde" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2024-10-08T14:38:21.519640Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-10-08T14:38:21.518651Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-10-08T14:38:21.579634Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-10-08T14:38:21.579634Z&quot;}}" data-outputid="aa85d542-74b5-4601-bd74-e1af0e45bf08">
-<details open="" class="code-fold">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb12-1"><a href=""></a>df[<span class="st">"ocean_proximity"</span>].hist()</span></code></pre></div>
-</details>
-
-</div>
-<img data-src="lab-02-housing_files/figure-revealjs/cell-9-output-1.png" class="r-stretch"></section>
-
 <section id="visualization" class="title-slide slide level1 center">
 <h1>Visualization</h1>
-<div id="570f14ff" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2024-10-08T14:38:21.581641Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-10-08T14:38:21.581641Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-10-08T14:38:22.361286Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-10-08T14:38:22.361286Z&quot;}}" data-outputid="76614232-7bd6-452f-df80-a8da248f923b" data-scrolled="true">
+<div id="570f14ff" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2024-10-08T14:38:21.581641Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-10-08T14:38:21.581641Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-10-08T14:38:22.361286Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-10-08T14:38:22.361286Z&quot;}}" data-outputid="3cfbc5f3-a13c-4192-851c-c5650aebf0f2" data-scrolled="true" data-execution_count="45">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb13-1"><a href=""></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
@@ -787,7 +1069,7 @@ Name: count, dtype: int64</code></pre>
 </details>
 
 </div>
-<img data-src="lab-02-housing_files/figure-revealjs/cell-10-output-1.png" class="r-stretch"></section>
+<img data-src="lab-02-housing_files/figure-revealjs/cell-11-output-1.png" class="r-stretch"></section>
 
 <section id="open-questions" class="title-slide slide level1 center">
 <h1>Open questions</h1>
@@ -805,7 +1087,7 @@ Name: count, dtype: int64</code></pre>
 <li>Each numeric variable in data will by shared across the y-axes across a single row and the x-axes across a single column</li>
 <li>The diagonal plots are treated differently: univariate distribution plots show the marginal distributions of the data</li>
 </ul>
-<div id="jFvRyNbGV36l" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2024-10-08T14:38:22.363292Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-10-08T14:38:22.363292Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-10-08T14:38:28.866021Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-10-08T14:38:28.866021Z&quot;}}" data-outputid="84be7606-9a80-42ba-b9de-668d9fbd44b9">
+<div id="jFvRyNbGV36l" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2024-10-08T14:38:22.363292Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-10-08T14:38:22.363292Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-10-08T14:38:28.866021Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-10-08T14:38:28.866021Z&quot;}}" data-outputid="9ccfecf0-2fda-46a8-ca5a-b59fbd778265" data-execution_count="46">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb14-1"><a href=""></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span>
@@ -816,11 +1098,11 @@ Name: count, dtype: int64</code></pre>
 </details>
 
 </div>
-<img data-src="lab-02-housing_files/figure-revealjs/cell-11-output-1.png" class="r-stretch"></section>
+<img data-src="lab-02-housing_files/figure-revealjs/cell-12-output-1.png" class="r-stretch"></section>
 
 <section id="section-1" class="title-slide slide level1 center">
 <h1></h1>
-<div id="cd370cf0" class="cell" data-outputid="bd74d47b-9aca-4a25-a6bb-aed7cfeaf4d8">
+<div id="cd370cf0" class="cell" data-outputid="f4d0a6eb-cf23-4910-d594-db97c31b74ab" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;,&quot;height&quot;:1000}}" data-execution_count="47">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb15-1"><a href=""></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
@@ -835,12 +1117,12 @@ Name: count, dtype: int64</code></pre>
 </details>
 
 </div>
-<img data-src="lab-02-housing_files/figure-revealjs/cell-12-output-1.png" class="r-stretch"></section>
+<img data-src="lab-02-housing_files/figure-revealjs/cell-13-output-1.png" class="r-stretch"></section>
 
 <section id="pareto-frontier" class="title-slide slide level1 center">
 <h1>Pareto frontier</h1>
 <p>Which blocks represent a good tradeof between cost and number of rooms?</p>
-<div id="U_q70SWYhXQI" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2024-10-08T14:38:31.774763Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-10-08T14:38:31.774763Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-10-08T14:38:31.897734Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-10-08T14:38:31.897734Z&quot;}}" data-outputid="c27adae9-3828-48a4-84ff-f3710452dd13">
+<div id="U_q70SWYhXQI" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2024-10-08T14:38:31.774763Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-10-08T14:38:31.774763Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-10-08T14:38:31.897734Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-10-08T14:38:31.897734Z&quot;}}" data-outputid="765d9bd6-8319-422c-f945-1ba09b4a6af8" data-execution_count="49">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb16-1"><a href=""></a>fig, ax <span class="op">=</span> plt.subplots(nrows<span class="op">=</span><span class="dv">1</span>, ncols<span class="op">=</span><span class="dv">1</span>)</span>
@@ -849,7 +1131,7 @@ Name: count, dtype: int64</code></pre>
 </details>
 
 </div>
-<img data-src="lab-02-housing_files/figure-revealjs/cell-14-output-1.png" class="r-stretch"></section>
+<img data-src="lab-02-housing_files/figure-revealjs/cell-15-output-1.png" class="r-stretch"></section>
 
 <section id="skyline" class="title-slide slide level1 center">
 <h1>Skyline</h1>
@@ -864,7 +1146,7 @@ Name: count, dtype: int64</code></pre>
 
 <section id="pareto-frontier-1" class="title-slide slide level1 center">
 <h1>Pareto frontier</h1>
-<div id="0_KF0LBDhab3" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2024-10-08T14:38:31.899748Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-10-08T14:38:31.899748Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-10-08T14:38:33.598030Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-10-08T14:38:33.598030Z&quot;}}" data-outputid="8303d6be-33f4-4d76-c891-3278b0be3212">
+<div id="0_KF0LBDhab3" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2024-10-08T14:38:31.899748Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-10-08T14:38:31.899748Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-10-08T14:38:33.598030Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-10-08T14:38:33.598030Z&quot;}}" data-outputid="99508ec3-fad4-4c86-b2ac-d3b665935948" data-execution_count="50">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb17-1"><a href=""></a><span class="im">from</span> paretoset <span class="im">import</span> paretoset</span>
@@ -875,7 +1157,7 @@ Name: count, dtype: int64</code></pre>
 </details>
 
 </div>
-<img data-src="lab-02-housing_files/figure-revealjs/cell-15-output-1.png" class="r-stretch"></section>
+<img data-src="lab-02-housing_files/figure-revealjs/cell-16-output-1.png" class="r-stretch"></section>
 
 <section id="exercise-1" class="title-slide slide level1 center">
 <h1>Exercise 1</h1>
@@ -885,7 +1167,7 @@ Name: count, dtype: int64</code></pre>
 <li>Print the mean value per <code>ocean_proximity</code> for every column</li>
 <li>Print the mean, min and max values value per <code>ocean_proximity</code> for every column</li>
 </ol>
-<div id="iURuzXemMzma" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2024-10-08T14:38:34.429557Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-10-08T14:38:34.429557Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-10-08T14:38:34.431988Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-10-08T14:38:34.431988Z&quot;}}">
+<div id="iURuzXemMzma" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2024-10-08T14:38:34.429557Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-10-08T14:38:34.429557Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-10-08T14:38:34.431988Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-10-08T14:38:34.431988Z&quot;}}" data-execution_count="53">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb18-1"><a href=""></a><span class="co"># Write your code here</span></span></code></pre></div>
@@ -900,7 +1182,7 @@ Name: count, dtype: int64</code></pre>
 <li>Add a new column: <code>rooms_per_household = total_rooms / households</code></li>
 <li>Add a new column: <code>bedrooms_per_room = total_bedrooms / total_rooms</code></li>
 </ol>
-<div id="ef4ed12b" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2024-10-08T14:38:34.434007Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-10-08T14:38:34.433009Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-10-08T14:38:34.435682Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-10-08T14:38:34.435682Z&quot;}}">
+<div id="ef4ed12b" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2024-10-08T14:38:34.434007Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-10-08T14:38:34.433009Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-10-08T14:38:34.435682Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-10-08T14:38:34.435682Z&quot;}}" data-execution_count="54">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb19"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb19-1"><a href=""></a><span class="co"># Write your code here</span></span></code></pre></div>

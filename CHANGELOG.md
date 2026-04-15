@@ -1,3 +1,10 @@
+## [1.0.25](https://github.com/w4bo/AA2526-unibo-mldm/compare/1.0.24...1.0.25) (2026-04-15)
+
+### Bug Fixes
+
+* lab 06 with feature selection ([ddd8be2](https://github.com/w4bo/AA2526-unibo-mldm/commit/ddd8be29983f07986b76ae2a70edf6128ae11a7d))
+* update the notebook ([ab830b2](https://github.com/w4bo/AA2526-unibo-mldm/commit/ab830b2be1303d8a2158636e10397404ea1c9ed0))
+
 ## [1.0.24](https://github.com/w4bo/AA2526-unibo-mldm/compare/1.0.23...1.0.24) (2026-04-12)
 
 ### Bug Fixes

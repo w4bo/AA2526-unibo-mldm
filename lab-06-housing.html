@@ -5,8 +5,8 @@
 <script src="lab-06-housing_files/libs/quarto-html/tippy.umd.min.js"></script>
 <link href="lab-06-housing_files/libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="lab-06-housing_files/libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="lab-06-housing_files/libs/quarto-html/quarto-syntax-highlighting-dfa48a90d809c806c7ea2d5aecd9fc66.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.9.29">
+<link href="lab-06-housing_files/libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.10.18">
 
   <meta name="author" content="Matteo Francia   DISI — University of Bologna   m.francia@unibo.it">
   <title>Machine Learning and Data Mining (Module 2)</title>
@@ -19,10 +19,13 @@
     /* Default styles provided by pandoc.
     ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
     */
-    code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
-    div.columns{display: flex; gap: min(4vw, 1.5em);}
-    div.column{flex: auto; overflow-x: auto;}
+    div.columns{display: flex; gap: 1.5em;}
+    div.column{flex: auto;}
+    @media screen {
+    div.columns{gap: min(4vw, 1.5em);}
+    div.column{overflow-x: auto;}
+    }
     div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
     ul.task-list{list-style: none;}
     ul.task-list li input[type="checkbox"] {
@@ -203,7 +206,7 @@
 <div class="quarto-title-authors">
 <div class="quarto-title-author">
 <div class="quarto-title-author-name">
-Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it 
+Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 </div>
 </div>
 </div>
@@ -223,28 +226,28 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <div id="87eb7c60" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2024-10-08T14:38:54.646489Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-10-08T14:38:54.646489Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-10-08T14:38:54.794041Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-10-08T14:38:54.794041Z&quot;}}" data-outputid="8749caee-425c-45bc-cd95-129835a7a77d" data-execution_count="2">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb1-1"><a href=""></a><span class="kw">def</span> preprocess(normalize<span class="op">=</span><span class="va">True</span>):</span>
-<span id="cb1-2"><a href=""></a>    df <span class="op">=</span> pd.read_csv(<span class="st">"https://raw.githubusercontent.com/w4bo/handsOnDataPipelines/main/materials/datasets/housing.csv"</span>, delimiter<span class="op">=</span><span class="st">","</span>)</span>
-<span id="cb1-3"><a href=""></a>    num_df <span class="op">=</span> df.drop(columns<span class="op">=</span>[<span class="st">"ocean_proximity"</span>, <span class="st">"median_house_value"</span>])</span>
-<span id="cb1-4"><a href=""></a>    <span class="co"># Filling in (i.e., impute) missing values with the median value</span></span>
-<span id="cb1-5"><a href=""></a>    num_df[<span class="st">"total_bedrooms"</span>] <span class="op">=</span> num_df[<span class="st">"total_bedrooms"</span>].fillna(num_df[<span class="st">"total_bedrooms"</span>].median())</span>
-<span id="cb1-6"><a href=""></a>    <span class="co"># Add a new column: population_per_household = population / households</span></span>
-<span id="cb1-7"><a href=""></a>    num_df[<span class="st">"population_per_household"</span>] <span class="op">=</span> num_df[<span class="st">"population"</span>] <span class="op">/</span> num_df[<span class="st">"households"</span>]</span>
-<span id="cb1-8"><a href=""></a>    <span class="co"># Add a new column: rooms_per_household = total_rooms / households</span></span>
-<span id="cb1-9"><a href=""></a>    num_df[<span class="st">"rooms_per_household"</span>] <span class="op">=</span> num_df[<span class="st">"total_rooms"</span>] <span class="op">/</span> num_df[<span class="st">"households"</span>]</span>
-<span id="cb1-10"><a href=""></a>    <span class="co"># Add a new column: bedrooms_per_room = total_bedrooms / total_rooms</span></span>
-<span id="cb1-11"><a href=""></a>    num_df[<span class="st">"bedrooms_per_room"</span>] <span class="op">=</span> num_df[<span class="st">"total_bedrooms"</span>] <span class="op">/</span> num_df[<span class="st">"total_rooms"</span>]</span>
-<span id="cb1-12"><a href=""></a>    <span class="cf">if</span> normalize:</span>
-<span id="cb1-13"><a href=""></a>        <span class="co"># Apply standardization to all the numeric columns</span></span>
-<span id="cb1-14"><a href=""></a>        num_df <span class="op">=</span> (num_df <span class="op">-</span> num_df.mean()) <span class="op">/</span> num_df.std()</span>
-<span id="cb1-15"><a href=""></a>    <span class="co"># One hot encode `ocean_proximity` since it is a categorical attribute</span></span>
-<span id="cb1-16"><a href=""></a>    cat_df <span class="op">=</span> pd.get_dummies(df[<span class="st">"ocean_proximity"</span>], prefix<span class="op">=</span><span class="st">'ocean_proximity'</span>)</span>
-<span id="cb1-17"><a href=""></a>    <span class="co"># Join all the dataframes</span></span>
-<span id="cb1-18"><a href=""></a>    <span class="cf">return</span> pd.concat([num_df, cat_df, df[[<span class="st">"median_house_value"</span>]]], axis<span class="op">=</span><span class="dv">1</span>)</span>
-<span id="cb1-19"><a href=""></a></span>
-<span id="cb1-20"><a href=""></a></span>
-<span id="cb1-21"><a href=""></a>df <span class="op">=</span> preprocess()</span>
-<span id="cb1-22"><a href=""></a>df</span></code></pre></div>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb1-1"><a href="" aria-label="1"></a><span class="kw">def</span> preprocess(normalize<span class="op">=</span><span class="va">True</span>):</span>
+<span id="cb1-2"><a href="" aria-label="2"></a>    df <span class="op">=</span> pd.read_csv(<span class="st">"https://raw.githubusercontent.com/w4bo/handsOnDataPipelines/main/materials/datasets/housing.csv"</span>, delimiter<span class="op">=</span><span class="st">","</span>)</span>
+<span id="cb1-3"><a href="" aria-label="3"></a>    num_df <span class="op">=</span> df.drop(columns<span class="op">=</span>[<span class="st">"ocean_proximity"</span>, <span class="st">"median_house_value"</span>])</span>
+<span id="cb1-4"><a href="" aria-label="4"></a>    <span class="co"># Filling in (i.e., impute) missing values with the median value</span></span>
+<span id="cb1-5"><a href="" aria-label="5"></a>    num_df[<span class="st">"total_bedrooms"</span>] <span class="op">=</span> num_df[<span class="st">"total_bedrooms"</span>].fillna(num_df[<span class="st">"total_bedrooms"</span>].median())</span>
+<span id="cb1-6"><a href="" aria-label="6"></a>    <span class="co"># Add a new column: population_per_household = population / households</span></span>
+<span id="cb1-7"><a href="" aria-label="7"></a>    num_df[<span class="st">"population_per_household"</span>] <span class="op">=</span> num_df[<span class="st">"population"</span>] <span class="op">/</span> num_df[<span class="st">"households"</span>]</span>
+<span id="cb1-8"><a href="" aria-label="8"></a>    <span class="co"># Add a new column: rooms_per_household = total_rooms / households</span></span>
+<span id="cb1-9"><a href="" aria-label="9"></a>    num_df[<span class="st">"rooms_per_household"</span>] <span class="op">=</span> num_df[<span class="st">"total_rooms"</span>] <span class="op">/</span> num_df[<span class="st">"households"</span>]</span>
+<span id="cb1-10"><a href="" aria-label="10"></a>    <span class="co"># Add a new column: bedrooms_per_room = total_bedrooms / total_rooms</span></span>
+<span id="cb1-11"><a href="" aria-label="11"></a>    num_df[<span class="st">"bedrooms_per_room"</span>] <span class="op">=</span> num_df[<span class="st">"total_bedrooms"</span>] <span class="op">/</span> num_df[<span class="st">"total_rooms"</span>]</span>
+<span id="cb1-12"><a href="" aria-label="12"></a>    <span class="cf">if</span> normalize:</span>
+<span id="cb1-13"><a href="" aria-label="13"></a>        <span class="co"># Apply standardization to all the numeric columns</span></span>
+<span id="cb1-14"><a href="" aria-label="14"></a>        num_df <span class="op">=</span> (num_df <span class="op">-</span> num_df.mean()) <span class="op">/</span> num_df.std()</span>
+<span id="cb1-15"><a href="" aria-label="15"></a>    <span class="co"># One hot encode `ocean_proximity` since it is a categorical attribute</span></span>
+<span id="cb1-16"><a href="" aria-label="16"></a>    cat_df <span class="op">=</span> pd.get_dummies(df[<span class="st">"ocean_proximity"</span>], prefix<span class="op">=</span><span class="st">'ocean_proximity'</span>)</span>
+<span id="cb1-17"><a href="" aria-label="17"></a>    <span class="co"># Join all the dataframes</span></span>
+<span id="cb1-18"><a href="" aria-label="18"></a>    <span class="cf">return</span> pd.concat([num_df, cat_df, df[[<span class="st">"median_house_value"</span>]]], axis<span class="op">=</span><span class="dv">1</span>)</span>
+<span id="cb1-19"><a href="" aria-label="19"></a></span>
+<span id="cb1-20"><a href="" aria-label="20"></a></span>
+<span id="cb1-21"><a href="" aria-label="21"></a>df <span class="op">=</span> preprocess()</span>
+<span id="cb1-22"><a href="" aria-label="22"></a>df</span></code></pre></div>
 </details>
 <div class="cell-output cell-output-display" data-execution_count="2">
 <div>
@@ -519,10 +522,10 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <div id="6UU4itaaW-pF" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2024-10-08T14:38:54.796052Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-10-08T14:38:54.796052Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-10-08T14:38:57.643762Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-10-08T14:38:57.643762Z&quot;}}" data-outputid="94bd048f-b61c-4fd0-a687-5326451db5a5" data-execution_count="3">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb2-1"><a href=""></a>sns.pairplot(</span>
-<span id="cb2-2"><a href=""></a>    df[[<span class="st">"population_per_household"</span>, <span class="st">"rooms_per_household"</span>, <span class="st">"bedrooms_per_room"</span>, <span class="st">"median_house_value"</span>]].sample(n<span class="op">=</span><span class="dv">1000</span>, random_state<span class="op">=</span><span class="dv">42</span>),</span>
-<span id="cb2-3"><a href=""></a>    hue<span class="op">=</span><span class="st">'median_house_value'</span>, markers<span class="op">=</span><span class="st">'+'</span></span>
-<span id="cb2-4"><a href=""></a>)</span></code></pre></div>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb2-1"><a href="" aria-label="1"></a>sns.pairplot(</span>
+<span id="cb2-2"><a href="" aria-label="2"></a>    df[[<span class="st">"population_per_household"</span>, <span class="st">"rooms_per_household"</span>, <span class="st">"bedrooms_per_room"</span>, <span class="st">"median_house_value"</span>]].sample(n<span class="op">=</span><span class="dv">1000</span>, random_state<span class="op">=</span><span class="dv">42</span>),</span>
+<span id="cb2-3"><a href="" aria-label="3"></a>    hue<span class="op">=</span><span class="st">'median_house_value'</span>, markers<span class="op">=</span><span class="st">'+'</span></span>
+<span id="cb2-4"><a href="" aria-label="4"></a>)</span></code></pre></div>
 </details>
 
 </div>
@@ -533,15 +536,15 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <div id="09fe3dce" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2024-10-08T14:38:57.659050Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-10-08T14:38:57.659050Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-10-08T14:38:57.675892Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-10-08T14:38:57.675892Z&quot;}}" data-outputid="8371a2bd-5749-487a-f84c-8330a0733557" data-execution_count="4">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb3-1"><a href=""></a><span class="im">from</span> sklearn.model_selection <span class="im">import</span> train_test_split</span>
-<span id="cb3-2"><a href=""></a>y <span class="op">=</span> df[<span class="st">"median_house_value"</span>]  <span class="co"># labels</span></span>
-<span id="cb3-3"><a href=""></a>X <span class="op">=</span> df.drop(columns<span class="op">=</span>[<span class="st">"median_house_value"</span>])  <span class="co"># input data</span></span>
-<span id="cb3-4"><a href=""></a>X_train, X_test, y_train, y_test <span class="op">=</span> train_test_split(X, y, test_size<span class="op">=</span><span class="fl">0.2</span>, random_state<span class="op">=</span><span class="dv">42</span>)</span>
-<span id="cb3-5"><a href=""></a></span>
-<span id="cb3-6"><a href=""></a><span class="bu">print</span>(<span class="ss">f"X_train: </span><span class="sc">{</span>X_train<span class="sc">.</span>shape<span class="sc">}</span><span class="ss">"</span>)</span>
-<span id="cb3-7"><a href=""></a><span class="bu">print</span>(<span class="ss">f"X_test: </span><span class="sc">{</span>X_test<span class="sc">.</span>shape<span class="sc">}</span><span class="ss">"</span>)</span>
-<span id="cb3-8"><a href=""></a><span class="bu">print</span>(<span class="ss">f"y_train: </span><span class="sc">{</span>y_train<span class="sc">.</span>shape<span class="sc">}</span><span class="ss">"</span>)</span>
-<span id="cb3-9"><a href=""></a><span class="bu">print</span>(<span class="ss">f"y_test: </span><span class="sc">{</span>y_test<span class="sc">.</span>shape<span class="sc">}</span><span class="ss">"</span>)</span></code></pre></div>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb3-1"><a href="" aria-label="1"></a><span class="im">from</span> sklearn.model_selection <span class="im">import</span> train_test_split</span>
+<span id="cb3-2"><a href="" aria-label="2"></a>y <span class="op">=</span> df[<span class="st">"median_house_value"</span>]  <span class="co"># labels</span></span>
+<span id="cb3-3"><a href="" aria-label="3"></a>X <span class="op">=</span> df.drop(columns<span class="op">=</span>[<span class="st">"median_house_value"</span>])  <span class="co"># input data</span></span>
+<span id="cb3-4"><a href="" aria-label="4"></a>X_train, X_test, y_train, y_test <span class="op">=</span> train_test_split(X, y, test_size<span class="op">=</span><span class="fl">0.2</span>, random_state<span class="op">=</span><span class="dv">42</span>)</span>
+<span id="cb3-5"><a href="" aria-label="5"></a></span>
+<span id="cb3-6"><a href="" aria-label="6"></a><span class="bu">print</span>(<span class="ss">f"X_train: </span><span class="sc">{</span>X_train<span class="sc">.</span>shape<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb3-7"><a href="" aria-label="7"></a><span class="bu">print</span>(<span class="ss">f"X_test: </span><span class="sc">{</span>X_test<span class="sc">.</span>shape<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb3-8"><a href="" aria-label="8"></a><span class="bu">print</span>(<span class="ss">f"y_train: </span><span class="sc">{</span>y_train<span class="sc">.</span>shape<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb3-9"><a href="" aria-label="9"></a><span class="bu">print</span>(<span class="ss">f"y_test: </span><span class="sc">{</span>y_test<span class="sc">.</span>shape<span class="sc">}</span><span class="ss">"</span>)</span></code></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>X_train: (16512, 16)
@@ -553,7 +556,7 @@ y_test: (4128,)</code></pre>
 <div id="613643ea" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2024-10-08T14:38:57.677897Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-10-08T14:38:57.677897Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-10-08T14:38:57.690094Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-10-08T14:38:57.690094Z&quot;}}" data-outputid="ab9bf13a-5be0-4edb-fe1e-2369dd200ecf" data-execution_count="5">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb5-1"><a href=""></a>X_train.info()</span></code></pre></div>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb5-1"><a href="" aria-label="1"></a>X_train.info()</span></code></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>&lt;class 'pandas.DataFrame'&gt;
@@ -589,10 +592,10 @@ memory usage: 1.6 MB</code></pre>
 <div id="805e7157" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2024-10-08T14:38:57.698006Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-10-08T14:38:57.698006Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-10-08T14:38:57.745758Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-10-08T14:38:57.745758Z&quot;}}" data-outputid="05420042-b247-4baf-f654-3edb80ffd448" data-execution_count="6">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb7-1"><a href=""></a><span class="im">from</span> sklearn.linear_model <span class="im">import</span> LinearRegression  <span class="co"># choose and import the model</span></span>
-<span id="cb7-2"><a href=""></a>lin_reg <span class="op">=</span> LinearRegression(fit_intercept<span class="op">=</span><span class="va">True</span>)  <span class="co"># choose model hyperparameters and initialize the model (i.e., the estimator)</span></span>
-<span id="cb7-3"><a href=""></a>lin_reg.fit(X_train, y_train)  <span class="co"># model fitting</span></span>
-<span id="cb7-4"><a href=""></a>lin_reg.coef_  <span class="co"># return the learned parameters</span></span></code></pre></div>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb7-1"><a href="" aria-label="1"></a><span class="im">from</span> sklearn.linear_model <span class="im">import</span> LinearRegression  <span class="co"># choose and import the model</span></span>
+<span id="cb7-2"><a href="" aria-label="2"></a>lin_reg <span class="op">=</span> LinearRegression(fit_intercept<span class="op">=</span><span class="va">True</span>)  <span class="co"># choose model hyperparameters and initialize the model (i.e., the estimator)</span></span>
+<span id="cb7-3"><a href="" aria-label="3"></a>lin_reg.fit(X_train, y_train)  <span class="co"># model fitting</span></span>
+<span id="cb7-4"><a href="" aria-label="4"></a>lin_reg.coef_  <span class="co"># return the learned parameters</span></span></code></pre></div>
 </details>
 <div class="cell-output cell-output-display" data-execution_count="6">
 <pre><code>array([-56218.2257606 , -56621.04836643,  14103.74699543,   5900.12924673,
@@ -604,8 +607,8 @@ memory usage: 1.6 MB</code></pre>
 <div id="deb75fc9" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2024-10-08T14:38:57.747755Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-10-08T14:38:57.747755Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-10-08T14:38:57.753266Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-10-08T14:38:57.753266Z&quot;}}" data-outputid="2d0b201e-7fe9-42ea-c32e-f3f6575d69ee" data-execution_count="7">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb9-1"><a href=""></a>housing_predictions <span class="op">=</span> lin_reg.predict(X_test)  <span class="co"># predict the cost of the houses in the test set</span></span>
-<span id="cb9-2"><a href=""></a>housing_predictions</span></code></pre></div>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb9-1"><a href="" aria-label="1"></a>housing_predictions <span class="op">=</span> lin_reg.predict(X_test)  <span class="co"># predict the cost of the houses in the test set</span></span>
+<span id="cb9-2"><a href="" aria-label="2"></a>housing_predictions</span></code></pre></div>
 </details>
 <div class="cell-output cell-output-display" data-execution_count="7">
 <pre><code>array([ 61463.74466641, 121631.21809998, 267594.25389058, ...,
@@ -631,17 +634,17 @@ memory usage: 1.6 MB</code></pre>
 <div id="a764f2b9" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2024-10-08T14:38:57.755277Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-10-08T14:38:57.755277Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-10-08T14:38:57.863585Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-10-08T14:38:57.863585Z&quot;}}" data-outputid="94dce697-35d8-4f11-be5c-be4a09daab82" data-execution_count="8">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb11-1"><a href=""></a><span class="im">from</span> sklearn.metrics <span class="im">import</span> root_mean_squared_error</span>
-<span id="cb11-2"><a href=""></a><span class="im">from</span> sklearn.metrics <span class="im">import</span> accuracy_score</span>
-<span id="cb11-3"><a href=""></a></span>
-<span id="cb11-4"><a href=""></a><span class="kw">def</span> plot_predictions(y_test, housing_predictions, show<span class="op">=</span><span class="dv">20</span>, accuracy<span class="op">=</span><span class="va">False</span>, plot<span class="op">=</span><span class="va">True</span>):</span>
-<span id="cb11-5"><a href=""></a>    <span class="cf">if</span> <span class="kw">not</span> accuracy:</span>
-<span id="cb11-6"><a href=""></a>        <span class="bu">print</span>(<span class="ss">f"RMSE: </span><span class="sc">{</span>root_mean_squared_error(y_test, housing_predictions)<span class="sc">}</span><span class="ss">"</span>)  <span class="co"># check the error</span></span>
-<span id="cb11-7"><a href=""></a>    <span class="cf">else</span>:</span>
-<span id="cb11-8"><a href=""></a>        <span class="bu">print</span>(<span class="ss">f"Accuracy: </span><span class="sc">{</span>accuracy_score(y_test, housing_predictions)<span class="sc">}</span><span class="ss">"</span>)  <span class="co"># check the error</span></span>
-<span id="cb11-9"><a href=""></a>    <span class="cf">if</span> plot: pd.DataFrame({<span class="st">'y_test'</span>: y_test[:show].to_numpy(), <span class="st">'y_pred'</span>: housing_predictions[:show]}, index<span class="op">=</span>[x <span class="cf">for</span> x <span class="kw">in</span> <span class="bu">range</span>(show)]).plot.bar(rot<span class="op">=</span><span class="dv">0</span>)  <span class="co"># visualize some predictions</span></span>
-<span id="cb11-10"><a href=""></a></span>
-<span id="cb11-11"><a href=""></a>plot_predictions(y_test, housing_predictions)</span></code></pre></div>
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb11-1"><a href="" aria-label="1"></a><span class="im">from</span> sklearn.metrics <span class="im">import</span> root_mean_squared_error</span>
+<span id="cb11-2"><a href="" aria-label="2"></a><span class="im">from</span> sklearn.metrics <span class="im">import</span> accuracy_score</span>
+<span id="cb11-3"><a href="" aria-label="3"></a></span>
+<span id="cb11-4"><a href="" aria-label="4"></a><span class="kw">def</span> plot_predictions(y_test, housing_predictions, show<span class="op">=</span><span class="dv">20</span>, accuracy<span class="op">=</span><span class="va">False</span>, plot<span class="op">=</span><span class="va">True</span>):</span>
+<span id="cb11-5"><a href="" aria-label="5"></a>    <span class="cf">if</span> <span class="kw">not</span> accuracy:</span>
+<span id="cb11-6"><a href="" aria-label="6"></a>        <span class="bu">print</span>(<span class="ss">f"RMSE: </span><span class="sc">{</span>root_mean_squared_error(y_test, housing_predictions)<span class="sc">}</span><span class="ss">"</span>)  <span class="co"># check the error</span></span>
+<span id="cb11-7"><a href="" aria-label="7"></a>    <span class="cf">else</span>:</span>
+<span id="cb11-8"><a href="" aria-label="8"></a>        <span class="bu">print</span>(<span class="ss">f"Accuracy: </span><span class="sc">{</span>accuracy_score(y_test, housing_predictions)<span class="sc">}</span><span class="ss">"</span>)  <span class="co"># check the error</span></span>
+<span id="cb11-9"><a href="" aria-label="9"></a>    <span class="cf">if</span> plot: pd.DataFrame({<span class="st">'y_test'</span>: y_test[:show].to_numpy(), <span class="st">'y_pred'</span>: housing_predictions[:show]}, index<span class="op">=</span>[x <span class="cf">for</span> x <span class="kw">in</span> <span class="bu">range</span>(show)]).plot.bar(rot<span class="op">=</span><span class="dv">0</span>)  <span class="co"># visualize some predictions</span></span>
+<span id="cb11-10"><a href="" aria-label="10"></a></span>
+<span id="cb11-11"><a href="" aria-label="11"></a>plot_predictions(y_test, housing_predictions)</span></code></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>RMSE: 72668.53837868223</code></pre>
@@ -663,16 +666,16 @@ memory usage: 1.6 MB</code></pre>
 <div id="109abc76" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2024-10-08T14:38:57.865592Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-10-08T14:38:57.865592Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-10-08T14:38:57.925325Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-10-08T14:38:57.925325Z&quot;}}" data-outputid="641816d0-1801-4fd7-d3cf-148af727c637" data-execution_count="9">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb13-1"><a href=""></a><span class="im">from</span> sklearn.ensemble <span class="im">import</span> RandomForestRegressor  <span class="co"># import the model</span></span>
-<span id="cb13-2"><a href=""></a></span>
-<span id="cb13-3"><a href=""></a><span class="kw">def</span> run_forest(n_estimators, max_features, min_samples_split<span class="op">=</span><span class="dv">5</span>):</span>
-<span id="cb13-4"><a href=""></a>    forest_reg <span class="op">=</span> RandomForestRegressor(n_estimators<span class="op">=</span>n_estimators, max_features<span class="op">=</span>max_features, random_state<span class="op">=</span><span class="dv">42</span>, bootstrap<span class="op">=</span><span class="va">True</span>)  <span class="co"># initialize the model (i.e., the estimator)</span></span>
-<span id="cb13-5"><a href=""></a>    forest_reg.fit(X_train, y_train)  <span class="co"># train it</span></span>
-<span id="cb13-6"><a href=""></a>    housing_predictions <span class="op">=</span> forest_reg.predict(X_test)  <span class="co"># predict the cost of houses in the test set</span></span>
-<span id="cb13-7"><a href=""></a>    plot_predictions(y_test, housing_predictions)</span>
-<span id="cb13-8"><a href=""></a>    <span class="cf">return</span> forest_reg</span>
-<span id="cb13-9"><a href=""></a></span>
-<span id="cb13-10"><a href=""></a>forest_reg <span class="op">=</span> run_forest(<span class="dv">100</span>, <span class="fl">1.0</span>)</span></code></pre></div>
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb13-1"><a href="" aria-label="1"></a><span class="im">from</span> sklearn.ensemble <span class="im">import</span> RandomForestRegressor  <span class="co"># import the model</span></span>
+<span id="cb13-2"><a href="" aria-label="2"></a></span>
+<span id="cb13-3"><a href="" aria-label="3"></a><span class="kw">def</span> run_forest(n_estimators, max_features, min_samples_split<span class="op">=</span><span class="dv">5</span>):</span>
+<span id="cb13-4"><a href="" aria-label="4"></a>    forest_reg <span class="op">=</span> RandomForestRegressor(n_estimators<span class="op">=</span>n_estimators, max_features<span class="op">=</span>max_features, random_state<span class="op">=</span><span class="dv">42</span>, bootstrap<span class="op">=</span><span class="va">True</span>)  <span class="co"># initialize the model (i.e., the estimator)</span></span>
+<span id="cb13-5"><a href="" aria-label="5"></a>    forest_reg.fit(X_train, y_train)  <span class="co"># train it</span></span>
+<span id="cb13-6"><a href="" aria-label="6"></a>    housing_predictions <span class="op">=</span> forest_reg.predict(X_test)  <span class="co"># predict the cost of houses in the test set</span></span>
+<span id="cb13-7"><a href="" aria-label="7"></a>    plot_predictions(y_test, housing_predictions)</span>
+<span id="cb13-8"><a href="" aria-label="8"></a>    <span class="cf">return</span> forest_reg</span>
+<span id="cb13-9"><a href="" aria-label="9"></a></span>
+<span id="cb13-10"><a href="" aria-label="10"></a>forest_reg <span class="op">=</span> run_forest(<span class="dv">100</span>, <span class="fl">1.0</span>)</span></code></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>RMSE: 50402.56458314594</code></pre>
@@ -686,8 +689,8 @@ memory usage: 1.6 MB</code></pre>
 <div id="b45ae8cc" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;,&quot;height&quot;:623}}" data-outputid="09151631-ff40-4324-9176-a3a540b409ff" data-execution_count="10">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb15-1"><a href=""></a>feature_importance <span class="op">=</span> forest_reg.feature_importances_</span>
-<span id="cb15-2"><a href=""></a>pd.DataFrame({<span class="st">'Feature'</span>: X_train.columns, <span class="st">'Importance'</span>: feature_importance}).sort_values(by<span class="op">=</span><span class="st">'Importance'</span>, ascending<span class="op">=</span><span class="va">False</span>)</span></code></pre></div>
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb15-1"><a href="" aria-label="1"></a>feature_importance <span class="op">=</span> forest_reg.feature_importances_</span>
+<span id="cb15-2"><a href="" aria-label="2"></a>pd.DataFrame({<span class="st">'Feature'</span>: X_train.columns, <span class="st">'Importance'</span>: feature_importance}).sort_values(by<span class="op">=</span><span class="st">'Importance'</span>, ascending<span class="op">=</span><span class="va">False</span>)</span></code></pre></div>
 </details>
 <div class="cell-output cell-output-display" data-execution_count="10">
 <div>
@@ -807,11 +810,11 @@ memory usage: 1.6 MB</code></pre>
 <div id="b802bd3f" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;,&quot;height&quot;:54}}" data-outputid="cc843cb6-aa83-476f-cf22-8a2b62b90ce1" data-execution_count="11">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb16-1"><a href=""></a>cur_df <span class="op">=</span> preprocess(normalize<span class="op">=</span><span class="va">False</span>)</span>
-<span id="cb16-2"><a href=""></a>fig, axs <span class="op">=</span> plt.subplots(<span class="dv">1</span>, <span class="dv">4</span>, figsize<span class="op">=</span>(<span class="dv">12</span>, <span class="dv">4</span>), sharex<span class="op">=</span><span class="va">True</span>, sharey<span class="op">=</span><span class="va">True</span>)</span>
-<span id="cb16-3"><a href=""></a><span class="cf">for</span> i, c <span class="kw">in</span> <span class="bu">enumerate</span>([<span class="st">'INLAND'</span>, <span class="st">'NEAR OCEAN'</span>, <span class="st">'&lt;1H OCEAN'</span>, <span class="st">'ISLAND'</span>]):</span>
-<span id="cb16-4"><a href=""></a>    cur_df.groupby(<span class="ss">f'ocean_proximity_</span><span class="sc">{</span>c<span class="sc">}</span><span class="ss">'</span>)[<span class="st">'median_house_value'</span>].mean().plot(kind<span class="op">=</span><span class="st">"bar"</span>, ax<span class="op">=</span>axs[i])</span>
-<span id="cb16-5"><a href=""></a>fig.tight_layout()</span></code></pre></div>
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb16-1"><a href="" aria-label="1"></a>cur_df <span class="op">=</span> preprocess(normalize<span class="op">=</span><span class="va">False</span>)</span>
+<span id="cb16-2"><a href="" aria-label="2"></a>fig, axs <span class="op">=</span> plt.subplots(<span class="dv">1</span>, <span class="dv">4</span>, figsize<span class="op">=</span>(<span class="dv">12</span>, <span class="dv">4</span>), sharex<span class="op">=</span><span class="va">True</span>, sharey<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb16-3"><a href="" aria-label="3"></a><span class="cf">for</span> i, c <span class="kw">in</span> <span class="bu">enumerate</span>([<span class="st">'INLAND'</span>, <span class="st">'NEAR OCEAN'</span>, <span class="st">'&lt;1H OCEAN'</span>, <span class="st">'ISLAND'</span>]):</span>
+<span id="cb16-4"><a href="" aria-label="4"></a>    cur_df.groupby(<span class="ss">f'ocean_proximity_</span><span class="sc">{</span>c<span class="sc">}</span><span class="ss">'</span>)[<span class="st">'median_house_value'</span>].mean().plot(kind<span class="op">=</span><span class="st">"bar"</span>, ax<span class="op">=</span>axs[i])</span>
+<span id="cb16-5"><a href="" aria-label="5"></a>fig.tight_layout()</span></code></pre></div>
 </details>
 
 </div>
@@ -823,7 +826,7 @@ memory usage: 1.6 MB</code></pre>
 <div id="f0235826" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2024-10-08T14:39:10.291668Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-10-08T14:39:10.291668Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-10-08T14:39:10.294682Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-10-08T14:39:10.294682Z&quot;}}" data-outputid="ad59039d-717b-4f3a-cceb-e47400dd8ed6" data-execution_count="12">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb17-1"><a href=""></a>forest_reg.get_params()</span></code></pre></div>
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb17-1"><a href="" aria-label="1"></a>forest_reg.get_params()</span></code></pre></div>
 </details>
 <div class="cell-output cell-output-display" data-execution_count="12">
 <pre><code>{'bootstrap': True,
@@ -853,18 +856,18 @@ memory usage: 1.6 MB</code></pre>
 <div id="8d94f505" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2024-10-08T14:39:10.296702Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-10-08T14:39:10.295703Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-10-08T14:40:20.701647Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-10-08T14:40:20.701647Z&quot;}}" data-outputid="a705c761-b76c-4e44-e3e5-934565b39a23" data-scrolled="true" data-execution_count="13">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb19-1"><a href=""></a><span class="im">from</span> sklearn.model_selection <span class="im">import</span> RandomizedSearchCV</span>
-<span id="cb19-2"><a href=""></a></span>
-<span id="cb19-3"><a href=""></a>random_grid <span class="op">=</span> {</span>
-<span id="cb19-4"><a href=""></a>    <span class="st">'n_estimators'</span>: [<span class="dv">2</span>, <span class="dv">10</span>, <span class="dv">25</span>, <span class="dv">50</span>, <span class="dv">100</span>, <span class="dv">150</span>],  <span class="co"># Number of trees in random forest</span></span>
-<span id="cb19-5"><a href=""></a>    <span class="st">'max_features'</span>: [<span class="fl">1.0</span>, <span class="st">'sqrt'</span>],  <span class="co"># Number of features to consider at every split</span></span>
-<span id="cb19-6"><a href=""></a>    <span class="st">'min_samples_split'</span>: [<span class="dv">2</span>, <span class="dv">5</span>]</span>
-<span id="cb19-7"><a href=""></a>}</span>
-<span id="cb19-8"><a href=""></a></span>
-<span id="cb19-9"><a href=""></a><span class="co"># Fit the random search model</span></span>
-<span id="cb19-10"><a href=""></a>rf_random <span class="op">=</span> RandomizedSearchCV(estimator<span class="op">=</span>forest_reg, param_distributions<span class="op">=</span>random_grid, n_iter<span class="op">=</span><span class="dv">5</span>, cv<span class="op">=</span><span class="dv">3</span>, verbose<span class="op">=</span><span class="dv">2</span>, random_state<span class="op">=</span><span class="dv">42</span>)</span>
-<span id="cb19-11"><a href=""></a>rf_random.fit(X_train, y_train)</span>
-<span id="cb19-12"><a href=""></a>rf_random.best_params_</span></code></pre></div>
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb19-1"><a href="" aria-label="1"></a><span class="im">from</span> sklearn.model_selection <span class="im">import</span> RandomizedSearchCV</span>
+<span id="cb19-2"><a href="" aria-label="2"></a></span>
+<span id="cb19-3"><a href="" aria-label="3"></a>random_grid <span class="op">=</span> {</span>
+<span id="cb19-4"><a href="" aria-label="4"></a>    <span class="st">'n_estimators'</span>: [<span class="dv">2</span>, <span class="dv">10</span>, <span class="dv">25</span>, <span class="dv">50</span>, <span class="dv">100</span>, <span class="dv">150</span>],  <span class="co"># Number of trees in random forest</span></span>
+<span id="cb19-5"><a href="" aria-label="5"></a>    <span class="st">'max_features'</span>: [<span class="fl">1.0</span>, <span class="st">'sqrt'</span>],  <span class="co"># Number of features to consider at every split</span></span>
+<span id="cb19-6"><a href="" aria-label="6"></a>    <span class="st">'min_samples_split'</span>: [<span class="dv">2</span>, <span class="dv">5</span>]</span>
+<span id="cb19-7"><a href="" aria-label="7"></a>}</span>
+<span id="cb19-8"><a href="" aria-label="8"></a></span>
+<span id="cb19-9"><a href="" aria-label="9"></a><span class="co"># Fit the random search model</span></span>
+<span id="cb19-10"><a href="" aria-label="10"></a>rf_random <span class="op">=</span> RandomizedSearchCV(estimator<span class="op">=</span>forest_reg, param_distributions<span class="op">=</span>random_grid, n_iter<span class="op">=</span><span class="dv">5</span>, cv<span class="op">=</span><span class="dv">3</span>, verbose<span class="op">=</span><span class="dv">2</span>, random_state<span class="op">=</span><span class="dv">42</span>)</span>
+<span id="cb19-11"><a href="" aria-label="11"></a>rf_random.fit(X_train, y_train)</span>
+<span id="cb19-12"><a href="" aria-label="12"></a>rf_random.best_params_</span></code></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>Fitting 3 folds for each of 5 candidates, totalling 15 fits
@@ -895,7 +898,7 @@ memory usage: 1.6 MB</code></pre>
 <div id="f40f18a9" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2024-10-08T14:40:20.703647Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-10-08T14:40:20.703647Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-10-08T14:40:24.353893Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-10-08T14:40:24.353893Z&quot;}}" data-outputid="e7cff80c-4256-4b7b-848a-ab9ea272b019" data-execution_count="14">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb22-1"><a href=""></a>forest<span class="op">=</span>run_forest(n_estimators<span class="op">=</span><span class="dv">100</span>, min_samples_split<span class="op">=</span><span class="dv">2</span>, max_features<span class="op">=</span><span class="st">'sqrt'</span>)</span></code></pre></div>
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb22-1"><a href="" aria-label="1"></a>forest<span class="op">=</span>run_forest(n_estimators<span class="op">=</span><span class="dv">100</span>, min_samples_split<span class="op">=</span><span class="dv">2</span>, max_features<span class="op">=</span><span class="st">'sqrt'</span>)</span></code></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>RMSE: 49246.09927718297</code></pre>
@@ -909,12 +912,12 @@ memory usage: 1.6 MB</code></pre>
 <div id="41167ddd" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2024-10-08T14:40:24.355965Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-10-08T14:40:24.355965Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-10-08T14:40:24.624612Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-10-08T14:40:24.624612Z&quot;}}" data-outputid="97f398c8-57f8-4633-eac9-69f2a2099da8" data-scrolled="true" data-execution_count="15">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb24-1"><a href=""></a><span class="im">from</span> sklearn.decomposition <span class="im">import</span> PCA</span>
-<span id="cb24-2"><a href=""></a></span>
-<span id="cb24-3"><a href=""></a>pca <span class="op">=</span> PCA(n_components<span class="op">=</span><span class="dv">2</span>)</span>
-<span id="cb24-4"><a href=""></a>result_pca <span class="op">=</span> pca.fit_transform(X_train.values)</span>
-<span id="cb24-5"><a href=""></a>plt.scatter(x<span class="op">=</span>result_pca[:, <span class="dv">0</span>], y<span class="op">=</span>result_pca[:, <span class="dv">1</span>], c<span class="op">=</span>y_train, s<span class="op">=</span><span class="dv">2</span>, cmap<span class="op">=</span><span class="st">'viridis'</span>)</span>
-<span id="cb24-6"><a href=""></a>pd.DataFrame(pca.components_, columns<span class="op">=</span>X_train.columns, index<span class="op">=</span>[<span class="st">'PC1'</span>, <span class="st">'PC2'</span>])</span></code></pre></div>
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb24-1"><a href="" aria-label="1"></a><span class="im">from</span> sklearn.decomposition <span class="im">import</span> PCA</span>
+<span id="cb24-2"><a href="" aria-label="2"></a></span>
+<span id="cb24-3"><a href="" aria-label="3"></a>pca <span class="op">=</span> PCA(n_components<span class="op">=</span><span class="dv">2</span>)</span>
+<span id="cb24-4"><a href="" aria-label="4"></a>result_pca <span class="op">=</span> pca.fit_transform(X_train.values)</span>
+<span id="cb24-5"><a href="" aria-label="5"></a>plt.scatter(x<span class="op">=</span>result_pca[:, <span class="dv">0</span>], y<span class="op">=</span>result_pca[:, <span class="dv">1</span>], c<span class="op">=</span>y_train, s<span class="op">=</span><span class="dv">2</span>, cmap<span class="op">=</span><span class="st">'viridis'</span>)</span>
+<span id="cb24-6"><a href="" aria-label="6"></a>pd.DataFrame(pca.components_, columns<span class="op">=</span>X_train.columns, index<span class="op">=</span>[<span class="st">'PC1'</span>, <span class="st">'PC2'</span>])</span></code></pre></div>
 </details>
 <div class="cell-output cell-output-display" data-execution_count="15">
 <div>
@@ -1007,12 +1010,12 @@ memory usage: 1.6 MB</code></pre>
 <div id="HYDBmdVCXjFV" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2024-10-08T14:40:24.636588Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-10-08T14:40:24.636588Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-10-08T14:40:31.548205Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-10-08T14:40:31.548205Z&quot;}}" data-outputid="054d4c50-46b3-48e9-f8a0-597ee7c7bbb5" data-execution_count="16">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb25-1"><a href=""></a><span class="im">from</span> sklearn.manifold <span class="im">import</span> TSNE</span>
-<span id="cb25-2"><a href=""></a></span>
-<span id="cb25-3"><a href=""></a>tsne <span class="op">=</span> TSNE(n_components<span class="op">=</span><span class="dv">2</span>)</span>
-<span id="cb25-4"><a href=""></a>result_tsne <span class="op">=</span> tsne.fit_transform(X_train.head(<span class="dv">3000</span>))</span>
-<span id="cb25-5"><a href=""></a></span>
-<span id="cb25-6"><a href=""></a>plt.scatter(x<span class="op">=</span>result_tsne[:, <span class="dv">0</span>], y<span class="op">=</span>result_tsne[:, <span class="dv">1</span>], c<span class="op">=</span>y_train.head(<span class="dv">3000</span>), s<span class="op">=</span><span class="dv">2</span>, cmap<span class="op">=</span><span class="st">'viridis'</span>)</span></code></pre></div>
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb25-1"><a href="" aria-label="1"></a><span class="im">from</span> sklearn.manifold <span class="im">import</span> TSNE</span>
+<span id="cb25-2"><a href="" aria-label="2"></a></span>
+<span id="cb25-3"><a href="" aria-label="3"></a>tsne <span class="op">=</span> TSNE(n_components<span class="op">=</span><span class="dv">2</span>)</span>
+<span id="cb25-4"><a href="" aria-label="4"></a>result_tsne <span class="op">=</span> tsne.fit_transform(X_train.head(<span class="dv">3000</span>))</span>
+<span id="cb25-5"><a href="" aria-label="5"></a></span>
+<span id="cb25-6"><a href="" aria-label="6"></a>plt.scatter(x<span class="op">=</span>result_tsne[:, <span class="dv">0</span>], y<span class="op">=</span>result_tsne[:, <span class="dv">1</span>], c<span class="op">=</span>y_train.head(<span class="dv">3000</span>), s<span class="op">=</span><span class="dv">2</span>, cmap<span class="op">=</span><span class="st">'viridis'</span>)</span></code></pre></div>
 </details>
 
 </div>
@@ -1042,15 +1045,15 @@ memory usage: 1.6 MB</code></pre>
 <div id="EAlvqIISMHkR" class="cell" data-execution_count="18">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb26-1"><a href=""></a>max_size <span class="op">=</span> <span class="dv">10000</span></span>
-<span id="cb26-2"><a href=""></a>X_t, X_val, y_t, y_val <span class="op">=</span> train_test_split(X_train[:max_size], y_train[:max_size], test_size<span class="op">=</span><span class="fl">0.2</span>, random_state<span class="op">=</span><span class="dv">42</span>)</span>
-<span id="cb26-3"><a href=""></a>feature_range <span class="op">=</span> <span class="bu">range</span>(<span class="dv">1</span>, X_t.shape[<span class="dv">1</span>] <span class="op">+</span> <span class="dv">1</span>)</span></code></pre></div>
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb26-1"><a href="" aria-label="1"></a>max_size <span class="op">=</span> <span class="dv">10000</span></span>
+<span id="cb26-2"><a href="" aria-label="2"></a>X_t, X_val, y_t, y_val <span class="op">=</span> train_test_split(X_train[:max_size], y_train[:max_size], test_size<span class="op">=</span><span class="fl">0.2</span>, random_state<span class="op">=</span><span class="dv">42</span>)</span>
+<span id="cb26-3"><a href="" aria-label="3"></a>feature_range <span class="op">=</span> <span class="bu">range</span>(<span class="dv">1</span>, X_t.shape[<span class="dv">1</span>] <span class="op">+</span> <span class="dv">1</span>)</span></code></pre></div>
 </details>
 </div>
 <div id="5a225533" class="cell" data-execution_count="19">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb27-1"><a href=""></a><span class="op">!</span>[Training vs validation vs test datasets](https:<span class="op">//</span>upload.wikimedia.org<span class="op">/</span>wikipedia<span class="op">/</span>commons<span class="op">/</span><span class="dv">1</span><span class="op">/</span><span class="dv">12</span><span class="op">/</span>Train<span class="op">-</span>Test<span class="op">-</span>Validation.png)</span></code></pre></div>
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb27-1"><a href="" aria-label="1"></a><span class="op">!</span>[Training vs validation vs test datasets](https:<span class="op">//</span>upload.wikimedia.org<span class="op">/</span>wikipedia<span class="op">/</span>commons<span class="op">/</span><span class="dv">1</span><span class="op">/</span><span class="dv">12</span><span class="op">/</span>Train<span class="op">-</span>Test<span class="op">-</span>Validation.png)</span></code></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>/bin/bash: -c: line 1: syntax error near unexpected token `('
@@ -1063,22 +1066,22 @@ memory usage: 1.6 MB</code></pre>
 <div id="veBgBY_epGNG" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;,&quot;height&quot;:333}}" data-outputid="2535739d-1e35-4482-a364-b0abcd5d892b" data-execution_count="20">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb29-1"><a href=""></a><span class="im">from</span> sklearn.feature_selection <span class="im">import</span> RFE</span>
-<span id="cb29-2"><a href=""></a></span>
-<span id="cb29-3"><a href=""></a>rf <span class="op">=</span> RandomForestRegressor(n_estimators<span class="op">=</span><span class="dv">200</span>, random_state<span class="op">=</span><span class="dv">42</span>, n_jobs<span class="op">=-</span><span class="dv">1</span>)  <span class="co"># base RF model for RFE</span></span>
-<span id="cb29-4"><a href=""></a>best_selector, best_n, best_rmse, errors <span class="op">=</span> <span class="va">None</span>, <span class="va">None</span>, np.inf, []  <span class="co"># store best selector + metrics</span></span>
-<span id="cb29-5"><a href=""></a><span class="cf">for</span> n_features <span class="kw">in</span> feature_range:  <span class="co"># loop over number of features to keep</span></span>
-<span id="cb29-6"><a href=""></a>    selector <span class="op">=</span> RFE(estimator<span class="op">=</span>rf, n_features_to_select<span class="op">=</span>n_features, step<span class="op">=</span><span class="dv">2</span>)  <span class="co"># RFE feature selector</span></span>
-<span id="cb29-7"><a href=""></a>    X_train_sel <span class="op">=</span> selector.fit_transform(X_t, y_t)  <span class="co"># fit RFE on training data</span></span>
-<span id="cb29-8"><a href=""></a>    X_val_sel <span class="op">=</span> selector.transform(X_val)  <span class="co"># transform validation data</span></span>
-<span id="cb29-9"><a href=""></a>    rf.fit(X_train_sel, y_t)  <span class="co"># train RF on selected features</span></span>
-<span id="cb29-10"><a href=""></a>    preds <span class="op">=</span> rf.predict(X_val_sel)  <span class="co"># predict validation set</span></span>
-<span id="cb29-11"><a href=""></a>    rmse <span class="op">=</span> root_mean_squared_error(y_val, preds)  <span class="co"># compute RMSE</span></span>
-<span id="cb29-12"><a href=""></a>    errors.append(rmse)  <span class="co"># store error for plotting</span></span>
-<span id="cb29-13"><a href=""></a>    <span class="cf">if</span> rmse <span class="op">&lt;</span> best_rmse: best_rmse, best_n, best_selector <span class="op">=</span> rmse, n_features, selector  <span class="co"># update best model</span></span>
-<span id="cb29-14"><a href=""></a>selected_features <span class="op">=</span> X_train.columns[best_selector.support_]  <span class="co"># extract selected feature names</span></span>
-<span id="cb29-15"><a href=""></a><span class="bu">print</span>(<span class="st">"Selected features:"</span> <span class="op">+</span> <span class="bu">str</span>(<span class="bu">list</span>(selected_features)))  <span class="co"># print final features</span></span>
-<span id="cb29-16"><a href=""></a>plot_elbow(feature_range, errors, best_n, title<span class="op">=</span><span class="st">"(RFE + RandomForest)"</span>)  <span class="co"># plot elbow curve</span></span></code></pre></div>
+<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb29-1"><a href="" aria-label="1"></a><span class="im">from</span> sklearn.feature_selection <span class="im">import</span> RFE</span>
+<span id="cb29-2"><a href="" aria-label="2"></a></span>
+<span id="cb29-3"><a href="" aria-label="3"></a>rf <span class="op">=</span> RandomForestRegressor(n_estimators<span class="op">=</span><span class="dv">200</span>, random_state<span class="op">=</span><span class="dv">42</span>, n_jobs<span class="op">=-</span><span class="dv">1</span>)  <span class="co"># base RF model for RFE</span></span>
+<span id="cb29-4"><a href="" aria-label="4"></a>best_selector, best_n, best_rmse, errors <span class="op">=</span> <span class="va">None</span>, <span class="va">None</span>, np.inf, []  <span class="co"># store best selector + metrics</span></span>
+<span id="cb29-5"><a href="" aria-label="5"></a><span class="cf">for</span> n_features <span class="kw">in</span> feature_range:  <span class="co"># loop over number of features to keep</span></span>
+<span id="cb29-6"><a href="" aria-label="6"></a>    selector <span class="op">=</span> RFE(estimator<span class="op">=</span>rf, n_features_to_select<span class="op">=</span>n_features, step<span class="op">=</span><span class="dv">2</span>)  <span class="co"># RFE feature selector</span></span>
+<span id="cb29-7"><a href="" aria-label="7"></a>    X_train_sel <span class="op">=</span> selector.fit_transform(X_t, y_t)  <span class="co"># fit RFE on training data</span></span>
+<span id="cb29-8"><a href="" aria-label="8"></a>    X_val_sel <span class="op">=</span> selector.transform(X_val)  <span class="co"># transform validation data</span></span>
+<span id="cb29-9"><a href="" aria-label="9"></a>    rf.fit(X_train_sel, y_t)  <span class="co"># train RF on selected features</span></span>
+<span id="cb29-10"><a href="" aria-label="10"></a>    preds <span class="op">=</span> rf.predict(X_val_sel)  <span class="co"># predict validation set</span></span>
+<span id="cb29-11"><a href="" aria-label="11"></a>    rmse <span class="op">=</span> root_mean_squared_error(y_val, preds)  <span class="co"># compute RMSE</span></span>
+<span id="cb29-12"><a href="" aria-label="12"></a>    errors.append(rmse)  <span class="co"># store error for plotting</span></span>
+<span id="cb29-13"><a href="" aria-label="13"></a>    <span class="cf">if</span> rmse <span class="op">&lt;</span> best_rmse: best_rmse, best_n, best_selector <span class="op">=</span> rmse, n_features, selector  <span class="co"># update best model</span></span>
+<span id="cb29-14"><a href="" aria-label="14"></a>selected_features <span class="op">=</span> X_train.columns[best_selector.support_]  <span class="co"># extract selected feature names</span></span>
+<span id="cb29-15"><a href="" aria-label="15"></a><span class="bu">print</span>(<span class="st">"Selected features:"</span> <span class="op">+</span> <span class="bu">str</span>(<span class="bu">list</span>(selected_features)))  <span class="co"># print final features</span></span>
+<span id="cb29-16"><a href="" aria-label="16"></a>plot_elbow(feature_range, errors, best_n, title<span class="op">=</span><span class="st">"(RFE + RandomForest)"</span>)  <span class="co"># plot elbow curve</span></span></code></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>Selected features:['longitude', 'latitude', 'housing_median_age', 'median_income', 'population_per_household', 'rooms_per_household', 'bedrooms_per_room', 'ocean_proximity_INLAND']</code></pre>
@@ -1096,22 +1099,22 @@ memory usage: 1.6 MB</code></pre>
 <div id="Qz2lzXLgHf6x" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;,&quot;height&quot;:307}}" data-outputid="bd56c6a4-3978-4d7c-82da-bcda3287e1f7" data-execution_count="22">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb31-1"><a href=""></a><span class="im">from</span> sklearn.linear_model <span class="im">import</span> Lasso</span>
-<span id="cb31-2"><a href=""></a></span>
-<span id="cb31-3"><a href=""></a>alphas <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">10</span>, <span class="dv">100</span>, <span class="dv">1000</span>, <span class="dv">10000</span>]  <span class="co"># regularization strengths to test</span></span>
-<span id="cb31-4"><a href=""></a>errors, n_features_list <span class="op">=</span> [], []  <span class="co"># store RMSE and number of selected features</span></span>
-<span id="cb31-5"><a href=""></a>best_model, best_alpha, best_rmse <span class="op">=</span> <span class="va">None</span>, <span class="va">None</span>, np.inf  <span class="co"># track best model and performance</span></span>
-<span id="cb31-6"><a href=""></a><span class="cf">for</span> alpha <span class="kw">in</span> alphas:  <span class="co"># loop over regularization values</span></span>
-<span id="cb31-7"><a href=""></a>    model <span class="op">=</span> Lasso(alpha<span class="op">=</span>alpha, max_iter<span class="op">=</span><span class="dv">10000</span>, random_state<span class="op">=</span><span class="dv">42</span>)  <span class="co"># define Lasso model</span></span>
-<span id="cb31-8"><a href=""></a>    model.fit(X_t, y_t)  <span class="co"># train model</span></span>
-<span id="cb31-9"><a href=""></a>    preds <span class="op">=</span> model.predict(X_val)  <span class="co"># predict validation set</span></span>
-<span id="cb31-10"><a href=""></a>    rmse <span class="op">=</span> root_mean_squared_error(y_val, preds)  <span class="co"># compute RMSE</span></span>
-<span id="cb31-11"><a href=""></a>    errors.append(rmse)  <span class="co"># store error for elbow plot</span></span>
-<span id="cb31-12"><a href=""></a>    n_features_list.append(np.<span class="bu">sum</span>(model.coef_ <span class="op">!=</span> <span class="dv">0</span>))  <span class="co"># count selected (non-zero) features</span></span>
-<span id="cb31-13"><a href=""></a>    <span class="cf">if</span> rmse <span class="op">&lt;=</span> best_rmse: best_rmse, best_alpha, best_model <span class="op">=</span> rmse, alpha, model  <span class="co"># update best model</span></span>
-<span id="cb31-14"><a href=""></a>selected_features <span class="op">=</span> X_t.columns[best_model.coef_ <span class="op">!=</span> <span class="dv">0</span>]  <span class="co"># extract selected feature names</span></span>
-<span id="cb31-15"><a href=""></a><span class="bu">print</span>(<span class="st">"Selected features: "</span> <span class="op">+</span> <span class="bu">str</span>(<span class="bu">list</span>(selected_features)))  <span class="co"># print final selected features</span></span>
-<span id="cb31-16"><a href=""></a>plot_lasso_tradeoff(alphas, errors, n_features_list, best_alpha)  <span class="co"># plot RMSE vs sparsity trade-off</span></span></code></pre></div>
+<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb31-1"><a href="" aria-label="1"></a><span class="im">from</span> sklearn.linear_model <span class="im">import</span> Lasso</span>
+<span id="cb31-2"><a href="" aria-label="2"></a></span>
+<span id="cb31-3"><a href="" aria-label="3"></a>alphas <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">10</span>, <span class="dv">100</span>, <span class="dv">1000</span>, <span class="dv">10000</span>]  <span class="co"># regularization strengths to test</span></span>
+<span id="cb31-4"><a href="" aria-label="4"></a>errors, n_features_list <span class="op">=</span> [], []  <span class="co"># store RMSE and number of selected features</span></span>
+<span id="cb31-5"><a href="" aria-label="5"></a>best_model, best_alpha, best_rmse <span class="op">=</span> <span class="va">None</span>, <span class="va">None</span>, np.inf  <span class="co"># track best model and performance</span></span>
+<span id="cb31-6"><a href="" aria-label="6"></a><span class="cf">for</span> alpha <span class="kw">in</span> alphas:  <span class="co"># loop over regularization values</span></span>
+<span id="cb31-7"><a href="" aria-label="7"></a>    model <span class="op">=</span> Lasso(alpha<span class="op">=</span>alpha, max_iter<span class="op">=</span><span class="dv">10000</span>, random_state<span class="op">=</span><span class="dv">42</span>)  <span class="co"># define Lasso model</span></span>
+<span id="cb31-8"><a href="" aria-label="8"></a>    model.fit(X_t, y_t)  <span class="co"># train model</span></span>
+<span id="cb31-9"><a href="" aria-label="9"></a>    preds <span class="op">=</span> model.predict(X_val)  <span class="co"># predict validation set</span></span>
+<span id="cb31-10"><a href="" aria-label="10"></a>    rmse <span class="op">=</span> root_mean_squared_error(y_val, preds)  <span class="co"># compute RMSE</span></span>
+<span id="cb31-11"><a href="" aria-label="11"></a>    errors.append(rmse)  <span class="co"># store error for elbow plot</span></span>
+<span id="cb31-12"><a href="" aria-label="12"></a>    n_features_list.append(np.<span class="bu">sum</span>(model.coef_ <span class="op">!=</span> <span class="dv">0</span>))  <span class="co"># count selected (non-zero) features</span></span>
+<span id="cb31-13"><a href="" aria-label="13"></a>    <span class="cf">if</span> rmse <span class="op">&lt;=</span> best_rmse: best_rmse, best_alpha, best_model <span class="op">=</span> rmse, alpha, model  <span class="co"># update best model</span></span>
+<span id="cb31-14"><a href="" aria-label="14"></a>selected_features <span class="op">=</span> X_t.columns[best_model.coef_ <span class="op">!=</span> <span class="dv">0</span>]  <span class="co"># extract selected feature names</span></span>
+<span id="cb31-15"><a href="" aria-label="15"></a><span class="bu">print</span>(<span class="st">"Selected features: "</span> <span class="op">+</span> <span class="bu">str</span>(<span class="bu">list</span>(selected_features)))  <span class="co"># print final selected features</span></span>
+<span id="cb31-16"><a href="" aria-label="16"></a>plot_lasso_tradeoff(alphas, errors, n_features_list, best_alpha)  <span class="co"># plot RMSE vs sparsity trade-off</span></span></code></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>Selected features: ['longitude', 'latitude', 'housing_median_age', 'total_rooms', 'total_bedrooms', 'population', 'households', 'median_income', 'population_per_household', 'rooms_per_household', 'bedrooms_per_room', 'ocean_proximity_INLAND', 'ocean_proximity_ISLAND', 'ocean_proximity_NEAR BAY', 'ocean_proximity_NEAR OCEAN']</code></pre>
@@ -1129,11 +1132,11 @@ memory usage: 1.6 MB</code></pre>
 <div id="f16c0883" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2024-10-08T14:40:31.550196Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-10-08T14:40:31.549196Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-10-08T14:40:31.735627Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-10-08T14:40:31.735627Z&quot;}}" data-outputid="d34dedfa-f4e2-4d4a-a688-ffffaa933756" data-scrolled="false" data-execution_count="23">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb33-1"><a href=""></a>df <span class="op">=</span> preprocess(<span class="va">False</span>)  <span class="co"># clean the dataset withtout standardization</span></span>
-<span id="cb33-2"><a href=""></a>bins <span class="op">=</span> [<span class="st">"low"</span>, <span class="st">"medium"</span>, <span class="st">"high"</span>]  <span class="co"># the labels we are gonna use</span></span>
-<span id="cb33-3"><a href=""></a><span class="co"># map bins of values into labels</span></span>
-<span id="cb33-4"><a href=""></a>df[<span class="st">"median_house_value"</span>] <span class="op">=</span> pd.cut(df[<span class="st">"median_house_value"</span>], <span class="dv">3</span>, labels<span class="op">=</span>bins)</span>
-<span id="cb33-5"><a href=""></a>df[<span class="st">"median_house_value"</span>].hist()  <span class="co"># plot them</span></span></code></pre></div>
+<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb33-1"><a href="" aria-label="1"></a>df <span class="op">=</span> preprocess(<span class="va">False</span>)  <span class="co"># clean the dataset withtout standardization</span></span>
+<span id="cb33-2"><a href="" aria-label="2"></a>bins <span class="op">=</span> [<span class="st">"low"</span>, <span class="st">"medium"</span>, <span class="st">"high"</span>]  <span class="co"># the labels we are gonna use</span></span>
+<span id="cb33-3"><a href="" aria-label="3"></a><span class="co"># map bins of values into labels</span></span>
+<span id="cb33-4"><a href="" aria-label="4"></a>df[<span class="st">"median_house_value"</span>] <span class="op">=</span> pd.cut(df[<span class="st">"median_house_value"</span>], <span class="dv">3</span>, labels<span class="op">=</span>bins)</span>
+<span id="cb33-5"><a href="" aria-label="5"></a>df[<span class="st">"median_house_value"</span>].hist()  <span class="co"># plot them</span></span></code></pre></div>
 </details>
 
 </div>
@@ -1145,11 +1148,11 @@ memory usage: 1.6 MB</code></pre>
 <div id="eafc83b9" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2024-10-08T14:40:31.737633Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-10-08T14:40:31.737633Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-10-08T14:40:31.742710Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-10-08T14:40:31.742710Z&quot;}}" data-execution_count="24">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb34-1"><a href=""></a>y <span class="op">=</span> df[<span class="st">"median_house_value"</span>]  <span class="co"># labels</span></span>
-<span id="cb34-2"><a href=""></a><span class="co"># consider only some features from the train dataset</span></span>
-<span id="cb34-3"><a href=""></a>X <span class="op">=</span> df[[<span class="st">"latitude"</span>, <span class="st">"longitude"</span>, <span class="st">"median_income"</span>, <span class="st">"population"</span>, <span class="st">"households"</span>, <span class="st">"total_bedrooms"</span>]]</span>
-<span id="cb34-4"><a href=""></a><span class="co"># split the dataset</span></span>
-<span id="cb34-5"><a href=""></a>X_train, X_test, y_train, y_test <span class="op">=</span> train_test_split(X, y, test_size<span class="op">=</span><span class="fl">0.33</span>, random_state<span class="op">=</span><span class="dv">42</span>)</span></code></pre></div>
+<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb34-1"><a href="" aria-label="1"></a>y <span class="op">=</span> df[<span class="st">"median_house_value"</span>]  <span class="co"># labels</span></span>
+<span id="cb34-2"><a href="" aria-label="2"></a><span class="co"># consider only some features from the train dataset</span></span>
+<span id="cb34-3"><a href="" aria-label="3"></a>X <span class="op">=</span> df[[<span class="st">"latitude"</span>, <span class="st">"longitude"</span>, <span class="st">"median_income"</span>, <span class="st">"population"</span>, <span class="st">"households"</span>, <span class="st">"total_bedrooms"</span>]]</span>
+<span id="cb34-4"><a href="" aria-label="4"></a><span class="co"># split the dataset</span></span>
+<span id="cb34-5"><a href="" aria-label="5"></a>X_train, X_test, y_train, y_test <span class="op">=</span> train_test_split(X, y, test_size<span class="op">=</span><span class="fl">0.33</span>, random_state<span class="op">=</span><span class="dv">42</span>)</span></code></pre></div>
 </details>
 </div>
 </section>
@@ -1159,12 +1162,12 @@ memory usage: 1.6 MB</code></pre>
 <div id="ae91e744" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;,&quot;height&quot;:448}}" data-outputid="45a9f867-3207-47ca-929a-aeed2ac25bf8" data-execution_count="25">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb35-1"><a href=""></a>result_pca <span class="op">=</span> pca.fit_transform(X_train.values)</span>
-<span id="cb35-2"><a href=""></a><span class="kw">def</span> color(x):</span>
-<span id="cb35-3"><a href=""></a>    <span class="cf">if</span> x <span class="op">==</span> <span class="st">"low"</span>: <span class="cf">return</span> <span class="st">"tab:blue"</span></span>
-<span id="cb35-4"><a href=""></a>    <span class="cf">elif</span> x <span class="op">==</span> <span class="st">"medium"</span>: <span class="cf">return</span> <span class="st">"tab:orange"</span></span>
-<span id="cb35-5"><a href=""></a>    <span class="cf">else</span>: <span class="cf">return</span> <span class="st">"tab:red"</span></span>
-<span id="cb35-6"><a href=""></a>plt.scatter(x<span class="op">=</span>result_pca[:, <span class="dv">0</span>], y<span class="op">=</span>result_pca[:, <span class="dv">1</span>], c<span class="op">=</span>y_train.<span class="bu">apply</span>(color), s<span class="op">=</span><span class="dv">2</span>)</span></code></pre></div>
+<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb35-1"><a href="" aria-label="1"></a>result_pca <span class="op">=</span> pca.fit_transform(X_train.values)</span>
+<span id="cb35-2"><a href="" aria-label="2"></a><span class="kw">def</span> color(x):</span>
+<span id="cb35-3"><a href="" aria-label="3"></a>    <span class="cf">if</span> x <span class="op">==</span> <span class="st">"low"</span>: <span class="cf">return</span> <span class="st">"tab:blue"</span></span>
+<span id="cb35-4"><a href="" aria-label="4"></a>    <span class="cf">elif</span> x <span class="op">==</span> <span class="st">"medium"</span>: <span class="cf">return</span> <span class="st">"tab:orange"</span></span>
+<span id="cb35-5"><a href="" aria-label="5"></a>    <span class="cf">else</span>: <span class="cf">return</span> <span class="st">"tab:red"</span></span>
+<span id="cb35-6"><a href="" aria-label="6"></a>plt.scatter(x<span class="op">=</span>result_pca[:, <span class="dv">0</span>], y<span class="op">=</span>result_pca[:, <span class="dv">1</span>], c<span class="op">=</span>y_train.<span class="bu">apply</span>(color), s<span class="op">=</span><span class="dv">2</span>)</span></code></pre></div>
 </details>
 
 </div>
@@ -1175,9 +1178,9 @@ memory usage: 1.6 MB</code></pre>
 <div id="7c2620f8" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;,&quot;height&quot;:448}}" data-outputid="6ff1d1b3-5eec-44c0-a3e1-90cbc2755f22" data-execution_count="26">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb36-1"><a href=""></a>tsne <span class="op">=</span> TSNE(n_components<span class="op">=</span><span class="dv">2</span>)</span>
-<span id="cb36-2"><a href=""></a>result_tsne <span class="op">=</span> tsne.fit_transform(X_train.head(<span class="dv">3000</span>))</span>
-<span id="cb36-3"><a href=""></a>plt.scatter(x<span class="op">=</span>result_tsne[:, <span class="dv">0</span>], y<span class="op">=</span>result_tsne[:, <span class="dv">1</span>], c<span class="op">=</span>y_train.head(<span class="dv">3000</span>).<span class="bu">apply</span>(color), s<span class="op">=</span><span class="dv">2</span>)</span></code></pre></div>
+<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb36-1"><a href="" aria-label="1"></a>tsne <span class="op">=</span> TSNE(n_components<span class="op">=</span><span class="dv">2</span>)</span>
+<span id="cb36-2"><a href="" aria-label="2"></a>result_tsne <span class="op">=</span> tsne.fit_transform(X_train.head(<span class="dv">3000</span>))</span>
+<span id="cb36-3"><a href="" aria-label="3"></a>plt.scatter(x<span class="op">=</span>result_tsne[:, <span class="dv">0</span>], y<span class="op">=</span>result_tsne[:, <span class="dv">1</span>], c<span class="op">=</span>y_train.head(<span class="dv">3000</span>).<span class="bu">apply</span>(color), s<span class="op">=</span><span class="dv">2</span>)</span></code></pre></div>
 </details>
 
 </div>
@@ -1203,12 +1206,12 @@ memory usage: 1.6 MB</code></pre>
 <div id="f6a910d0" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2024-10-08T14:40:31.744725Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-10-08T14:40:31.744725Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-10-08T14:40:31.858857Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-10-08T14:40:31.858857Z&quot;}}" data-outputid="5aa5a3d0-6285-4531-86ae-b4076282bf77" data-execution_count="27">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb37-1"><a href=""></a><span class="im">from</span> sklearn <span class="im">import</span> tree</span>
-<span id="cb37-2"><a href=""></a></span>
-<span id="cb37-3"><a href=""></a>clf <span class="op">=</span> tree.DecisionTreeClassifier(criterion<span class="op">=</span><span class="st">"entropy"</span>, random_state<span class="op">=</span><span class="dv">42</span>)</span>
-<span id="cb37-4"><a href=""></a>clf <span class="op">=</span> clf.fit(X_train, y_train)</span>
-<span id="cb37-5"><a href=""></a>housing_predictions <span class="op">=</span> clf.predict(X_test)</span>
-<span id="cb37-6"><a href=""></a>plot_predictions(y_test, housing_predictions, accuracy<span class="op">=</span><span class="va">True</span>, plot<span class="op">=</span><span class="va">False</span>)</span></code></pre></div>
+<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb37-1"><a href="" aria-label="1"></a><span class="im">from</span> sklearn <span class="im">import</span> tree</span>
+<span id="cb37-2"><a href="" aria-label="2"></a></span>
+<span id="cb37-3"><a href="" aria-label="3"></a>clf <span class="op">=</span> tree.DecisionTreeClassifier(criterion<span class="op">=</span><span class="st">"entropy"</span>, random_state<span class="op">=</span><span class="dv">42</span>)</span>
+<span id="cb37-4"><a href="" aria-label="4"></a>clf <span class="op">=</span> clf.fit(X_train, y_train)</span>
+<span id="cb37-5"><a href="" aria-label="5"></a>housing_predictions <span class="op">=</span> clf.predict(X_test)</span>
+<span id="cb37-6"><a href="" aria-label="6"></a>plot_predictions(y_test, housing_predictions, accuracy<span class="op">=</span><span class="va">True</span>, plot<span class="op">=</span><span class="va">False</span>)</span></code></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>Accuracy: 0.768349970640047</code></pre>
@@ -1217,9 +1220,9 @@ memory usage: 1.6 MB</code></pre>
 <div id="0a816a7f" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2024-10-08T14:40:31.860857Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-10-08T14:40:31.860857Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-10-08T14:40:31.945414Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-10-08T14:40:31.945414Z&quot;}}" data-outputid="8ad567b0-5cd5-474d-faa5-dba8559fc698" data-execution_count="28">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb39"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb39-1"><a href=""></a><span class="im">from</span> sklearn.metrics <span class="im">import</span> classification_report</span>
-<span id="cb39-2"><a href=""></a></span>
-<span id="cb39-3"><a href=""></a><span class="bu">print</span>(classification_report(y_test, housing_predictions, target_names<span class="op">=</span>bins))</span></code></pre></div>
+<div class="sourceCode cell-code" id="cb39"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb39-1"><a href="" aria-label="1"></a><span class="im">from</span> sklearn.metrics <span class="im">import</span> classification_report</span>
+<span id="cb39-2"><a href="" aria-label="2"></a></span>
+<span id="cb39-3"><a href="" aria-label="3"></a><span class="bu">print</span>(classification_report(y_test, housing_predictions, target_names<span class="op">=</span>bins))</span></code></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>              precision    recall  f1-score   support
@@ -1237,8 +1240,8 @@ weighted avg       0.77      0.77      0.77      6812
 <div id="ec492de6" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;,&quot;height&quot;:238}}" data-outputid="6d06c24f-01b3-4cbe-e5d0-72740a661ac5" data-execution_count="29">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb41"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb41-1"><a href=""></a>feature_importance <span class="op">=</span> clf.feature_importances_</span>
-<span id="cb41-2"><a href=""></a>pd.DataFrame({<span class="st">'Feature'</span>: X_train.columns,<span class="st">'Importance'</span>: feature_importance}).sort_values(by<span class="op">=</span><span class="st">'Importance'</span>, ascending<span class="op">=</span><span class="va">False</span>)</span></code></pre></div>
+<div class="sourceCode cell-code" id="cb41"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb41-1"><a href="" aria-label="1"></a>feature_importance <span class="op">=</span> clf.feature_importances_</span>
+<span id="cb41-2"><a href="" aria-label="2"></a>pd.DataFrame({<span class="st">'Feature'</span>: X_train.columns,<span class="st">'Importance'</span>: feature_importance}).sort_values(by<span class="op">=</span><span class="st">'Importance'</span>, ascending<span class="op">=</span><span class="va">False</span>)</span></code></pre></div>
 </details>
 <div class="cell-output cell-output-display" data-execution_count="29">
 <div>
@@ -1308,8 +1311,8 @@ weighted avg       0.77      0.77      0.77      6812
 <div id="017f3c68" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2024-10-08T14:40:31.947419Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-10-08T14:40:31.947419Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-10-08T14:40:32.839235Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-10-08T14:40:32.839168Z&quot;}}" data-outputid="ed4ac902-7925-41e4-881b-6e2108f83c7e" data-scrolled="true" data-execution_count="30">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb42"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb42-1"><a href=""></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">20</span>,<span class="dv">12</span>))</span>
-<span id="cb42-2"><a href=""></a>tree <span class="op">=</span> tree.plot_tree(clf, fontsize<span class="op">=</span><span class="dv">10</span>, feature_names<span class="op">=</span>X_train.columns, class_names<span class="op">=</span>bins, max_depth<span class="op">=</span><span class="dv">4</span>)</span></code></pre></div>
+<div class="sourceCode cell-code" id="cb42"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb42-1"><a href="" aria-label="1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">20</span>,<span class="dv">12</span>))</span>
+<span id="cb42-2"><a href="" aria-label="2"></a>tree <span class="op">=</span> tree.plot_tree(clf, fontsize<span class="op">=</span><span class="dv">10</span>, feature_names<span class="op">=</span>X_train.columns, class_names<span class="op">=</span>bins, max_depth<span class="op">=</span><span class="dv">4</span>)</span></code></pre></div>
 </details>
 
 </div>
@@ -1320,11 +1323,11 @@ weighted avg       0.77      0.77      0.77      6812
 <div id="zgtE_hRwXpWj" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2024-10-08T14:40:32.841175Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-10-08T14:40:32.841175Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-10-08T14:40:35.457733Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-10-08T14:40:35.457733Z&quot;}}" data-outputid="a17c2521-e446-483f-9417-1238d26e5e5d" data-execution_count="31">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb43"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb43-1"><a href=""></a><span class="im">from</span> sklearn.ensemble <span class="im">import</span> RandomForestClassifier</span>
-<span id="cb43-2"><a href=""></a></span>
-<span id="cb43-3"><a href=""></a>forest_cls <span class="op">=</span> RandomForestClassifier(criterion<span class="op">=</span><span class="st">"entropy"</span>, random_state<span class="op">=</span><span class="dv">42</span>) <span class="co"># initialize the model</span></span>
-<span id="cb43-4"><a href=""></a>forest_cls <span class="op">=</span> forest_cls.fit(X_train, y_train) <span class="co"># train it</span></span>
-<span id="cb43-5"><a href=""></a>plot_predictions(y_test, forest_cls.predict(X_test), accuracy<span class="op">=</span><span class="va">True</span>, plot<span class="op">=</span><span class="va">False</span>) <span class="co"># check the error</span></span></code></pre></div>
+<div class="sourceCode cell-code" id="cb43"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb43-1"><a href="" aria-label="1"></a><span class="im">from</span> sklearn.ensemble <span class="im">import</span> RandomForestClassifier</span>
+<span id="cb43-2"><a href="" aria-label="2"></a></span>
+<span id="cb43-3"><a href="" aria-label="3"></a>forest_cls <span class="op">=</span> RandomForestClassifier(criterion<span class="op">=</span><span class="st">"entropy"</span>, random_state<span class="op">=</span><span class="dv">42</span>) <span class="co"># initialize the model</span></span>
+<span id="cb43-4"><a href="" aria-label="4"></a>forest_cls <span class="op">=</span> forest_cls.fit(X_train, y_train) <span class="co"># train it</span></span>
+<span id="cb43-5"><a href="" aria-label="5"></a>plot_predictions(y_test, forest_cls.predict(X_test), accuracy<span class="op">=</span><span class="va">True</span>, plot<span class="op">=</span><span class="va">False</span>) <span class="co"># check the error</span></span></code></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>Accuracy: 0.8247210804462712</code></pre>
@@ -1333,7 +1336,7 @@ weighted avg       0.77      0.77      0.77      6812
 <div id="oXKGFKaUXriL" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2024-10-08T14:40:35.459725Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-10-08T14:40:35.459725Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-10-08T14:40:35.462834Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-10-08T14:40:35.462834Z&quot;}}" data-outputid="13ffb4f2-aaa1-4b2f-c11d-c2f53631723c" data-execution_count="32">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb45"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb45-1"><a href=""></a>forest_cls.get_params()</span></code></pre></div>
+<div class="sourceCode cell-code" id="cb45"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb45-1"><a href="" aria-label="1"></a>forest_cls.get_params()</span></code></pre></div>
 </details>
 <div class="cell-output cell-output-display" data-execution_count="32">
 <pre><code>{'bootstrap': True,
@@ -1364,15 +1367,15 @@ weighted avg       0.77      0.77      0.77      6812
 <div id="iJNLDjRuXtv0" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2024-10-08T14:40:35.463834Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-10-08T14:40:35.463834Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-10-08T14:41:01.414696Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-10-08T14:41:01.414696Z&quot;}}" data-outputid="4b0265d7-3c7b-47b0-c2f4-cf6b9ad377ef" data-execution_count="33">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb47"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb47-1"><a href=""></a>random_grid <span class="op">=</span> {<span class="st">'n_estimators'</span>: [<span class="dv">50</span>, <span class="dv">100</span>, <span class="dv">150</span>], <span class="co"># Number of trees in random forest</span></span>
-<span id="cb47-2"><a href=""></a>               <span class="st">'max_features'</span>: [<span class="fl">1.0</span>, <span class="st">'sqrt'</span>], <span class="co"># Number of features to consider at every split</span></span>
-<span id="cb47-3"><a href=""></a>               <span class="st">'min_samples_leaf'</span>: [<span class="dv">1</span>, <span class="dv">5</span>],</span>
-<span id="cb47-4"><a href=""></a>               <span class="st">'max_depth'</span>: [<span class="dv">2</span>, <span class="dv">5</span>]</span>
-<span id="cb47-5"><a href=""></a>              }</span>
-<span id="cb47-6"><a href=""></a></span>
-<span id="cb47-7"><a href=""></a>rf_random <span class="op">=</span> RandomizedSearchCV(estimator<span class="op">=</span>forest_cls, param_distributions<span class="op">=</span>random_grid, cv<span class="op">=</span><span class="dv">3</span>, verbose<span class="op">=</span><span class="dv">2</span>, random_state<span class="op">=</span><span class="dv">42</span>)</span>
-<span id="cb47-8"><a href=""></a>rf_random.fit(X_train, y_train)</span>
-<span id="cb47-9"><a href=""></a>rf_random.best_params_</span></code></pre></div>
+<div class="sourceCode cell-code" id="cb47"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb47-1"><a href="" aria-label="1"></a>random_grid <span class="op">=</span> {<span class="st">'n_estimators'</span>: [<span class="dv">50</span>, <span class="dv">100</span>, <span class="dv">150</span>], <span class="co"># Number of trees in random forest</span></span>
+<span id="cb47-2"><a href="" aria-label="2"></a>               <span class="st">'max_features'</span>: [<span class="fl">1.0</span>, <span class="st">'sqrt'</span>], <span class="co"># Number of features to consider at every split</span></span>
+<span id="cb47-3"><a href="" aria-label="3"></a>               <span class="st">'min_samples_leaf'</span>: [<span class="dv">1</span>, <span class="dv">5</span>],</span>
+<span id="cb47-4"><a href="" aria-label="4"></a>               <span class="st">'max_depth'</span>: [<span class="dv">2</span>, <span class="dv">5</span>]</span>
+<span id="cb47-5"><a href="" aria-label="5"></a>              }</span>
+<span id="cb47-6"><a href="" aria-label="6"></a></span>
+<span id="cb47-7"><a href="" aria-label="7"></a>rf_random <span class="op">=</span> RandomizedSearchCV(estimator<span class="op">=</span>forest_cls, param_distributions<span class="op">=</span>random_grid, cv<span class="op">=</span><span class="dv">3</span>, verbose<span class="op">=</span><span class="dv">2</span>, random_state<span class="op">=</span><span class="dv">42</span>)</span>
+<span id="cb47-8"><a href="" aria-label="8"></a>rf_random.fit(X_train, y_train)</span>
+<span id="cb47-9"><a href="" aria-label="9"></a>rf_random.best_params_</span></code></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>Fitting 3 folds for each of 10 candidates, totalling 30 fits
@@ -1421,9 +1424,9 @@ weighted avg       0.77      0.77      0.77      6812
 <div id="Prs9v1QQXvbo" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2024-10-08T14:41:01.416702Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-10-08T14:41:01.415702Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-10-08T14:41:01.771627Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-10-08T14:41:01.771627Z&quot;}}" data-outputid="cde6da09-c7f4-40c8-81f4-4c11cc3587a3" data-execution_count="34">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb50"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb50-1"><a href=""></a>forest_cls <span class="op">=</span> RandomForestClassifier(criterion<span class="op">=</span><span class="st">"gini"</span>, random_state<span class="op">=</span><span class="dv">42</span>, n_estimators<span class="op">=</span><span class="dv">50</span>, max_features<span class="op">=</span><span class="st">"sqrt"</span>, min_samples_leaf<span class="op">=</span><span class="dv">1</span>, max_depth<span class="op">=</span><span class="dv">5</span>)</span>
-<span id="cb50-2"><a href=""></a>forest_cls <span class="op">=</span> forest_cls.fit(X_train, y_train) <span class="co"># train it</span></span>
-<span id="cb50-3"><a href=""></a>plot_predictions(y_test, forest_cls.predict(X_test), accuracy<span class="op">=</span><span class="va">True</span>, plot<span class="op">=</span><span class="va">False</span>)</span></code></pre></div>
+<div class="sourceCode cell-code" id="cb50"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb50-1"><a href="" aria-label="1"></a>forest_cls <span class="op">=</span> RandomForestClassifier(criterion<span class="op">=</span><span class="st">"gini"</span>, random_state<span class="op">=</span><span class="dv">42</span>, n_estimators<span class="op">=</span><span class="dv">50</span>, max_features<span class="op">=</span><span class="st">"sqrt"</span>, min_samples_leaf<span class="op">=</span><span class="dv">1</span>, max_depth<span class="op">=</span><span class="dv">5</span>)</span>
+<span id="cb50-2"><a href="" aria-label="2"></a>forest_cls <span class="op">=</span> forest_cls.fit(X_train, y_train) <span class="co"># train it</span></span>
+<span id="cb50-3"><a href="" aria-label="3"></a>plot_predictions(y_test, forest_cls.predict(X_test), accuracy<span class="op">=</span><span class="va">True</span>, plot<span class="op">=</span><span class="va">False</span>)</span></code></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>Accuracy: 0.7298884321785085</code></pre>
@@ -1432,7 +1435,7 @@ weighted avg       0.77      0.77      0.77      6812
 <div id="1Wr3yNmyXxE8" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2024-10-08T14:41:01.773633Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-10-08T14:41:01.773633Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-10-08T14:41:01.776923Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-10-08T14:41:01.776923Z&quot;}}" data-outputid="6c23dec8-3125-4c70-e534-f0f804e0c70d" data-execution_count="35">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb52"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb52-1"><a href=""></a>forest_cls.get_params()</span></code></pre></div>
+<div class="sourceCode cell-code" id="cb52"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb52-1"><a href="" aria-label="1"></a>forest_cls.get_params()</span></code></pre></div>
 </details>
 <div class="cell-output cell-output-display" data-execution_count="35">
 <pre><code>{'bootstrap': True,
@@ -1463,10 +1466,10 @@ weighted avg       0.77      0.77      0.77      6812
 <div id="13d88cfc" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2024-10-08T14:41:01.778938Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-10-08T14:41:01.778938Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-10-08T14:41:01.784881Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-10-08T14:41:01.784881Z&quot;}}" data-outputid="3c3e4bd6-a82a-4d28-b633-06bec2fb2b1d" data-execution_count="36">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb54"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb54-1"><a href=""></a>scale_mapper <span class="op">=</span> {<span class="st">"low"</span>: <span class="dv">1</span>, <span class="st">"medium"</span>: <span class="dv">2</span>, <span class="st">"high"</span>: <span class="dv">3</span>}</span>
-<span id="cb54-2"><a href=""></a>y_train <span class="op">=</span> y_train.<span class="bu">map</span>(scale_mapper).astype(<span class="bu">int</span>)</span>
-<span id="cb54-3"><a href=""></a>y_test <span class="op">=</span> y_test.<span class="bu">map</span>(scale_mapper).astype(<span class="bu">int</span>)</span>
-<span id="cb54-4"><a href=""></a>y_train</span></code></pre></div>
+<div class="sourceCode cell-code" id="cb54"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb54-1"><a href="" aria-label="1"></a>scale_mapper <span class="op">=</span> {<span class="st">"low"</span>: <span class="dv">1</span>, <span class="st">"medium"</span>: <span class="dv">2</span>, <span class="st">"high"</span>: <span class="dv">3</span>}</span>
+<span id="cb54-2"><a href="" aria-label="2"></a>y_train <span class="op">=</span> y_train.<span class="bu">map</span>(scale_mapper).astype(<span class="bu">int</span>)</span>
+<span id="cb54-3"><a href="" aria-label="3"></a>y_test <span class="op">=</span> y_test.<span class="bu">map</span>(scale_mapper).astype(<span class="bu">int</span>)</span>
+<span id="cb54-4"><a href="" aria-label="4"></a>y_train</span></code></pre></div>
 </details>
 <div class="cell-output cell-output-display" data-execution_count="36">
 <pre><code>5088     1
@@ -1486,7 +1489,7 @@ Name: median_house_value, Length: 13828, dtype: int64</code></pre>
 <div id="3bc96812" class="cell" data-execution_count="37">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb56"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb56-1"><a href=""></a>X_train.info()</span></code></pre></div>
+<div class="sourceCode cell-code" id="cb56"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb56-1"><a href="" aria-label="1"></a>X_train.info()</span></code></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>&lt;class 'pandas.DataFrame'&gt;
@@ -1511,16 +1514,16 @@ memory usage: 756.2 KB</code></pre>
 <div id="1898d4d7" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2024-10-08T14:41:01.786894Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-10-08T14:41:01.786894Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-10-08T14:42:03.305354Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-10-08T14:42:03.305354Z&quot;}}" data-outputid="81168e11-42f5-4a7d-9898-b93fe052684f">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb58"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb58-1"><a href=""></a><span class="im">from</span> flaml <span class="im">import</span> AutoML</span>
-<span id="cb58-2"><a href=""></a></span>
-<span id="cb58-3"><a href=""></a>automl_settings <span class="op">=</span> {</span>
-<span id="cb58-4"><a href=""></a>    <span class="st">"time_budget"</span>: <span class="dv">60</span>,  <span class="co"># in seconds</span></span>
-<span id="cb58-5"><a href=""></a>    <span class="st">"metric"</span>: <span class="st">"accuracy"</span>,</span>
-<span id="cb58-6"><a href=""></a>    <span class="st">"task"</span>: <span class="st">"classification"</span>,</span>
-<span id="cb58-7"><a href=""></a>}</span>
-<span id="cb58-8"><a href=""></a></span>
-<span id="cb58-9"><a href=""></a>automl <span class="op">=</span> AutoML()</span>
-<span id="cb58-10"><a href=""></a>automl.fit(X_train, y_train, <span class="op">**</span>automl_settings)</span></code></pre></div>
+<div class="sourceCode cell-code" id="cb58"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb58-1"><a href="" aria-label="1"></a><span class="im">from</span> flaml <span class="im">import</span> AutoML</span>
+<span id="cb58-2"><a href="" aria-label="2"></a></span>
+<span id="cb58-3"><a href="" aria-label="3"></a>automl_settings <span class="op">=</span> {</span>
+<span id="cb58-4"><a href="" aria-label="4"></a>    <span class="st">"time_budget"</span>: <span class="dv">60</span>,  <span class="co"># in seconds</span></span>
+<span id="cb58-5"><a href="" aria-label="5"></a>    <span class="st">"metric"</span>: <span class="st">"accuracy"</span>,</span>
+<span id="cb58-6"><a href="" aria-label="6"></a>    <span class="st">"task"</span>: <span class="st">"classification"</span>,</span>
+<span id="cb58-7"><a href="" aria-label="7"></a>}</span>
+<span id="cb58-8"><a href="" aria-label="8"></a></span>
+<span id="cb58-9"><a href="" aria-label="9"></a>automl <span class="op">=</span> AutoML()</span>
+<span id="cb58-10"><a href="" aria-label="10"></a>automl.fit(X_train, y_train, <span class="op">**</span>automl_settings)</span></code></pre></div>
 </details>
 </div>
 </section>
@@ -1530,7 +1533,7 @@ memory usage: 756.2 KB</code></pre>
 <div id="8f9415cc" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2024-10-08T14:42:03.307348Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-10-08T14:42:03.307348Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-10-08T14:42:03.314350Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-10-08T14:42:03.314350Z&quot;}}" data-outputid="9aa58b13-1881-4eff-f525-aead6a780606">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb59"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb59-1"><a href=""></a>automl.model.estimator</span></code></pre></div>
+<div class="sourceCode cell-code" id="cb59"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb59-1"><a href="" aria-label="1"></a>automl.model.estimator</span></code></pre></div>
 </details>
 <div class="cell-output cell-output-display" data-execution_count="115">
 <style>#sk-container-id-2 {
@@ -1962,8 +1965,8 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
 <div id="6b21842b" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2024-10-08T14:42:03.316349Z&quot;,&quot;iopub.status.busy&quot;:&quot;2024-10-08T14:42:03.316349Z&quot;,&quot;iopub.status.idle&quot;:&quot;2024-10-08T14:42:03.341372Z&quot;,&quot;shell.execute_reply&quot;:&quot;2024-10-08T14:42:03.341372Z&quot;}}" data-outputid="a13c5ead-1d8a-4ae6-fa91-3c92ad7f3720">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb60"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb60-1"><a href=""></a>housing_predictions <span class="op">=</span> automl.predict(X_test)</span>
-<span id="cb60-2"><a href=""></a>plot_predictions(y_test, housing_predictions, accuracy<span class="op">=</span><span class="va">True</span>, plot<span class="op">=</span><span class="va">False</span>)</span></code></pre></div>
+<div class="sourceCode cell-code" id="cb60"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb60-1"><a href="" aria-label="1"></a>housing_predictions <span class="op">=</span> automl.predict(X_test)</span>
+<span id="cb60-2"><a href="" aria-label="2"></a>plot_predictions(y_test, housing_predictions, accuracy<span class="op">=</span><span class="va">True</span>, plot<span class="op">=</span><span class="va">False</span>)</span></code></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>Accuracy: 0.845713446858485</code></pre>
@@ -1976,7 +1979,7 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
 <div id="571b733a" class="cell">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb62"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb62-1"><a href=""></a><span class="co"># Can you do better?</span></span></code></pre></div>
+<div class="sourceCode cell-code" id="cb62"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb62-1"><a href="" aria-label="1"></a><span class="co"># Can you do better?</span></span></code></pre></div>
 </details>
 </div>
 

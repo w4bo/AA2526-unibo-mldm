@@ -1,3 +1,30 @@
+## [1.0.26](https://github.com/w4bo/AA2526-unibo-mldm/compare/1.0.25...1.0.26) (2026-09-09)
+
+### Dependency updates
+
+* **deps:** update node.js to 24.15 ([#42](https://github.com/w4bo/AA2526-unibo-mldm/issues/42)) ([7059745](https://github.com/w4bo/AA2526-unibo-mldm/commit/70597458d3aeae1f512a580a9a9c0b1713bdeb52))
+* **deps:** update node.js to 24.18 ([#44](https://github.com/w4bo/AA2526-unibo-mldm/issues/44)) ([5482c0f](https://github.com/w4bo/AA2526-unibo-mldm/commit/5482c0f8abf85a7cb1cdd56f5093de9fc49c0e76))
+* **deps:** update node.js to 24.19 ([#48](https://github.com/w4bo/AA2526-unibo-mldm/issues/48)) ([d365cb8](https://github.com/w4bo/AA2526-unibo-mldm/commit/d365cb8d6dd25cf3570ce4ccecd4114b9edac55e))
+* **deps:** update node.js to 24.20 ([#54](https://github.com/w4bo/AA2526-unibo-mldm/issues/54)) ([2f6668a](https://github.com/w4bo/AA2526-unibo-mldm/commit/2f6668a1e437a7545b2200467f766611692b62cc))
+* **deps:** update slides/refs digest to 8bc4da8 ([#17](https://github.com/w4bo/AA2526-unibo-mldm/issues/17)) ([aa93788](https://github.com/w4bo/AA2526-unibo-mldm/commit/aa93788aa87caf44cbb4a430feaacc9584070e13))
+* **deps:** update slides/refs digest to cf5d8d6 ([#56](https://github.com/w4bo/AA2526-unibo-mldm/issues/56)) ([956f978](https://github.com/w4bo/AA2526-unibo-mldm/commit/956f978b7807286331571687856df3411f3e011d))
+* **deps:** update slides/utils digest to 47e7239 ([#52](https://github.com/w4bo/AA2526-unibo-mldm/issues/52)) ([9e2c516](https://github.com/w4bo/AA2526-unibo-mldm/commit/9e2c5161d0d05af523750361ff3a15ae6849feb5))
+* **deps:** update slides/utils digest to 5e40e8b ([#41](https://github.com/w4bo/AA2526-unibo-mldm/issues/41)) ([91d8268](https://github.com/w4bo/AA2526-unibo-mldm/commit/91d82682f36098d77b23feeee3c56a4d749b01c4))
+* **deps:** update slides/utils digest to eaf95de ([#49](https://github.com/w4bo/AA2526-unibo-mldm/issues/49)) ([366dd05](https://github.com/w4bo/AA2526-unibo-mldm/commit/366dd050683505d7b5788c63e8f628a720ef69af))
+* **deps:** update w4bo/quarto-slides docker tag to v1.0.29 ([#47](https://github.com/w4bo/AA2526-unibo-mldm/issues/47)) ([411975b](https://github.com/w4bo/AA2526-unibo-mldm/commit/411975bac1f20d3d8b5ccca76ccbec3d0eba1148))
+* **deps:** update w4bo/quarto-slides docker tag to v1.0.30 ([#50](https://github.com/w4bo/AA2526-unibo-mldm/issues/50)) ([0d1c94e](https://github.com/w4bo/AA2526-unibo-mldm/commit/0d1c94e1363868f5b49b98b4739b1196bfdca40a))
+* **deps:** update w4bo/quarto-slides docker tag to v1.0.31 ([#53](https://github.com/w4bo/AA2526-unibo-mldm/issues/53)) ([4f410e3](https://github.com/w4bo/AA2526-unibo-mldm/commit/4f410e32fb52345bc11e53fef069ec7e6a408eb8))
+
+### Bug Fixes
+
+* replace remote image URLs with local copies in slides ([0bdf64c](https://github.com/w4bo/AA2526-unibo-mldm/commit/0bdf64ca37b769bccf39033f355dd9485eb09a22))
+
+### Build and continuous integration
+
+* **deps:** update actions/checkout action to v7 ([#45](https://github.com/w4bo/AA2526-unibo-mldm/issues/45)) ([ef8e943](https://github.com/w4bo/AA2526-unibo-mldm/commit/ef8e943b267f932cea067aa74d6ff9567c776dd2))
+* **deps:** update actions/setup-node action to v6.5.0 ([#43](https://github.com/w4bo/AA2526-unibo-mldm/issues/43)) ([5e261f4](https://github.com/w4bo/AA2526-unibo-mldm/commit/5e261f43026299e2f882db135905996c21543cb3))
+* **deps:** update actions/setup-node action to v7 ([#46](https://github.com/w4bo/AA2526-unibo-mldm/issues/46)) ([6b31ee3](https://github.com/w4bo/AA2526-unibo-mldm/commit/6b31ee34175b1eb540b0cadb399c8816b5a44ea6))
+
 ## [1.0.25](https://github.com/w4bo/AA2526-unibo-mldm/compare/1.0.24...1.0.25) (2026-04-15)
 
 ### Bug Fixes
